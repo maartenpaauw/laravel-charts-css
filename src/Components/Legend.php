@@ -14,6 +14,7 @@ class Legend extends Component
     {
         $this->configuration = $configuration;
     }
+
     public function render(): View
     {
         return view('charts-css::components.legend');

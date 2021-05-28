@@ -16,7 +16,7 @@ class Stylesheet extends Component
     {
         if ($cdn === 'jsdelivr') {
             $this->strategy = new JSDelivrStylesheet();
-        } else if ($cdn === 'unpkg') {
+        } elseif ($cdn === 'unpkg') {
             $this->strategy = new UnpkgStylesheet();
         }
     }

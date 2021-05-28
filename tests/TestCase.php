@@ -2,8 +2,8 @@
 
 namespace Maartenpaauw\Chart\Tests;
 
-use Orchestra\Testbench\TestCase as Orchestra;
 use Maartenpaauw\Chart\ChartServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
