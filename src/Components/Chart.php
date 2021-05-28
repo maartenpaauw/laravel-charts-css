@@ -1,0 +1,22 @@
+<?php
+
+namespace Maartenpaauw\Chart\Components;
+
+use Illuminate\View\Component;
+use Illuminate\View\View;
+use Maartenpaauw\Chart\Configuration\Configuration;
+
+class Chart extends Component
+{
+    public Configuration $configuration;
+
+    public function __construct(Configuration $configuration)
+    {
+        $this->configuration = $configuration;
+    }
+
+    public function render(): View
+    {
+        return view('charts-css::components.chart');
+    }
+}

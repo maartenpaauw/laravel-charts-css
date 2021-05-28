@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Maartenpaauw\Chart\Tests;
 
 class ExampleTest extends TestCase
 {

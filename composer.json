@@ -1,22 +1,22 @@
 {
-    "name": "vendor_slug/package_slug",
-    "description": ":package_description",
+    "name": "maartenpaauw/laravel-charts-css",
+    "description": "Laravel components to create beautifully Charts.css charts.",
     "keywords": [
-        ":vendor_name",
+        "maartenpaauw",
         "laravel",
-        "package_slug"
+        "laravel-charts-css"
     ],
-    "homepage": "https://github.com/vendor_slug/package_slug",
+    "homepage": "https://github.com/maartenpaauw/laravel-charts-css",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Maarten Paauw",
+            "email": "maartenpaauw@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.0",
+        "php": "^7.4|^8.0",
         "spatie/laravel-package-tools": "^1.4.3",
         "illuminate/contracts": "^8.37"
     },
@@ -30,13 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Maartenpaauw\\Chart\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Maartenpaauw\\Chart\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -50,11 +49,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
-            }
+                "Maartenpaauw\\Chart\\ChartServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",
