@@ -23,6 +23,7 @@ class DatasetTest extends TestCase
     /** @test */
     public function it_should_return_the_entries_correctly(): void
     {
+        $this->assertIsArray($this->dataset->entries());
         $this->assertCount(2, $this->dataset->entries());
     }
 
