@@ -2,7 +2,8 @@
 
 namespace Maartenpaauw\Chart\Configuration;
 
-use Maartenpaauw\Chart\Configuration\Legend\Legend;
+use Maartenpaauw\Chart\Legend\Appearance;
+use Maartenpaauw\Chart\Legend\Legend;
 
 class Configuration
 {
@@ -13,7 +14,7 @@ class Configuration
 
     public function heading(): string
     {
-        return 'This is my chart';
+        return 'This is my first chart';
     }
 
     public function legend(): Legend
@@ -22,6 +23,6 @@ class Configuration
             'Label 1',
             'Label 2',
             'Label 3',
-        ]);
+        ], new Appearance());
     }
 }
