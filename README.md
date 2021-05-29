@@ -1,4 +1,4 @@
-# Laravel components to create beautifully Charts.css charts.
+# Laravel components to create gorgeous Charts.css charts.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/maartenpaauw/laravel-charts-css.svg?style=flat-square)](https://packagist.org/packages/maartenpaauw/laravel-charts-css)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/maartenpaauw/laravel-charts-css/run-tests?label=tests)](https://github.com/maartenpaauw/laravel-charts-css/actions?query=workflow%3Arun-tests+branch%3Amain)
