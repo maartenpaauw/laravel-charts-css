@@ -2,12 +2,12 @@
 
 namespace Maartenpaauw\Chart\Tests\Stylesheets;
 
-use Maartenpaauw\Chart\Stylesheets\StylesheetStrategy;
+use Maartenpaauw\Chart\Stylesheets\Stylesheet;
 use Maartenpaauw\Chart\Tests\TestCase;
 
-abstract class StylesheetStrategyTest extends TestCase
+abstract class StylesheetTest extends TestCase
 {
-    abstract protected function stylesheet(): StylesheetStrategy;
+    abstract protected function stylesheet(): Stylesheet;
 
     abstract protected function href(): string;
 

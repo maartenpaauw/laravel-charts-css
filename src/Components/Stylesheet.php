@@ -5,12 +5,12 @@ namespace Maartenpaauw\Chart\Components;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 use Maartenpaauw\Chart\Stylesheets\JSDelivrStylesheet;
-use Maartenpaauw\Chart\Stylesheets\StylesheetStrategy;
+use Maartenpaauw\Chart\Stylesheets\Stylesheet as StylesheetContract;
 use Maartenpaauw\Chart\Stylesheets\UnpkgStylesheet;
 
 class Stylesheet extends Component
 {
-    private StylesheetStrategy $strategy;
+    private StylesheetContract $strategy;
 
     public function __construct(string $cdn)
     {

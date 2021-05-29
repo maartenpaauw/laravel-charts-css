@@ -3,11 +3,11 @@
 namespace Maartenpaauw\Chart\Tests\Stylesheets;
 
 use Maartenpaauw\Chart\Stylesheets\JSDelivrStylesheet;
-use Maartenpaauw\Chart\Stylesheets\StylesheetStrategy;
+use Maartenpaauw\Chart\Stylesheets\Stylesheet;
 
-class JSDelivrStylesheetTest extends StylesheetStrategyTest
+class JSDelivrStylesheetTest extends StylesheetTest
 {
-    protected function stylesheet(): StylesheetStrategy
+    protected function stylesheet(): Stylesheet
     {
         return new JSDelivrStylesheet();
     }

@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chart\Stylesheets;
 
-interface StylesheetStrategy
+interface Stylesheet
 {
     public function href(): string;
 }
