@@ -1,4 +1,4 @@
-<ul {{ $attributes->class(['charts-css', 'legend', 'legend-inline' => $configuration->inline, 'legend-'.$configuration->shape => $configuration->shape]) }}>
+<ul {{ $attributes->class(['charts-css', 'legend'])->class($configuration->appearance->classes()) }}>
 @foreach ($configuration->labels as $label)
         <li>{{ $label }}</li>
     @endforeach

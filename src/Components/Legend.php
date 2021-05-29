@@ -4,7 +4,7 @@ namespace Maartenpaauw\Chart\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
-use Maartenpaauw\Chart\Configuration\Legend\Legend as Configuration;
+use Maartenpaauw\Chart\Legend\Legend as Configuration;
 
 class Legend extends Component
 {
