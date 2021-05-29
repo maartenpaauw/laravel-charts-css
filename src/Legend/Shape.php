@@ -1,6 +1,6 @@
 <?php
 
-namespace Maartenpaauw\Chart\Configuration\Legend;
+namespace Maartenpaauw\Chart\Legend;
 
 class Shape
 {
