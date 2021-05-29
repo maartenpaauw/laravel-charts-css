@@ -17,13 +17,18 @@ class DatasetTest extends TestCase
         $this->dataset = new Dataset([
             new Entry('$40k', 40000),
             new Entry('$70k', 70000),
-        ]);
+        ], 'Europe');
     }
 
     /** @test */
     public function it_should_return_the_entries_correctly(): void
     {
         $this->assertCount(2, $this->dataset->entries());
+    }
+
+    public function it_should_return_the_label_correctly(): void
+    {
+        $this->assertEquals('Europe', $this->dataset->label());
     }
 
     /** @test */
