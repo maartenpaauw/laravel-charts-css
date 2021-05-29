@@ -36,5 +36,4 @@ class ModificationsBagTest extends ModificationTest
         // Assert
         $this->assertCount(1, $bag->classes());
     }
-
 }

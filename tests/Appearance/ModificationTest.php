@@ -7,9 +7,9 @@ use Maartenpaauw\Chart\Tests\TestCase;
 
 abstract class ModificationTest extends TestCase
 {
-    public abstract function modification(): Modification;
+    abstract public function modification(): Modification;
 
-    public abstract function classes(): array;
+    abstract public function classes(): array;
 
     /** @test */
     public function it_should_collect_all_modifications_within_array(): void
@@ -17,5 +17,4 @@ abstract class ModificationTest extends TestCase
         $this->assertIsArray($this->modification()->classes());
         $this->assertEquals($this->classes(), $this->modification()->classes());
     }
-
 }
