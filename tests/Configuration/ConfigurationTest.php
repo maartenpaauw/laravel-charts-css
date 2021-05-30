@@ -29,7 +29,7 @@ class ConfigurationTest extends TestCase
     }
 
     /** @test */
-    public function it_legend(): void
+    public function it_should_have_three_labels_by_default(): void
     {
         // Arrange
         $labels = [
@@ -43,5 +43,16 @@ class ConfigurationTest extends TestCase
 
         // Assert
         $this->assertEquals($labels, $legend->labels);
+    }
+
+    /** @test */
+    public function it_should_show_the_data_on_hover_by_default(): void
+    {
+        // Act
+        $modificationsBag = $this->configuration->modifications();
+
+        // Assert
+        $this->assertCount(1, $modificationsBag->modifications());
+        $this->assertContains('show-data-on-hover', $modificationsBag->classes());
     }
 }

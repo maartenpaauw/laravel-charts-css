@@ -2,6 +2,8 @@
 
 namespace Maartenpaauw\Chart\Configuration;
 
+use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\ShowDataOnHover;
 use Maartenpaauw\Chart\Legend\Appearance;
 use Maartenpaauw\Chart\Legend\Legend;
 
@@ -24,5 +26,12 @@ class Configuration
             'Label 2',
             'Label 3',
         ], new Appearance());
+    }
+
+    public function modifications(): ModificationsBag
+    {
+        return new ModificationsBag([
+            new ShowDataOnHover(),
+        ]);
     }
 }
