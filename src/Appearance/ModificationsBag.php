@@ -11,11 +11,23 @@ class ModificationsBag implements Modification
         $this->modifications = $modifications;
     }
 
+    public function modifications(): array
+    {
+        return $this->modifications;
+    }
+
     public function add(Modification $modification): self
     {
         $this->modifications[] = $modification;
 
         return $this;
+    }
+
+    public function merge(ModificationsBag $modificationsBag): ModificationsBag
+    {
+        $merge = array_merge($this->modifications, $modificationsBag->modifications());
+
+        return new ModificationsBag($merge);
     }
 
     public function classes(): array
