@@ -4,7 +4,7 @@ namespace Maartenpaauw\Chart\Appearance;
 
 use Maartenpaauw\Chart\Appearance\Exceptions\OutOfRangeException;
 
-class ShowSecondaryAxes implements Modification
+class ShowSecondaryAxes extends RangeModification
 {
     private int $axes;
 
@@ -13,9 +13,7 @@ class ShowSecondaryAxes implements Modification
      */
     public function __construct(int $axes = 1)
     {
-        if (1 > $axes || $axes > 10) {
-            throw new OutOfRangeException($axes, 1, 10);
-        }
+        $this->validate($axes);
 
         $this->axes = $axes;
     }
