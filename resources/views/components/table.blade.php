@@ -1,4 +1,4 @@
-<table {{ $attributes->class(['charts-css', 'column', 'show-labels', 'multiple', 'show-heading' => $heading]) }}>
+<table {{ $attributes->class(['charts-css', 'column'])->class($modifications->classes()) }}>
     {{ $slot }}
     <tbody>
         @foreach($datasets->toArray() as $dataset)

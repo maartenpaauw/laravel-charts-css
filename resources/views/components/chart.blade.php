@@ -1,5 +1,5 @@
 <div id="{{ $configuration->id() }}">
-    <x-charts-css-table :datasets="$datasets" :heading="!!$configuration->heading()">
+    <x-charts-css-table :datasets="$datasets" :modifications="$tableModifications">
         @if($configuration->heading())
             <x-charts-css-heading :heading="$configuration->heading()"/>
         @endif
