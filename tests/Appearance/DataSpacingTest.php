@@ -5,7 +5,6 @@ namespace Maartenpaauw\Chart\Tests\Appearance;
 use Maartenpaauw\Chart\Appearance\DataSpacing;
 use Maartenpaauw\Chart\Appearance\Exceptions\OutOfRangeException;
 use Maartenpaauw\Chart\Appearance\Modification;
-use Maartenpaauw\Chart\Appearance\ShowSecondaryAxes;
 
 class DataSpacingTest extends ModificationTest
 {
