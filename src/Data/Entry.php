@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chart\Data;
 
-class Entry
+class Entry implements EntryContract
 {
     private string $value;
 
@@ -20,6 +20,11 @@ class Entry
     }
 
     public function raw(): float
+    {
+        return $this->raw;
+    }
+
+    public function start(): float
     {
         return $this->raw;
     }
