@@ -2,11 +2,11 @@
 
 namespace Maartenpaauw\Chart\Data\Specifications;
 
-use Maartenpaauw\Chart\Data\Datasets;
+use Maartenpaauw\Chart\Data\DatasetsContract;
 
 class HasMultiple implements DatasetsSpecification
 {
-    public function isSatisfiedBy(Datasets $datasets): bool
+    public function isSatisfiedBy(DatasetsContract $datasets): bool
     {
         return $datasets->size() > 1;
     }

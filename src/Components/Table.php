@@ -5,15 +5,15 @@ namespace Maartenpaauw\Chart\Components;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 use Maartenpaauw\Chart\Appearance\ModificationsBag;
-use Maartenpaauw\Chart\Data\Datasets;
+use Maartenpaauw\Chart\Data\DatasetsContract;
 
 class Table extends Component
 {
-    public Datasets $datasets;
+    public DatasetsContract $datasets;
 
     public ModificationsBag $modifications;
 
-    public function __construct(Datasets $datasets, ModificationsBag $modifications)
+    public function __construct(DatasetsContract $datasets, ModificationsBag $modifications)
     {
         $this->datasets = $datasets;
         $this->modifications = $modifications;

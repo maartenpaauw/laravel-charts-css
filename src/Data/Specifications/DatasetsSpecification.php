@@ -2,9 +2,9 @@
 
 namespace Maartenpaauw\Chart\Data\Specifications;
 
-use Maartenpaauw\Chart\Data\Datasets;
+use Maartenpaauw\Chart\Data\DatasetsContract;
 
 interface DatasetsSpecification
 {
-    public function isSatisfiedBy(Datasets $datasets): bool;
+    public function isSatisfiedBy(DatasetsContract $datasets): bool;
 }

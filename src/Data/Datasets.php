@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chart\Data;
 
-class Datasets
+class Datasets implements DatasetsContract
 {
     private array $datasets;
 

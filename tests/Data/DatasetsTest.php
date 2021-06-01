@@ -4,12 +4,13 @@ namespace Maartenpaauw\Chart\Tests\Data;
 
 use Maartenpaauw\Chart\Data\Dataset;
 use Maartenpaauw\Chart\Data\Datasets;
+use Maartenpaauw\Chart\Data\DatasetsContract;
 use Maartenpaauw\Chart\Data\Entry;
 use Maartenpaauw\Chart\Tests\TestCase;
 
 class DatasetsTest extends TestCase
 {
-    private Datasets $datasets;
+    private DatasetsContract $datasets;
 
     protected function setUp(): void
     {
