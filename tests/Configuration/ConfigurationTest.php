@@ -65,5 +65,4 @@ class ConfigurationTest extends TestCase
         // Assert
         $this->assertEmpty($colors);
     }
-
 }
