@@ -34,7 +34,7 @@ class ColorTest extends TestCase
     public function it_should_be_possible_to_convert_it_to_a_css_variable_declaration(): void
     {
         // Arrange
-        $expectedVariable = '--color: #FF0000';
+        $expectedVariable = '--color: #FF0000;';
 
         // Act
         $variable = $this->color->declaration();

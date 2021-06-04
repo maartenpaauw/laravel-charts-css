@@ -38,7 +38,7 @@ class SpecificColorTest extends TestCase
     public function it_should_add_the_row_definition_to_the_css_color_variable_declaration(): void
     {
         // Arrange
-        $expectedDeclaration = '--color-3: #00FF00';
+        $expectedDeclaration = '--color-3: #00FF00;';
 
         // Act
         $declaration = $this->specificColor->declaration();

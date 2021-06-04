@@ -9,7 +9,7 @@ class Colorscheme implements ColorschemeContract
      */
     private array $colors;
 
-    public function __construct(array $colors)
+    public function __construct(array $colors = [])
     {
         $this->colors = $colors;
     }

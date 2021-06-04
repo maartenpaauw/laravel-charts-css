@@ -21,6 +21,6 @@ class SpecificColor implements ColorContract
 
     public function declaration(): string
     {
-        return sprintf('--color-%d: %s', $this->row, $this->value());
+        return sprintf('--color-%d: %s;', $this->row, $this->value());
     }
 }

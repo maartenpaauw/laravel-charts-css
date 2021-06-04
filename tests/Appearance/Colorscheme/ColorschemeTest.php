@@ -44,9 +44,9 @@ class ColorschemeTest extends TestCase
         $this->assertInstanceOf(SpecificColor::class, $green);
         $this->assertInstanceOf(SpecificColor::class, $blue);
 
-        $this->assertEquals('--color-1: #FF0000', $red->declaration());
-        $this->assertEquals('--color-2: #00FF00', $green->declaration());
-        $this->assertEquals('--color-3: #0000FF', $blue->declaration());
+        $this->assertEquals('--color-1: #FF0000;', $red->declaration());
+        $this->assertEquals('--color-2: #00FF00;', $green->declaration());
+        $this->assertEquals('--color-3: #0000FF;', $blue->declaration());
     }
 
     /** @test */

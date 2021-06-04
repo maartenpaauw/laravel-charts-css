@@ -18,6 +18,6 @@ class Color implements ColorContract
 
     public function declaration(): string
     {
-        return sprintf('--color: %s', $this->value());
+        return sprintf('--color: %s;', $this->value());
     }
 }
