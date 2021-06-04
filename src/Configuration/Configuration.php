@@ -2,6 +2,8 @@
 
 namespace Maartenpaauw\Chart\Configuration;
 
+use Maartenpaauw\Chart\Appearance\Colorscheme\Colorscheme;
+use Maartenpaauw\Chart\Appearance\Colorscheme\ColorschemeContract;
 use Maartenpaauw\Chart\Appearance\ModificationsBag;
 use Maartenpaauw\Chart\Appearance\ShowDataOnHover;
 use Maartenpaauw\Chart\Legend\Appearance\Inline;
@@ -37,5 +39,10 @@ class Configuration
         return new ModificationsBag([
             new ShowDataOnHover(),
         ]);
+    }
+
+    public function colorscheme(): ColorschemeContract
+    {
+        return new Colorscheme();
     }
 }

@@ -55,4 +55,15 @@ class ConfigurationTest extends TestCase
         $this->assertCount(1, $modificationsBag->modifications());
         $this->assertContains('show-data-on-hover', $modificationsBag->classes());
     }
+
+    /** @test */
+    public function it_should_not_have_any_color_overwrites_by_default(): void
+    {
+        // Act
+        $colors = $this->configuration->colorscheme()->colors();
+
+        // Assert
+        $this->assertEmpty($colors);
+    }
+
 }
