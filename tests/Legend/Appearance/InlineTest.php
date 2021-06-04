@@ -8,7 +8,6 @@ use Maartenpaauw\Chart\Tests\Appearance\ModificationTest;
 
 class InlineTest extends ModificationTest
 {
-
     public function modification(): Modification
     {
         return new Inline();
