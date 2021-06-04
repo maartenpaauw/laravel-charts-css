@@ -6,7 +6,7 @@ class Datasets implements DatasetsContract
 {
     private array $datasets;
 
-    public function __construct(array $datasets)
+    public function __construct(array $datasets = [])
     {
         $this->datasets = $datasets;
     }
