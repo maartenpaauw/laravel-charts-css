@@ -42,7 +42,7 @@ class ConfigurationTest extends TestCase
         $legend = $this->configuration->legend();
 
         // Assert
-        $this->assertEquals($labels, $legend->labels);
+        $this->assertEquals($labels, $legend->labels());
     }
 
     /** @test */

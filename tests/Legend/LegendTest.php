@@ -2,15 +2,14 @@
 
 namespace Maartenpaauw\Chart\Tests\Legend;
 
-use Maartenpaauw\Chart\Legend\Appearance;
+use Maartenpaauw\Chart\Legend\Appearance\Inline;
+use Maartenpaauw\Chart\Legend\Appearance\Square;
 use Maartenpaauw\Chart\Legend\Legend;
 use Maartenpaauw\Chart\Tests\TestCase;
 
 class LegendTest extends TestCase
 {
     private array $labels;
-
-    private Appearance $appearance;
 
     private Legend $legend;
 
@@ -19,20 +18,32 @@ class LegendTest extends TestCase
         parent::setUp();
 
         $this->labels = ['Label A', 'Label B', 'Label C'];
-        $this->appearance = new Appearance();
-        $this->legend = new Legend($this->labels, $this->appearance);
+        $this->legend = new Legend($this->labels, [new Inline(), new Square()]);
     }
 
     /** @test */
     public function it_should_be_possible_to_access_the_labels(): void
     {
-        $this->assertCount(3, $this->legend->labels);
-        $this->assertEquals($this->labels, $this->legend->labels);
+        // Arrange
+        $expectedLabels = $this->labels;
+
+        // Act
+        $labels = $this->legend->labels();
+
+        // Assert
+        $this->assertCount(3, $labels);
+        $this->assertEquals($expectedLabels, $labels);
     }
 
     /** @test */
-    public function it_should_be_possible_to_access_the_appearance(): void
+    public function it_should_return_an_classes_array(): void
     {
-        $this->assertEquals($this->appearance, $this->legend->appearance);
+        // Act
+        $classes = $this->legend->classes();
+
+        // Assert
+        $this->assertCount(2, $classes);
+        $this->assertContains('legend-inline', $classes);
+        $this->assertContains('legend-square', $classes);
     }
 }

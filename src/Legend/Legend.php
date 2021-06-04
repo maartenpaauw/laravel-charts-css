@@ -2,15 +2,36 @@
 
 namespace Maartenpaauw\Chart\Legend;
 
+use Maartenpaauw\Chart\Appearance\Modification;
+use Maartenpaauw\Chart\Appearance\ModificationsBag;
+
 class Legend
 {
-    public array $labels;
+    private array $labels;
 
-    public Appearance $appearance;
+    /**
+     * @param Modification[] $modifications
+     */
+    private array $modifications;
 
-    public function __construct(array $labels, Appearance $appearance)
+    /**
+     * @param Modification[] $modifications
+     */
+    public function __construct(array $labels, array $modifications)
     {
         $this->labels = $labels;
-        $this->appearance = $appearance;
+        $this->modifications = $modifications;
+    }
+
+    public function classes(): array
+    {
+        return (new ModificationsBag(
+            $this->modifications,
+        ))->classes();
+    }
+
+    public function labels(): array
+    {
+        return $this->labels;
     }
 }

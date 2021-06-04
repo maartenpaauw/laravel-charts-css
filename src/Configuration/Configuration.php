@@ -4,7 +4,8 @@ namespace Maartenpaauw\Chart\Configuration;
 
 use Maartenpaauw\Chart\Appearance\ModificationsBag;
 use Maartenpaauw\Chart\Appearance\ShowDataOnHover;
-use Maartenpaauw\Chart\Legend\Appearance;
+use Maartenpaauw\Chart\Legend\Appearance\Inline;
+use Maartenpaauw\Chart\Legend\Appearance\Square;
 use Maartenpaauw\Chart\Legend\Legend;
 
 class Configuration
@@ -25,7 +26,10 @@ class Configuration
             'Label 1',
             'Label 2',
             'Label 3',
-        ], new Appearance());
+        ], [
+            new Inline(),
+            new Square(),
+        ]);
     }
 
     public function modifications(): ModificationsBag
