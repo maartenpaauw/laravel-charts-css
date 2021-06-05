@@ -9,6 +9,7 @@ use Maartenpaauw\Chart\Appearance\Colorscheme\ColorschemeContract;
 use Maartenpaauw\Chart\Appearance\ModificationsBag;
 use Maartenpaauw\Chart\Configuration\Configuration;
 use Maartenpaauw\Chart\Configuration\ConfigurationContract;
+use Maartenpaauw\Chart\Configuration\SmartConfiguration;
 use Maartenpaauw\Chart\Configuration\Specifications\HasColorscheme;
 use Maartenpaauw\Chart\Configuration\Specifications\HasHeading;
 use Maartenpaauw\Chart\Configuration\Specifications\HasLabels;
@@ -39,13 +40,16 @@ abstract class Chart extends Component
         return new Colorscheme();
     }
 
-    private function configuration(): ConfigurationContract
+    protected function configuration(): ConfigurationContract
     {
-        return new Configuration(
-            $this->identity(),
-            $this->legend(),
-            $this->modifications(),
-            $this->colorscheme(),
+        return new SmartConfiguration(
+            new Configuration(
+                $this->identity(),
+                $this->legend(),
+                $this->modifications(),
+                $this->colorscheme(),
+            ),
+            $this->datasets(),
         );
     }
 
