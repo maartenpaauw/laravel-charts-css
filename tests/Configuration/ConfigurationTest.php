@@ -2,67 +2,64 @@
 
 namespace Maartenpaauw\Chart\Tests\Configuration;
 
+use Maartenpaauw\Chart\Appearance\Colorscheme\Colorscheme;
+use Maartenpaauw\Chart\Appearance\Colorscheme\ColorschemeContract;
+use Maartenpaauw\Chart\Appearance\ModificationsBag;
 use Maartenpaauw\Chart\Configuration\Configuration;
+use Maartenpaauw\Chart\Identity\Identity;
+use Maartenpaauw\Chart\Legend\Legend;
 use Maartenpaauw\Chart\Tests\TestCase;
 
 class ConfigurationTest extends TestCase
 {
+    private Identity $identity;
+
+    private Legend $legend;
+
+    private ModificationsBag $modifications;
+
     private Configuration $configuration;
+
+    private ColorschemeContract $colorscheme;
 
     protected function setUp(): void
     {
         parent::setUp();
 
-        $this->configuration = new Configuration();
+        $this->identity = new Identity('My chart', 'my-chart');
+        $this->legend = new Legend();
+        $this->modifications = new ModificationsBag();
+        $this->colorscheme = new Colorscheme();
+
+        $this->configuration = new Configuration(
+            $this->identity,
+            $this->legend,
+            $this->modifications,
+            $this->colorscheme,
+        );
     }
 
     /** @test */
-    public function it_should_return_the_default_id_correctly(): void
+    public function it_can_access_the_identity(): void
     {
-        $this->assertEquals('my-chart', $this->configuration->id());
+        $this->assertEquals($this->identity, $this->configuration->identity());
     }
 
     /** @test */
-    public function it_should_return_the_default_heading_correctly(): void
+    public function it_can_access_the_legend(): void
     {
-        $this->assertEquals('This is my first chart', $this->configuration->heading());
+        $this->assertEquals($this->legend, $this->configuration->legend());
     }
 
     /** @test */
-    public function it_should_have_three_labels_by_default(): void
+    public function it_can_access_the_modifications(): void
     {
-        // Arrange
-        $labels = [
-            'Label 1',
-            'Label 2',
-            'Label 3',
-        ];
-
-        // Act
-        $legend = $this->configuration->legend();
-
-        // Assert
-        $this->assertEquals($labels, $legend->labels());
+        $this->assertEquals($this->modifications, $this->configuration->modifications());
     }
 
     /** @test */
-    public function it_should_show_the_data_on_hover_by_default(): void
+    public function it_can_access_the_colorscheme(): void
     {
-        // Act
-        $modificationsBag = $this->configuration->modifications();
-
-        // Assert
-        $this->assertCount(1, $modificationsBag->modifications());
-        $this->assertContains('show-data-on-hover', $modificationsBag->classes());
-    }
-
-    /** @test */
-    public function it_should_not_have_any_color_overwrites_by_default(): void
-    {
-        // Act
-        $colors = $this->configuration->colorscheme()->colors();
-
-        // Assert
-        $this->assertEmpty($colors);
+        $this->assertEquals($this->colorscheme, $this->configuration->colorscheme());
     }
 }

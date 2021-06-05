@@ -8,6 +8,6 @@ class HasHeading implements ConfigurationSpecification
 {
     public function isSatisfiedBy(Configuration $configuration): bool
     {
-        return $configuration->heading() !== '';
+        return $configuration->identity()->description() !== '';
     }
 }
