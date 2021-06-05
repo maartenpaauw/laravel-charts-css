@@ -35,11 +35,11 @@ class ModificationsBagTest extends ModificationTest
         ]);
 
         // Act
-        $modifications = $modificationsBag->modifications();
+        [$hideData, $showLabels] = $modifications = $modificationsBag->toArray();
 
         // Assert
-        $this->assertInstanceOf(HideData::class, $modifications[0]);
-        $this->assertInstanceOf(ShowLabels::class, $modifications[1]);
+        $this->assertInstanceOf(HideData::class, $hideData);
+        $this->assertInstanceOf(ShowLabels::class, $showLabels);
         $this->assertCount(2, $modifications);
     }
 
@@ -65,11 +65,11 @@ class ModificationsBagTest extends ModificationTest
 
         // Act
         $mergedModificationsBag = $a->merge($b);
-        $modifications = $mergedModificationsBag->modifications();
+        [$hideData, $showLabels] = $modifications = $mergedModificationsBag->toArray();
 
         // Assert
-        $this->assertInstanceOf(HideData::class, $modifications[0]);
-        $this->assertInstanceOf(ShowLabels::class, $modifications[1]);
+        $this->assertInstanceOf(HideData::class, $hideData);
+        $this->assertInstanceOf(ShowLabels::class, $showLabels);
         $this->assertCount(2, $modifications);
     }
 }
