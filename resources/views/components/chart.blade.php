@@ -1,4 +1,4 @@
-<div id="{{ $configuration->id() }}">
+<div id="{{ $configuration->identity()->toString() }}">
     @if($hasColorscheme)
         <x-charts-css-colorscheme :configuration="$configuration" />
     @endif

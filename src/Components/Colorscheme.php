@@ -18,7 +18,7 @@ class Colorscheme extends Component
 
     public function id(): string
     {
-        return sprintf('#%s', $this->configuration->id());
+        return sprintf('#%s', $this->configuration->identity()->toString());
     }
 
     /**
