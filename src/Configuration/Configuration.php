@@ -7,7 +7,7 @@ use Maartenpaauw\Chart\Appearance\ModificationsBag;
 use Maartenpaauw\Chart\Identity\Identity;
 use Maartenpaauw\Chart\Legend\Legend;
 
-class Configuration
+class Configuration implements ConfigurationContract
 {
     private Identity $identity;
 

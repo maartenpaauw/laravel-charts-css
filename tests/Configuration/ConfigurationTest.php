@@ -6,6 +6,7 @@ use Maartenpaauw\Chart\Appearance\Colorscheme\Colorscheme;
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorschemeContract;
 use Maartenpaauw\Chart\Appearance\ModificationsBag;
 use Maartenpaauw\Chart\Configuration\Configuration;
+use Maartenpaauw\Chart\Configuration\ConfigurationContract;
 use Maartenpaauw\Chart\Identity\Identity;
 use Maartenpaauw\Chart\Legend\Legend;
 use Maartenpaauw\Chart\Tests\TestCase;
@@ -18,7 +19,7 @@ class ConfigurationTest extends TestCase
 
     private ModificationsBag $modifications;
 
-    private Configuration $configuration;
+    private ConfigurationContract $configuration;
 
     private ColorschemeContract $colorscheme;
 

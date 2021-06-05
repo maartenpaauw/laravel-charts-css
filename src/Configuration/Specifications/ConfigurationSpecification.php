@@ -2,9 +2,9 @@
 
 namespace Maartenpaauw\Chart\Configuration\Specifications;
 
-use Maartenpaauw\Chart\Configuration\Configuration;
+use Maartenpaauw\Chart\Configuration\ConfigurationContract;
 
 interface ConfigurationSpecification
 {
-    public function isSatisfiedBy(Configuration $configuration): bool;
+    public function isSatisfiedBy(ConfigurationContract $configuration): bool;
 }

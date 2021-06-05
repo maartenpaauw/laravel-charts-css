@@ -4,13 +4,13 @@ namespace Maartenpaauw\Chart\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
-use Maartenpaauw\Chart\Configuration\Configuration;
+use Maartenpaauw\Chart\Configuration\ConfigurationContract;
 
 class Legend extends Component
 {
-    private Configuration $configuration;
+    private ConfigurationContract $configuration;
 
-    public function __construct(Configuration $configuration)
+    public function __construct(ConfigurationContract $configuration)
     {
         $this->configuration = $configuration;
     }

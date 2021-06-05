@@ -9,6 +9,7 @@ use Maartenpaauw\Chart\Appearance\Multiple;
 use Maartenpaauw\Chart\Appearance\ShowHeading;
 use Maartenpaauw\Chart\Appearance\ShowLabels;
 use Maartenpaauw\Chart\Configuration\Configuration;
+use Maartenpaauw\Chart\Configuration\ConfigurationContract;
 use Maartenpaauw\Chart\Configuration\Specifications\HasColorscheme;
 use Maartenpaauw\Chart\Configuration\Specifications\HasHeading;
 use Maartenpaauw\Chart\Configuration\Specifications\HasLabels;
@@ -19,7 +20,7 @@ class Chart extends Component
 {
     public DatasetsContract $datasets;
 
-    public Configuration $configuration;
+    public ConfigurationContract $configuration;
 
     public ModificationsBag $tableModifications;
 
@@ -29,7 +30,7 @@ class Chart extends Component
 
     public bool $hasLabels;
 
-    public function __construct(DatasetsContract $datasets, Configuration $configuration)
+    public function __construct(DatasetsContract $datasets, ConfigurationContract $configuration)
     {
         $this->datasets = $datasets;
         $this->configuration = $configuration;
