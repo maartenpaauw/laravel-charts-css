@@ -26,14 +26,12 @@ class Colorscheme implements ColorschemeContract
      */
     public function colors(): array
     {
-        $colors = array_values($this->colors);
-
-        if (count($colors) <= 1) {
-            return $colors;
+        if (count($this->colors) <= 1) {
+            return $this->colors;
         }
 
-        return array_map(function (ColorContract $color, int $index) {
-            return new SpecificColor($color, $index + 1);
-        }, $colors, array_keys($colors));
+        return array_map(function (ColorContract $color, int $row) {
+            return new SpecificColor($color, $row);
+        }, $this->colors, range(1, count($this->colors)));
     }
 }
