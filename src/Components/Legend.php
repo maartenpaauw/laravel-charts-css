@@ -4,11 +4,11 @@ namespace Maartenpaauw\Chart\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
-use Maartenpaauw\Chart\Legend\Legend as Configuration;
+use Maartenpaauw\Chart\Configuration\Configuration;
 
 class Legend extends Component
 {
-    public Configuration $configuration;
+    private Configuration $configuration;
 
     public function __construct(Configuration $configuration)
     {
@@ -17,6 +17,9 @@ class Legend extends Component
 
     public function render(): View
     {
-        return view('charts-css::components.legend');
+        return view('charts-css::components.legend', [
+            'labels' => $this->configuration->legend()->labels(),
+            'classes' => $this->configuration->legend()->classes(),
+        ]);
     }
 }

@@ -9,6 +9,6 @@
     </x-charts-css-table>
 
     @if($hasLabels)
-        <x-charts-css-legend :configuration="$configuration->legend()"/>
+        <x-charts-css-legend :configuration="$configuration"/>
     @endif
 </div>
