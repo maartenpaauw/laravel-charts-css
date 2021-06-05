@@ -8,7 +8,6 @@ use Maartenpaauw\Chart\Appearance\ModificationsBag;
 use Maartenpaauw\Chart\Appearance\Multiple;
 use Maartenpaauw\Chart\Appearance\ShowHeading;
 use Maartenpaauw\Chart\Appearance\ShowLabels;
-use Maartenpaauw\Chart\Configuration\Configuration;
 use Maartenpaauw\Chart\Configuration\ConfigurationContract;
 use Maartenpaauw\Chart\Configuration\Specifications\HasColorscheme;
 use Maartenpaauw\Chart\Configuration\Specifications\HasHeading;
