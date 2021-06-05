@@ -61,4 +61,19 @@ class ColorschemeTest extends TestCase
         // Assert
         $this->assertEmpty($colors);
     }
+
+    /** @test */
+    public function it_should_be_possible_to_add_a_color_to_the_list(): void
+    {
+        // Arrange
+        $colorscheme = new Colorscheme();
+        $color = new Color('#FF0000');
+
+        // Act
+        $colorscheme->add($color);
+
+        // Assert
+        $this->assertCount(1, $colorscheme->colors());
+        $this->assertContains($color, $colorscheme->colors());
+    }
 }

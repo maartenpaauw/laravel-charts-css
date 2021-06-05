@@ -14,6 +14,13 @@ class Colorscheme implements ColorschemeContract
         $this->colors = $colors;
     }
 
+    public function add(ColorContract $color): ColorschemeContract
+    {
+        $this->colors[] = $color;
+
+        return $this;
+    }
+
     /**
      * @return ColorContract[]
      */
