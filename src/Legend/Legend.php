@@ -9,18 +9,15 @@ class Legend
 {
     private array $labels;
 
-    /**
-     * @param Modification[] $modifications
-     */
-    private array $modifications;
+    private ModificationsBag $modificationsBag;
 
     /**
      * @param Modification[] $modifications
      */
-    public function __construct(array $labels, array $modifications)
+    public function __construct(array $labels = [], array $modifications = [])
     {
         $this->labels = $labels;
-        $this->modifications = $modifications;
+        $this->modificationsBag = new ModificationsBag($modifications);
     }
 
     public function labels(): array
@@ -28,10 +25,22 @@ class Legend
         return $this->labels;
     }
 
+    public function withLabel(string $label): Legend
+    {
+        $this->labels[] = $label;
+
+        return $this;
+    }
+
+    public function withModification(Modification $modification): Legend
+    {
+        $this->modificationsBag->add($modification);
+
+        return $this;
+    }
+
     public function classes(): array
     {
-        return (new ModificationsBag(
-            $this->modifications,
-        ))->classes();
+        return $this->modificationsBag->classes();
     }
 }

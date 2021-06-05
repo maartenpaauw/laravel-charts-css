@@ -36,7 +36,7 @@ class LegendTest extends TestCase
     }
 
     /** @test */
-    public function it_should_return_an_classes_array(): void
+    public function it_should_return_a_classes_array(): void
     {
         // Act
         $classes = $this->legend->classes();
@@ -45,5 +45,37 @@ class LegendTest extends TestCase
         $this->assertCount(2, $classes);
         $this->assertContains('legend-inline', $classes);
         $this->assertContains('legend-square', $classes);
+    }
+
+    /** @test */
+    public function it_should_be_possible_to_add_a_label(): void
+    {
+        // Arrange
+        $legend = new Legend();
+        $expectedLabel = 'Label A';
+
+        // Act
+        $labels = $legend
+            ->withLabel($expectedLabel)
+            ->labels();
+
+        // Assert
+        $this->assertCount(1, $labels);
+        $this->assertContains($expectedLabel, $labels);
+    }
+
+    /** @test */
+    public function it_should_be_possible_to_add_a_modification(): void
+    {
+        // Arrange
+        $legend = new Legend();
+        $inline = new Inline();
+
+        // Act
+        $legend->withModification($inline);
+
+        // Assert
+        $this->assertCount(1, $legend->classes());
+        $this->assertContains('legend-inline', $legend->classes());
     }
 }
