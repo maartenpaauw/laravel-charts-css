@@ -23,15 +23,15 @@ class Legend
         $this->modifications = $modifications;
     }
 
+    public function labels(): array
+    {
+        return $this->labels;
+    }
+
     public function classes(): array
     {
         return (new ModificationsBag(
             $this->modifications,
         ))->classes();
-    }
-
-    public function labels(): array
-    {
-        return $this->labels;
     }
 }
