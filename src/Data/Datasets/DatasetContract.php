@@ -1,6 +1,8 @@
 <?php
 
-namespace Maartenpaauw\Chart\Data;
+namespace Maartenpaauw\Chart\Data\Datasets;
+
+use Maartenpaauw\Chart\Data\Entries\EntryContract;
 
 interface DatasetContract
 {

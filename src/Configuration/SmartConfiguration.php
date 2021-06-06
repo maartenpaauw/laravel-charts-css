@@ -8,7 +8,7 @@ use Maartenpaauw\Chart\Appearance\Multiple;
 use Maartenpaauw\Chart\Appearance\ShowHeading;
 use Maartenpaauw\Chart\Appearance\ShowLabels;
 use Maartenpaauw\Chart\Configuration\Specifications\HasHeading;
-use Maartenpaauw\Chart\Data\DatasetsContract;
+use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chart\Data\Specifications\HasMultiple;
 use Maartenpaauw\Chart\Identity\Identity;
 use Maartenpaauw\Chart\Legend\Legend;

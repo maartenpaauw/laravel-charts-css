@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Data;
+namespace Maartenpaauw\Chart\Tests\Data\Entries;
 
-use Maartenpaauw\Chart\Data\EntryContract;
-use Maartenpaauw\Chart\Data\NullEntry;
+use Maartenpaauw\Chart\Data\Entries\EntryContract;
+use Maartenpaauw\Chart\Data\Entries\NullEntry;
 use Maartenpaauw\Chart\Tests\TestCase;
 
 class NullEntryTest extends TestCase

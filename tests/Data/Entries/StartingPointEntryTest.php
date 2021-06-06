@@ -1,10 +1,10 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Data;
+namespace Maartenpaauw\Chart\Tests\Data\Entries;
 
-use Maartenpaauw\Chart\Data\Entry;
-use Maartenpaauw\Chart\Data\EntryContract;
-use Maartenpaauw\Chart\Data\StartingPointEntry;
+use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\EntryContract;
+use Maartenpaauw\Chart\Data\Entries\StartingPointEntry;
 use Maartenpaauw\Chart\Tests\TestCase;
 
 class StartingPointEntryTest extends TestCase

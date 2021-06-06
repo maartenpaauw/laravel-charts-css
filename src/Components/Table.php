@@ -5,7 +5,7 @@ namespace Maartenpaauw\Chart\Components;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 use Maartenpaauw\Chart\Appearance\ModificationsBag;
-use Maartenpaauw\Chart\Data\DatasetsContract;
+use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
 
 class Table extends Component
 {

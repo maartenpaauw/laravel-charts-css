@@ -1,13 +1,13 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Data;
+namespace Maartenpaauw\Chart\Tests\Data\Datasets;
 
-use Maartenpaauw\Chart\Data\Dataset;
-use Maartenpaauw\Chart\Data\Datasets;
-use Maartenpaauw\Chart\Data\DatasetsContract;
-use Maartenpaauw\Chart\Data\Entry;
-use Maartenpaauw\Chart\Data\StartingPointDataset;
-use Maartenpaauw\Chart\Data\StartingPointDatasets;
+use Maartenpaauw\Chart\Data\Datasets\Dataset;
+use Maartenpaauw\Chart\Data\Datasets\Datasets;
+use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chart\Data\Datasets\StartingPointDataset;
+use Maartenpaauw\Chart\Data\Datasets\StartingPointDatasets;
+use Maartenpaauw\Chart\Data\Entries\Entry;
 use Maartenpaauw\Chart\Tests\TestCase;
 
 class StartingPointDatasetsTest extends TestCase

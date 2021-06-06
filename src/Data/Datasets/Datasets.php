@@ -1,9 +1,12 @@
 <?php
 
-namespace Maartenpaauw\Chart\Data;
+namespace Maartenpaauw\Chart\Data\Datasets;
 
 class Datasets implements DatasetsContract
 {
+    /**
+     * @var DatasetContract[]
+     */
     private array $datasets;
 
     public function __construct(array $datasets = [])

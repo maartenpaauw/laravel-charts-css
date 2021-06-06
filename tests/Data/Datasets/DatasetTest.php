@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Data;
+namespace Maartenpaauw\Chart\Tests\Data\Datasets;
 
-use Maartenpaauw\Chart\Data\Dataset;
-use Maartenpaauw\Chart\Data\Entry;
+use Maartenpaauw\Chart\Data\Datasets\Dataset;
+use Maartenpaauw\Chart\Data\Entries\Entry;
 use Maartenpaauw\Chart\Tests\TestCase;
 
 class DatasetTest extends TestCase

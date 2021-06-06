@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chart\Data\Specifications;
 
-use Maartenpaauw\Chart\Data\DatasetsContract;
+use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
 
 class HasMultiple implements DatasetsSpecification
 {

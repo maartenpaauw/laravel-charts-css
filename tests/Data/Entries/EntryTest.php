@@ -1,8 +1,8 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Data;
+namespace Maartenpaauw\Chart\Tests\Data\Entries;
 
-use Maartenpaauw\Chart\Data\Entry;
+use Maartenpaauw\Chart\Data\Entries\Entry;
 use Maartenpaauw\Chart\Tests\TestCase;
 
 class EntryTest extends TestCase

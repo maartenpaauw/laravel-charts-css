@@ -1,6 +1,10 @@
 <?php
 
-namespace Maartenpaauw\Chart\Data;
+namespace Maartenpaauw\Chart\Data\Datasets;
+
+use Maartenpaauw\Chart\Data\Entries\EntryContract;
+use Maartenpaauw\Chart\Data\Entries\NullEntry;
+use Maartenpaauw\Chart\Data\Entries\StartingPointEntry;
 
 class StartingPointDataset implements DatasetContract
 {
