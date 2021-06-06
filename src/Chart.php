@@ -16,6 +16,8 @@ use Maartenpaauw\Chart\Configuration\Specifications\HasLabels;
 use Maartenpaauw\Chart\Data\DatasetsContract;
 use Maartenpaauw\Chart\Identity\Identity;
 use Maartenpaauw\Chart\Legend\Legend;
+use Maartenpaauw\Chart\Types\ChartType;
+use Maartenpaauw\Chart\Types\Column;
 
 abstract class Chart extends Component
 {
@@ -25,6 +27,11 @@ abstract class Chart extends Component
 
     abstract protected function datasets(): DatasetsContract;
 
+    protected function type(): ChartType
+    {
+        return new Column();
+    }
+
     protected function legend(): Legend
     {
         return new Legend();
@@ -32,7 +39,9 @@ abstract class Chart extends Component
 
     protected function modifications(): ModificationsBag
     {
-        return new ModificationsBag();
+        return new ModificationsBag([
+            $this->type()->toModification(),
+        ]);
     }
 
     protected function colorscheme(): ColorschemeContract
