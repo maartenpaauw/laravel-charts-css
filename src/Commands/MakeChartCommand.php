@@ -25,7 +25,6 @@ class MakeChartCommand extends GeneratorCommand
         return sprintf('%s/../../stubs/chart.stub', __DIR__);
     }
 
-
     protected function replaceClass($stub, $name): string
     {
         return Str::replace(
