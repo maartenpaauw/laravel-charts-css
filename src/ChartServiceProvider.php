@@ -2,6 +2,7 @@
 
 namespace Maartenpaauw\Chart;
 
+use Maartenpaauw\Chart\Commands\MakeChartCommand;
 use Maartenpaauw\Chart\Components\Colorscheme;
 use Maartenpaauw\Chart\Components\Heading;
 use Maartenpaauw\Chart\Components\Legend;
@@ -17,6 +18,7 @@ class ChartServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-charts-css')
             ->hasViews()
+            ->hasCommand(MakeChartCommand::class)
             ->hasViewComponent('charts-css', Colorscheme::class)
             ->hasViewComponent('charts-css', Heading::class)
             ->hasViewComponent('charts-css', Legend::class)
