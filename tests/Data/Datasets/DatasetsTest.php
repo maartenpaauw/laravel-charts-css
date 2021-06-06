@@ -24,7 +24,7 @@ class DatasetsTest extends TestCase
             new Dataset([
                 new Entry('400k', 400000),
                 new Entry('300k', 300000),
-            ], 'Asian'),
+            ], 'Asia'),
         ]);
     }
 
