@@ -7,7 +7,6 @@ use Maartenpaauw\Chart\Declarations\RowColorDeclaration;
 
 class RowColorDeclarationTest extends DeclarationTest
 {
-
     public function declaration(): DeclarationContract
     {
         return new RowColorDeclaration('#FF0000', 3);
