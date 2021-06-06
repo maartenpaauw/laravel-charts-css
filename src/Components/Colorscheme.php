@@ -27,7 +27,7 @@ class Colorscheme extends Component
     public function declarations(): array
     {
         return array_map(function (ColorContract $color) {
-            return $color->declaration();
+            return $color->declaration()->toString();
         }, $this->configuration->colorscheme()->colors());
     }
 

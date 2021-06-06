@@ -2,6 +2,9 @@
 
 namespace Maartenpaauw\Chart\Appearance\Colorscheme;
 
+use Maartenpaauw\Chart\Declarations\ColorDeclaration;
+use Maartenpaauw\Chart\Declarations\DeclarationContract;
+
 class Color implements ColorContract
 {
     private string $value;
@@ -16,8 +19,8 @@ class Color implements ColorContract
         return $this->value;
     }
 
-    public function declaration(): string
+    public function declaration(): DeclarationContract
     {
-        return sprintf('--color: %s;', $this->value());
+        return new ColorDeclaration($this->value());
     }
 }

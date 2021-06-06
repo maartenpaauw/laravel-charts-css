@@ -31,7 +31,7 @@ class Colorscheme implements ColorschemeContract
         }
 
         return array_map(function (ColorContract $color, int $row) {
-            return new SpecificColor($color, $row);
+            return new RowColor($color, $row);
         }, $this->colors, range(1, count($this->colors)));
     }
 }

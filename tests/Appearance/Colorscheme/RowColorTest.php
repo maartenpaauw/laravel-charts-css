@@ -4,21 +4,22 @@ namespace Maartenpaauw\Chart\Tests\Appearance\Colorscheme;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
-use Maartenpaauw\Chart\Appearance\Colorscheme\SpecificColor;
+use Maartenpaauw\Chart\Appearance\Colorscheme\RowColor;
+use Maartenpaauw\Chart\Declarations\RowColorDeclaration;
 use Maartenpaauw\Chart\Tests\TestCase;
 
-class SpecificColorTest extends TestCase
+class RowColorTest extends TestCase
 {
     private ColorContract $color;
 
-    private ColorContract $specificColor;
+    private ColorContract $rowColor;
 
     protected function setUp(): void
     {
         parent::setUp();
 
         $this->color = new Color('#00FF00');
-        $this->specificColor = new SpecificColor($this->color, 3);
+        $this->rowColor = new RowColor($this->color, 3);
     }
 
     /** @test */
@@ -28,7 +29,7 @@ class SpecificColorTest extends TestCase
         $expectedValue = $this->color->value();
 
         // Act
-        $value = $this->specificColor->value();
+        $value = $this->rowColor->value();
 
         // Assert
         $this->assertEquals($expectedValue, $value);
@@ -38,12 +39,13 @@ class SpecificColorTest extends TestCase
     public function it_should_add_the_row_definition_to_the_css_color_variable_declaration(): void
     {
         // Arrange
-        $expectedDeclaration = '--color-3: #00FF00;';
+        $expectedString = '--color-3: #00FF00;';
 
         // Act
-        $declaration = $this->specificColor->declaration();
+        $declaration = $this->rowColor->declaration();
 
         // Assert
-        $this->assertEquals($expectedDeclaration, $declaration);
+        $this->assertInstanceOf(RowColorDeclaration::class, $declaration);
+        $this->assertEquals($expectedString, $declaration->toString());
     }
 }

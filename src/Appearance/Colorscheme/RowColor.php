@@ -2,7 +2,10 @@
 
 namespace Maartenpaauw\Chart\Appearance\Colorscheme;
 
-class SpecificColor implements ColorContract
+use Maartenpaauw\Chart\Declarations\DeclarationContract;
+use Maartenpaauw\Chart\Declarations\RowColorDeclaration;
+
+class RowColor implements ColorContract
 {
     private ColorContract $origin;
 
@@ -19,8 +22,8 @@ class SpecificColor implements ColorContract
         return $this->origin->value();
     }
 
-    public function declaration(): string
+    public function declaration(): DeclarationContract
     {
-        return sprintf('--color-%d: %s;', $this->row, $this->value());
+        return new RowColorDeclaration($this->value(), $this->row);
     }
 }

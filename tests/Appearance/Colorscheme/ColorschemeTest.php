@@ -4,7 +4,7 @@ namespace Maartenpaauw\Chart\Tests\Appearance\Colorscheme;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
 use Maartenpaauw\Chart\Appearance\Colorscheme\Colorscheme;
-use Maartenpaauw\Chart\Appearance\Colorscheme\SpecificColor;
+use Maartenpaauw\Chart\Appearance\Colorscheme\RowColor;
 use Maartenpaauw\Chart\Tests\TestCase;
 
 class ColorschemeTest extends TestCase
@@ -25,7 +25,7 @@ class ColorschemeTest extends TestCase
     }
 
     /** @test */
-    public function it_should_wrap_each_color_within_a_specific_row_color_decorator_when_multiple_colors_are_given(): void
+    public function it_should_wrap_each_color_within_a_row_color_decorator_when_multiple_colors_are_given(): void
     {
         // Arrange
         $colorscheme = new Colorscheme([
@@ -40,13 +40,13 @@ class ColorschemeTest extends TestCase
         // Assert
         $this->assertCount(3, $colors);
 
-        $this->assertInstanceOf(SpecificColor::class, $red);
-        $this->assertInstanceOf(SpecificColor::class, $green);
-        $this->assertInstanceOf(SpecificColor::class, $blue);
+        $this->assertInstanceOf(RowColor::class, $red);
+        $this->assertInstanceOf(RowColor::class, $green);
+        $this->assertInstanceOf(RowColor::class, $blue);
 
-        $this->assertEquals('--color-1: #FF0000;', $red->declaration());
-        $this->assertEquals('--color-2: #00FF00;', $green->declaration());
-        $this->assertEquals('--color-3: #0000FF;', $blue->declaration());
+        $this->assertEquals('--color-1: #FF0000;', $red->declaration()->toString());
+        $this->assertEquals('--color-2: #00FF00;', $green->declaration()->toString());
+        $this->assertEquals('--color-3: #0000FF;', $blue->declaration()->toString());
     }
 
     /** @test */
