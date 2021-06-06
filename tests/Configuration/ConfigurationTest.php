@@ -10,6 +10,7 @@ use Maartenpaauw\Chart\Configuration\ConfigurationContract;
 use Maartenpaauw\Chart\Identity\Identity;
 use Maartenpaauw\Chart\Legend\Legend;
 use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chart\Types\Column;
 
 class ConfigurationTest extends TestCase
 {
@@ -27,7 +28,7 @@ class ConfigurationTest extends TestCase
     {
         parent::setUp();
 
-        $this->identity = new Identity('My chart', 'my-chart');
+        $this->identity = new Identity('my-chart', 'My chart', new Column());
         $this->legend = new Legend();
         $this->modifications = new ModificationsBag();
         $this->colorscheme = new Colorscheme();

@@ -11,6 +11,7 @@ use Maartenpaauw\Chart\Configuration\Specifications\HasColorscheme;
 use Maartenpaauw\Chart\Identity\Identity;
 use Maartenpaauw\Chart\Legend\Legend;
 use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chart\Types\Column;
 
 class HasColorschemeTest extends TestCase
 {
@@ -27,7 +28,7 @@ class HasColorschemeTest extends TestCase
         parent::setUp();
 
         $this->hasColorscheme = new HasColorscheme();
-        $this->identity = new Identity('My chart', 'my-chart');
+        $this->identity = new Identity('my-chart', 'My chart', new Column());
         $this->legend = new Legend();
         $this->modificationsBag = new ModificationsBag();
     }

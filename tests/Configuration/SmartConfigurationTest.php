@@ -12,6 +12,7 @@ use Maartenpaauw\Chart\Data\Dataset;
 use Maartenpaauw\Chart\Data\Datasets;
 use Maartenpaauw\Chart\Identity\Identity;
 use Maartenpaauw\Chart\Legend\Legend;
+use Maartenpaauw\Chart\Types\Column;
 use PHPUnit\Framework\TestCase;
 
 class SmartConfigurationTest extends TestCase
@@ -37,7 +38,7 @@ class SmartConfigurationTest extends TestCase
             new Dataset([], 'Dataset 2'),
         ]);
 
-        $this->identity = new Identity('My chart', 'my-chart');
+        $this->identity = new Identity('my-chart', 'My chart', new Column());
         $this->legend = new Legend();
         $this->modifications = new ModificationsBag();
         $this->colorscheme = new Colorscheme();

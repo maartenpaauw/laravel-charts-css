@@ -11,6 +11,7 @@ use Maartenpaauw\Chart\Configuration\Specifications\HasLabels;
 use Maartenpaauw\Chart\Identity\Identity;
 use Maartenpaauw\Chart\Legend\Legend;
 use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chart\Types\Column;
 
 class HasLabelsTest extends TestCase
 {
@@ -27,7 +28,7 @@ class HasLabelsTest extends TestCase
         parent::setUp();
 
         $this->hasLabels = new HasLabels();
-        $this->identity = new Identity('My chart', 'my-chart');
+        $this->identity = new Identity('my-chart', 'My chart', new Column());
         $this->modifications = new ModificationsBag();
         $this->colorscheme = new Colorscheme();
     }

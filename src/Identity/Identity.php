@@ -2,16 +2,26 @@
 
 namespace Maartenpaauw\Chart\Identity;
 
+use Maartenpaauw\Chart\Types\ChartType;
+
 class Identity
 {
-    private string $description;
-
     private string $id;
 
-    public function __construct(string $description, string $id)
+    private string $description;
+
+    private ChartType $type;
+
+    public function __construct(string $id, string $description, ChartType $type)
     {
-        $this->description = $description;
         $this->id = $id;
+        $this->description = $description;
+        $this->type = $type;
+    }
+
+    public function id(): string
+    {
+        return $this->id;
     }
 
     public function description(): string
@@ -19,8 +29,8 @@ class Identity
         return $this->description;
     }
 
-    public function toString(): string
+    public function type(): ChartType
     {
-        return $this->id;
+        return $this->type;
     }
 }

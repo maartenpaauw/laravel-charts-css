@@ -4,6 +4,7 @@ namespace Maartenpaauw\Chart\Tests\Identity;
 
 use Maartenpaauw\Chart\Identity\Identity;
 use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chart\Types\Column;
 
 class IdentityTest extends TestCase
 {
@@ -13,7 +14,7 @@ class IdentityTest extends TestCase
     {
         parent::setUp();
 
-        $this->identity = new Identity('This is my chart.', 'my-chart');
+        $this->identity = new Identity('my-chart', 'This is my chart.', new Column());
     }
 
     /** @test */
@@ -23,8 +24,14 @@ class IdentityTest extends TestCase
     }
 
     /** @test */
-    public function it_should_convert_it_to_a_string_correctly(): void
+    public function it_should_return_the_id(): void
     {
-        $this->assertEquals('my-chart', $this->identity->toString());
+        $this->assertEquals('my-chart', $this->identity->id());
+    }
+
+    /** @test */
+    public function it_should_return_the_type(): void
+    {
+        $this->assertEquals((new Column())->toString(), $this->identity->type()->toString());
     }
 }

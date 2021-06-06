@@ -11,6 +11,7 @@ use Maartenpaauw\Chart\Configuration\Specifications\HasHeading;
 use Maartenpaauw\Chart\Identity\Identity;
 use Maartenpaauw\Chart\Legend\Legend;
 use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chart\Types\Column;
 
 class HasHeadingTest extends TestCase
 {
@@ -37,7 +38,7 @@ class HasHeadingTest extends TestCase
     {
         // Arrange
         $configuration = new Configuration(
-            new Identity('This is my chart', 'my-chart'),
+            new Identity('my-chart', 'This is my chart', new Column()),
             $this->legend,
             $this->modificationsBag,
             $this->colorscheme,
@@ -55,7 +56,7 @@ class HasHeadingTest extends TestCase
     {
         // Arrange
         $configuration = new Configuration(
-            new Identity('', 'my-chart'),
+            new Identity('my-chart', '', new Column()),
             $this->legend,
             $this->modificationsBag,
             $this->colorscheme,

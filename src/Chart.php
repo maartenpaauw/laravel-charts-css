@@ -13,7 +13,9 @@ use Maartenpaauw\Chart\Configuration\SmartConfiguration;
 use Maartenpaauw\Chart\Configuration\Specifications\HasColorscheme;
 use Maartenpaauw\Chart\Configuration\Specifications\HasHeading;
 use Maartenpaauw\Chart\Configuration\Specifications\HasLabels;
+use Maartenpaauw\Chart\Configuration\Specifications\NeedsStartingPoint;
 use Maartenpaauw\Chart\Data\DatasetsContract;
+use Maartenpaauw\Chart\Data\StartingPointDatasets;
 use Maartenpaauw\Chart\Identity\Identity;
 use Maartenpaauw\Chart\Legend\Legend;
 use Maartenpaauw\Chart\Types\ChartType;
@@ -64,14 +66,27 @@ abstract class Chart extends Component
 
     private function identity(): Identity
     {
-        return new Identity($this->heading(), $this->id());
+        return new Identity(
+            $this->id(),
+            $this->heading(),
+            $this->type(),
+        );
+    }
+
+    private function prepareDatasets(): DatasetsContract
+    {
+        if ((new NeedsStartingPoint())->isSatisfiedBy($this->configuration())) {
+            return new StartingPointDatasets($this->datasets());
+        }
+
+        return $this->datasets();
     }
 
     public function render(): View
     {
         return view('charts-css::components.chart', [
             'configuration' => $this->configuration(),
-            'datasets' => $this->datasets(),
+            'datasets' => $this->prepareDatasets(),
             'hasColorscheme' => (new HasColorscheme())->isSatisfiedBy($this->configuration()),
             'hasHeading' => (new HasHeading())->isSatisfiedBy($this->configuration()),
             'hasLabels' => (new HasLabels())->isSatisfiedBy($this->configuration()),
