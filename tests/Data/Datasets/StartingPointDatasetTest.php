@@ -4,9 +4,9 @@ namespace Maartenpaauw\Chart\Tests\Data\Datasets;
 
 use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\DatasetContract;
+use Maartenpaauw\Chart\Data\Datasets\StartingPointDataset;
 use Maartenpaauw\Chart\Data\Entries\Entry;
 use Maartenpaauw\Chart\Data\Entries\NullEntry;
-use Maartenpaauw\Chart\Data\Datasets\StartingPointDataset;
 use Maartenpaauw\Chart\Data\Entries\StartingPointEntry;
 use Maartenpaauw\Chart\Tests\TestCase;
 
