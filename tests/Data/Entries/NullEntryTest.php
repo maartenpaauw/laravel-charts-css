@@ -54,5 +54,4 @@ class NullEntryTest extends TestCase
         // Assert
         $this->assertEmpty($this->entry->declarations()->toString());
     }
-
 }
