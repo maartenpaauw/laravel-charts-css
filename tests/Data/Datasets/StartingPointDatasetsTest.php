@@ -2,6 +2,7 @@
 
 namespace Maartenpaauw\Chart\Tests\Data\Datasets;
 
+use Maartenpaauw\Chart\Data\Axes\Axes;
 use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
 use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
@@ -20,16 +21,19 @@ class StartingPointDatasetsTest extends TestCase
     {
         parent::setUp();
 
-        $this->datasets = new Datasets([
-            new Dataset([
-                new Entry('10', 10),
-                new Entry('20', 20),
-            ], 'Dataset #1'),
-            new Dataset([
-                new Entry('10', 10),
-                new Entry('20', 20),
-            ], 'Dataset #2'),
-        ]);
+        $this->datasets = new Datasets(
+            new Axes('Dataset', 'Value'),
+            [
+                new Dataset([
+                    new Entry('10', 10),
+                    new Entry('20', 20),
+                ], 'Dataset #1'),
+                new Dataset([
+                    new Entry('10', 10),
+                    new Entry('20', 20),
+                ], 'Dataset #2'),
+            ],
+        );
 
         $this->startingPointDatasets = new StartingPointDatasets($this->datasets);
     }
@@ -44,6 +48,12 @@ class StartingPointDatasetsTest extends TestCase
     public function it_should_return_the_max_of_the_origin_datasets(): void
     {
         $this->assertEquals($this->datasets->max(), $this->startingPointDatasets->max());
+    }
+
+    /** @test */
+    public function it_should_return_the_axes_of_the_origin_datasets(): void
+    {
+        $this->assertEquals($this->datasets->axes(), $this->startingPointDatasets->axes());
     }
 
     /** @test */

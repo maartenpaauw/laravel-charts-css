@@ -8,6 +8,7 @@ use Maartenpaauw\Chart\Appearance\ModificationsBag;
 use Maartenpaauw\Chart\Configuration\Configuration;
 use Maartenpaauw\Chart\Configuration\ConfigurationContract;
 use Maartenpaauw\Chart\Configuration\SmartConfiguration;
+use Maartenpaauw\Chart\Data\Axes\NullAxes;
 use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
 use Maartenpaauw\Chart\Identity\Identity;
@@ -33,7 +34,7 @@ class SmartConfigurationTest extends TestCase
     {
         parent::setUp();
 
-        $datasets = new Datasets([
+        $datasets = new Datasets(new NullAxes(), [
             new Dataset([], 'Dataset 1'),
             new Dataset([], 'Dataset 2'),
         ]);

@@ -2,6 +2,8 @@
 
 namespace Maartenpaauw\Chart\Tests\Data\Datasets;
 
+use Maartenpaauw\Chart\Data\Axes\Axes;
+use Maartenpaauw\Chart\Data\Axes\AxesContract;
 use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
 use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
@@ -12,11 +14,17 @@ class DatasetsTest extends TestCase
 {
     private DatasetsContract $datasets;
 
+    private AxesContract $axes;
+
     protected function setUp(): void
     {
         parent::setUp();
 
-        $this->datasets = new Datasets([
+        $this->axes = new Axes('Continent', 'Salary');
+
+        $this->datasets = new Datasets(
+            $this->axes,
+            [
             new Dataset([
                 new Entry('100k', 100000),
                 new Entry('200k', 200000),
@@ -38,6 +46,12 @@ class DatasetsTest extends TestCase
     public function it_should_calculate_the_max_data_entry_correctly(): void
     {
         $this->assertEquals(400000, $this->datasets->max());
+    }
+
+    /** @test */
+    public function it_should_be_possible_to_retrieve_the_axes(): void
+    {
+        $this->assertEquals($this->axes, $this->datasets->axes());
     }
 
     /** @test */

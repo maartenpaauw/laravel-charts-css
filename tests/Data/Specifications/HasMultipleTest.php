@@ -2,6 +2,7 @@
 
 namespace Maartenpaauw\Chart\Tests\Data\Specifications;
 
+use Maartenpaauw\Chart\Data\Axes\NullAxes;
 use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
 use Maartenpaauw\Chart\Data\Specifications\HasMultiple;
@@ -14,7 +15,7 @@ class HasMultipleTest extends TestCase
     {
         // Arrange
         $hasMultiple = new HasMultiple();
-        $datasets = new Datasets([]);
+        $datasets = new Datasets(new NullAxes(), []);
 
         // Act
         $satisfied = $hasMultiple->isSatisfiedBy($datasets);
@@ -28,7 +29,7 @@ class HasMultipleTest extends TestCase
     {
         // Arrange
         $hasMultiple = new HasMultiple();
-        $datasets = new Datasets([
+        $datasets = new Datasets(new NullAxes(), [
             new Dataset([], 'Europe'),
         ]);
 
@@ -44,7 +45,7 @@ class HasMultipleTest extends TestCase
     {
         // Arrange
         $hasMultiple = new HasMultiple();
-        $datasets = new Datasets([
+        $datasets = new Datasets(new NullAxes(), [
             new Dataset([], 'Europe'),
             new Dataset([], 'Asia'),
         ]);

@@ -2,6 +2,8 @@
 
 namespace Maartenpaauw\Chart\Data\Datasets;
 
+use Maartenpaauw\Chart\Data\Axes\AxesContract;
+
 class StartingPointDatasets implements DatasetsContract
 {
     private DatasetsContract $origin;
@@ -19,6 +21,11 @@ class StartingPointDatasets implements DatasetsContract
     public function max(): float
     {
         return $this->origin->max();
+    }
+
+    public function axes(): AxesContract
+    {
+        return $this->origin->axes();
     }
 
     public function toArray(): array
