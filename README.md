@@ -92,6 +92,8 @@ By overwriting the `modifications()` method you can add multiple modifications.
 Out of the box the `ShowHeading` modification will be applied when the heading is present
 and the modifications `Multiple` and `ShowLabels` are applied when there are multiple datasets configured.
 
+All modifications can be found within the `Maartenpaauw\Chart\Appearance` namespace.
+
 ##### Data(sets) spacing
 
 ```php
