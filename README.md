@@ -81,9 +81,24 @@ To display your chart it is as easily as adding the following blade component:
 <x-medals-chart/>
 ```
 
+Make sure you import the css library as well. There is a helper component available for it!
+
+```html
+<x-charts-css-stylesheet cdn="unpkg" />
+```
+
 ## Advanced
 
-There is a lot more to configure.
+### Stylesheet
+
+```html
+<x-charts-css-stylesheet cdn="unpkg" />
+```
+
+Charts.css host the production CSS file on two difference CDN's: `jsdelivr` and `unpkg`.
+You can import the stylesheet by adding the following component to the head within your blade file.
+
+If you add your CSS by using a different way, for example a package manager, adding this component is not needed.
 
 ### Type
 
