@@ -18,14 +18,19 @@ class NullAxesTest extends TestCase
     }
 
     /** @test */
-    public function it_should_return_an_empty_string_as_data_axis(): void
-    {
-        $this->assertEmpty($this->nullAxes->data());
-    }
-
-    /** @test */
     public function it_should_return_an_empty_string_as_primary_axis(): void
     {
         $this->assertEmpty($this->nullAxes->primary());
+    }
+
+    /** @test */
+    public function it_should_return_an_array_with_an_empty_string_as_data_axis(): void
+    {
+        // Act
+        $data = $this->nullAxes->data();
+
+        // Assert
+        $this->assertContains('', $data);
+        $this->assertCount(1, $data);
     }
 }

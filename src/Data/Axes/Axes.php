@@ -6,12 +6,18 @@ class Axes implements AxesContract
 {
     private string $primary;
 
-    private string $data;
+    /**
+     * @var string[]
+     */
+    private array $data;
 
-    public function __construct(string $primary, string $data)
+    /**
+     * @param string|array $data
+     */
+    public function __construct(string $primary, $data)
     {
         $this->primary = $primary;
-        $this->data = $data;
+        $this->data = is_string($data) ? [$data] : $data;
     }
 
     public function primary(): string
@@ -19,7 +25,7 @@ class Axes implements AxesContract
         return $this->primary;
     }
 
-    public function data(): string
+    public function data(): array
     {
         return $this->data;
     }

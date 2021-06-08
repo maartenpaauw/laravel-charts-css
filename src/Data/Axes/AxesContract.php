@@ -6,5 +6,8 @@ interface AxesContract
 {
     public function primary(): string;
 
-    public function data(): string;
+    /**
+     * @return string[]
+     */
+    public function data(): array;
 }

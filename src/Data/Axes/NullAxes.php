@@ -9,8 +9,8 @@ class NullAxes implements AxesContract
         return '';
     }
 
-    public function data(): string
+    public function data(): array
     {
-        return '';
+        return [''];
     }
 }
