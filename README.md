@@ -404,6 +404,30 @@ protected function modifications(): ModificationsBag
 Feel free to create a pull request or submitting an issue.
 In the meanwhile you can add it easily by adding a `CustomModification`.
 
+### Configuration
+
+As mentioned before, the configuration is pretty smart. It adds a `ShowHeading` modification if a heading is present and
+adds the modifications `Mulitple` and `ShowLabels` when multiple datasets are configured. This is done by wrapping the configuration within a `SmartConfiguration` decorator.
+
+If you do not want this behaviour you can overwrite the `configuration` method and build the configuration by yourself.
+
+```php
+use Maartenpaauw\Chart\Configuration\Configuration;
+use Maartenpaauw\Chart\Configuration\ConfigurationContract;
+
+// ...
+
+protected function configuration(): ConfigurationContract
+{
+    return new Configuration(
+        $this->identity(),
+        $this->legend(),
+        $this->modifications(),
+        $this->colorscheme(),
+    );
+}
+````
+
 ## Testing
 
 ```bash
