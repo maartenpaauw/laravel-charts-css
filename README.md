@@ -75,7 +75,7 @@ class MedalsChart extends Chart
 }
 ```
 
-Within your blade file you can display the chart by adding:
+To display your chart it is as easily as adding the following blade component:
 
 ```html
 <x-medals-chart/>
@@ -84,6 +84,37 @@ Within your blade file you can display the chart by adding:
 ### Advanced
 
 There is a lot more to configure.
+
+#### Colorscheme
+
+```php
+protected function colorscheme(): ColorschemeContract
+{
+    return parent::colorscheme()
+        ->add(new Color('#FF0000'))
+        ->add(new Color('#00FF00'))
+        ->add(new Color('#0000FF'));
+}
+```
+
+The framework has a set of 10 default color repeating themselves.
+You can change it by overwriting the `colorscheme()` method.
+
+If you only add one color, **all** the data entries will get the same color.
+You can add up to 10 colors by calling the `add()` method on the colorscheme.
+
+```php
+protected function colorscheme(): ColorschemeContract
+{
+    return new Colorscheme([
+        new Color('#FF0000'),
+        new Color('#00FF00'),
+        new Color('#0000FF'),
+    ]);
+}
+```
+
+It is also possible to return a new instance of `Colorscheme` and given an array with colors as the first constructor parameter.
 
 #### Modifications
 
