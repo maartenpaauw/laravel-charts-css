@@ -5,7 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/maartenpaauw/laravel-charts-css/Check%20&%20fix%20styling?label=code%20style)](https://github.com/maartenpaauw/laravel-charts-css/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/maartenpaauw/laravel-charts-css.svg?style=flat-square)](https://packagist.org/packages/maartenpaauw/laravel-charts-css)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+This library will help you generate CSS only charts based on the **Charts.css** library.
 
 ## Installation
 
@@ -17,9 +17,10 @@ composer require maartenpaauw/laravel-charts-css
 
 ## Usage
 
-```php
-$laravel-charts-css = new Maartenpaauw\Chart();
-echo $laravel-charts-css->echoPhrase('Hello, Spatie!');
+Here's how you can create a chart:
+
+```bash
+php artisan make:chart MedalsChart
 ```
 
 ## Testing
