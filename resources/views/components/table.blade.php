@@ -1,5 +1,13 @@
 <table {{ $attributes->class(['charts-css'])->class($modifications->classes()) }}>
     {{ $slot }}
+    @if($datasets->size() === 1)
+        <thead>
+            <tr>
+                <th scope="col">{{ $datasets->axes()->primary() }}</th>
+                <th scope="col">{{ $datasets->axes()->data() }}</th>
+            </tr>
+        </thead>
+    @endif
     <tbody>
         @foreach($datasets->toArray() as $dataset)
             @if($datasets->size() === 1)
