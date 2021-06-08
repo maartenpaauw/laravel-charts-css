@@ -85,6 +85,29 @@ To display your chart it is as easily as adding the following blade component:
 
 There is a lot more to configure.
 
+### Type
+
+```php
+use Maartenpaauw\Chart\Types\Bar;
+use Maartenpaauw\Chart\Types\ChartType;
+
+// ...
+
+protected function type(): ChartType
+{
+    return new Bar();
+}
+```
+
+At the moment there is support for 4 types of charts:
+
+- `Area`
+- `Bar`
+- `Column`
+- `Line`
+
+By default each generated chart is a `Column` chart. If you want to change the chart type you can do it by overwriting the `type` method.
+
 ### Colorscheme
 
 ```php
