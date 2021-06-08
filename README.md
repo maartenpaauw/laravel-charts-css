@@ -108,6 +108,39 @@ At the moment there is support for 4 types of charts:
 
 By default each generated chart is a `Column` chart. If you want to change the chart type you can do it by overwriting the `type` method.
 
+### Legend
+
+```php
+use Maartenpaauw\Chart\Legend\Appearance\Inline;
+use Maartenpaauw\Chart\Legend\Appearance\Square;
+use Maartenpaauw\Chart\Legend\Legend;
+
+// ...
+
+protected function legend(): Legend
+{
+    return parent::legend()
+        ->withLabel('Gold')
+        ->withLabel('Silver')
+        ->withLabel('Bronze')
+        ->withModification(new Inline())
+        ->withModification(new Square());
+}
+```
+
+By default, no legend is being generated and shown. You can change this behaviour by simply overwriting the `legend()` method.
+By calling the `withLabel()` method on a `Legend` instance you can add a label.
+By default, the legend is displayed vertically. You can change it to horizontally by adding the `Inline` modification.
+
+The labels do not have any style by default. You can add one of the following shapes as a modification:
+
+- `Circle`
+- `Ellipse`
+- `Line`
+- `Rectangle`
+- `Rhombus`
+- `Square`
+
 ### Colorscheme
 
 ```php
