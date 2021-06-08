@@ -81,11 +81,11 @@ To display your chart it is as easily as adding the following blade component:
 <x-medals-chart/>
 ```
 
-### Advanced
+## Advanced
 
 There is a lot more to configure.
 
-#### Colorscheme
+### Colorscheme
 
 ```php
 protected function colorscheme(): ColorschemeContract
@@ -116,7 +116,7 @@ protected function colorscheme(): ColorschemeContract
 
 It is also possible to return a new instance of `Colorscheme` and given an array with colors as the first constructor parameter.
 
-#### Modifications
+### Modifications
 
 By overwriting the `modifications()` method you can add multiple modifications.
 
@@ -125,7 +125,7 @@ and the modifications `Multiple` and `ShowLabels` are applied when there are mul
 
 All modifications can be found within the `Maartenpaauw\Chart\Appearance` namespace.
 
-##### Data(sets) spacing
+#### Data(sets) spacing
 
 ```php
 protected function modifications(): ModificationsBag
@@ -138,7 +138,7 @@ protected function modifications(): ModificationsBag
 
 By adding `DatasetsSpacing` or `DataSpacing` you can configure the space between the data entries. Both constructors accept a number between 1 and 20 defining the amount of space.
 
-##### Hide data
+#### Hide data
 
 ```php
 protected function modifications(): ModificationsBag
@@ -152,7 +152,7 @@ The `HideData` modification will hide the display value of each entry.
 The value will still be printed to the screen, but it is hidden by CSS.
 This will respect screenreaders.
 
-##### Show data on hover.
+#### Show data on hover.
 
 ```php
 protected function modifications(): ModificationsBag
@@ -165,7 +165,7 @@ protected function modifications(): ModificationsBag
 The `ShowDataOnHover` modification will hide the data the same way as the `HideData` modification.
 The big difference is it will show the data when you hover it.
 
-##### Label alignment
+#### Label alignment
 
 ```php
 protected function modifications(): ModificationsBag
@@ -179,7 +179,7 @@ protected function modifications(): ModificationsBag
 
 You can configure the label alignment by adding one of the following modifications: `LabelsAlignStart`, `LabelsAlignCenter` or `LabelsAlignRight`.
 
-##### Multiple
+#### Multiple
 
 ```php
 protected function modifications(): ModificationsBag
@@ -192,7 +192,7 @@ protected function modifications(): ModificationsBag
 When displaying multiple datasets the modification `Multiple` needs to be added.
 Out of the box it is automatically add if there are multiple datasets.
 
-##### Reverse
+#### Reverse
 
 ```php
 protected function modifications(): ModificationsBag
@@ -206,7 +206,7 @@ protected function modifications(): ModificationsBag
 
 If you want to reverse the data, datasets or the orientation you can add the modifications: `ReverseData`, `ReverseDatasets` or/and `ReverseOrientation`.
 
-##### Axes
+#### Axes
 
 ```php
 protected function modifications(): ModificationsBag
@@ -224,7 +224,7 @@ Same goes for the `ShowDataAxes`.
 To display the secondary axes you can add the `ShowSecondaryAxes` modification.
 The constructor accepts the amount of axes (with a limit of 10) as the first parameter.
 
-##### Show heading
+#### Show heading
 
 ```php
 protected function modifications(): ModificationsBag
@@ -238,7 +238,7 @@ The heading (table caption) will always be printed to the screen to respect scre
 but it will be hidden with CSS by default. If you want to display the heading you need to add the `ShowHeading` modification.
 This modification will be added automatically when the heading is present.
 
-##### Show labels
+#### Show labels
 
 ```php
 protected function modifications(): ModificationsBag
@@ -251,7 +251,7 @@ protected function modifications(): ModificationsBag
 The labels will always be printed to the screen to respect screenreaders,
 but they are hidden with CSS by default. If you want to display the labels you need to add the `ShowLabels` modification.
 
-##### Stacked
+#### Stacked
 
 ```php
 protected function modifications(): ModificationsBag
@@ -263,7 +263,7 @@ protected function modifications(): ModificationsBag
 
 If you want to stack multiple datasets you can add the `Stacked` modification.
 
-##### Did I miss adding a modification?
+#### Did I miss adding a modification?
 
 ```php
 protected function modifications(): ModificationsBag
