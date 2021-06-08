@@ -64,7 +64,7 @@ abstract class Chart extends Component
         );
     }
 
-    private function identity(): Identity
+    protected function identity(): Identity
     {
         return new Identity(
             $this->id(),
