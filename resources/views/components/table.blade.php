@@ -3,8 +3,8 @@
     <thead>
         <tr>
             <th scope="col">{{ $datasets->axes()->primary() }}</th>
-            @foreach($datasets->axes()->data() as $data)
-                <th scope="col">{{ $data }}</th>
+            @foreach($datasets->axes()->data() as $axis)
+                <th scope="col">{{ $axis }}</th>
             @endforeach
         </tr>
     </thead>
