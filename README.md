@@ -111,6 +111,11 @@ By default each generated chart is a `Column` chart. If you want to change the c
 ### Colorscheme
 
 ```php
+use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
+use Maartenpaauw\Chart\Appearance\Colorscheme\ColorschemeContract;
+
+// ...
+
 protected function colorscheme(): ColorschemeContract
 {
     return parent::colorscheme()
@@ -127,6 +132,11 @@ If you only add one color, **all** the data entries will get the same color.
 You can add up to 10 colors by calling the `add()` method on the colorscheme.
 
 ```php
+use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
+use Maartenpaauw\Chart\Appearance\Colorscheme\ColorschemeContract;
+
+// ...
+
 protected function colorscheme(): ColorschemeContract
 {
     return new Colorscheme([
@@ -151,6 +161,12 @@ All modifications can be found within the `Maartenpaauw\Chart\Appearance` namesp
 #### Data(sets) spacing
 
 ```php
+use Maartenpaauw\Chart\Appearance\DatasetsSpacing;
+use Maartenpaauw\Chart\Appearance\DataSpacing;
+use Maartenpaauw\Chart\Appearance\ModificationsBag;
+
+// ...
+
 protected function modifications(): ModificationsBag
 {
     return parent::modifications()
@@ -164,6 +180,11 @@ By adding `DatasetsSpacing` or `DataSpacing` you can configure the space between
 #### Hide data
 
 ```php
+use Maartenpaauw\Chart\Appearance\HideData;
+use Maartenpaauw\Chart\Appearance\ModificationsBag;
+
+// ...
+
 protected function modifications(): ModificationsBag
 {
     return parent::modifications()
@@ -178,6 +199,11 @@ This will respect screenreaders.
 #### Show data on hover.
 
 ```php
+use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\ShowDataOnHover;
+
+// ...
+
 protected function modifications(): ModificationsBag
 {
     return parent::modifications()
@@ -191,6 +217,13 @@ The big difference is it will show the data when you hover it.
 #### Label alignment
 
 ```php
+use Maartenpaauw\Chart\Appearance\LabelsAlignCenter;
+use Maartenpaauw\Chart\Appearance\LabelsAlignEnd;
+use Maartenpaauw\Chart\Appearance\LabelsAlignStart;
+use Maartenpaauw\Chart\Appearance\ModificationsBag;
+
+// ...
+
 protected function modifications(): ModificationsBag
 {
     return parent::modifications()
@@ -205,6 +238,11 @@ You can configure the label alignment by adding one of the following modificatio
 #### Multiple
 
 ```php
+use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Multiple;
+
+// ...
+
 protected function modifications(): ModificationsBag
 {
     return parent::modifications()
@@ -218,6 +256,13 @@ Out of the box it is automatically add if there are multiple datasets.
 #### Reverse
 
 ```php
+use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\ReverseData;
+use Maartenpaauw\Chart\Appearance\ReverseDatasets;
+use Maartenpaauw\Chart\Appearance\ReverseOrientation;
+
+// ...
+
 protected function modifications(): ModificationsBag
 {
     return parent::modifications()
@@ -232,6 +277,13 @@ If you want to reverse the data, datasets or the orientation you can add the mod
 #### Axes
 
 ```php
+use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\ShowDataAxes;
+use Maartenpaauw\Chart\Appearance\ShowPrimaryAxis;
+use Maartenpaauw\Chart\Appearance\ShowSecondaryAxes;
+
+// ...
+
 protected function modifications(): ModificationsBag
 {
     return parent::modifications()
@@ -250,6 +302,11 @@ The constructor accepts the amount of axes (with a limit of 10) as the first par
 #### Show heading
 
 ```php
+use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\ShowHeading;
+
+// ...
+
 protected function modifications(): ModificationsBag
 {
     return parent::modifications()
@@ -264,6 +321,11 @@ This modification will be added automatically when the heading is present.
 #### Show labels
 
 ```php
+use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\ShowLabels;
+
+// ...
+
 protected function modifications(): ModificationsBag
 {
     return parent::modifications()
@@ -277,6 +339,11 @@ but they are hidden with CSS by default. If you want to display the labels you n
 #### Stacked
 
 ```php
+use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Stacked;
+
+// ...
+
 protected function modifications(): ModificationsBag
 {
     return parent::modifications()
@@ -289,6 +356,11 @@ If you want to stack multiple datasets you can add the `Stacked` modification.
 #### Did I miss adding a modification?
 
 ```php
+use Maartenpaauw\Chart\Appearance\CustomModification;
+use Maartenpaauw\Chart\Appearance\ModificationsBag;
+
+// ...
+
 protected function modifications(): ModificationsBag
 {
     return parent::modifications()
