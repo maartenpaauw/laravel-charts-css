@@ -23,22 +23,23 @@ class DummyChart extends Chart
     protected function datasets(): DatasetsContract
     {
         return new Datasets(
-            new Axes('Continent', 'Salary'),
+            new Axes('Country', ['Gold', 'Silver', 'Bronze']),
             [
                 new Dataset([
-                    new Entry('$20k', 20000),
-                    new Entry('$30k', 30000),
-                    new Entry('$40k', 40000),
-                    new Entry('$50k', 50000),
-                    new Entry('$75k', 75000),
-                ], 'Asia'),
+                    new Entry('46', 46),
+                    new Entry('37', 37),
+                    new Entry('38', 38),
+                ], 'USA'),
                 new Dataset([
-                    new Entry('$40k', 40000),
-                    new Entry('$60k', 60000),
-                    new Entry('$75k', 75000),
-                    new Entry('$90k', 90000),
-                    new Entry('$100k', 100000),
-                ], 'Europe'),
+                    new Entry('27', 27),
+                    new Entry('23', 23),
+                    new Entry('17', 17),
+                ], 'GBR'),
+                new Dataset([
+                    new Entry('26', 26),
+                    new Entry('18', 18),
+                    new Entry('26', 26),
+                ], 'CHN'),
             ]
         );
     }
