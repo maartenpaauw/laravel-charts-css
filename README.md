@@ -197,6 +197,36 @@ protected function colorscheme(): ColorschemeContract
 
 It is also possible to return a new instance of `Colorscheme` and given an array with colors as the first constructor parameter.
 
+#### Specific color for one entry
+
+```php
+use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
+use Maartenpaauw\Chart\Data\Axes\Axes;
+use Maartenpaauw\Chart\Data\Datasets\Dataset;
+use Maartenpaauw\Chart\Data\Datasets\Datasets;
+use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chart\Data\Entries\Entry;
+
+// ...
+
+protected function datasets(): DatasetsContract
+{
+    return new Datasets(
+        new Axes('Country', ['Gold', 'Silver', 'Bronze']),
+        [
+            new Dataset([
+                (new Entry('46', 46))
+                    ->color(new Color('#FFD700')), // <--
+                new Entry('37', 37),
+                new Entry('38', 38),
+            ], 'USA'),
+        ]
+    );
+}
+```
+
+Want to change a specific data entry's color? This can be done by chaining the `color` method.
+
 ### Modifications
 
 By overwriting the `modifications()` method you can add multiple modifications.
