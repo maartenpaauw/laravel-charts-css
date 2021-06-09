@@ -4,6 +4,7 @@ namespace Maartenpaauw\Chart\Legend;
 
 use Maartenpaauw\Chart\Appearance\Modification;
 use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Legend\Appearance\Inline;
 
 class Legend
 {
@@ -35,6 +36,13 @@ class Legend
     public function withModification(Modification $modification): Legend
     {
         $this->modificationsBag->add($modification);
+
+        return $this;
+    }
+
+    public function inline(): self
+    {
+        $this->modificationsBag->add(new Inline());
 
         return $this;
     }
