@@ -329,7 +329,7 @@ protected function modifications(): ModificationsBag
 ````
 
 When displaying multiple datasets the modification `Multiple` needs to be added.
-Out of the box it is automatically add if there are multiple datasets.
+Out of the box it is automatically added if there are multiple datasets.
 
 #### Reverse
 
