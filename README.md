@@ -274,7 +274,7 @@ The `HideData` modification will hide the display value of each entry.
 The value will still be printed to the screen, but it is hidden by CSS.
 This will respect screenreaders.
 
-#### Show data on hover.
+#### Show data on hover
 
 ```php
 use Maartenpaauw\Chart\Appearance\ModificationsBag;
@@ -350,7 +350,8 @@ protected function modifications(): ModificationsBag
 }
 ```
 
-If you want to reverse the data, datasets or the orientation you can add the modifications: `ReverseData`, `ReverseDatasets` or/and `ReverseOrientation`.
+If you want to reverse the data, datasets or the orientation you can add the modifications:
+`ReverseData`, `ReverseDatasets` or/and `ReverseOrientation`.
 
 #### Axes
 
@@ -452,7 +453,7 @@ In the meanwhile you can add it easily by adding a `CustomModification`.
 ### Configuration
 
 As mentioned before, the configuration is pretty smart. It adds a `ShowHeading` modification if a heading is present and
-adds the modifications `Mulitple` and `ShowLabels` when multiple datasets are configured. This is done by wrapping the configuration within a `SmartConfiguration` decorator.
+adds the modifications `Multiple` and `ShowLabels` when multiple datasets are configured. This is done by wrapping the configuration within a `SmartConfiguration` decorator.
 
 If you do not want this behaviour you can overwrite the `configuration` method and build the configuration by yourself.
 
