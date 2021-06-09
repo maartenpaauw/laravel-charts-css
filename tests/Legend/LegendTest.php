@@ -78,4 +78,18 @@ class LegendTest extends TestCase
         $this->assertCount(1, $legend->classes());
         $this->assertContains('legend-inline', $legend->classes());
     }
+    
+    /** @test */
+    public function it_should_be_possible_to_inline_the_legend(): void
+    {
+        // Arrange
+        $legend = new Legend();
+
+        // Act
+        $legend->inline();
+
+        // Assert
+        $this->assertCount(1, $legend->classes());
+        $this->assertContains('legend-inline', $legend->classes());
+    }
 }
