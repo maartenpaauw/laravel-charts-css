@@ -40,7 +40,7 @@ class Legend
         return $this;
     }
 
-    public function inline(): self
+    public function inline(): Legend
     {
         $this->modificationsBag->add(new Inline());
 
