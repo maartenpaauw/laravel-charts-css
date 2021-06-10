@@ -26,21 +26,21 @@ class Legend
         return $this->labels;
     }
 
-    public function withLabel(string $label): Legend
+    public function withLabel(string $label): self
     {
         $this->labels[] = $label;
 
         return $this;
     }
 
-    public function withModification(Modification $modification): Legend
+    public function withModification(Modification $modification): self
     {
         $this->modificationsBag->add($modification);
 
         return $this;
     }
 
-    public function inline(): Legend
+    public function inline(): self
     {
         $this->modificationsBag->add(new Inline());
 
