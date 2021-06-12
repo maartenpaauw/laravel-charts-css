@@ -89,12 +89,12 @@ Make sure you import the css library as well. There is a helper component availa
 
 ## Advanced
 
-### Datasets
+### Single dataset
 
 The default generated chart component shows you how you can provide multiple datasets.
-There is a lot more to configure. You can specify a color for a specific entry shown [here](#specific-color-for-one-entry).
-
-It is also possible to give an entry its own label via:
+If you only want to show a single dataset, you still need to wrap in within a datasets instance.
+This is because axes must be provided. The only difference is you need to provide the data axis via the entry
+and give a global description via the axes.
 
 ```php
 use Maartenpaauw\Chart\Data\Axes\Axes;
@@ -108,12 +108,12 @@ use Maartenpaauw\Chart\Data\Entries\Entry;
 protected function datasets(): DatasetsContract
 {
     return new Datasets(
-        new Axes('Country', ['Gold', 'Silver', 'Bronze']),
+        new Axes('Country', 'Amount'),
         [
             new Dataset([
-                new Entry(46, 'Gold'), // <--
-                new Entry(37),
-                new Entry(38),
+                new Entry(46, 'Gold'),
+                new Entry(37, 'Silver'),
+                new Entry(38, 'Bronze'),
             ], 'USA'),
         ]
     );
