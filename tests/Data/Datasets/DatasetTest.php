@@ -37,4 +37,17 @@ class DatasetTest extends TestCase
     {
         $this->assertEquals(70000, $this->dataset->max());
     }
+
+    /** @test */
+    public function it_should_be_possible_to_skip_the_label(): void
+    {
+        // Arrange
+        $dataset = new Dataset([]);
+
+        // Act
+        $label = $dataset->label();
+
+        // Assert
+        $this->assertEmpty($label);
+    }
 }

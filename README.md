@@ -114,7 +114,7 @@ protected function datasets(): DatasetsContract
                 new Entry(46, 'Gold'),
                 new Entry(37, 'Silver'),
                 new Entry(38, 'Bronze'),
-            ], 'USA'),
+            ]),
         ]
     );
 }

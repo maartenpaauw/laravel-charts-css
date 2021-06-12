@@ -10,7 +10,7 @@ class Dataset implements DatasetContract
 
     private string $label;
 
-    public function __construct(array $entries, string $label)
+    public function __construct(array $entries, string $label = '')
     {
         $this->entries = $entries;
         $this->label = $label;
