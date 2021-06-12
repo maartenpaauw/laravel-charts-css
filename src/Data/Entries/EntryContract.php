@@ -3,6 +3,7 @@
 namespace Maartenpaauw\Chart\Data\Entries;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
+use Maartenpaauw\Chart\Data\Entries\Label\LabelContract;
 use Maartenpaauw\Chart\Declarations\Declarations;
 
 interface EntryContract
@@ -13,7 +14,11 @@ interface EntryContract
 
     public function start(): float;
 
+    public function label(): LabelContract;
+
     public function declarations(): Declarations;
 
-    public function color(ColorContract $color): self;
+    public function color(ColorContract $color): EntryContract;
+
+    public function hideLabel(): EntryContract;
 }

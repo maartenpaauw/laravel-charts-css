@@ -52,6 +52,29 @@ class NullEntryTest extends TestCase
         $this->entry->color($color);
 
         // Assert
-        $this->assertEmpty($this->entry->declarations()->toString());
+        $this->assertEmpty($this->entry->declarations()->toArray());
+    }
+
+    /** @test */
+    public function it_should_use_as_dash_as_label(): void
+    {
+        // Arrange
+        $expectedLabel = '-';
+
+        // Act
+        $label = $this->entry->label()->value();
+
+        // Assert
+        $this->assertEquals($expectedLabel, $label);
+    }
+
+    /** @test */
+    public function it_should_not_be_possible_to_hide_the_label(): void
+    {
+        // Act
+        $this->entry->hideLabel();
+
+        // Assert
+        $this->assertEmpty($this->entry->label()->modifications()->toArray());
     }
 }

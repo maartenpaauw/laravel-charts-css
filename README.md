@@ -55,19 +55,19 @@ class MedalsChart extends Chart
             new Axes('Country', ['Gold', 'Silver', 'Bronze']),
             [
                 new Dataset([
-                    new Entry('46', 46),
-                    new Entry('37', 37),
-                    new Entry('38', 38),
+                    new Entry(46),
+                    new Entry(37),
+                    new Entry(38),
                 ], 'USA'),
                 new Dataset([
-                    new Entry('27', 27),
-                    new Entry('23', 23),
-                    new Entry('17', 17),
+                    new Entry(27),
+                    new Entry(23),
+                    new Entry(17),
                 ], 'GBR'),
                 new Dataset([
-                    new Entry('26', 26),
-                    new Entry('18', 18),
-                    new Entry('26', 26),
+                    new Entry(26),
+                    new Entry(18),
+                    new Entry(26),
                 ], 'CHN'),
             ]
         );
@@ -88,6 +88,37 @@ Make sure you import the css library as well. There is a helper component availa
 ```
 
 ## Advanced
+
+### Datasets
+
+The default generated chart component shows you how you can provide multiple datasets.
+There is a lot more to configure. You can specify a color for a specific entry shown [here](#specific-color-for-one-entry).
+
+It is also possible to give an entry its own label via:
+
+```php
+use Maartenpaauw\Chart\Data\Axes\Axes;
+use Maartenpaauw\Chart\Data\Datasets\Dataset;
+use Maartenpaauw\Chart\Data\Datasets\Datasets;
+use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chart\Data\Entries\Entry;
+
+// ...
+
+protected function datasets(): DatasetsContract
+{
+    return new Datasets(
+        new Axes('Country', ['Gold', 'Silver', 'Bronze']),
+        [
+            new Dataset([
+                new Entry(46, 'Gold'), // <--
+                new Entry(37),
+                new Entry(38),
+            ], 'USA'),
+        ]
+    );
+}
+```
 
 ### Stylesheet
 
@@ -214,10 +245,10 @@ protected function datasets(): DatasetsContract
         new Axes('Country', ['Gold', 'Silver', 'Bronze']),
         [
             new Dataset([
-                (new Entry('46', 46))
+                (new Entry(46))
                     ->color(new Color('#FFD700')), // <--
-                new Entry('37', 37),
-                new Entry('38', 38),
+                new Entry(37),
+                new Entry(38),
             ], 'USA'),
         ]
     );

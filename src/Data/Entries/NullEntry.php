@@ -3,6 +3,9 @@
 namespace Maartenpaauw\Chart\Data\Entries;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
+use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Data\Entries\Label\Label;
+use Maartenpaauw\Chart\Data\Entries\Label\LabelContract;
 use Maartenpaauw\Chart\Declarations\Declarations;
 
 class NullEntry implements EntryContract
@@ -28,6 +31,16 @@ class NullEntry implements EntryContract
     }
 
     public function color(ColorContract $color): EntryContract
+    {
+        return $this;
+    }
+
+    public function label(): LabelContract
+    {
+        return new Label('-', new ModificationsBag());
+    }
+
+    public function hideLabel(): EntryContract
     {
         return $this;
     }

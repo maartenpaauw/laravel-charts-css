@@ -3,6 +3,7 @@
 namespace Maartenpaauw\Chart\Data\Entries;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
+use Maartenpaauw\Chart\Data\Entries\Label\LabelContract;
 use Maartenpaauw\Chart\Declarations\Declarations;
 
 class StartingPointEntry implements EntryContract
@@ -32,6 +33,11 @@ class StartingPointEntry implements EntryContract
         return $this->previous->raw();
     }
 
+    public function label(): LabelContract
+    {
+        return $this->origin->label();
+    }
+
     public function declarations(): Declarations
     {
         return $this->origin->declarations();
@@ -40,5 +46,12 @@ class StartingPointEntry implements EntryContract
     public function color(ColorContract $color): EntryContract
     {
         return $this->origin->color($color);
+    }
+
+    public function hideLabel(): EntryContract
+    {
+        $this->origin->hideLabel();
+
+        return $this;
     }
 }

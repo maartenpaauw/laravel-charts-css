@@ -26,19 +26,19 @@ class DummyChart extends Chart
             new Axes('Country', ['Gold', 'Silver', 'Bronze']),
             [
                 new Dataset([
-                    new Entry('46', 46),
-                    new Entry('37', 37),
-                    new Entry('38', 38),
+                    new Entry(46),
+                    new Entry(37),
+                    new Entry(38),
                 ], 'USA'),
                 new Dataset([
-                    new Entry('27', 27),
-                    new Entry('23', 23),
-                    new Entry('17', 17),
+                    new Entry(27),
+                    new Entry(23),
+                    new Entry(17),
                 ], 'GBR'),
                 new Dataset([
-                    new Entry('26', 26),
-                    new Entry('18', 18),
-                    new Entry('26', 26),
+                    new Entry(26),
+                    new Entry(18),
+                    new Entry(26),
                 ], 'CHN'),
             ]
         );

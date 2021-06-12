@@ -21,9 +21,9 @@ class StartingPointDatasetTest extends TestCase
         parent::setUp();
 
         $this->dataset = new Dataset([
-            new Entry('10', 10),
-            new Entry('20', 20),
-            new Entry('30', 30),
+            new Entry(10),
+            new Entry(20),
+            new Entry(30),
         ], 'Dataset #1');
 
         $this->startingPointDataset = new StartingPointDataset($this->dataset);

@@ -25,12 +25,12 @@ class StartingPointDatasetsTest extends TestCase
             new Axes('Dataset', 'Value'),
             [
                 new Dataset([
-                    new Entry('10', 10),
-                    new Entry('20', 20),
+                    new Entry(10),
+                    new Entry(20),
                 ], 'Dataset #1'),
                 new Dataset([
-                    new Entry('10', 10),
-                    new Entry('20', 20),
+                    new Entry(10),
+                    new Entry(20),
                 ], 'Dataset #2'),
             ],
         );

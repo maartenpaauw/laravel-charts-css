@@ -20,15 +20,9 @@ class StartingPointEntryTest extends TestCase
     {
         parent::setUp();
 
-        $this->origin = new Entry('10', 10);
-        $this->previous = new Entry('20', 20);
+        $this->origin = new Entry(10);
+        $this->previous = new Entry(20);
         $this->entry = new StartingPointEntry($this->origin, $this->previous);
-    }
-
-    /** @test */
-    public function it_should_return_the_previous_raw_value_as_start_value(): void
-    {
-        $this->assertEquals($this->previous->raw(), $this->entry->start());
     }
 
     /** @test */
@@ -41,6 +35,18 @@ class StartingPointEntryTest extends TestCase
     public function it_should_return_the_origin_raw_value(): void
     {
         $this->assertEquals($this->origin->raw(), $this->entry->raw());
+    }
+
+    /** @test */
+    public function it_should_return_the_previous_raw_value_as_start_value(): void
+    {
+        $this->assertEquals($this->previous->raw(), $this->entry->start());
+    }
+
+    /** @test */
+    public function it_should_return_the_origin_label(): void
+    {
+        $this->assertEquals($this->origin->label(), $this->entry->label());
     }
 
     /** @test */
@@ -60,5 +66,20 @@ class StartingPointEntryTest extends TestCase
 
         // Assert
         $this->assertEquals('--color: red;', $this->origin->declarations()->toString());
+    }
+
+    /** @test */
+    public function it_should_hide_modify_the_origin_label_when_hiding_it(): void
+    {
+        // Arrange
+
+        // Act
+        $this->entry->hideLabel();
+
+        $modifications = $this->origin->label()->modifications();
+
+        // Assert
+        $this->assertCount(1, $modifications->toArray());
+        $this->assertContains('hide-label', $modifications->classes());
     }
 }

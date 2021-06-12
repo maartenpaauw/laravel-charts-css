@@ -17,8 +17,8 @@ class CalculatedDatasetTest extends TestCase
         parent::setUp();
 
         $this->dataset = new CalculatedDataset(new Dataset([
-            new Entry('$40k', 40000),
-            new Entry('$70k', 70000),
+            new Entry(40000),
+            new Entry(70000),
         ], 'Europe'));
     }
 

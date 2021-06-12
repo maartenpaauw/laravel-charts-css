@@ -26,12 +26,12 @@ class DatasetsTest extends TestCase
             $this->axes,
             [
             new Dataset([
-                new Entry('100k', 100000),
-                new Entry('200k', 200000),
+                new Entry(100000),
+                new Entry(200000),
             ], 'Europe'),
             new Dataset([
-                new Entry('400k', 400000),
-                new Entry('300k', 300000),
+                new Entry(400000),
+                new Entry(300000),
             ], 'Asia'),
         ]
         );
