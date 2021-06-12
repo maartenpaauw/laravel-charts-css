@@ -47,4 +47,19 @@ class DeclarationsTest extends TestCase
         // Assert
         $this->assertEquals($expectedString, $string);
     }
+
+    /** @test */
+    public function it_should_be_possible_to_convert_it_to_an_array(): void
+    {
+        // Arrange
+        $expectedCount = 2;
+
+        // Act
+        [$red, $green] = $array = $this->declarations->toArray();
+
+        // Assert
+        $this->assertCount($expectedCount, $array);
+        $this->assertInstanceOf(RowColorDeclaration::class, $red);
+        $this->assertInstanceOf(RowColorDeclaration::class, $green);
+    }
 }

@@ -27,4 +27,9 @@ class Declarations implements DeclarationContract
             return $declaration->toString();
         }, $this->declarations));
     }
+
+    public function toArray(): array
+    {
+        return $this->declarations;
+    }
 }
