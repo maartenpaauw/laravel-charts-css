@@ -33,6 +33,15 @@ class Legend
         return $this;
     }
 
+    public function withLabels(array $labels): Legend
+    {
+        foreach ($labels as $label) {
+            $this->withLabel($label);
+        }
+
+        return $this;
+    }
+
     public function withModification(Modification $modification): self
     {
         $this->modificationsBag->add($modification);

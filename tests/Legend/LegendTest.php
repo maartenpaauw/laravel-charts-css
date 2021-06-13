@@ -65,6 +65,25 @@ class LegendTest extends TestCase
     }
 
     /** @test */
+    public function it_should_be_possible_to_add_multiple_labels_at_once(): void
+    {
+        // Arrange
+        $legend = new Legend();
+        $labelA = 'Label A';
+        $labelB = 'Label B';
+
+        // Act
+        $labels = $legend
+            ->withLabels([$labelA, $labelB])
+            ->labels();
+
+        // Assert
+        $this->assertCount(2, $labels);
+        $this->assertContains($labelA, $labels);
+        $this->assertContains($labelB, $labels);
+    }
+
+    /** @test */
     public function it_should_be_possible_to_add_a_modification(): void
     {
         // Arrange
@@ -78,7 +97,7 @@ class LegendTest extends TestCase
         $this->assertCount(1, $legend->classes());
         $this->assertContains('legend-inline', $legend->classes());
     }
-    
+
     /** @test */
     public function it_should_be_possible_to_inline_the_legend(): void
     {
