@@ -1,3 +1,5 @@
+![Banner](assets/banner.png)
+
 # Laravel component to create gorgeous Charts.css charts.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/maartenpaauw/laravel-charts-css.svg?style=flat-square)](https://packagist.org/packages/maartenpaauw/laravel-charts-css)
