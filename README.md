@@ -481,10 +481,12 @@ In the meanwhile you can add it easily by adding a `CustomModification`.
 
 ### Configuration
 
-As mentioned before, the configuration is pretty smart. It adds a `ShowHeading` modification if a heading is present and
-adds the modifications `Multiple` and `ShowLabels` when multiple datasets are configured. This is done by wrapping the configuration within a `SmartConfiguration` decorator.
+As mentioned before, the configuration is pretty smart. It adds a `ShowHeading` modification if a heading is present,
+adds the modifications `Multiple` and `ShowLabels` when multiple datasets are present, and it uses the configured
+data axes as legend labels when none has been specified.
 
-If you do not want this behaviour you can overwrite the `configuration` method and build the configuration by yourself.
+This is done by wrapping the configuration within a `SmartConfiguration` decorator. If you do not want this behaviour
+you can overwrite the `configuration` method and build the configuration by yourself.
 
 ```php
 use Maartenpaauw\Chart\Configuration\Configuration;

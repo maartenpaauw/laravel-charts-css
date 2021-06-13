@@ -8,7 +8,7 @@ use Maartenpaauw\Chart\Appearance\ModificationsBag;
 use Maartenpaauw\Chart\Configuration\Configuration;
 use Maartenpaauw\Chart\Configuration\ConfigurationContract;
 use Maartenpaauw\Chart\Configuration\SmartConfiguration;
-use Maartenpaauw\Chart\Data\Axes\NullAxes;
+use Maartenpaauw\Chart\Data\Axes\Axes;
 use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
 use Maartenpaauw\Chart\Identity\Identity;
@@ -34,7 +34,7 @@ class SmartConfigurationTest extends TestCase
     {
         parent::setUp();
 
-        $datasets = new Datasets(new NullAxes(), [
+        $datasets = new Datasets(new Axes('A', ['B', 'C']), [
             new Dataset([], 'Dataset 1'),
             new Dataset([], 'Dataset 2'),
         ]);
@@ -66,6 +66,29 @@ class SmartConfigurationTest extends TestCase
     {
         $this->assertEquals($this->configuration->legend(), $this->smartConfiguration->legend());
         $this->assertEquals($this->legend, $this->smartConfiguration->legend());
+    }
+
+    /** @test */
+    public function it_should_automatically_add_the_data_axes_as_labels_to_the_legend(): void
+    {
+        $this->assertCount(2, $this->smartConfiguration->legend()->labels());
+        $this->assertContains('B', $this->smartConfiguration->legend()->labels());
+        $this->assertContains('C', $this->smartConfiguration->legend()->labels());
+    }
+
+    /** @test */
+    public function it_should_not_add_any_labels_to_the_legend_when_it_is_configured_manually(): void
+    {
+        // Arrange
+
+        // Act
+        $this->legend->withLabel('My label');
+
+        // Assert
+        $this->assertCount(1, $this->smartConfiguration->legend()->labels());
+        $this->assertContains('My label', $this->smartConfiguration->legend()->labels());
+        $this->assertNotContains('B', $this->smartConfiguration->legend()->labels());
+        $this->assertNotContains('C', $this->smartConfiguration->legend()->labels());
     }
 
     /** @test */

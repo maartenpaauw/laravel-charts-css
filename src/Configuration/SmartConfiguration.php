@@ -8,6 +8,8 @@ use Maartenpaauw\Chart\Appearance\Multiple;
 use Maartenpaauw\Chart\Appearance\ShowHeading;
 use Maartenpaauw\Chart\Appearance\ShowLabels;
 use Maartenpaauw\Chart\Configuration\Specifications\HasHeading;
+use Maartenpaauw\Chart\Configuration\Specifications\HasLabels;
+use Maartenpaauw\Chart\Configuration\Specifications\NotSpecification;
 use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chart\Data\Specifications\HasMultiple;
 use Maartenpaauw\Chart\Identity\Identity;
@@ -32,6 +34,10 @@ class SmartConfiguration implements ConfigurationContract
 
     public function legend(): Legend
     {
+        if ($this->hasMultipleDatasets() && $this->doesNotHaveLabels()) {
+            $this->origin->legend()->withLabels($this->datasets->axes()->data());
+        }
+
         return $this->origin->legend();
     }
 
@@ -43,7 +49,7 @@ class SmartConfiguration implements ConfigurationContract
             $modificationsBag->add(new ShowHeading());
         }
 
-        if ((new HasMultiple())->isSatisfiedBy($this->datasets)) {
+        if ($this->hasMultipleDatasets()) {
             $modificationsBag->add(new Multiple());
             $modificationsBag->add(new ShowLabels());
         }
@@ -54,5 +60,15 @@ class SmartConfiguration implements ConfigurationContract
     public function colorscheme(): ColorschemeContract
     {
         return $this->origin->colorscheme();
+    }
+
+    private function hasMultipleDatasets(): bool
+    {
+        return (new HasMultiple())->isSatisfiedBy($this->datasets);
+    }
+
+    private function doesNotHaveLabels(): bool
+    {
+        return (new NotSpecification(new HasLabels()))->isSatisfiedBy($this->origin);
     }
 }
