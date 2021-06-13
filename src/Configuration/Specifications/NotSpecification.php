@@ -15,6 +15,6 @@ class NotSpecification implements ConfigurationSpecification
 
     public function isSatisfiedBy(ConfigurationContract $configuration): bool
     {
-        return !$this->specification->isSatisfiedBy($configuration);
+        return ! $this->specification->isSatisfiedBy($configuration);
     }
 }

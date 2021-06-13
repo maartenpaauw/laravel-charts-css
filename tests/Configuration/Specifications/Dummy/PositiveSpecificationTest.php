@@ -13,7 +13,6 @@ use Maartenpaauw\Chart\Types\Column;
 
 class PositiveSpecificationTest extends TestCase
 {
-
     /** @test */
     public function it_should_be_satisfied(): void
     {

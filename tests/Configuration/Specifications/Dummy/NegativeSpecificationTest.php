@@ -13,7 +13,6 @@ use Maartenpaauw\Chart\Types\Column;
 
 class NegativeSpecificationTest extends TestCase
 {
-
     /** @test */
     public function it_should_not_be_satisfied(): void
     {
