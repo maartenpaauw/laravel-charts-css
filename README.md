@@ -108,7 +108,7 @@ use Maartenpaauw\Chart\Data\Entries\Entry;
 protected function datasets(): DatasetsContract
 {
     return new Datasets(
-        new Axes('Country', 'Amount'),
+        new Axes('Type', 'Amount'),
         [
             new Dataset([
                 new Entry(46, 'Gold'),
@@ -242,14 +242,14 @@ use Maartenpaauw\Chart\Data\Entries\Entry;
 protected function datasets(): DatasetsContract
 {
     return new Datasets(
-        new Axes('Country', ['Gold', 'Silver', 'Bronze']),
+        new Axes('Type', 'Amount'),
         [
             new Dataset([
-                (new Entry(46))
+                (new Entry(46, 'Gold'))
                     ->color(new Color('#FFD700')), // <--
-                new Entry(37),
-                new Entry(38),
-            ], 'USA'),
+                new Entry(37, 'Silver'),
+                new Entry(38, 'Bronze'),
+            ]),
         ]
     );
 }
