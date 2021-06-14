@@ -159,7 +159,6 @@ By default each generated chart is a `Column` chart. If you want to change the c
 ### Legend
 
 ```php
-use Maartenpaauw\Chart\Legend\Appearance\Square;
 use Maartenpaauw\Chart\Legend\Legend;
 
 // ...
@@ -170,7 +169,7 @@ protected function legend(): Legend
         ->withLabel('Gold')
         ->withLabels(['Silver', 'Bronze'])
         ->inline()
-        ->withModification(new Square());
+        ->squares();
 }
 ```
 
@@ -178,14 +177,14 @@ By default, no legend is being generated and shown. You can change this behaviou
 By calling the `withLabel()` or `withLabels()` method on a `Legend` instance you can add a label.
 By default, the legend is displayed vertically. You can change it to horizontally by chaining the `inline()` method.
 
-The labels do not have any style by default. You can add one of the following shapes as a modification:
+The labels do not have any style by default. You can change the shape by calling one of the following methods:
 
-- `Circle`
-- `Ellipse`
-- `Line`
-- `Rectangle`
-- `Rhombus`
-- `Square`
+- `circles()`
+- `ellipses()`
+- `lines()`
+- `rectangles()`
+- `rhombuses()`
+- `squares()`
 
 ### Colorscheme
 
