@@ -84,21 +84,6 @@ class LegendTest extends TestCase
     }
 
     /** @test */
-    public function it_should_be_possible_to_add_a_modification(): void
-    {
-        // Arrange
-        $legend = new Legend();
-        $inline = new Inline();
-
-        // Act
-        $legend->withModification($inline);
-
-        // Assert
-        $this->assertCount(1, $legend->classes());
-        $this->assertContains('legend-inline', $legend->classes());
-    }
-
-    /** @test */
     public function it_should_be_possible_to_inline_the_legend(): void
     {
         // Arrange
@@ -110,5 +95,89 @@ class LegendTest extends TestCase
         // Assert
         $this->assertCount(1, $legend->classes());
         $this->assertContains('legend-inline', $legend->classes());
+    }
+
+    /** @test */
+    public function it_should_be_possible_to_change_the_legend_shape_to_circles(): void
+    {
+        // Arrange
+        $legend = new Legend();
+
+        // Act
+        $legend->circles();
+
+        // Assert
+        $this->assertCount(1, $legend->classes());
+        $this->assertContains('legend-circle', $legend->classes());
+    }
+
+    /** @test */
+    public function it_should_be_possible_to_change_the_legend_shape_to_ellipses(): void
+    {
+        // Arrange
+        $legend = new Legend();
+
+        // Act
+        $legend->ellipses();
+
+        // Assert
+        $this->assertCount(1, $legend->classes());
+        $this->assertContains('legend-ellipse', $legend->classes());
+    }
+
+    /** @test */
+    public function it_should_be_possible_to_change_the_legend_shape_to_lines(): void
+    {
+        // Arrange
+        $legend = new Legend();
+
+        // Act
+        $legend->lines();
+
+        // Assert
+        $this->assertCount(1, $legend->classes());
+        $this->assertContains('legend-line', $legend->classes());
+    }
+
+    /** @test */
+    public function it_should_be_possible_to_change_the_legend_shape_to_rectangles(): void
+    {
+        // Arrange
+        $legend = new Legend();
+
+        // Act
+        $legend->rectangles();
+
+        // Assert
+        $this->assertCount(1, $legend->classes());
+        $this->assertContains('legend-rectangle', $legend->classes());
+    }
+
+    /** @test */
+    public function it_should_be_possible_to_change_the_legend_shape_to_rhombuses(): void
+    {
+        // Arrange
+        $legend = new Legend();
+
+        // Act
+        $legend->rhombuses();
+
+        // Assert
+        $this->assertCount(1, $legend->classes());
+        $this->assertContains('legend-rhombus', $legend->classes());
+    }
+
+    /** @test */
+    public function it_should_be_possible_to_change_the_legend_shape_to_squares(): void
+    {
+        // Arrange
+        $legend = new Legend();
+
+        // Act
+        $legend->squares();
+
+        // Assert
+        $this->assertCount(1, $legend->classes());
+        $this->assertContains('legend-square', $legend->classes());
     }
 }

@@ -4,7 +4,13 @@ namespace Maartenpaauw\Chart\Legend;
 
 use Maartenpaauw\Chart\Appearance\Modification;
 use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Legend\Appearance\Circle;
+use Maartenpaauw\Chart\Legend\Appearance\Ellipse;
 use Maartenpaauw\Chart\Legend\Appearance\Inline;
+use Maartenpaauw\Chart\Legend\Appearance\Line;
+use Maartenpaauw\Chart\Legend\Appearance\Rectangle;
+use Maartenpaauw\Chart\Legend\Appearance\Rhombus;
+use Maartenpaauw\Chart\Legend\Appearance\Square;
 
 class Legend
 {
@@ -42,16 +48,51 @@ class Legend
         return $this;
     }
 
-    public function withModification(Modification $modification): self
+    public function inline(): self
     {
-        $this->modificationsBag->add($modification);
+        $this->modificationsBag->add(new Inline());
 
         return $this;
     }
 
-    public function inline(): self
+    public function circles(): self
     {
-        $this->modificationsBag->add(new Inline());
+        $this->modificationsBag->add(new Circle());
+
+        return $this;
+    }
+
+    public function ellipses(): self
+    {
+        $this->modificationsBag->add(new Ellipse());
+
+        return $this;
+    }
+
+    public function lines(): self
+    {
+        $this->modificationsBag->add(new Line());
+
+        return $this;
+    }
+
+    public function rectangles(): self
+    {
+        $this->modificationsBag->add(new Rectangle());
+
+        return $this;
+    }
+
+    public function rhombuses(): self
+    {
+        $this->modificationsBag->add(new Rhombus());
+
+        return $this;
+    }
+
+    public function squares(): self
+    {
+        $this->modificationsBag->add(new Square());
 
         return $this;
     }
