@@ -36,4 +36,9 @@ class ModificationsBag implements Modification
     {
         return $this->modifications;
     }
+
+    public function toString(): string
+    {
+        return implode(' ', $this->classes());
+    }
 }

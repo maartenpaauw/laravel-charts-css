@@ -72,4 +72,20 @@ class ModificationsBagTest extends ModificationTest
         $this->assertInstanceOf(ShowLabels::class, $showLabels);
         $this->assertCount(2, $modifications);
     }
+
+    /** @test */
+    public function it_should_be_possible_to_convert_it_to_a_string(): void
+    {
+        // Arrange
+        $modifications = new ModificationsBag([
+            new HideData(),
+            new ShowLabels(),
+        ]);
+
+        // Act
+        $string = $modifications->toString();
+
+        // Assert
+        $this->assertEquals('hide-data show-labels', $string);
+    }
 }

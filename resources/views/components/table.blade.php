@@ -13,7 +13,7 @@
             @if($datasets->size() === 1)
                 @foreach($dataset->entries() as $entry)
                     <tr>
-                        <th scope="row" class="{{ implode(' ', $entry->label()->modifications()->classes()) }}">{{ $entry->label()->value() }}</th>
+                        <th scope="row" @if($entry->label()->modifications()->toString())class="{{ $entry->label()->modifications()->toString() }}"@endif>{{ $entry->label()->value() }}</th>
                         <td style="--start: calc({{ $entry->start() }} / {{ $dataset->max() }}); --size: calc({{ $entry->raw() }} / {{ $dataset->max() }}); {{ $entry->declarations()->toString() }}">
                             <span class="data">{{ $entry->value() }}</span>
                         </td>
