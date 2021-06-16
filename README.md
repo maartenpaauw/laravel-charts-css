@@ -122,6 +122,69 @@ protected function datasets(): DatasetsContract
 }
 ```
 
+#### Hiding a specific label
+
+```php
+use Maartenpaauw\Chart\Data\Axes\Axes;
+use Maartenpaauw\Chart\Data\Datasets\Dataset;
+use Maartenpaauw\Chart\Data\Datasets\Datasets;
+use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chart\Data\Entries\Entry;
+
+// ...
+
+protected function datasets(): DatasetsContract
+{
+    return new Datasets(
+        new Axes('Type', 'Amount'),
+        [
+            new Dataset([
+                (new Entry(46, 'Gold'))
+                    ->hideLabel(), // <--
+                new Entry(37, 'Silver'),
+                new Entry(38, 'Bronze'),
+            ]),
+        ]
+    );
+}
+```
+
+You can hide an entry's label by calling the `hideLabel()` method on a dataset.
+
+### Multiple datasets
+
+```php
+use Maartenpaauw\Chart\Data\Axes\Axes;
+use Maartenpaauw\Chart\Data\Datasets\Dataset;
+use Maartenpaauw\Chart\Data\Datasets\Datasets;
+use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chart\Data\Entries\Entry;
+
+// ...
+
+protected function datasets(): DatasetsContract
+{
+    return new Datasets(
+        new Axes('Country', ['Gold', 'Silver', 'Bronze']),
+        [
+            (new Dataset([
+                new Entry(46),
+                new Entry(37),
+                new Entry(38),
+            ], 'USA'))
+                ->hideLabel(), // <--
+            new Dataset([
+                new Entry(27),
+                new Entry(23),
+                new Entry(17),
+            ], 'GBR'),
+        ]
+    );
+}
+```
+
+You can hide a dataset's label by calling the `hideLabel()` method on a dataset.
+
 ### Stylesheet
 
 ```html
