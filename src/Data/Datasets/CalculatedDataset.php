@@ -2,6 +2,8 @@
 
 namespace Maartenpaauw\Chart\Data\Datasets;
 
+use Maartenpaauw\Chart\Data\Entries\Label\LabelContract;
+
 class CalculatedDataset implements DatasetContract
 {
     private DatasetContract $origin;
@@ -19,13 +21,20 @@ class CalculatedDataset implements DatasetContract
         return $this->origin->entries();
     }
 
-    public function label(): string
+    public function max(): float
+    {
+        return $this->max;
+    }
+
+    public function label(): LabelContract
     {
         return $this->origin->label();
     }
 
-    public function max(): float
+    public function hideLabel(): DatasetContract
     {
-        return $this->max;
+        $this->origin->hideLabel();
+
+        return $this;
     }
 }

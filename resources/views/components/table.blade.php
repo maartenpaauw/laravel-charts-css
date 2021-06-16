@@ -21,7 +21,7 @@
                 @endforeach
             @else
                 <tr>
-                    <th scope="row">{{ $dataset->label() }}</th>
+                    <th scope="row" @if($dataset->label()->modifications()->toString())class="{{ $dataset->label()->modifications()->toString() }}"@endif>{{ $dataset->label()->value() }}</th>
                     @foreach($dataset->entries() as $entry)
                         <td style="--start: calc({{ $entry->start() }} / {{ $datasets->max() }}); --size: calc({{ $entry->raw() }} / {{ $datasets->max() }}); {{ $entry->declarations()->toString() }}">
                             <span class="data">{{ $entry->value() }}</span>

@@ -3,6 +3,7 @@
 namespace Maartenpaauw\Chart\Data\Datasets;
 
 use Maartenpaauw\Chart\Data\Entries\EntryContract;
+use Maartenpaauw\Chart\Data\Entries\Label\LabelContract;
 
 interface DatasetContract
 {
@@ -11,7 +12,9 @@ interface DatasetContract
      */
     public function entries(): array;
 
-    public function label(): string;
-
     public function max(): float;
+
+    public function label(): LabelContract;
+
+    public function hideLabel(): DatasetContract;
 }

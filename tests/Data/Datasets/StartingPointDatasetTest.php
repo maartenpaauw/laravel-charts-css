@@ -65,4 +65,15 @@ class StartingPointDatasetTest extends TestCase
         $this->assertEquals($entryA->raw(), $startingPointEntryB->start());
         $this->assertEquals($entryB->raw(), $startingPointEntryC->start());
     }
+
+    /** @test */
+    public function it_should_be_possible_to_hide_the_label(): void
+    {
+        // Act
+        $dataset = $this->startingPointDataset->hideLabel();
+
+        // Assert
+        $this->assertCount(1, $dataset->label()->modifications()->toArray());
+        $this->assertInstanceOf(StartingPointDataset::class, $dataset);
+    }
 }
