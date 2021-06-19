@@ -10,9 +10,6 @@ use Maartenpaauw\Chart\Appearance\ModificationsBag;
 use Maartenpaauw\Chart\Configuration\Configuration;
 use Maartenpaauw\Chart\Configuration\ConfigurationContract;
 use Maartenpaauw\Chart\Configuration\SmartConfiguration;
-use Maartenpaauw\Chart\Configuration\Specifications\HasColorscheme;
-use Maartenpaauw\Chart\Configuration\Specifications\HasHeading;
-use Maartenpaauw\Chart\Configuration\Specifications\HasLabels;
 use Maartenpaauw\Chart\Configuration\Specifications\NeedsStartingPoint;
 use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chart\Data\Datasets\StartingPointDatasets;
@@ -88,9 +85,6 @@ abstract class Chart extends Component
             'id' => $this->identity()->id(),
             'configuration' => $this->configuration(),
             'datasets' => $this->prepareDatasets(),
-            'hasColorscheme' => (new HasColorscheme())->isSatisfiedBy($this->configuration()),
-            'hasHeading' => (new HasHeading())->isSatisfiedBy($this->configuration()),
-            'hasLabels' => (new HasLabels())->isSatisfiedBy($this->configuration()),
         ]);
     }
 }

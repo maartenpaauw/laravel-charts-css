@@ -9,6 +9,10 @@ use Maartenpaauw\Chart\Components\Label;
 use Maartenpaauw\Chart\Components\Legend;
 use Maartenpaauw\Chart\Components\Stylesheet;
 use Maartenpaauw\Chart\Components\Table;
+use Maartenpaauw\Chart\Configuration\Specifications\Directives;
+use Maartenpaauw\Chart\Configuration\Specifications\HasColorscheme;
+use Maartenpaauw\Chart\Configuration\Specifications\HasHeading;
+use Maartenpaauw\Chart\Configuration\Specifications\HasLabels;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -26,5 +30,10 @@ class ChartServiceProvider extends PackageServiceProvider
             ->hasViewComponent('charts-css', Legend::class)
             ->hasViewComponent('charts-css', Stylesheet::class)
             ->hasViewComponent('charts-css', Table::class);
+
+        (new Directives())
+            ->register(new HasColorscheme(), 'hasColorscheme')
+            ->register(new HasHeading(), 'hasHeading')
+            ->register(new HasLabels(), 'hasLabels');
     }
 }
