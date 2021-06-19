@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chart\Stylesheets;
 
-class UnpkgStylesheet implements Stylesheet
+class UnpkgStylesheet implements StylesheetContract
 {
     public function href(): string
     {

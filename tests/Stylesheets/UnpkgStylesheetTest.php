@@ -2,12 +2,12 @@
 
 namespace Maartenpaauw\Chart\Tests\Stylesheets;
 
-use Maartenpaauw\Chart\Stylesheets\Stylesheet;
+use Maartenpaauw\Chart\Stylesheets\StylesheetContract;
 use Maartenpaauw\Chart\Stylesheets\UnpkgStylesheet;
 
 class UnpkgStylesheetTest extends StylesheetTest
 {
-    protected function stylesheet(): Stylesheet
+    protected function stylesheet(): StylesheetContract
     {
         return new UnpkgStylesheet();
     }

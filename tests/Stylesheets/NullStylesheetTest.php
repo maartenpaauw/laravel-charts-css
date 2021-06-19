@@ -3,11 +3,11 @@
 namespace Maartenpaauw\Chart\Tests\Stylesheets;
 
 use Maartenpaauw\Chart\Stylesheets\NullStylesheet;
-use Maartenpaauw\Chart\Stylesheets\Stylesheet;
+use Maartenpaauw\Chart\Stylesheets\StylesheetContract;
 
 class NullStylesheetTest extends StylesheetTest
 {
-    protected function stylesheet(): Stylesheet
+    protected function stylesheet(): StylesheetContract
     {
         return new NullStylesheet();
     }

@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chart\Stylesheets;
 
-class NullStylesheet implements Stylesheet
+class NullStylesheet implements StylesheetContract
 {
     public function href(): string
     {

@@ -4,30 +4,22 @@ namespace Maartenpaauw\Chart\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
-use Maartenpaauw\Chart\Stylesheets\JSDelivrStylesheet;
-use Maartenpaauw\Chart\Stylesheets\Stylesheet as StylesheetContract;
-use Maartenpaauw\Chart\Stylesheets\UnpkgStylesheet;
+use Maartenpaauw\Chart\Stylesheets\StylesheetContract;
+use Maartenpaauw\Chart\Stylesheets\StylesheetFactory;
 
 class Stylesheet extends Component
 {
     private StylesheetContract $strategy;
 
-    public function __construct(string $cdn)
+    public function __construct(StylesheetFactory $factory, string $cdn = '')
     {
-        if ($cdn === 'jsdelivr') {
-            $this->strategy = new JSDelivrStylesheet();
-        } elseif ($cdn === 'unpkg') {
-            $this->strategy = new UnpkgStylesheet();
-        }
-    }
-
-    public function href(): string
-    {
-        return $this->strategy->href();
+        $this->strategy = $factory->create($cdn);
     }
 
     public function render(): View
     {
-        return view('charts-css::components.stylesheet');
+        return view('charts-css::components.stylesheet', [
+            'href' => $this->strategy->href(),
+        ]);
     }
 }

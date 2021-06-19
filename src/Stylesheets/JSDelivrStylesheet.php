@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chart\Stylesheets;
 
-class JSDelivrStylesheet implements Stylesheet
+class JSDelivrStylesheet implements StylesheetContract
 {
     public function href(): string
     {
