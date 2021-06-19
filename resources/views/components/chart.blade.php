@@ -1,7 +1,8 @@
+@if($hasColorscheme)
+    <x-charts-css-colorscheme :configuration="$configuration" />
+@endif
+
 <div id="{{ $configuration->identity()->id() }}">
-    @if($hasColorscheme)
-        <x-charts-css-colorscheme :configuration="$configuration" />
-    @endif
     <x-charts-css-table :datasets="$datasets" :modifications="$configuration->modifications()">
         @if($hasHeading)
             <x-charts-css-heading :heading="$configuration->identity()->description()"/>
