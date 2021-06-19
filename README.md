@@ -187,6 +187,9 @@ You can hide a dataset's label by calling the `hideLabel()` method on a dataset.
 
 ### Stylesheet
 
+> **Warning!** Make sure you insert this component within your base layout template where your chart is not directly used.
+> Otherwise a custom defined colorscheme won't be pushed to the CSS stack.
+
 ```html
 <x-charts-css-stylesheet cdn="unpkg" />
 ```
@@ -194,7 +197,8 @@ You can hide a dataset's label by calling the `hideLabel()` method on a dataset.
 Charts.css host the production CSS file on two difference CDN's: `jsdelivr` and `unpkg`.
 You can import the stylesheet by adding the following component to the head within your blade file.
 
-If you add your CSS by using a different way, for example a package manager, adding this component is not needed.
+If you add your CSS by using a different way, for example a package manager, you can leave out the `cdn` attribute. 
+Then this component will only be used to render the colorscheme definitions.
 
 ### Type
 
@@ -250,6 +254,8 @@ The labels do not have any style by default. You can change the shape by calling
 - `squares()`
 
 ### Colorscheme
+
+> **Warning!** Do not forget to add the `<x-charts-css-stylesheet />` to your layout's head.
 
 ```php
 use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
