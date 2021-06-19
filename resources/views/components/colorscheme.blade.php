@@ -1,11 +1,9 @@
 @once
     @push('charts.css')
-        <style>
-            {{ $id }} ul, {{ $id }} table {
-                @foreach($declarations as $declaration)
-                    {{ $declaration }}
-                @endforeach
-            }
-        </style>
+        {{ $id }} ul, {{ $id }} table {
+            @foreach($declarations as $declaration)
+                {{ $declaration }}
+            @endforeach
+        }
     @endpush
 @endonce
