@@ -1,1 +1,5 @@
-<link rel="stylesheet" href="{{ $href }}">
+@stack('charts.css')
+
+@if($href)
+    <link rel="stylesheet" href="{{ $href }}">
+@endif
