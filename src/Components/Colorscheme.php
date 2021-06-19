@@ -16,15 +16,12 @@ class Colorscheme extends Component
         $this->configuration = $configuration;
     }
 
-    public function id(): string
+    private function id(): string
     {
         return sprintf('#%s', $this->configuration->identity()->id());
     }
 
-    /**
-     * @return string[]
-     */
-    public function declarations(): array
+    private function declarations(): array
     {
         return array_map(function (ColorContract $color) {
             return $color->declaration()->toString();
@@ -33,6 +30,9 @@ class Colorscheme extends Component
 
     public function render(): View
     {
-        return view('charts-css::components.colorscheme');
+        return view('charts-css::components.colorscheme', [
+            'id' => $this->id(),
+            'declarations' => $this->declarations(),
+        ]);
     }
 }
