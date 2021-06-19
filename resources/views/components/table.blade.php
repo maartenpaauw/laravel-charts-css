@@ -1,5 +1,7 @@
-<table {{ $attributes->class(['charts-css'])->class($modifications->classes()) }}>
-    {{ $slot }}
+<table {{ $attributes->class(['charts-css'])->class($configuration->modifications()->classes()) }}>
+    @if($hasHeading)
+        <x-charts-css-heading heading="{{ $configuration->identity()->description() }}"/>
+    @endif
     <thead>
         <tr>
             <th scope="col">{{ $datasets->axes()->primary() }}</th>
