@@ -6,6 +6,7 @@ use Illuminate\View\Component;
 use Illuminate\View\View;
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
 use Maartenpaauw\Chart\Configuration\ConfigurationContract;
+use Maartenpaauw\Chart\Configuration\Specifications\HasLabels;
 
 class Colorscheme extends Component
 {
@@ -33,6 +34,7 @@ class Colorscheme extends Component
         return view('charts-css::components.colorscheme', [
             'id' => $this->id(),
             'declarations' => $this->declarations(),
+            'hasLabels' => (new HasLabels())->isSatisfiedBy($this->configuration),
         ]);
     }
 }

@@ -1,6 +1,6 @@
 @once
     @push('charts.css')
-        {{ $id }} ul, {{ $id }} table {
+        @if($hasLabels) {{ $id }} ul, {{ $id }} table @else {{ $id }} @endif {
             @foreach($declarations as $declaration)
                 {{ $declaration }}
             @endforeach

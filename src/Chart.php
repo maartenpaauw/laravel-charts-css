@@ -85,6 +85,7 @@ abstract class Chart extends Component
     public function render(): View
     {
         return view('charts-css::components.chart', [
+            'id' => $this->identity()->id(),
             'configuration' => $this->configuration(),
             'datasets' => $this->prepareDatasets(),
             'hasColorscheme' => (new HasColorscheme())->isSatisfiedBy($this->configuration()),
