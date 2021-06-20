@@ -6,6 +6,7 @@ use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
 use Maartenpaauw\Chart\Data\Entries\Entry;
 use Maartenpaauw\Chart\Data\Entries\EntryContract;
 use Maartenpaauw\Chart\Data\Entries\StartingPointEntry;
+use Maartenpaauw\Chart\Data\Entries\Value\Value;
 use Maartenpaauw\Chart\Tests\TestCase;
 
 class StartingPointEntryTest extends TestCase
@@ -20,8 +21,8 @@ class StartingPointEntryTest extends TestCase
     {
         parent::setUp();
 
-        $this->origin = new Entry(10);
-        $this->previous = new Entry(20);
+        $this->origin = new Entry(new Value(10));
+        $this->previous = new Entry(new Value(20));
         $this->entry = new StartingPointEntry($this->origin, $this->previous);
     }
 

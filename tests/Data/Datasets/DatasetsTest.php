@@ -8,6 +8,7 @@ use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
 use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Value\Value;
 use Maartenpaauw\Chart\Tests\TestCase;
 
 class DatasetsTest extends TestCase
@@ -26,12 +27,12 @@ class DatasetsTest extends TestCase
             $this->axes,
             [
             new Dataset([
-                new Entry(100000),
-                new Entry(200000),
+                new Entry(new Value(100000)),
+                new Entry(new Value(200000)),
             ], 'Europe'),
             new Dataset([
-                new Entry(400000),
-                new Entry(300000),
+                new Entry(new Value(400000)),
+                new Entry(new Value(300000)),
             ], 'Asia'),
         ]
         );

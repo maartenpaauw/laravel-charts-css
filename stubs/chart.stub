@@ -8,6 +8,7 @@ use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
 use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Value\Value;
 
 class DummyClass extends Chart
 {
@@ -27,19 +28,19 @@ class DummyClass extends Chart
             new Axes('Country', ['Gold', 'Silver', 'Bronze']),
             [
                 new Dataset([
-                    new Entry(46),
-                    new Entry(37),
-                    new Entry(38),
+                    new Entry(new Value(46)),
+                    new Entry(new Value(37)),
+                    new Entry(new Value(38)),
                 ], 'USA'),
                 new Dataset([
-                    new Entry(27),
-                    new Entry(23),
-                    new Entry(17),
+                    new Entry(new Value(27)),
+                    new Entry(new Value(23)),
+                    new Entry(new Value(17)),
                 ], 'GBR'),
                 new Dataset([
-                    new Entry(26),
-                    new Entry(18),
-                    new Entry(26),
+                    new Entry(new Value(26)),
+                    new Entry(new Value(18)),
+                    new Entry(new Value(26)),
                 ], 'CHN'),
             ]
         );

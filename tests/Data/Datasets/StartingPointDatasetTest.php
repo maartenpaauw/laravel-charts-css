@@ -8,6 +8,7 @@ use Maartenpaauw\Chart\Data\Datasets\StartingPointDataset;
 use Maartenpaauw\Chart\Data\Entries\Entry;
 use Maartenpaauw\Chart\Data\Entries\NullEntry;
 use Maartenpaauw\Chart\Data\Entries\StartingPointEntry;
+use Maartenpaauw\Chart\Data\Entries\Value\Value;
 use Maartenpaauw\Chart\Tests\TestCase;
 
 class StartingPointDatasetTest extends TestCase
@@ -21,9 +22,9 @@ class StartingPointDatasetTest extends TestCase
         parent::setUp();
 
         $this->dataset = new Dataset([
-            new Entry(10),
-            new Entry(20),
-            new Entry(30),
+            new Entry(new Value(10)),
+            new Entry(new Value(20)),
+            new Entry(new Value(30)),
         ], 'Dataset #1');
 
         $this->startingPointDataset = new StartingPointDataset($this->dataset);

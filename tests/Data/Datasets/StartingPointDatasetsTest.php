@@ -9,6 +9,7 @@ use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chart\Data\Datasets\StartingPointDataset;
 use Maartenpaauw\Chart\Data\Datasets\StartingPointDatasets;
 use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Value\Value;
 use Maartenpaauw\Chart\Tests\TestCase;
 
 class StartingPointDatasetsTest extends TestCase
@@ -25,12 +26,12 @@ class StartingPointDatasetsTest extends TestCase
             new Axes('Dataset', 'Value'),
             [
                 new Dataset([
-                    new Entry(10),
-                    new Entry(20),
+                    new Entry(new Value(10)),
+                    new Entry(new Value(20)),
                 ], 'Dataset #1'),
                 new Dataset([
-                    new Entry(10),
-                    new Entry(20),
+                    new Entry(new Value(10)),
+                    new Entry(new Value(20)),
                 ], 'Dataset #2'),
             ],
         );

@@ -4,6 +4,7 @@ namespace Maartenpaauw\Chart\Tests\Data\Datasets;
 
 use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Value\Value;
 use Maartenpaauw\Chart\Tests\TestCase;
 
 class DatasetTest extends TestCase
@@ -15,8 +16,8 @@ class DatasetTest extends TestCase
         parent::setUp();
 
         $this->dataset = new Dataset([
-            new Entry(40000),
-            new Entry(70000),
+            new Entry(new Value(40000)),
+            new Entry(new Value(70000)),
         ], 'Europe');
     }
 

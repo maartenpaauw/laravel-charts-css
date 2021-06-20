@@ -3,10 +3,8 @@
 namespace Maartenpaauw\Chart\Data\Entries;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
 use Maartenpaauw\Chart\Data\Entries\Label\Label;
 use Maartenpaauw\Chart\Data\Entries\Label\LabelContract;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
 use Maartenpaauw\Chart\Data\Entries\Value\ValueContract;
 use Maartenpaauw\Chart\Declarations\Declarations;
 
@@ -16,10 +14,10 @@ class Entry implements EntryContract
 
     private LabelContract $label;
 
-    public function __construct(float $value, string $label = '')
+    public function __construct(ValueContract $value, ?LabelContract $label = null)
     {
-        $this->value = new Value($value, strval($value), new Declarations());
-        $this->label = new Label($label, new ModificationsBag());
+        $this->value = $value;
+        $this->label = $label ?? new Label('');
     }
 
     public function value(): string
