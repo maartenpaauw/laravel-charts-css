@@ -38,6 +38,7 @@ use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
 use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Value\Value;
 
 class MedalsChart extends Chart
 {
@@ -57,19 +58,19 @@ class MedalsChart extends Chart
             new Axes('Country', ['Gold', 'Silver', 'Bronze']),
             [
                 new Dataset([
-                    new Entry(46),
-                    new Entry(37),
-                    new Entry(38),
+                    new Entry(new Value(46)),
+                    new Entry(new Value(37)),
+                    new Entry(new Value(38)),
                 ], 'USA'),
                 new Dataset([
-                    new Entry(27),
-                    new Entry(23),
-                    new Entry(17),
+                    new Entry(new Value(27)),
+                    new Entry(new Value(23)),
+                    new Entry(new Value(17)),
                 ], 'GBR'),
                 new Dataset([
-                    new Entry(26),
-                    new Entry(18),
-                    new Entry(26),
+                    new Entry(new Value(26)),
+                    new Entry(new Value(18)),
+                    new Entry(new Value(26)),
                 ], 'CHN'),
             ]
         );
@@ -104,6 +105,8 @@ use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
 use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Label\Label;
+use Maartenpaauw\Chart\Data\Entries\Value\Value;
 
 // ...
 
@@ -113,9 +116,9 @@ protected function datasets(): DatasetsContract
         new Axes('Type', 'Amount'),
         [
             new Dataset([
-                new Entry(46, 'Gold'),
-                new Entry(37, 'Silver'),
-                new Entry(38, 'Bronze'),
+                new Entry(new Value(46), new Label('Gold')),
+                new Entry(new Value(37), new Label('Silver')),
+                new Entry(new Value(38), new Label('Bronze')),
             ]),
         ]
     );
@@ -130,6 +133,8 @@ use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
 use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Label\Label;
+use Maartenpaauw\Chart\Data\Entries\Value\Value;
 
 // ...
 
@@ -139,10 +144,10 @@ protected function datasets(): DatasetsContract
         new Axes('Type', 'Amount'),
         [
             new Dataset([
-                (new Entry(46, 'Gold'))
+                (new Entry(new Value(46), new Label('Gold')))
                     ->hideLabel(), // <--
-                new Entry(37, 'Silver'),
-                new Entry(38, 'Bronze'),
+                new Entry(new Value(37), new Label('Silver')),
+                new Entry(new Value(38), new Label('Bronze')),
             ]),
         ]
     );
@@ -159,6 +164,7 @@ use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
 use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Value\Value;
 
 // ...
 
@@ -168,15 +174,15 @@ protected function datasets(): DatasetsContract
         new Axes('Country', ['Gold', 'Silver', 'Bronze']),
         [
             (new Dataset([
-                new Entry(46),
-                new Entry(37),
-                new Entry(38),
+                new Entry(new Value(46)),
+                new Entry(new Value(37)),
+                new Entry(new Value(38)),
             ], 'USA'))
                 ->hideLabel(), // <--
             new Dataset([
-                new Entry(27),
-                new Entry(23),
-                new Entry(17),
+                new Entry(new Value(27)),
+                new Entry(new Value(23)),
+                new Entry(new Value(17)),
             ], 'GBR'),
         ]
     );
@@ -305,6 +311,8 @@ use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
 use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Label\Label;
+use Maartenpaauw\Chart\Data\Entries\Value\Value;
 
 // ...
 
@@ -314,10 +322,10 @@ protected function datasets(): DatasetsContract
         new Axes('Type', 'Amount'),
         [
             new Dataset([
-                (new Entry(46, 'Gold'))
+                (new Entry(new Value(46), new Label('Gold')))
                     ->color(new Color('#FFD700')), // <--
-                new Entry(37, 'Silver'),
-                new Entry(38, 'Bronze'),
+                new Entry(new Value(37), new Label('Silver')),
+                new Entry(new Value(38), new Label('Bronze')),
             ]),
         ]
     );
