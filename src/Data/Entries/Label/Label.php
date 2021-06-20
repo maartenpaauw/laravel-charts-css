@@ -11,10 +11,10 @@ class Label implements LabelContract
 
     private ModificationsBag $modifications;
 
-    public function __construct(string $value, ModificationsBag $modifications)
+    public function __construct(string $value, ?ModificationsBag $modifications = null)
     {
         $this->value = $value;
-        $this->modifications = $modifications;
+        $this->modifications = $modifications ?? new ModificationsBag();
     }
 
     public function value(): string

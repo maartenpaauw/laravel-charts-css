@@ -57,4 +57,17 @@ class LabelTest extends TestCase
         $this->assertCount(1, $array);
         $this->assertContains($expectedClass, $classes);
     }
+
+    /** @test */
+    public function it_should_create_an_empty_modifications_bag_when_it_is_not_specified(): void
+    {
+        // Arrange
+        $label = new Label('A');
+
+        // Act
+        $modifications = $label->modifications();
+
+        // Assert
+        $this->assertEmpty($modifications->toArray());
+    }
 }
