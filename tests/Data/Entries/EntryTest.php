@@ -5,8 +5,8 @@ namespace Maartenpaauw\Chart\Tests\Data\Entries;
 use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
 use Maartenpaauw\Chart\Data\Entries\Entry;
 use Maartenpaauw\Chart\Data\Entries\EntryContract;
-use Maartenpaauw\Chart\Data\Label\Label;
 use Maartenpaauw\Chart\Data\Entries\Value\Value;
+use Maartenpaauw\Chart\Data\Label\Label;
 use Maartenpaauw\Chart\Tests\TestCase;
 
 class EntryTest extends TestCase

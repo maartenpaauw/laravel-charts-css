@@ -3,9 +3,9 @@
 namespace Maartenpaauw\Chart\Data\Entries;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
+use Maartenpaauw\Chart\Data\Entries\Value\ValueContract;
 use Maartenpaauw\Chart\Data\Label\Label;
 use Maartenpaauw\Chart\Data\Label\LabelContract;
-use Maartenpaauw\Chart\Data\Entries\Value\ValueContract;
 use Maartenpaauw\Chart\Declarations\Declarations;
 
 class Entry implements EntryContract
