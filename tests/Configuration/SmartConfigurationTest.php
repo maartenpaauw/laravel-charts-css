@@ -11,6 +11,7 @@ use Maartenpaauw\Chart\Configuration\SmartConfiguration;
 use Maartenpaauw\Chart\Data\Axes\Axes;
 use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
+use Maartenpaauw\Chart\Data\Entries\Label\Label;
 use Maartenpaauw\Chart\Identity\Identity;
 use Maartenpaauw\Chart\Legend\Legend;
 use Maartenpaauw\Chart\Types\Column;
@@ -35,8 +36,8 @@ class SmartConfigurationTest extends TestCase
         parent::setUp();
 
         $datasets = new Datasets(new Axes('A', ['B', 'C']), [
-            new Dataset([], 'Dataset 1'),
-            new Dataset([], 'Dataset 2'),
+            new Dataset([], new Label('Dataset 1')),
+            new Dataset([], new Label('Dataset 2')),
         ]);
 
         $this->identity = new Identity('my-chart', 'My chart', new Column());

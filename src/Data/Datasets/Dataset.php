@@ -2,7 +2,6 @@
 
 namespace Maartenpaauw\Chart\Data\Datasets;
 
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
 use Maartenpaauw\Chart\Data\Entries\Entry;
 use Maartenpaauw\Chart\Data\Entries\Label\Label;
 use Maartenpaauw\Chart\Data\Entries\Label\LabelContract;
@@ -13,10 +12,10 @@ class Dataset implements DatasetContract
 
     private LabelContract $label;
 
-    public function __construct(array $entries, string $label = '')
+    public function __construct(array $entries, ?LabelContract $label = null)
     {
         $this->entries = $entries;
-        $this->label = new Label($label, new ModificationsBag());
+        $this->label = $label ?? new Label('');
     }
 
     public function entries(): array

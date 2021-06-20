@@ -6,6 +6,7 @@ use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\DatasetContract;
 use Maartenpaauw\Chart\Data\Datasets\StartingPointDataset;
 use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Label\Label;
 use Maartenpaauw\Chart\Data\Entries\NullEntry;
 use Maartenpaauw\Chart\Data\Entries\StartingPointEntry;
 use Maartenpaauw\Chart\Data\Entries\Value\Value;
@@ -25,7 +26,7 @@ class StartingPointDatasetTest extends TestCase
             new Entry(new Value(10)),
             new Entry(new Value(20)),
             new Entry(new Value(30)),
-        ], 'Dataset #1');
+        ], new Label('Dataset #1'));
 
         $this->startingPointDataset = new StartingPointDataset($this->dataset);
     }

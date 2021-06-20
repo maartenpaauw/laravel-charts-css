@@ -8,6 +8,7 @@ use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
 use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Label\Label;
 use Maartenpaauw\Chart\Data\Entries\Value\Value;
 use Maartenpaauw\Chart\Tests\TestCase;
 
@@ -29,11 +30,11 @@ class DatasetsTest extends TestCase
             new Dataset([
                 new Entry(new Value(100000)),
                 new Entry(new Value(200000)),
-            ], 'Europe'),
+            ], new Label('Europe')),
             new Dataset([
                 new Entry(new Value(400000)),
                 new Entry(new Value(300000)),
-            ], 'Asia'),
+            ], new Label('Asia')),
         ]
         );
     }

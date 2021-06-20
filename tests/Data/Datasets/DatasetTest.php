@@ -4,6 +4,7 @@ namespace Maartenpaauw\Chart\Tests\Data\Datasets;
 
 use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Label\Label;
 use Maartenpaauw\Chart\Data\Entries\Value\Value;
 use Maartenpaauw\Chart\Tests\TestCase;
 
@@ -18,7 +19,7 @@ class DatasetTest extends TestCase
         $this->dataset = new Dataset([
             new Entry(new Value(40000)),
             new Entry(new Value(70000)),
-        ], 'Europe');
+        ], new Label('Europe'));
     }
 
     /** @test */
@@ -40,7 +41,7 @@ class DatasetTest extends TestCase
     }
 
     /** @test */
-    public function it_should_be_possible_to_skip_the_label(): void
+    public function it_should_be_an_empty_label_by_default(): void
     {
         // Arrange
         $dataset = new Dataset([]);
