@@ -59,4 +59,30 @@ class ValueTest extends TestCase
         // Assert
         $this->assertCount($expectedCount, $declarations->toArray());
     }
+
+    /** @test */
+    public function it_should_use_the_raw_value_as_display_when_no_specific_display_is_given(): void
+    {
+        // Arrange
+        $value = new Value(10);
+
+        // Act
+        $display = $value->display();
+
+        // Assert
+        $this->assertEquals('10', $display);
+    }
+
+    /** @test */
+    public function it_should_create_an_empty_declarations_container_when_it_is_not_specified(): void
+    {
+        // Arrange
+        $value = new Value(10);
+
+        // Act
+        $declarations = $value->declarations();
+
+        // Assert
+        $this->assertEmpty($declarations->toArray());
+    }
 }

@@ -12,11 +12,11 @@ class Value implements ValueContract
 
     private Declarations $declarations;
 
-    public function __construct(float $raw, string $display, Declarations $declarations)
+    public function __construct(float $raw, ?string $display = null, ?Declarations $declarations = null)
     {
         $this->raw = $raw;
-        $this->display = $display;
-        $this->declarations = $declarations;
+        $this->display = $display ?? strval($raw);
+        $this->declarations = $declarations ?? new Declarations();
     }
 
     public function raw(): float
