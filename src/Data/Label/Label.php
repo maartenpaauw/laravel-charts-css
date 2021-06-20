@@ -1,6 +1,6 @@
 <?php
 
-namespace Maartenpaauw\Chart\Data\Entries\Label;
+namespace Maartenpaauw\Chart\Data\Label;
 
 use Maartenpaauw\Chart\Appearance\HideLabel;
 use Maartenpaauw\Chart\Appearance\ModificationsBag;

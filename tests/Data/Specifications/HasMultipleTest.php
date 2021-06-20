@@ -5,7 +5,7 @@ namespace Maartenpaauw\Chart\Tests\Data\Specifications;
 use Maartenpaauw\Chart\Data\Axes\NullAxes;
 use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
-use Maartenpaauw\Chart\Data\Entries\Label\Label;
+use Maartenpaauw\Chart\Data\Label\Label;
 use Maartenpaauw\Chart\Data\Specifications\HasMultiple;
 use Maartenpaauw\Chart\Tests\TestCase;
 

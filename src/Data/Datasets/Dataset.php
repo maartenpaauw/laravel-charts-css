@@ -3,8 +3,8 @@
 namespace Maartenpaauw\Chart\Data\Datasets;
 
 use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\Label\Label;
-use Maartenpaauw\Chart\Data\Entries\Label\LabelContract;
+use Maartenpaauw\Chart\Data\Label\Label;
+use Maartenpaauw\Chart\Data\Label\LabelContract;
 
 class Dataset implements DatasetContract
 {

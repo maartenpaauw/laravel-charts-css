@@ -3,7 +3,7 @@
 namespace Maartenpaauw\Chart\Data\Entries;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
-use Maartenpaauw\Chart\Data\Entries\Label\LabelContract;
+use Maartenpaauw\Chart\Data\Label\LabelContract;
 use Maartenpaauw\Chart\Declarations\Declarations;
 
 interface EntryContract

@@ -9,7 +9,7 @@ use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chart\Data\Datasets\StartingPointDataset;
 use Maartenpaauw\Chart\Data\Datasets\StartingPointDatasets;
 use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\Label\Label;
+use Maartenpaauw\Chart\Data\Label\Label;
 use Maartenpaauw\Chart\Data\Entries\Value\Value;
 use Maartenpaauw\Chart\Tests\TestCase;
 

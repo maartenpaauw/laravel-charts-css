@@ -3,8 +3,8 @@
 namespace Maartenpaauw\Chart\Tests\Data\Entries\Label;
 
 use Maartenpaauw\Chart\Appearance\ModificationsBag;
-use Maartenpaauw\Chart\Data\Entries\Label\Label;
-use Maartenpaauw\Chart\Data\Entries\Label\LabelContract;
+use Maartenpaauw\Chart\Data\Label\Label;
+use Maartenpaauw\Chart\Data\Label\LabelContract;
 use PHPUnit\Framework\TestCase;
 
 class LabelTest extends TestCase

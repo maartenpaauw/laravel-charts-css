@@ -3,7 +3,7 @@
 namespace Maartenpaauw\Chart\Data\Datasets;
 
 use Maartenpaauw\Chart\Data\Entries\EntryContract;
-use Maartenpaauw\Chart\Data\Entries\Label\LabelContract;
+use Maartenpaauw\Chart\Data\Label\LabelContract;
 use Maartenpaauw\Chart\Data\Entries\NullEntry;
 use Maartenpaauw\Chart\Data\Entries\StartingPointEntry;
 

@@ -4,7 +4,7 @@ namespace Maartenpaauw\Chart\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
-use Maartenpaauw\Chart\Data\Entries\Label\LabelContract;
+use Maartenpaauw\Chart\Data\Label\LabelContract;
 
 class Label extends Component
 {
