@@ -11,6 +11,7 @@ use Maartenpaauw\Chart\Configuration\Configuration;
 use Maartenpaauw\Chart\Configuration\ConfigurationContract;
 use Maartenpaauw\Chart\Configuration\SmartConfiguration;
 use Maartenpaauw\Chart\Configuration\Specifications\NeedsStartingPoint;
+use Maartenpaauw\Chart\Data\Datasets\CalculatedDatasets;
 use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chart\Data\Datasets\StartingPointDatasets;
 use Maartenpaauw\Chart\Identity\Identity;
@@ -72,11 +73,13 @@ abstract class Chart extends Component
 
     private function prepareDatasets(): DatasetsContract
     {
+        $calculatedDatasets = new CalculatedDatasets($this->datasets());
+
         if ((new NeedsStartingPoint())->isSatisfiedBy($this->configuration())) {
-            return new StartingPointDatasets($this->datasets());
+            return new StartingPointDatasets($calculatedDatasets);
         }
 
-        return $this->datasets();
+        return $calculatedDatasets;
     }
 
     public function render(): View
