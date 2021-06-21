@@ -2,9 +2,9 @@
 
 namespace Maartenpaauw\Chart\Data\Datasets;
 
+use Maartenpaauw\Chart\Data\Entries\CalculatedEntry;
 use Maartenpaauw\Chart\Data\Entries\EntryContract;
 use Maartenpaauw\Chart\Data\Label\LabelContract;
-use Maartenpaauw\Chart\Declarations\SizeDeclaration;
 
 class CalculatedDataset implements DatasetContract
 {
@@ -21,9 +21,7 @@ class CalculatedDataset implements DatasetContract
     public function entries(): array
     {
         return array_map(function (EntryContract $entry) {
-            $entry->declarations()->add(new SizeDeclaration($entry->raw(), $this->max));
-
-            return $entry;
+            return new CalculatedEntry($entry, $this->max);
         }, $this->origin->entries());
     }
 
