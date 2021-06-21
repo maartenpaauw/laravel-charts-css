@@ -13,15 +13,14 @@ class StartingPointEntryTest extends TestCase
 {
     private EntryContract $origin;
 
-    private EntryContract $entry;
+    private EntryContract $startingPointEntry;
 
     protected function setUp(): void
     {
         parent::setUp();
 
         $this->origin = new Entry(new Value(10));
-
-        $this->entry = new StartingPointEntry(
+        $this->startingPointEntry = new StartingPointEntry(
             $this->origin,
             new Entry(new Value(20)),
             30,
@@ -31,26 +30,26 @@ class StartingPointEntryTest extends TestCase
     /** @test */
     public function it_should_return_the_origin_value(): void
     {
-        $this->assertEquals($this->origin->value(), $this->entry->value());
+        $this->assertEquals($this->origin->value(), $this->startingPointEntry->value());
     }
 
     /** @test */
     public function it_should_return_the_origin_raw_value(): void
     {
-        $this->assertEquals($this->origin->raw(), $this->entry->raw());
+        $this->assertEquals($this->origin->raw(), $this->startingPointEntry->raw());
     }
 
     /** @test */
     public function it_should_return_the_origin_label(): void
     {
-        $this->assertEquals($this->origin->label(), $this->entry->label());
+        $this->assertEquals($this->origin->label(), $this->startingPointEntry->label());
     }
 
     /** @test */
     public function it_should_add_the_start_declaration_correctly(): void
     {
         // Act
-        $declarations = $this->entry->declarations();
+        $declarations = $this->startingPointEntry->declarations();
 
         // Assert
         $this->assertStringContainsString('--start: calc(20 / 30);', $declarations->toString());
@@ -63,20 +62,17 @@ class StartingPointEntryTest extends TestCase
         $color = new Color('red');
 
         // Act
-        $this->entry->color($color);
+        $this->startingPointEntry->color($color);
 
         // Assert
         $this->assertEquals('--color: red;', $this->origin->declarations()->toString());
     }
 
     /** @test */
-    public function it_should_hide_modify_the_origin_label_when_hiding_it(): void
+    public function it_should_modify_the_origin_label_when_hiding_it(): void
     {
-        // Arrange
-
         // Act
-        $this->entry->hideLabel();
-
+        $this->startingPointEntry->hideLabel();
         $modifications = $this->origin->label()->modifications();
 
         // Assert
