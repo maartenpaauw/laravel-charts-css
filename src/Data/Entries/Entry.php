@@ -30,11 +30,6 @@ class Entry implements EntryContract
         return $this->value->raw();
     }
 
-    public function start(): float
-    {
-        return $this->value->raw();
-    }
-
     public function label(): LabelContract
     {
         return $this->label;

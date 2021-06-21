@@ -62,4 +62,21 @@ class DeclarationsTest extends TestCase
         $this->assertInstanceOf(RowColorDeclaration::class, $red);
         $this->assertInstanceOf(RowColorDeclaration::class, $green);
     }
+
+    /** @test */
+    public function it_should_be_possible_to_merge_two_declarations(): void
+    {
+        // Arrange
+        $exectedString = '--color-1: red; --color-2: green; --color-3: blue;';
+        $myDeclarations = new Declarations([
+            new RowColorDeclaration('blue', 3),
+        ]);
+
+        // Act
+        $declarations = $this->declarations->merge($myDeclarations);
+
+        // Assert
+        $this->assertCount(3, $declarations->toArray());
+        $this->assertEquals($exectedString, $declarations->toString());
+    }
 }

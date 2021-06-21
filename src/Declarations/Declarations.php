@@ -21,6 +21,11 @@ class Declarations implements DeclarationContract
         return $this;
     }
 
+    public function merge(Declarations $declarations): self
+    {
+        return new static(array_merge($this->toArray(), $declarations->toArray()));
+    }
+
     public function toString(): string
     {
         return implode(' ', array_map(function (DeclarationContract $declaration) {

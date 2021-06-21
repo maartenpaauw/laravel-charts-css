@@ -11,9 +11,12 @@ class StartingPointDataset implements DatasetContract
 {
     private DatasetContract $origin;
 
-    public function __construct(DatasetContract $origin)
+    private float $max;
+
+    public function __construct(DatasetContract $origin, float $max)
     {
         $this->origin = $origin;
+        $this->max = $max;
     }
 
     public function entries(): array
@@ -21,7 +24,7 @@ class StartingPointDataset implements DatasetContract
         $entries = array_values($this->origin->entries());
 
         return array_map(function (EntryContract $entry, int $key) use ($entries) {
-            return new StartingPointEntry($entry, $entries[--$key] ?? new NullEntry());
+            return new StartingPointEntry($entry, $entries[--$key] ?? new NullEntry(), $this->max);
         }, $entries, array_keys($entries));
     }
 

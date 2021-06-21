@@ -31,7 +31,7 @@ class StartingPointDatasets implements DatasetsContract
     public function toArray(): array
     {
         return array_map(function (DatasetContract $dataset) {
-            return new StartingPointDataset($dataset);
+            return new StartingPointDataset($dataset, $this->origin->max());
         }, $this->origin->toArray());
     }
 }

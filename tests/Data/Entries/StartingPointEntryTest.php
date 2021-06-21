@@ -13,8 +13,6 @@ class StartingPointEntryTest extends TestCase
 {
     private EntryContract $origin;
 
-    private EntryContract $previous;
-
     private EntryContract $entry;
 
     protected function setUp(): void
@@ -22,8 +20,12 @@ class StartingPointEntryTest extends TestCase
         parent::setUp();
 
         $this->origin = new Entry(new Value(10));
-        $this->previous = new Entry(new Value(20));
-        $this->entry = new StartingPointEntry($this->origin, $this->previous);
+
+        $this->entry = new StartingPointEntry(
+            $this->origin,
+            new Entry(new Value(20)),
+            30,
+        );
     }
 
     /** @test */
@@ -39,21 +41,19 @@ class StartingPointEntryTest extends TestCase
     }
 
     /** @test */
-    public function it_should_return_the_previous_raw_value_as_start_value(): void
-    {
-        $this->assertEquals($this->previous->raw(), $this->entry->start());
-    }
-
-    /** @test */
     public function it_should_return_the_origin_label(): void
     {
         $this->assertEquals($this->origin->label(), $this->entry->label());
     }
 
     /** @test */
-    public function it_should_return_the_origin_declarations(): void
+    public function it_should_add_the_start_declaration_correctly(): void
     {
-        $this->assertEquals($this->origin->declarations(), $this->entry->declarations());
+        // Act
+        $declarations = $this->entry->declarations();
+
+        // Assert
+        $this->assertStringContainsString('--start: calc(20 / 30);', $declarations->toString());
     }
 
     /** @test */

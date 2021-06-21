@@ -16,7 +16,7 @@
                 @foreach($dataset->entries() as $entry)
                     <tr>
                         <x-charts-css-label :label="$entry->label()" />
-                        <td style="--start: calc({{ $entry->start() }} / {{ $dataset->max() }}); {{ $entry->declarations()->toString() }}">
+                        <td style="{{ $entry->declarations()->toString() }}">
                             <span class="data">{!! $entry->value() !!}</span>
                         </td>
                     </tr>
@@ -25,7 +25,7 @@
                 <tr>
                     <x-charts-css-label :label="$dataset->label()" />
                     @foreach($dataset->entries() as $entry)
-                        <td style="--start: calc({{ $entry->start() }} / {{ $datasets->max() }}); {{ $entry->declarations()->toString() }}">
+                        <td style="{{ $entry->declarations()->toString() }}">
                             <span class="data">{!! $entry->value() !!}</span>
                         </td>
                     @endforeach

@@ -20,11 +20,6 @@ class NullEntry implements EntryContract
         return 0;
     }
 
-    public function start(): float
-    {
-        return 0;
-    }
-
     public function declarations(): Declarations
     {
         return new Declarations();

@@ -12,8 +12,6 @@ interface EntryContract
 
     public function raw(): float;
 
-    public function start(): float;
-
     public function label(): LabelContract;
 
     public function declarations(): Declarations;
