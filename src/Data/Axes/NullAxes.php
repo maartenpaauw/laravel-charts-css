@@ -11,6 +11,6 @@ class NullAxes implements AxesContract
 
     public function data(): array
     {
-        return [''];
+        return [];
     }
 }
