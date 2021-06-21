@@ -5,7 +5,7 @@ namespace Maartenpaauw\Chart\Tests\Data\Entries\Label;
 use Maartenpaauw\Chart\Appearance\ModificationsBag;
 use Maartenpaauw\Chart\Data\Label\Label;
 use Maartenpaauw\Chart\Data\Label\LabelContract;
-use PHPUnit\Framework\TestCase;
+use Maartenpaauw\Chart\Tests\TestCase;
 
 class LabelTest extends TestCase
 {

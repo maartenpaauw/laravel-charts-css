@@ -14,8 +14,8 @@ use Maartenpaauw\Chart\Data\Datasets\Datasets;
 use Maartenpaauw\Chart\Data\Label\Label;
 use Maartenpaauw\Chart\Identity\Identity;
 use Maartenpaauw\Chart\Legend\Legend;
+use Maartenpaauw\Chart\Tests\TestCase;
 use Maartenpaauw\Chart\Types\Column;
-use PHPUnit\Framework\TestCase;
 
 class SmartConfigurationTest extends TestCase
 {
