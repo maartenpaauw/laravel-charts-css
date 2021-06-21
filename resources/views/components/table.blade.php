@@ -16,18 +16,14 @@
                 @foreach($dataset->entries() as $entry)
                     <tr>
                         <x-charts-css-label :label="$entry->label()" />
-                        <td style="{{ $entry->declarations()->toString() }}">
-                            <span class="data">{!! $entry->value() !!}</span>
-                        </td>
+                        <x-charts-css-entry :entry="$entry" />
                     </tr>
                 @endforeach
             @else
                 <tr>
                     <x-charts-css-label :label="$dataset->label()" />
                     @foreach($dataset->entries() as $entry)
-                        <td style="{{ $entry->declarations()->toString() }}">
-                            <span class="data">{!! $entry->value() !!}</span>
-                        </td>
+                        <x-charts-css-entry :entry="$entry" />
                     @endforeach
                 </tr>
             @endif
