@@ -1,3 +1,1 @@
-<td style="{{ $styling }}">
-    <span class="data">{!! $value !!}</span>
-</td>
+<td style="{{ $styling }}">@if($value)<span class="data">{!! $value !!}</span>@endif</td>
