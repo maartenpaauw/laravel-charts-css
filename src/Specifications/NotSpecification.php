@@ -16,6 +16,6 @@ class NotSpecification implements BasicSpecification
 
     public function isSatisfiedBy($entity): bool
     {
-        return !$this->specification->isSatisfiedBy($entity);
+        return ! $this->specification->isSatisfiedBy($entity);
     }
 }

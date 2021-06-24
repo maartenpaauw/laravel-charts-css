@@ -14,7 +14,7 @@ class AndSpecification implements BasicSpecification
     public function isSatisfiedBy($entity): bool
     {
         foreach ($this->specifications as $specification) {
-            if (!$specification->isSatisfiedBy($entity)) {
+            if (! $specification->isSatisfiedBy($entity)) {
                 return false;
             }
         }
