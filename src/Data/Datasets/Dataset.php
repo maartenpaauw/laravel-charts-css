@@ -12,7 +12,7 @@ class Dataset implements DatasetContract
 
     private LabelContract $label;
 
-    public function __construct(array $entries, ?LabelContract $label = null)
+    public function __construct(array $entries = [], ?LabelContract $label = null)
     {
         $this->entries = $entries;
         $this->label = $label ?? new Label('');

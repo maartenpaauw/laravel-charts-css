@@ -63,4 +63,17 @@ class DatasetTest extends TestCase
         // Assert
         $this->assertContains('hide-label', $classes);
     }
+
+    /** @test */
+    public function it_should_have_no_entries_by_default(): void
+    {
+        // Arrange
+        $dataset = new Dataset();
+
+        // Act
+        $entries = $dataset->entries();
+
+        // Assert
+        $this->assertEmpty($entries);
+    }
 }
