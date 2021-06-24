@@ -2,6 +2,7 @@
     @hasHeading($configuration)
         <x-charts-css-heading heading="{{ $configuration->identity()->description() }}"/>
     @endhasHeading
+    @if($datasets->axes()->primary() || $datasets->axes()->data())
     <thead>
         <tr>
             <th scope="col">{{ $datasets->axes()->primary() }}</th>
@@ -10,6 +11,7 @@
             @endforeach
         </tr>
     </thead>
+    @endif
     <tbody>
         @foreach($datasets->toArray() as $dataset)
             @if($datasets->size() === 1)
