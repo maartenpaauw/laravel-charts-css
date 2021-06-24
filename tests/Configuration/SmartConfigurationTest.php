@@ -9,8 +9,11 @@ use Maartenpaauw\Chart\Configuration\Configuration;
 use Maartenpaauw\Chart\Configuration\ConfigurationContract;
 use Maartenpaauw\Chart\Configuration\SmartConfiguration;
 use Maartenpaauw\Chart\Data\Axes\Axes;
+use Maartenpaauw\Chart\Data\Axes\NullAxes;
 use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
+use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Value\Value;
 use Maartenpaauw\Chart\Data\Label\Label;
 use Maartenpaauw\Chart\Identity\Identity;
 use Maartenpaauw\Chart\Legend\Legend;
@@ -80,8 +83,6 @@ class SmartConfigurationTest extends TestCase
     /** @test */
     public function it_should_not_add_any_labels_to_the_legend_when_it_is_configured_manually(): void
     {
-        // Arrange
-
         // Act
         $this->legend->withLabel('My label');
 
@@ -137,5 +138,85 @@ class SmartConfigurationTest extends TestCase
     {
         $this->assertCount(0, $this->configuration->modifications()->toArray());
         $this->assertCount(3, $this->smartConfiguration->modifications()->toArray());
+    }
+
+    /** @test */
+    public function it_should_have_the_show_labels_modification_when_a_single_dataset_with_labels_is_configured(): void
+    {
+        // Arrange
+        $datasets = new Datasets(
+            new NullAxes(),
+            [
+                new Dataset([
+                    new Entry(new Value(10), new Label('Label A')),
+                    new Entry(new Value(10), new Label('Label B')),
+                ]),
+            ],
+        );
+
+        // Act
+        $smartConfiguration = new SmartConfiguration($this->configuration, $datasets);
+
+        // Assert
+        $this->assertContains('show-labels', $smartConfiguration->modifications()->classes());
+    }
+
+    /** @test */
+    public function it_should_not_have_the_show_labels_modification_when_a_single_dataset_has_no_labels_configured(): void
+    {
+        // Arrange
+        $datasets = new Datasets(
+            new NullAxes(),
+            [
+                new Dataset([
+                    new Entry(new Value(10)),
+                    new Entry(new Value(10)),
+                ]),
+            ],
+        );
+
+        // Act
+        $smartConfiguration = new SmartConfiguration($this->configuration, $datasets);
+
+        // Assert
+        $this->assertNotContains('show-labels', $smartConfiguration->modifications()->classes());
+    }
+
+    /** @test */
+    public function it_should_have_the_show_labels_modification_when_multiple_datasets_have_labels_configured(): void
+    {
+        // Arrange
+        $datasets = new Datasets(
+            new NullAxes(),
+            [
+                new Dataset([], new Label('Label A')),
+                new Dataset([], new Label('Label B')),
+            ],
+        );
+
+        // Act
+        $smartConfiguration = new SmartConfiguration($this->configuration, $datasets);
+
+        // Assert
+        $this->assertContains('show-labels', $smartConfiguration->modifications()->classes());
+    }
+
+    /** @test */
+    public function it_should_have_the_show_labels_modification_when_there_are_no_datasets_with_a_label(): void
+    {
+        // Arrange
+        $datasets = new Datasets(
+            new NullAxes(),
+            [
+                new Dataset(),
+                new Dataset(),
+            ],
+        );
+
+        // Act
+        $smartConfiguration = new SmartConfiguration($this->configuration, $datasets);
+
+        // Assert
+        $this->assertNotContains('show-labels', $smartConfiguration->modifications()->classes());
     }
 }
