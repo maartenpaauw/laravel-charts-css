@@ -48,6 +48,13 @@ class CalculatedEntry implements EntryContract
         return $this->origin->color($color);
     }
 
+    public function start(float $value): EntryContract
+    {
+        $this->origin->start($value);
+
+        return $this;
+    }
+
     public function hideLabel(): EntryContract
     {
         $this->origin->hideLabel();

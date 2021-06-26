@@ -7,6 +7,7 @@ use Maartenpaauw\Chart\Data\Entries\Value\ValueContract;
 use Maartenpaauw\Chart\Data\Label\Label;
 use Maartenpaauw\Chart\Data\Label\LabelContract;
 use Maartenpaauw\Chart\Declarations\Declarations;
+use Maartenpaauw\Chart\Declarations\StartDeclaration;
 
 class Entry implements EntryContract
 {
@@ -43,6 +44,13 @@ class Entry implements EntryContract
     public function color(ColorContract $color): EntryContract
     {
         $this->value->declarations()->add($color->declaration());
+
+        return $this;
+    }
+
+    public function start(float $value): EntryContract
+    {
+        $this->value->declarations()->add(new StartDeclaration($value, 1));
 
         return $this;
     }

@@ -89,6 +89,16 @@ class EntryTest extends TestCase
     }
 
     /** @test */
+    public function it_should_be_possible_to_set_the_start_declaration(): void
+    {
+        // Act
+        $this->entry->start(10000);
+
+        // Assert
+        $this->assertEquals('--start: calc(10000 / 1);', $this->entry->declarations()->toString());
+    }
+
+    /** @test */
     public function it_should_be_possible_to_hide_the_label(): void
     {
         // Act

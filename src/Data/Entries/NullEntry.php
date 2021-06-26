@@ -30,6 +30,11 @@ class NullEntry implements EntryContract
         return $this;
     }
 
+    public function start(float $value): EntryContract
+    {
+        return $this;
+    }
+
     public function label(): LabelContract
     {
         return new Label('-', new ModificationsBag());

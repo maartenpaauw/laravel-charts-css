@@ -43,13 +43,13 @@ class StartingPointDatasetTest extends TestCase
     }
 
     /** @test */
-    public function it_should_wrap_each_entry_within_a_starting_point_entry_decorator(): void
+    public function it_should_wrap_all_except_the_first_entry_within_a_starting_point_entry_decorator(): void
     {
         // Act
-        [$startingPointEntryA, $startingPointEntryB, $startingPointEntryC] = $this->startingPointDataset->entries();
+        [$entryA, $startingPointEntryB, $startingPointEntryC] = $this->startingPointDataset->entries();
 
         // Assert
-        $this->assertInstanceOf(StartingPointEntry::class, $startingPointEntryA);
+        $this->assertInstanceOf(Entry::class, $entryA);
         $this->assertInstanceOf(StartingPointEntry::class, $startingPointEntryB);
         $this->assertInstanceOf(StartingPointEntry::class, $startingPointEntryC);
     }

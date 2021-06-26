@@ -51,6 +51,11 @@ class StartingPointEntry implements EntryContract
         return $this->origin->color($color);
     }
 
+    public function start(float $value): EntryContract
+    {
+        return $this;
+    }
+
     public function hideLabel(): EntryContract
     {
         $this->origin->hideLabel();

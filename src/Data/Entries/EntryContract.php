@@ -18,5 +18,7 @@ interface EntryContract
 
     public function color(ColorContract $color): EntryContract;
 
+    public function start(float $value): EntryContract;
+
     public function hideLabel(): EntryContract;
 }

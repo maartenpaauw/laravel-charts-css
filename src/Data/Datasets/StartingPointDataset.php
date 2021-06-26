@@ -3,7 +3,6 @@
 namespace Maartenpaauw\Chart\Data\Datasets;
 
 use Maartenpaauw\Chart\Data\Entries\EntryContract;
-use Maartenpaauw\Chart\Data\Entries\NullEntry;
 use Maartenpaauw\Chart\Data\Entries\StartingPointEntry;
 use Maartenpaauw\Chart\Data\Label\LabelContract;
 
@@ -22,10 +21,11 @@ class StartingPointDataset implements DatasetContract
     public function entries(): array
     {
         $entries = array_values($this->origin->entries());
+        $first = array_shift($entries);
 
-        return array_map(function (EntryContract $entry, int $key) use ($entries) {
-            return new StartingPointEntry($entry, $entries[--$key] ?? new NullEntry(), $this->max);
-        }, $entries, array_keys($entries));
+        return array_merge([$first], array_map(function (EntryContract $entry, int $key) use ($first, $entries) {
+            return new StartingPointEntry($entry, $entries[--$key] ?? $first, $this->max);
+        }, $entries, array_keys($entries)));
     }
 
     public function max(): float

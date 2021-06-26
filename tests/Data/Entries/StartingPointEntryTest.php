@@ -53,6 +53,7 @@ class StartingPointEntryTest extends TestCase
 
         // Assert
         $this->assertStringContainsString('--start: calc(20 / 30);', $declarations->toString());
+        $this->assertCount(1, $this->startingPointEntry->declarations()->toArray());
     }
 
     /** @test */
@@ -66,6 +67,17 @@ class StartingPointEntryTest extends TestCase
 
         // Assert
         $this->assertEquals('--color: red;', $this->origin->declarations()->toString());
+    }
+
+    /** @test */
+    public function it_should_not_overwrite_the_start_declaration(): void
+    {
+        // Act
+        $this->startingPointEntry->start(0.2);
+
+        // Assert
+        $this->assertStringNotContainsString('0.2', $this->startingPointEntry->declarations()->toString());
+        $this->assertCount(1, $this->startingPointEntry->declarations()->toArray());
     }
 
     /** @test */

@@ -223,6 +223,34 @@ At the moment there is support for 4 types of charts:
 
 By default each generated chart is a `Column` chart. If you want to change the chart type you can do it by overwriting the `type` method.
 
+When using an `area` or `line` chart, you must determine the start of the chart by calling the `start` method on the first
+entry like this:
+
+```php
+use Maartenpaauw\Chart\Data\Axes\Axes;
+use Maartenpaauw\Chart\Data\Datasets\Dataset;
+use Maartenpaauw\Chart\Data\Datasets\Datasets;
+use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Value\Value;
+use Maartenpaauw\Chart\Data\Label\Label;
+
+// ...
+
+protected function datasets(): DatasetsContract
+{
+    return new Datasets(
+        new Axes('Type', 'Amount'),
+        new Dataset([
+            (new Entry(new Value(46), new Label('Gold')))
+                ->start(10),
+            new Entry(new Value(37), new Label('Silver')),
+            new Entry(new Value(38), new Label('Bronze')),
+        ]),
+    );
+}
+```
+
 ### Legend
 
 ```php

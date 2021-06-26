@@ -49,6 +49,18 @@ class CalculatedEntryTest extends TestCase
 
         // Assert
         $this->assertEquals('--color: red;', $this->origin->declarations()->toString());
+        $this->assertCount(2, $this->calculatedEntry->declarations()->toArray());
+    }
+
+    /** @test */
+    public function it_should_add_the_given_start_to_its_origin_declarations_bag(): void
+    {
+        // Act
+        $this->calculatedEntry->start(10000);
+
+        // Assert
+        $this->assertEquals('--start: calc(10000 / 1);', $this->origin->declarations()->toString());
+        $this->assertCount(2, $this->calculatedEntry->declarations()->toArray());
     }
 
     /** @test */

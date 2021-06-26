@@ -50,6 +50,16 @@ class NullEntryTest extends TestCase
     }
 
     /** @test */
+    public function it_should_not_add_the_start_declaration(): void
+    {
+        // Act
+        $this->entry->start(0.3);
+
+        // Assert
+        $this->assertEmpty($this->entry->declarations()->toArray());
+    }
+
+    /** @test */
     public function it_should_use_as_dash_as_label(): void
     {
         // Arrange
