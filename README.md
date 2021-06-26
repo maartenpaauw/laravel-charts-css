@@ -264,6 +264,7 @@ protected function legend(): Legend
         ->withLabel('Gold')
         ->withLabels(['Silver', 'Bronze'])
         ->inline()
+        ->ordered()
         ->squares();
 }
 ```
@@ -280,6 +281,9 @@ The labels do not have any style by default. You can change the shape by calling
 - `rectangles()`
 - `rhombuses()`
 - `squares()`
+
+By default the HTML tag `ul` is used to display the legend on the screen. If you prefer an `ol` HTML tag chain the
+`ordered()` method.
 
 ### Colorscheme
 
@@ -602,6 +606,20 @@ protected function configuration(): ConfigurationContract
     );
 }
 ````
+
+### Wrapper div
+
+If a legend is configured the chart will be wrapped in a `div`. If you want to change the HTML tag you can overwrite the
+`tag()` method.
+
+```php
+// ...
+
+protected function tag(): string
+{
+    return 'article';
+}
+```
 
 ## Testing
 

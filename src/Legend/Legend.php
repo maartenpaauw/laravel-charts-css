@@ -18,13 +18,16 @@ class Legend
 
     private ModificationsBag $modificationsBag;
 
+    private string $tag;
+
     /**
      * @param Modification[] $modifications
      */
-    public function __construct(array $labels = [], array $modifications = [])
+    public function __construct(array $labels = [], array $modifications = [], string $tag = 'ul')
     {
         $this->labels = $labels;
         $this->modificationsBag = new ModificationsBag($modifications);
+        $this->tag = $tag;
     }
 
     public function labels(): array
@@ -100,5 +103,19 @@ class Legend
     public function classes(): array
     {
         return $this->modificationsBag->classes();
+    }
+
+    public function ordered(): Legend
+    {
+        return new Legend(
+            $this->labels,
+            $this->modificationsBag->toArray(),
+            'ol',
+        );
+    }
+
+    public function tag(): string
+    {
+        return $this->tag;
     }
 }

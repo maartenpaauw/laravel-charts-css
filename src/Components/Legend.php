@@ -20,6 +20,7 @@ class Legend extends Component
         return view('charts-css::components.legend', [
             'labels' => $this->configuration->legend()->labels(),
             'classes' => $this->configuration->legend()->classes(),
+            'tag' => $this->configuration->legend()->tag(),
         ]);
     }
 }

@@ -3,10 +3,10 @@
 @endhasColorscheme
 
 @hasLabels($configuration)
-    <div id="{{ $id }}">
+    <{{ $tag }} id="{{ $id }}">
         <x-charts-css-table :datasets="$datasets" :configuration="$configuration"/>
         <x-charts-css-legend :configuration="$configuration"/>
-    </div>
+    </{{ $tag }}>
 @else
     <x-charts-css-table id="{{ $id }}" :datasets="$datasets" :configuration="$configuration"/>
 @endhasLabels

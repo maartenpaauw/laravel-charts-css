@@ -27,6 +27,11 @@ abstract class Chart extends Component
 
     abstract protected function datasets(): DatasetsContract;
 
+    protected function tag(): string
+    {
+        return 'div';
+    }
+
     protected function type(): ChartType
     {
         return new Column();
@@ -86,6 +91,7 @@ abstract class Chart extends Component
     {
         return view('charts-css::components.chart', [
             'id' => $this->identity()->id(),
+            'tag' => $this->tag(),
             'configuration' => $this->configuration(),
             'datasets' => $this->prepareDatasets(),
         ]);

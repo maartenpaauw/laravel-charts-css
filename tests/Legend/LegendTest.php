@@ -180,4 +180,30 @@ class LegendTest extends TestCase
         $this->assertCount(1, $legend->classes());
         $this->assertContains('legend-square', $legend->classes());
     }
+
+    /** @test */
+    public function it_should_use_the_ul_html_tag_as_default(): void
+    {
+        // Arrange
+        $expectedTag = 'ul';
+
+        // Act
+        $tag = $this->legend->tag();
+
+        // Assert
+        $this->assertEquals($expectedTag, $tag);
+    }
+
+    /** @test */
+    public function it_should_be_possible_to_define_the_tag(): void
+    {
+        // Arrange
+        $expectedTag = 'ol';
+
+        // Act
+        $tag = $this->legend->ordered()->tag();
+
+        // Assert
+        $this->assertEquals($expectedTag, $tag);
+    }
 }
