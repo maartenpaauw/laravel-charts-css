@@ -28,15 +28,13 @@ class DataExample3 extends Chart
     {
         return new Datasets(
             new NullAxes(),
-            [
-                new Dataset([
-                    new Entry(new Value(0.4, '')),
-                    new Entry(new Value(0.6, '')),
-                    new Entry(new Value(0.75, '')),
-                    new Entry(new Value(0.9, '')),
-                    new Entry(new Value(1, '')),
-                ]),
-            ],
+            new Dataset([
+                new Entry(new Value(0.4, '')),
+                new Entry(new Value(0.6, '')),
+                new Entry(new Value(0.75, '')),
+                new Entry(new Value(0.9, '')),
+                new Entry(new Value(1, '')),
+            ]),
         );
     }
 

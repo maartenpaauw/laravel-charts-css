@@ -25,16 +25,14 @@ class StartingPointDatasetsTest extends TestCase
 
         $this->datasets = new Datasets(
             new Axes('Dataset', 'Value'),
-            [
-                new Dataset([
-                    new Entry(new Value(10)),
-                    new Entry(new Value(20)),
-                ], new Label('Dataset #1')),
-                new Dataset([
-                    new Entry(new Value(10)),
-                    new Entry(new Value(20)),
-                ], new Label('Dataset #2')),
-            ],
+            new Dataset([
+                new Entry(new Value(10)),
+                new Entry(new Value(20)),
+            ], new Label('Dataset #1')),
+            new Dataset([
+                new Entry(new Value(10)),
+                new Entry(new Value(20)),
+            ], new Label('Dataset #2')),
         );
 
         $this->startingPointDatasets = new StartingPointDatasets($this->datasets);

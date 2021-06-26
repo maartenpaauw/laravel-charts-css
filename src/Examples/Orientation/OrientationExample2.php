@@ -38,15 +38,13 @@ class OrientationExample2 extends Chart
     {
         return new Datasets(
             new Axes('Year', 'Progress'),
-            [
-                new Dataset([
-                    new Entry(new Value(0.2, ''), new Label('2016')),
-                    new Entry(new Value(0.4, ''), new Label('2017')),
-                    new Entry(new Value(0.6, ''), new Label('2018')),
-                    new Entry(new Value(0.8, ''), new Label('2019')),
-                    new Entry(new Value(1, ''), new Label('2020')),
-                ]),
-            ],
+            new Dataset([
+                new Entry(new Value(0.2, ''), new Label('2016')),
+                new Entry(new Value(0.4, ''), new Label('2017')),
+                new Entry(new Value(0.6, ''), new Label('2018')),
+                new Entry(new Value(0.8, ''), new Label('2019')),
+                new Entry(new Value(1, ''), new Label('2020')),
+            ]),
         );
     }
 

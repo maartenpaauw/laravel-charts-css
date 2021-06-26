@@ -38,10 +38,11 @@ class SmartConfigurationTest extends TestCase
     {
         parent::setUp();
 
-        $datasets = new Datasets(new Axes('A', ['B', 'C']), [
+        $datasets = new Datasets(
+            new Axes('A', ['B', 'C']),
             new Dataset([], new Label('Dataset 1')),
             new Dataset([], new Label('Dataset 2')),
-        ]);
+        );
 
         $this->identity = new Identity('my-chart', 'My chart', new Column());
         $this->legend = new Legend();
@@ -146,12 +147,10 @@ class SmartConfigurationTest extends TestCase
         // Arrange
         $datasets = new Datasets(
             new NullAxes(),
-            [
-                new Dataset([
-                    new Entry(new Value(10), new Label('Label A')),
-                    new Entry(new Value(10), new Label('Label B')),
-                ]),
-            ],
+            new Dataset([
+                new Entry(new Value(10), new Label('Label A')),
+                new Entry(new Value(10), new Label('Label B')),
+            ]),
         );
 
         // Act
@@ -167,12 +166,10 @@ class SmartConfigurationTest extends TestCase
         // Arrange
         $datasets = new Datasets(
             new NullAxes(),
-            [
-                new Dataset([
-                    new Entry(new Value(10)),
-                    new Entry(new Value(10)),
-                ]),
-            ],
+            new Dataset([
+                new Entry(new Value(10)),
+                new Entry(new Value(10)),
+            ]),
         );
 
         // Act
@@ -188,10 +185,8 @@ class SmartConfigurationTest extends TestCase
         // Arrange
         $datasets = new Datasets(
             new NullAxes(),
-            [
-                new Dataset([], new Label('Label A')),
-                new Dataset([], new Label('Label B')),
-            ],
+            new Dataset([], new Label('Label A')),
+            new Dataset([], new Label('Label B')),
         );
 
         // Act
@@ -207,10 +202,8 @@ class SmartConfigurationTest extends TestCase
         // Arrange
         $datasets = new Datasets(
             new NullAxes(),
-            [
-                new Dataset(),
-                new Dataset(),
-            ],
+            new Dataset(),
+            new Dataset(),
         );
 
         // Act

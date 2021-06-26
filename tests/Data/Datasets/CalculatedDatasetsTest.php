@@ -23,7 +23,8 @@ class CalculatedDatasetsTest extends TestCase
     {
         parent::setUp();
 
-        $this->datasets = new Datasets(new NullAxes(), [
+        $this->datasets = new Datasets(
+            new NullAxes(),
             new Dataset([
                 new Entry(new Value(10)),
                 new Entry(new Value(20)),
@@ -32,7 +33,7 @@ class CalculatedDatasetsTest extends TestCase
                 new Entry(new Value(30)),
                 new Entry(new Value(40)),
             ], new Label('B')),
-        ]);
+        );
 
         $this->calculatedDatasets = new CalculatedDatasets($this->datasets);
     }

@@ -42,10 +42,8 @@ class HasEntryLabelsTest extends TestCase
         // Arrange
         $datasets = new Datasets(
             new NullAxes(),
-            [
-                new Dataset(),
-                new Dataset(),
-            ],
+            new Dataset(),
+            new Dataset(),
         );
 
         // Act
@@ -61,16 +59,14 @@ class HasEntryLabelsTest extends TestCase
         // Arrange
         $datasets = new Datasets(
             new NullAxes(),
-            [
-                new Dataset([
-                    new Entry(new Value(10)),
-                    new Entry(new Value(20)),
-                ]),
-                new Dataset([
-                    new Entry(new Value(10)),
-                    new Entry(new Value(20)),
-                ]),
-            ],
+            new Dataset([
+                new Entry(new Value(10)),
+                new Entry(new Value(20)),
+            ]),
+            new Dataset([
+                new Entry(new Value(10)),
+                new Entry(new Value(20)),
+            ]),
         );
 
         // Act
@@ -86,16 +82,14 @@ class HasEntryLabelsTest extends TestCase
         // Arrange
         $datasets = new Datasets(
             new NullAxes(),
-            [
-                new Dataset([
-                    new Entry(new Value(10), new Label('')),
-                    new Entry(new Value(20), new Label('')),
-                ]),
-                new Dataset([
-                    new Entry(new Value(10), new Label('')),
-                    new Entry(new Value(20), new Label('')),
-                ]),
-            ],
+            new Dataset([
+                new Entry(new Value(10), new Label('')),
+                new Entry(new Value(20), new Label('')),
+            ]),
+            new Dataset([
+                new Entry(new Value(10), new Label('')),
+                new Entry(new Value(20), new Label('')),
+            ]),
         );
 
         // Act
@@ -111,16 +105,14 @@ class HasEntryLabelsTest extends TestCase
         // Arrange
         $datasets = new Datasets(
             new NullAxes(),
-            [
-                new Dataset([
-                    new Entry(new Value(10), new Label('Label A')),
-                    new Entry(new Value(20)),
-                ]),
-                new Dataset([
-                    new Entry(new Value(10)),
-                    new Entry(new Value(20)),
-                ]),
-            ],
+            new Dataset([
+                new Entry(new Value(10), new Label('Label A')),
+                new Entry(new Value(20)),
+            ]),
+            new Dataset([
+                new Entry(new Value(10)),
+                new Entry(new Value(20)),
+            ]),
         );
 
         // Act

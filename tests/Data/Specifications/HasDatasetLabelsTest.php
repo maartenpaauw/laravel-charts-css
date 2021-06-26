@@ -40,10 +40,8 @@ class HasDatasetLabelsTest extends TestCase
         // Arrange
         $datasets = new Datasets(
             new NullAxes(),
-            [
-                new Dataset(),
-                new Dataset(),
-            ],
+            new Dataset(),
+            new Dataset(),
         );
 
         // Act
@@ -59,10 +57,8 @@ class HasDatasetLabelsTest extends TestCase
         // Arrange
         $datasets = new Datasets(
             new NullAxes(),
-            [
-                new Dataset([], new Label('Label A')),
-                new Dataset(),
-            ],
+            new Dataset([], new Label('Label A')),
+            new Dataset(),
         );
 
         // Act

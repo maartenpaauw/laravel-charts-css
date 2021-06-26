@@ -34,22 +34,20 @@ class DatasetsExample1 extends Chart
     {
         return new Datasets(
             new NullAxes(),
-            [
-                new Dataset([
-                    new Entry(new Value(20, '$20k')),
-                    new Entry(new Value(30, '$30k')),
-                    new Entry(new Value(40, '$40k')),
-                    new Entry(new Value(50, '$50k')),
-                    new Entry(new Value(75, '$75k')),
-                ], new Label('Asia')),
-                new Dataset([
-                    new Entry(new Value(40, '$40k')),
-                    new Entry(new Value(60, '$60k')),
-                    new Entry(new Value(75, '$75k')),
-                    new Entry(new Value(90, '$90k')),
-                    new Entry(new Value(100, '$100k')),
-                ], new Label('Europe')),
-            ],
+            new Dataset([
+                new Entry(new Value(20, '$20k')),
+                new Entry(new Value(30, '$30k')),
+                new Entry(new Value(40, '$40k')),
+                new Entry(new Value(50, '$50k')),
+                new Entry(new Value(75, '$75k')),
+            ], new Label('Asia')),
+            new Dataset([
+                new Entry(new Value(40, '$40k')),
+                new Entry(new Value(60, '$60k')),
+                new Entry(new Value(75, '$75k')),
+                new Entry(new Value(90, '$90k')),
+                new Entry(new Value(100, '$100k')),
+            ], new Label('Europe')),
         );
     }
 

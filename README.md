@@ -57,23 +57,21 @@ class MedalsChart extends Chart
     {
         return new Datasets(
             new Axes('Country', ['Gold', 'Silver', 'Bronze']),
-            [
-                new Dataset([
-                    new Entry(new Value(46)),
-                    new Entry(new Value(37)),
-                    new Entry(new Value(38)),
-                ], new Label('USA')),
-                new Dataset([
-                    new Entry(new Value(27)),
-                    new Entry(new Value(23)),
-                    new Entry(new Value(17)),
-                ], new Label('GBR')),
-                new Dataset([
-                    new Entry(new Value(26)),
-                    new Entry(new Value(18)),
-                    new Entry(new Value(26)),
-                ], new Label('CHN')),
-            ]
+            new Dataset([
+                new Entry(new Value(46)),
+                new Entry(new Value(37)),
+                new Entry(new Value(38)),
+            ], new Label('USA')),
+            new Dataset([
+                new Entry(new Value(27)),
+                new Entry(new Value(23)),
+                new Entry(new Value(17)),
+            ], new Label('GBR')),
+            new Dataset([
+                new Entry(new Value(26)),
+                new Entry(new Value(18)),
+                new Entry(new Value(26)),
+            ], new Label('CHN')),
         );
     }
 }
@@ -115,13 +113,11 @@ protected function datasets(): DatasetsContract
 {
     return new Datasets(
         new Axes('Type', 'Amount'),
-        [
-            new Dataset([
-                new Entry(new Value(46), new Label('Gold')),
-                new Entry(new Value(37), new Label('Silver')),
-                new Entry(new Value(38), new Label('Bronze')),
-            ]),
-        ]
+        new Dataset([
+            new Entry(new Value(46), new Label('Gold')),
+            new Entry(new Value(37), new Label('Silver')),
+            new Entry(new Value(38), new Label('Bronze')),
+        ]),
     );
 }
 ```
@@ -143,14 +139,12 @@ protected function datasets(): DatasetsContract
 {
     return new Datasets(
         new Axes('Type', 'Amount'),
-        [
-            new Dataset([
-                (new Entry(new Value(46), new Label('Gold')))
-                    ->hideLabel(), // <--
-                new Entry(new Value(37), new Label('Silver')),
-                new Entry(new Value(38), new Label('Bronze')),
-            ]),
-        ]
+        new Dataset([
+            (new Entry(new Value(46), new Label('Gold')))
+                ->hideLabel(), // <--
+            new Entry(new Value(37), new Label('Silver')),
+            new Entry(new Value(38), new Label('Bronze')),
+        ]),
     );
 }
 ```
@@ -174,19 +168,17 @@ protected function datasets(): DatasetsContract
 {
     return new Datasets(
         new Axes('Country', ['Gold', 'Silver', 'Bronze']),
-        [
-            (new Dataset([
-                new Entry(new Value(46)),
-                new Entry(new Value(37)),
-                new Entry(new Value(38)),
-            ], new Label('USA')))
-                ->hideLabel(), // <--
-            new Dataset([
-                new Entry(new Value(27)),
-                new Entry(new Value(23)),
-                new Entry(new Value(17)),
-            ], new Label('GBR')),
-        ]
+        (new Dataset([
+            new Entry(new Value(46)),
+            new Entry(new Value(37)),
+            new Entry(new Value(38)),
+        ], new Label('USA')))
+            ->hideLabel(), // <--
+        new Dataset([
+            new Entry(new Value(27)),
+            new Entry(new Value(23)),
+            new Entry(new Value(17)),
+        ], new Label('GBR')),
     );
 }
 ```
@@ -322,14 +314,12 @@ protected function datasets(): DatasetsContract
 {
     return new Datasets(
         new Axes('Type', 'Amount'),
-        [
-            new Dataset([
-                (new Entry(new Value(46), new Label('Gold')))
-                    ->color(new Color('#FFD700')), // <--
-                new Entry(new Value(37), new Label('Silver')),
-                new Entry(new Value(38), new Label('Bronze')),
-            ]),
-        ]
+        new Dataset([
+            (new Entry(new Value(46), new Label('Gold')))
+                ->color(new Color('#FFD700')), // <--
+            new Entry(new Value(37), new Label('Silver')),
+            new Entry(new Value(38), new Label('Bronze')),
+        ]),
     );
 }
 ```

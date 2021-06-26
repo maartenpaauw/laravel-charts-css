@@ -26,7 +26,6 @@ class DatasetsTest extends TestCase
 
         $this->datasets = new Datasets(
             $this->axes,
-            [
             new Dataset([
                 new Entry(new Value(100000)),
                 new Entry(new Value(200000)),
@@ -35,7 +34,6 @@ class DatasetsTest extends TestCase
                 new Entry(new Value(400000)),
                 new Entry(new Value(300000)),
             ], new Label('Asia')),
-        ]
         );
     }
 
@@ -62,5 +60,15 @@ class DatasetsTest extends TestCase
     {
         $this->assertIsArray($this->datasets->toArray());
         $this->assertCount(2, $this->datasets->toArray());
+    }
+
+    /** @test */
+    public function it_should_be_an_empty_array_by_default(): void
+    {
+        // Arrange
+        $datasets = new Datasets($this->axes);
+
+        // Assert
+        $this->assertEmpty($datasets->toArray());
     }
 }

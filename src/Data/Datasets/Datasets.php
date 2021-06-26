@@ -13,7 +13,7 @@ class Datasets implements DatasetsContract
      */
     private array $datasets;
 
-    public function __construct(AxesContract $axes, array $datasets = [])
+    public function __construct(AxesContract $axes, DatasetContract ...$datasets)
     {
         $this->axes = $axes;
         $this->datasets = $datasets;
