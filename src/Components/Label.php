@@ -18,7 +18,7 @@ class Label extends Component
     public function render(): View
     {
         return view('charts-css::components.label', [
-            'classes' => $this->label->modifications()->classes(),
+            'classes' => $this->label->modifications()->toString(),
             'label' => $this->label->value(),
         ]);
     }

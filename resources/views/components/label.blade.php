@@ -1,1 +1,1 @@
-@if($label)<th scope="row" {{ $attributes->class($classes) }}>{!! $label !!}</th>@endif
+@if($label)<th scope="row" @if($classes)class="{{ $classes }}"@endif>{!! $label !!}</th>@endif
