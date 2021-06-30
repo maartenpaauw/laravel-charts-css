@@ -23,7 +23,7 @@ class Declarations implements DeclarationContract
 
     public function merge(Declarations $declarations): self
     {
-        return new static(array_merge($this->toArray(), $declarations->toArray()));
+        return new self(array_merge($this->toArray(), $declarations->toArray()));
     }
 
     public function toString(): string
