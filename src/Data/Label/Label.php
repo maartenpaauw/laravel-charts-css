@@ -39,19 +39,29 @@ class Label implements LabelContract
 
     public function hide(): LabelContract
     {
-        $this->modifications->add(new HideLabel());
+        $mergedModifications = $this->modifications
+            ->merge(new ModificationsBag([
+                new HideLabel(),
+            ]));
 
-        return $this;
+        return new self(
+            $this->value,
+            $mergedModifications,
+            $this->declarations,
+        );
     }
 
     public function align(string $alignment): LabelContract
     {
+        $mergedDeclarations = $this->declarations
+            ->merge(new Declarations([
+                new LabelAlignmentDeclaration($alignment),
+            ]));
+
         return new self(
             $this->value,
             $this->modifications,
-            $this->declarations->merge(new Declarations([
-                new LabelAlignmentDeclaration($alignment),
-            ])),
+            $mergedDeclarations,
         );
     }
 }

@@ -57,8 +57,9 @@ class DatasetTest extends TestCase
     public function it_should_be_possible_to_hide_the_label(): void
     {
         // Act
-        $this->dataset->hideLabel();
-        $classes = $this->dataset->label()->modifications()->classes();
+        $dataset = $this->dataset->hideLabel();
+
+        $classes = $dataset->label()->modifications()->classes();
 
         // Assert
         $this->assertContains('hide-label', $classes);

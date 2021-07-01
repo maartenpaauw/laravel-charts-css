@@ -48,10 +48,10 @@ class LabelTest extends TestCase
         $expectedClass = 'hide-label';
 
         // Act
-        $this->label->hide();
+        $label = $this->label->hide();
 
-        $array = $this->label->modifications()->toArray();
-        $classes = $this->label->modifications()->classes();
+        $array = $label->modifications()->toArray();
+        $classes = $label->modifications()->classes();
 
         // Assert
         $this->assertCount(1, $array);

@@ -35,9 +35,10 @@ class Dataset implements DatasetContract
 
     public function hideLabel(): DatasetContract
     {
-        $this->label->hide();
-
-        return $this;
+        return new self(
+            $this->entries,
+            $this->label->hide(),
+        );
     }
 
     public function alignLabel(string $alignment): DatasetContract

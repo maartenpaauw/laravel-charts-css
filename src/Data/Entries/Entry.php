@@ -52,9 +52,10 @@ class Entry implements EntryContract
 
     public function hideLabel(): EntryContract
     {
-        $this->label->hide();
-
-        return $this;
+        return new self(
+            $this->value,
+            $this->label->hide(),
+        );
     }
 
     public function alignLabel(string $alignment): EntryContract

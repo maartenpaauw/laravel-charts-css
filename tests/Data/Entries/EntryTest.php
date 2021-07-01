@@ -101,9 +101,9 @@ class EntryTest extends TestCase
     public function it_should_be_possible_to_hide_the_label(): void
     {
         // Act
-        $this->entry->hideLabel();
+        $entry = $this->entry->hideLabel();
 
-        $modifications = $this->entry->label()->modifications();
+        $modifications = $entry->label()->modifications();
 
         // Assert
         $this->assertCount(1, $modifications->toArray());
