@@ -50,15 +50,15 @@ class SmartConfiguration implements ConfigurationContract
         $modifications = new Modifications($this->origin->modifications()->toArray());
 
         if ((new HasHeading())->isSatisfiedBy($this)) {
-            $modifications->add(new ShowHeading());
+            $modifications = $modifications->add(new ShowHeading());
         }
 
         if ($this->hasMultipleDatasets()) {
-            $modifications->add(new Multiple());
+            $modifications = $modifications->add(new Multiple());
         }
 
         if ($this->hasDataLabels()) {
-            $modifications->add(new ShowLabels());
+            $modifications = $modifications->add(new ShowLabels());
         }
 
         return $modifications;

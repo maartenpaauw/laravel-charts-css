@@ -46,14 +46,11 @@ class ModificationsTest extends ModificationTest
     /** @test */
     public function it_should_be_possible_to_add_a_modification(): void
     {
-        // Arrange
-        $bag = new Modifications();
-
         // Act
-        $bag->add(new HideData());
+        $modifications = (new Modifications())->add(new HideData());
 
         // Assert
-        $this->assertCount(1, $bag->classes());
+        $this->assertCount(1, $modifications->classes());
     }
 
     /** @test */

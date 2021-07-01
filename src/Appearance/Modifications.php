@@ -13,9 +13,7 @@ class Modifications implements Modification
 
     public function add(Modification $modification): self
     {
-        $this->modifications[] = $modification;
-
-        return $this;
+        return new self(array_merge($this->modifications, [$modification]));
     }
 
     public function merge(Modifications $modifications): Modifications
