@@ -37,18 +37,16 @@ class Legend
 
     public function withLabel(string $label): self
     {
-        $this->labels[] = $label;
-
-        return $this;
+        return $this->withLabels([$label]);
     }
 
     public function withLabels(array $labels): Legend
     {
-        foreach ($labels as $label) {
-            $this->withLabel($label);
-        }
-
-        return $this;
+        return new self(
+            array_merge($this->labels, $labels),
+            $this->modifications->toArray(),
+            $this->tag,
+        );
     }
 
     public function inline(): self

@@ -39,7 +39,7 @@ class SmartConfiguration implements ConfigurationContract
     public function legend(): Legend
     {
         if ($this->shouldConfigureLegend()) {
-            $this->origin->legend()->withLabels($this->datasets->axes()->data());
+            return $this->origin->legend()->withLabels($this->datasets->axes()->data());
         }
 
         return $this->origin->legend();

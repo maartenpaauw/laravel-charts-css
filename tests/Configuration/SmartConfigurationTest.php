@@ -12,6 +12,7 @@ use Maartenpaauw\Chart\Data\Axes\Axes;
 use Maartenpaauw\Chart\Data\Axes\NullAxes;
 use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
+use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chart\Data\Entries\Entry;
 use Maartenpaauw\Chart\Data\Entries\Value\Value;
 use Maartenpaauw\Chart\Data\Label\Label;
@@ -34,11 +35,13 @@ class SmartConfigurationTest extends TestCase
 
     private ColorschemeContract $colorscheme;
 
+    private DatasetsContract $datasets;
+
     protected function setUp(): void
     {
         parent::setUp();
 
-        $datasets = new Datasets(
+        $this->datasets = new Datasets(
             new Axes('A', ['B', 'C']),
             new Dataset([], new Label('Dataset 1')),
             new Dataset([], new Label('Dataset 2')),
@@ -56,7 +59,7 @@ class SmartConfigurationTest extends TestCase
             $this->colorscheme,
         );
 
-        $this->smartConfiguration = new SmartConfiguration($this->configuration, $datasets);
+        $this->smartConfiguration = new SmartConfiguration($this->configuration, $this->datasets);
     }
 
     /** @test */
@@ -67,31 +70,37 @@ class SmartConfigurationTest extends TestCase
     }
 
     /** @test */
-    public function it_should_return_the_origin_legend(): void
-    {
-        $this->assertEquals($this->configuration->legend(), $this->smartConfiguration->legend());
-        $this->assertEquals($this->legend, $this->smartConfiguration->legend());
-    }
-
-    /** @test */
     public function it_should_automatically_add_the_data_axes_as_labels_to_the_legend(): void
     {
         $this->assertCount(2, $this->smartConfiguration->legend()->labels());
         $this->assertContains('B', $this->smartConfiguration->legend()->labels());
         $this->assertContains('C', $this->smartConfiguration->legend()->labels());
+        $this->assertNotEquals($this->legend, $this->smartConfiguration->legend());
     }
 
     /** @test */
     public function it_should_not_add_any_labels_to_the_legend_when_it_is_configured_manually(): void
     {
+        // Arrange
+        $legend = new Legend(['My label']);
+
         // Act
-        $this->legend->withLabel('My label');
+        $smartConfiguration = new SmartConfiguration(
+            new Configuration(
+                $this->identity,
+                $legend,
+                $this->modifications,
+                $this->colorscheme,
+            ),
+            $this->datasets,
+        );
 
         // Assert
-        $this->assertCount(1, $this->smartConfiguration->legend()->labels());
-        $this->assertContains('My label', $this->smartConfiguration->legend()->labels());
-        $this->assertNotContains('B', $this->smartConfiguration->legend()->labels());
-        $this->assertNotContains('C', $this->smartConfiguration->legend()->labels());
+        $this->assertCount(1, $smartConfiguration->legend()->labels());
+        $this->assertContains('My label', $smartConfiguration->legend()->labels());
+        $this->assertNotContains('B', $smartConfiguration->legend()->labels());
+        $this->assertNotContains('C', $smartConfiguration->legend()->labels());
+        $this->assertEquals($legend, $smartConfiguration->legend());
     }
 
     /** @test */
