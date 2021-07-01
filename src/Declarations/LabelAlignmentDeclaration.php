@@ -8,7 +8,7 @@ class LabelAlignmentDeclaration implements DeclarationContract
 
     public function __construct(string $alignment)
     {
-        $this->alignment = $alignment;
+        $this->alignment = $alignment === 'center' ? $alignment : "flex-{$alignment}";
     }
 
     public function toString(): string

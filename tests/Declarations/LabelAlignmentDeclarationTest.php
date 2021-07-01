@@ -16,4 +16,16 @@ class LabelAlignmentDeclarationTest extends DeclarationTest
     {
         return '--labels-align: center;';
     }
+
+    /** @test */
+    public function it_should_prefix_the_alignment_with_flex_when_needed(): void
+    {
+        // Arrange
+        $start = new LabelAlignmentDeclaration('start');
+        $end = new LabelAlignmentDeclaration('end');
+
+        // Assert
+        $this->assertEquals('--labels-align: flex-start;', $start->toString());
+        $this->assertEquals('--labels-align: flex-end;', $end->toString());
+    }
 }
