@@ -4,7 +4,7 @@ namespace Maartenpaauw\Chart\Examples\Labels;
 
 use Maartenpaauw\Chart\Appearance\HideData;
 use Maartenpaauw\Chart\Appearance\LabelsAlignStart;
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Appearance\Multiple;
 use Maartenpaauw\Chart\Appearance\ShowLabels;
 use Maartenpaauw\Chart\Chart;
@@ -67,7 +67,7 @@ class LabelsExample5 extends Chart
         );
     }
 
-    protected function modifications(): ModificationsBag
+    protected function modifications(): Modifications
     {
         return parent::modifications()
             ->add(new Multiple())

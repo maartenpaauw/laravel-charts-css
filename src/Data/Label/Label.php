@@ -3,7 +3,7 @@
 namespace Maartenpaauw\Chart\Data\Label;
 
 use Maartenpaauw\Chart\Appearance\HideLabel;
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Declarations\Declarations;
 use Maartenpaauw\Chart\Declarations\LabelAlignmentDeclaration;
 
@@ -11,14 +11,14 @@ class Label implements LabelContract
 {
     private string $value;
 
-    private ModificationsBag $modifications;
+    private Modifications $modifications;
 
     private Declarations $declarations;
 
-    public function __construct(string $value, ?ModificationsBag $modifications = null, ?Declarations $declarations = null)
+    public function __construct(string $value, ?Modifications $modifications = null, ?Declarations $declarations = null)
     {
         $this->value = $value;
-        $this->modifications = $modifications ?? new ModificationsBag();
+        $this->modifications = $modifications ?? new Modifications();
         $this->declarations = $declarations ?? new Declarations();
     }
 
@@ -27,7 +27,7 @@ class Label implements LabelContract
         return $this->value;
     }
 
-    public function modifications(): ModificationsBag
+    public function modifications(): Modifications
     {
         return $this->modifications;
     }
@@ -40,7 +40,7 @@ class Label implements LabelContract
     public function hide(): LabelContract
     {
         $mergedModifications = $this->modifications
-            ->merge(new ModificationsBag([
+            ->merge(new Modifications([
                 new HideLabel(),
             ]));
 

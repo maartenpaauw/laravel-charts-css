@@ -437,11 +437,11 @@ All modifications can be found within the `Maartenpaauw\Chart\Appearance` namesp
 ```php
 use Maartenpaauw\Chart\Appearance\DatasetsSpacing;
 use Maartenpaauw\Chart\Appearance\DataSpacing;
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 
 // ...
 
-protected function modifications(): ModificationsBag
+protected function modifications(): Modifications
 {
     return parent::modifications()
         ->add(new DataSpacing(10))
@@ -455,11 +455,11 @@ By adding `DatasetsSpacing` or `DataSpacing` you can configure the space between
 
 ```php
 use Maartenpaauw\Chart\Appearance\HideData;
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 
 // ...
 
-protected function modifications(): ModificationsBag
+protected function modifications(): Modifications
 {
     return parent::modifications()
         ->add(new HideData());
@@ -473,12 +473,12 @@ This will respect screenreaders.
 #### Show data on hover
 
 ```php
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Appearance\ShowDataOnHover;
 
 // ...
 
-protected function modifications(): ModificationsBag
+protected function modifications(): Modifications
 {
     return parent::modifications()
         ->add(new ShowDataOnHover());
@@ -494,11 +494,11 @@ The big difference is it will show the data when you hover it.
 use Maartenpaauw\Chart\Appearance\LabelsAlignCenter;
 use Maartenpaauw\Chart\Appearance\LabelsAlignEnd;
 use Maartenpaauw\Chart\Appearance\LabelsAlignStart;
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 
 // ...
 
-protected function modifications(): ModificationsBag
+protected function modifications(): Modifications
 {
     return parent::modifications()
         ->add(new LabelsAlignStart())
@@ -512,12 +512,12 @@ You can configure the label alignment by adding one of the following modificatio
 #### Multiple
 
 ```php
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Appearance\Multiple;
 
 // ...
 
-protected function modifications(): ModificationsBag
+protected function modifications(): Modifications
 {
     return parent::modifications()
         ->add(new Multiple());
@@ -530,14 +530,14 @@ Out of the box it is automatically added if there are multiple datasets.
 #### Reverse
 
 ```php
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Appearance\ReverseData;
 use Maartenpaauw\Chart\Appearance\ReverseDatasets;
 use Maartenpaauw\Chart\Appearance\ReverseOrientation;
 
 // ...
 
-protected function modifications(): ModificationsBag
+protected function modifications(): Modifications
 {
     return parent::modifications()
         ->add(new ReverseData())
@@ -552,14 +552,14 @@ If you want to reverse the data, datasets or the orientation you can add the mod
 #### Axes
 
 ```php
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Appearance\ShowDataAxes;
 use Maartenpaauw\Chart\Appearance\ShowPrimaryAxis;
 use Maartenpaauw\Chart\Appearance\ShowSecondaryAxes;
 
 // ...
 
-protected function modifications(): ModificationsBag
+protected function modifications(): Modifications
 {
     return parent::modifications()
         ->add(new ShowDataAxes())
@@ -577,12 +577,12 @@ The constructor accepts the amount of axes (with a limit of 10) as the first par
 #### Show heading
 
 ```php
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Appearance\ShowHeading;
 
 // ...
 
-protected function modifications(): ModificationsBag
+protected function modifications(): Modifications
 {
     return parent::modifications()
         ->add(new ShowHeading());
@@ -596,12 +596,12 @@ This modification will be added automatically when the heading is present.
 #### Show labels
 
 ```php
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Appearance\ShowLabels;
 
 // ...
 
-protected function modifications(): ModificationsBag
+protected function modifications(): Modifications
 {
     return parent::modifications()
         ->add(new ShowLabels());
@@ -614,12 +614,12 @@ but they are hidden with CSS by default. If you want to display the labels you n
 #### Stacked
 
 ```php
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Appearance\Stacked;
 
 // ...
 
-protected function modifications(): ModificationsBag
+protected function modifications(): Modifications
 {
     return parent::modifications()
         ->add(new Stacked());
@@ -632,11 +632,11 @@ If you want to stack multiple datasets you can add the `Stacked` modification.
 
 ```php
 use Maartenpaauw\Chart\Appearance\CustomModification;
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 
 // ...
 
-protected function modifications(): ModificationsBag
+protected function modifications(): Modifications
 {
     return parent::modifications()
         ->add(new CustomModification('foo'));

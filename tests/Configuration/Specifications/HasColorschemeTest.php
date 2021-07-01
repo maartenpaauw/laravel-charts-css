@@ -4,7 +4,7 @@ namespace Maartenpaauw\Chart\Tests\Configuration\Specifications;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
 use Maartenpaauw\Chart\Appearance\Colorscheme\Colorscheme;
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Configuration\Configuration;
 use Maartenpaauw\Chart\Configuration\Specifications\ConfigurationSpecification;
 use Maartenpaauw\Chart\Configuration\Specifications\HasColorscheme;
@@ -21,7 +21,7 @@ class HasColorschemeTest extends TestCase
 
     private Legend $legend;
 
-    private ModificationsBag $modificationsBag;
+    private Modifications $modifications;
 
     protected function setUp(): void
     {
@@ -30,7 +30,7 @@ class HasColorschemeTest extends TestCase
         $this->hasColorscheme = new HasColorscheme();
         $this->identity = new Identity('my-chart', 'My chart', new Column());
         $this->legend = new Legend();
-        $this->modificationsBag = new ModificationsBag();
+        $this->modifications = new Modifications();
     }
 
     /** @test */
@@ -40,7 +40,7 @@ class HasColorschemeTest extends TestCase
         $configuration = new Configuration(
             $this->identity,
             $this->legend,
-            $this->modificationsBag,
+            $this->modifications,
             new Colorscheme([
                 new Color('#FF0000'),
             ])
@@ -60,7 +60,7 @@ class HasColorschemeTest extends TestCase
         $configuration = new Configuration(
             $this->identity,
             $this->legend,
-            $this->modificationsBag,
+            $this->modifications,
             new Colorscheme(),
         );
 

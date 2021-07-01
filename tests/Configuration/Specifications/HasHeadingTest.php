@@ -4,7 +4,7 @@ namespace Maartenpaauw\Chart\Tests\Configuration\Specifications;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\Colorscheme;
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorschemeContract;
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Configuration\Configuration;
 use Maartenpaauw\Chart\Configuration\Specifications\ConfigurationSpecification;
 use Maartenpaauw\Chart\Configuration\Specifications\HasHeading;
@@ -19,7 +19,7 @@ class HasHeadingTest extends TestCase
 
     private Legend $legend;
 
-    private ModificationsBag $modificationsBag;
+    private Modifications $modifications;
 
     private ColorschemeContract $colorscheme;
 
@@ -29,7 +29,7 @@ class HasHeadingTest extends TestCase
 
         $this->hasHeading = new HasHeading();
         $this->legend = new Legend();
-        $this->modificationsBag = new ModificationsBag();
+        $this->modifications = new Modifications();
         $this->colorscheme = new Colorscheme();
     }
 
@@ -40,7 +40,7 @@ class HasHeadingTest extends TestCase
         $configuration = new Configuration(
             new Identity('my-chart', 'This is my chart', new Column()),
             $this->legend,
-            $this->modificationsBag,
+            $this->modifications,
             $this->colorscheme,
         );
 
@@ -58,7 +58,7 @@ class HasHeadingTest extends TestCase
         $configuration = new Configuration(
             new Identity('my-chart', '', new Column()),
             $this->legend,
-            $this->modificationsBag,
+            $this->modifications,
             $this->colorscheme,
         );
 

@@ -4,7 +4,7 @@ namespace Maartenpaauw\Chart\Examples\Datasets;
 
 use Maartenpaauw\Chart\Appearance\DatasetsSpacing;
 use Maartenpaauw\Chart\Appearance\DataSpacing;
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Appearance\Multiple;
 use Maartenpaauw\Chart\Appearance\ShowLabels;
 use Maartenpaauw\Chart\Chart;
@@ -77,7 +77,7 @@ class DatasetsExample4 extends Chart
             ->squares();
     }
 
-    protected function modifications(): ModificationsBag
+    protected function modifications(): Modifications
     {
         return parent::modifications()
             ->add(new Multiple())

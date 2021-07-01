@@ -3,7 +3,7 @@
 namespace Maartenpaauw\Chart\Configuration;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorschemeContract;
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Appearance\Multiple;
 use Maartenpaauw\Chart\Appearance\ShowHeading;
 use Maartenpaauw\Chart\Appearance\ShowLabels;
@@ -45,23 +45,23 @@ class SmartConfiguration implements ConfigurationContract
         return $this->origin->legend();
     }
 
-    public function modifications(): ModificationsBag
+    public function modifications(): Modifications
     {
-        $modificationsBag = new ModificationsBag($this->origin->modifications()->toArray());
+        $modifications = new Modifications($this->origin->modifications()->toArray());
 
         if ((new HasHeading())->isSatisfiedBy($this)) {
-            $modificationsBag->add(new ShowHeading());
+            $modifications->add(new ShowHeading());
         }
 
         if ($this->hasMultipleDatasets()) {
-            $modificationsBag->add(new Multiple());
+            $modifications->add(new Multiple());
         }
 
         if ($this->hasDataLabels()) {
-            $modificationsBag->add(new ShowLabels());
+            $modifications->add(new ShowLabels());
         }
 
-        return $modificationsBag;
+        return $modifications;
     }
 
     public function colorscheme(): ColorschemeContract

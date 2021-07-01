@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chart\Data\Entries;
 
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Data\Entries\Value\Value;
 use Maartenpaauw\Chart\Data\Entries\Value\ValueContract;
 use Maartenpaauw\Chart\Data\Label\Label;
@@ -23,6 +23,6 @@ class NullEntry implements EntryContract
 
     public function label(): LabelContract
     {
-        return new Label('-', new ModificationsBag());
+        return new Label('-', new Modifications());
     }
 }

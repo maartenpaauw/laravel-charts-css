@@ -6,7 +6,7 @@ use Illuminate\View\Component;
 use Illuminate\View\View;
 use Maartenpaauw\Chart\Appearance\Colorscheme\Colorscheme;
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorschemeContract;
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Configuration\Configuration;
 use Maartenpaauw\Chart\Configuration\ConfigurationContract;
 use Maartenpaauw\Chart\Configuration\SmartConfiguration;
@@ -42,9 +42,9 @@ abstract class Chart extends Component
         return new Legend();
     }
 
-    protected function modifications(): ModificationsBag
+    protected function modifications(): Modifications
     {
-        return new ModificationsBag([
+        return new Modifications([
             $this->type()->toModification(),
         ]);
     }

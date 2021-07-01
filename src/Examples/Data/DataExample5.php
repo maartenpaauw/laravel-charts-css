@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chart\Examples\Data;
 
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Appearance\ShowDataOnHover;
 use Maartenpaauw\Chart\Chart;
 use Maartenpaauw\Chart\Configuration\Configuration;
@@ -40,7 +40,7 @@ class DataExample5 extends Chart
         );
     }
 
-    protected function modifications(): ModificationsBag
+    protected function modifications(): Modifications
     {
         return parent::modifications()
             ->add(new ShowDataOnHover());

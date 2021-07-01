@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chart\Tests\Data\Entries\Label;
 
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Data\Label\Label;
 use Maartenpaauw\Chart\Data\Label\LabelContract;
 use Maartenpaauw\Chart\Tests\TestCase;
@@ -15,7 +15,7 @@ class LabelTest extends TestCase
     {
         parent::setUp();
 
-        $this->label = new Label('Value #1', new ModificationsBag());
+        $this->label = new Label('Value #1', new Modifications());
     }
 
     /** @test */
@@ -32,7 +32,7 @@ class LabelTest extends TestCase
     }
 
     /** @test */
-    public function it_should_be_possible_to_receive_the_modifications_bag(): void
+    public function it_should_be_possible_to_receive_the_modifications(): void
     {
         // Act
         $modifications = $this->label->modifications();
@@ -59,7 +59,7 @@ class LabelTest extends TestCase
     }
 
     /** @test */
-    public function it_should_create_an_empty_modifications_bag_when_it_is_not_specified(): void
+    public function it_should_create_an_empty_modifications_instance_when_it_is_not_specified(): void
     {
         // Arrange
         $label = new Label('A');

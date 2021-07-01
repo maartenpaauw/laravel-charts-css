@@ -3,7 +3,7 @@
 namespace Maartenpaauw\Chart\Configuration;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorschemeContract;
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Identity\Identity;
 use Maartenpaauw\Chart\Legend\Legend;
 
@@ -13,14 +13,14 @@ class Configuration implements ConfigurationContract
 
     private Legend $legend;
 
-    private ModificationsBag $modifications;
+    private Modifications $modifications;
 
     private ColorschemeContract $colorscheme;
 
     public function __construct(
         Identity $identity,
         Legend $legend,
-        ModificationsBag $modifications,
+        Modifications $modifications,
         ColorschemeContract $colorscheme
     ) {
         $this->identity = $identity;
@@ -39,7 +39,7 @@ class Configuration implements ConfigurationContract
         return $this->legend;
     }
 
-    public function modifications(): ModificationsBag
+    public function modifications(): Modifications
     {
         return $this->modifications;
     }

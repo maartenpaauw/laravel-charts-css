@@ -4,7 +4,7 @@ namespace Maartenpaauw\Chart\Tests\Configuration\Specifications;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\Colorscheme;
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorschemeContract;
-use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Configuration\Configuration;
 use Maartenpaauw\Chart\Configuration\Specifications\ConfigurationSpecification;
 use Maartenpaauw\Chart\Configuration\Specifications\HasLabels;
@@ -19,7 +19,7 @@ class HasLabelsTest extends TestCase
 
     private Identity $identity;
 
-    private ModificationsBag $modifications;
+    private Modifications $modifications;
 
     private ColorschemeContract $colorscheme;
 
@@ -29,7 +29,7 @@ class HasLabelsTest extends TestCase
 
         $this->hasLabels = new HasLabels();
         $this->identity = new Identity('my-chart', 'My chart', new Column());
-        $this->modifications = new ModificationsBag();
+        $this->modifications = new Modifications();
         $this->colorscheme = new Colorscheme();
     }
 

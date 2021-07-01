@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chart\Appearance;
 
-class ModificationsBag implements Modification
+class Modifications implements Modification
 {
     private array $modifications;
 
@@ -18,11 +18,11 @@ class ModificationsBag implements Modification
         return $this;
     }
 
-    public function merge(ModificationsBag $modificationsBag): ModificationsBag
+    public function merge(Modifications $modifications): Modifications
     {
-        $merge = array_merge($this->modifications, $modificationsBag->toArray());
+        $merge = array_merge($this->modifications, $modifications->toArray());
 
-        return new ModificationsBag($merge);
+        return new Modifications($merge);
     }
 
     public function classes(): array

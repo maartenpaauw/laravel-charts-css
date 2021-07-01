@@ -30,7 +30,7 @@ class NullEntryTest extends TestCase
     }
 
     /** @test */
-    public function it_should_return_a_empty_declarations_bag_by_default(): void
+    public function it_should_return_a_empty_declarations_instance_by_default(): void
     {
         $this->assertEmpty($this->entry->declarations()->toString());
     }
