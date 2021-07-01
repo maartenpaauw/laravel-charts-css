@@ -33,7 +33,7 @@ class Dataset implements DatasetContract
         return max(array_map(fn (Entry $entry) => $entry->value()->raw(), $this->entries));
     }
 
-    public function hideLabel(): DatasetContract
+    public function hideLabel(): Dataset
     {
         return new self(
             $this->entries,
@@ -41,7 +41,7 @@ class Dataset implements DatasetContract
         );
     }
 
-    public function alignLabel(string $alignment): DatasetContract
+    public function alignLabel(string $alignment): Dataset
     {
         return new self(
             $this->entries,

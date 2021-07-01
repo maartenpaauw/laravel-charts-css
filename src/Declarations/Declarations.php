@@ -16,9 +16,7 @@ class Declarations implements DeclarationContract
 
     public function add(DeclarationContract $declaration): self
     {
-        $this->declarations[] = $declaration;
-
-        return $this;
+        return new self(array_merge($this->declarations, [$declaration]));
     }
 
     public function merge(Declarations $declarations): self

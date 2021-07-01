@@ -81,20 +81,20 @@ class EntryTest extends TestCase
         $color = new Color('red');
 
         // Act
-        $this->entry->color($color);
+        $entry = $this->entry->color($color);
 
         // Assert
-        $this->assertEquals('--color: red;', $this->entry->declarations()->toString());
+        $this->assertEquals('--color: red;', $entry->declarations()->toString());
     }
 
     /** @test */
     public function it_should_be_possible_to_set_the_start_declaration(): void
     {
         // Act
-        $this->entry->start(10000);
+        $entry = $this->entry->start(10000);
 
         // Assert
-        $this->assertEquals('--start: calc(10000 / 1);', $this->entry->declarations()->toString());
+        $this->assertEquals('--start: calc(10000 / 1);', $entry->declarations()->toString());
     }
 
     /** @test */

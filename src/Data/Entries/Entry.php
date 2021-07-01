@@ -3,6 +3,7 @@
 namespace Maartenpaauw\Chart\Data\Entries;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
+use Maartenpaauw\Chart\Data\Entries\Value\Value;
 use Maartenpaauw\Chart\Data\Entries\Value\ValueContract;
 use Maartenpaauw\Chart\Data\Label\Label;
 use Maartenpaauw\Chart\Data\Label\LabelContract;
@@ -36,21 +37,31 @@ class Entry implements EntryContract
         return $this->value->declarations();
     }
 
-    public function color(ColorContract $color): EntryContract
+    public function color(ColorContract $color): Entry
     {
-        $this->value->declarations()->add($color->declaration());
-
-        return $this;
+        return new self(
+            new Value(
+                $this->value->raw(),
+                $this->value->display(),
+                $this->value->declarations()->add($color->declaration()),
+            ),
+            $this->label,
+        );
     }
 
-    public function start(float $value): EntryContract
+    public function start(float $value): Entry
     {
-        $this->value->declarations()->add(new StartDeclaration($value, 1));
-
-        return $this;
+        return new self(
+            new Value(
+                $this->value->raw(),
+                $this->value->display(),
+                $this->value->declarations()->add(new StartDeclaration($value, 1)),
+            ),
+            $this->label,
+        );
     }
 
-    public function hideLabel(): EntryContract
+    public function hideLabel(): Entry
     {
         return new self(
             $this->value,
@@ -58,7 +69,7 @@ class Entry implements EntryContract
         );
     }
 
-    public function alignLabel(string $alignment): EntryContract
+    public function alignLabel(string $alignment): Entry
     {
         return new self(
             $this->value,

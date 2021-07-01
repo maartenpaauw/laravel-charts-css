@@ -27,12 +27,10 @@ class DeclarationsTest extends TestCase
         $exectedString = '--color-1: red; --color-2: green; --color-3: blue;';
 
         // Act
-        $this->declarations->add(new RowColorDeclaration('blue', 3));
-
-        $string = $this->declarations->toString();
+        $declarations = $this->declarations->add(new RowColorDeclaration('blue', 3));
 
         // Assert
-        $this->assertEquals($exectedString, $string);
+        $this->assertEquals($exectedString, $declarations->toString());
     }
 
     /** @test */
