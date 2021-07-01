@@ -20,13 +20,10 @@ class Legend
 
     private string $tag;
 
-    /**
-     * @param Modification[] $modifications
-     */
-    public function __construct(array $labels = [], array $modifications = [], string $tag = 'ul')
+    public function __construct(array $labels = [], ?Modifications $modifications = null, string $tag = 'ul')
     {
         $this->labels = $labels;
-        $this->modifications = new Modifications($modifications);
+        $this->modifications = $modifications ?? new Modifications();
         $this->tag = $tag;
     }
 
@@ -44,7 +41,7 @@ class Legend
     {
         return new self(
             array_merge($this->labels, $labels),
-            $this->modifications->toArray(),
+            $this->modifications,
             $this->tag,
         );
     }
@@ -89,8 +86,7 @@ class Legend
         $mergedModifications = $this->modifications
             ->merge(new Modifications([
                 $modification,
-            ]))
-            ->toArray();
+            ]));
 
         return new self(
             $this->labels,
@@ -108,7 +104,7 @@ class Legend
     {
         return new Legend(
             $this->labels,
-            $this->modifications->toArray(),
+            $this->modifications,
             'ol',
         );
     }

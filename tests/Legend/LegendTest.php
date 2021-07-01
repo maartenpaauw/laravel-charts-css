@@ -2,6 +2,7 @@
 
 namespace Maartenpaauw\Chart\Tests\Legend;
 
+use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Legend\Appearance\Inline;
 use Maartenpaauw\Chart\Legend\Appearance\Square;
 use Maartenpaauw\Chart\Legend\Legend;
@@ -18,7 +19,13 @@ class LegendTest extends TestCase
         parent::setUp();
 
         $this->labels = ['Label A', 'Label B', 'Label C'];
-        $this->legend = new Legend($this->labels, [new Inline(), new Square()]);
+        $this->legend = new Legend(
+            $this->labels,
+            new Modifications([
+                new Inline(),
+                new Square(),
+            ]),
+        );
     }
 
     /** @test */
