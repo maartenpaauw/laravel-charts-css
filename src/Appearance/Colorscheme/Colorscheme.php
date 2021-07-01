@@ -16,9 +16,7 @@ class Colorscheme implements ColorschemeContract
 
     public function add(ColorContract $color): ColorschemeContract
     {
-        $this->colors[] = $color;
-
-        return $this;
+        return new self(array_merge($this->colors, [$color]));
     }
 
     /**

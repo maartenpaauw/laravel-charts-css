@@ -70,10 +70,10 @@ class ColorschemeTest extends TestCase
         $color = new Color('#FF0000');
 
         // Act
-        $colorscheme->add($color);
+        $myColorscheme = $colorscheme->add($color);
 
         // Assert
-        $this->assertCount(1, $colorscheme->colors());
-        $this->assertContains($color, $colorscheme->colors());
+        $this->assertCount(1, $myColorscheme->colors());
+        $this->assertContains($color, $myColorscheme->colors());
     }
 }
