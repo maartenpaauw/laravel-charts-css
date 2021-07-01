@@ -12,9 +12,7 @@ interface DatasetContract
      */
     public function entries(): array;
 
-    public function max(): float;
-
     public function label(): LabelContract;
 
-    public function hideLabel(): DatasetContract;
+    public function max(): float;
 }

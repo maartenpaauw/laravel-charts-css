@@ -37,11 +37,4 @@ class StartingPointDataset implements DatasetContract
     {
         return $this->origin->label();
     }
-
-    public function hideLabel(): DatasetContract
-    {
-        $this->origin->hideLabel();
-
-        return $this;
-    }
 }

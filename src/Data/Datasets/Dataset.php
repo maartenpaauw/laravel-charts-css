@@ -23,14 +23,14 @@ class Dataset implements DatasetContract
         return $this->entries;
     }
 
-    public function max(): float
-    {
-        return max(array_map(fn (Entry $entry) => $entry->value()->raw(), $this->entries));
-    }
-
     public function label(): LabelContract
     {
         return $this->label;
+    }
+
+    public function max(): float
+    {
+        return max(array_map(fn (Entry $entry) => $entry->value()->raw(), $this->entries));
     }
 
     public function hideLabel(): DatasetContract

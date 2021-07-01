@@ -54,15 +54,4 @@ class CalculatedDatasetTest extends TestCase
     {
         $this->assertEquals($this->dataset->label(), $this->calculatedDataset->label());
     }
-
-    /** @test */
-    public function it_should_be_possible_to_hide_the_label(): void
-    {
-        // Act
-        $dataset = $this->calculatedDataset->hideLabel();
-
-        // Assert
-        $this->assertCount(1, $dataset->label()->modifications()->toArray());
-        $this->assertInstanceOf(CalculatedDataset::class, $dataset);
-    }
 }
