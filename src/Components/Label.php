@@ -20,6 +20,7 @@ class Label extends Component
         return view('charts-css::components.label', [
             'classes' => $this->label->modifications()->toString(),
             'label' => $this->label->value(),
+            'styling' => $this->label->declarations()->toString(),
         ]);
     }
 }

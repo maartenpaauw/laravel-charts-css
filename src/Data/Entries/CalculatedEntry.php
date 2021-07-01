@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chart\Data\Entries;
 
-use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
+use Maartenpaauw\Chart\Data\Entries\Value\ValueContract;
 use Maartenpaauw\Chart\Data\Label\LabelContract;
 use Maartenpaauw\Chart\Declarations\Declarations;
 use Maartenpaauw\Chart\Declarations\SizeDeclaration;
@@ -19,14 +19,9 @@ class CalculatedEntry implements EntryContract
         $this->max = $max;
     }
 
-    public function value(): string
+    public function value(): ValueContract
     {
         return $this->origin->value();
-    }
-
-    public function raw(): float
-    {
-        return $this->origin->raw();
     }
 
     public function label(): LabelContract
@@ -39,26 +34,7 @@ class CalculatedEntry implements EntryContract
         return $this->origin
             ->declarations()
             ->merge(new Declarations([
-                new SizeDeclaration($this->origin->raw(), $this->max),
+                new SizeDeclaration($this->origin->value()->raw(), $this->max),
             ]));
-    }
-
-    public function color(ColorContract $color): EntryContract
-    {
-        return $this->origin->color($color);
-    }
-
-    public function start(float $value): EntryContract
-    {
-        $this->origin->start($value);
-
-        return $this;
-    }
-
-    public function hideLabel(): EntryContract
-    {
-        $this->origin->hideLabel();
-
-        return $this;
     }
 }

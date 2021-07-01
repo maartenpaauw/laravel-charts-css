@@ -4,14 +4,13 @@ namespace Maartenpaauw\Chart\Tests\Data\Entries;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
 use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\EntryContract;
 use Maartenpaauw\Chart\Data\Entries\Value\Value;
 use Maartenpaauw\Chart\Data\Label\Label;
 use Maartenpaauw\Chart\Tests\TestCase;
 
 class EntryTest extends TestCase
 {
-    private EntryContract $entry;
+    private Entry $entry;
 
     protected function setUp(): void
     {
@@ -23,19 +22,19 @@ class EntryTest extends TestCase
     /** @test */
     public function it_should_return_the_value_correctly(): void
     {
-        $this->assertEquals('40000', $this->entry->value());
+        $this->assertEquals('40000', $this->entry->value()->display());
     }
 
     /** @test */
     public function it_should_return_the_raw_value_correctly(): void
     {
-        $this->assertEquals(40000, $this->entry->raw());
+        $this->assertEquals(40000, $this->entry->value()->raw());
     }
 
     /** @test */
     public function it_should_return_the_raw_value_as_start_value(): void
     {
-        $this->assertEquals($this->entry->raw(), $this->entry->value());
+        $this->assertEquals($this->entry->value()->raw(), $this->entry->value()->display());
     }
 
     /** @test */
@@ -109,5 +108,16 @@ class EntryTest extends TestCase
         // Assert
         $this->assertCount(1, $modifications->toArray());
         $this->assertContains('hide-label', $modifications->classes());
+    }
+
+    /** @test */
+    public function it_should_be_possible_to_align_the_label(): void
+    {
+        // Act
+        $entry = $this->entry->alignLabel('center');
+
+        // Assert
+        $this->assertNotEquals($this->entry, $entry);
+        $this->assertEquals('--labels-align: center;', $entry->label()->declarations()->toString());
     }
 }

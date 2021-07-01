@@ -3,6 +3,7 @@
 namespace Maartenpaauw\Chart\Data\Label;
 
 use Maartenpaauw\Chart\Appearance\ModificationsBag;
+use Maartenpaauw\Chart\Declarations\Declarations;
 
 interface LabelContract
 {
@@ -10,5 +11,9 @@ interface LabelContract
 
     public function modifications(): ModificationsBag;
 
+    public function declarations(): Declarations;
+
     public function hide(): LabelContract;
+
+    public function align(string $alignment): LabelContract;
 }

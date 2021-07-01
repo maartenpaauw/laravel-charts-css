@@ -21,14 +21,9 @@ class Entry implements EntryContract
         $this->label = $label ?? new Label('');
     }
 
-    public function value(): string
+    public function value(): ValueContract
     {
-        return $this->value->display();
-    }
-
-    public function raw(): float
-    {
-        return $this->value->raw();
+        return $this->value;
     }
 
     public function label(): LabelContract
@@ -60,5 +55,13 @@ class Entry implements EntryContract
         $this->label->hide();
 
         return $this;
+    }
+
+    public function alignLabel(string $alignment): EntryContract
+    {
+        return new self(
+            $this->value,
+            $this->label->align($alignment),
+        );
     }
 }

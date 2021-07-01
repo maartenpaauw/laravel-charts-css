@@ -19,7 +19,7 @@ class Entry extends Component
     {
         return view('charts-css::components.entry', [
             'styling' => $this->entry->declarations()->toString(),
-            'value' => $this->entry->value(),
+            'value' => $this->entry->value()->display(),
         ]);
     }
 }

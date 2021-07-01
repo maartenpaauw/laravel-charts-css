@@ -2,7 +2,6 @@
 
 namespace Maartenpaauw\Chart\Tests\Data\Entries;
 
-use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
 use Maartenpaauw\Chart\Data\Entries\Entry;
 use Maartenpaauw\Chart\Data\Entries\EntryContract;
 use Maartenpaauw\Chart\Data\Entries\StartingPointEntry;
@@ -34,12 +33,6 @@ class StartingPointEntryTest extends TestCase
     }
 
     /** @test */
-    public function it_should_return_the_origin_raw_value(): void
-    {
-        $this->assertEquals($this->origin->raw(), $this->startingPointEntry->raw());
-    }
-
-    /** @test */
     public function it_should_return_the_origin_label(): void
     {
         $this->assertEquals($this->origin->label(), $this->startingPointEntry->label());
@@ -54,41 +47,5 @@ class StartingPointEntryTest extends TestCase
         // Assert
         $this->assertStringContainsString('--start: calc(20 / 30);', $declarations->toString());
         $this->assertCount(1, $this->startingPointEntry->declarations()->toArray());
-    }
-
-    /** @test */
-    public function it_should_add_the_given_color_to_its_origin_declarations_bag(): void
-    {
-        // Arrange
-        $color = new Color('red');
-
-        // Act
-        $this->startingPointEntry->color($color);
-
-        // Assert
-        $this->assertEquals('--color: red;', $this->origin->declarations()->toString());
-    }
-
-    /** @test */
-    public function it_should_not_overwrite_the_start_declaration(): void
-    {
-        // Act
-        $this->startingPointEntry->start(0.2);
-
-        // Assert
-        $this->assertStringNotContainsString('0.2', $this->startingPointEntry->declarations()->toString());
-        $this->assertCount(1, $this->startingPointEntry->declarations()->toArray());
-    }
-
-    /** @test */
-    public function it_should_modify_the_origin_label_when_hiding_it(): void
-    {
-        // Act
-        $this->startingPointEntry->hideLabel();
-        $modifications = $this->origin->label()->modifications();
-
-        // Assert
-        $this->assertCount(1, $modifications->toArray());
-        $this->assertContains('hide-label', $modifications->classes());
     }
 }

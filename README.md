@@ -151,7 +151,38 @@ protected function datasets(): DatasetsContract
 
 You can hide an entry's label by calling the `hideLabel()` method on a dataset.
 
+#### Alignment of a specific label
+
+```php
+use Maartenpaauw\Chart\Data\Axes\Axes;
+use Maartenpaauw\Chart\Data\Datasets\Dataset;
+use Maartenpaauw\Chart\Data\Datasets\Datasets;
+use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Value\Value;
+use Maartenpaauw\Chart\Data\Label\Label;
+
+// ...
+
+protected function datasets(): DatasetsContract
+{
+    return new Datasets(
+        new Axes('Type', 'Amount'),
+        new Dataset([
+            (new Entry(new Value(46), new Label('Gold')))
+                ->alignLabel('end'), // <--
+            new Entry(new Value(37), new Label('Silver')),
+            new Entry(new Value(38), new Label('Bronze')),
+        ]),
+    );
+}
+```
+
+You can align an entry's label by calling the `alignLabel()` method on a dataset with `start`, `center` or `end` as parameter.
+
 ### Multiple datasets
+
+#### Hiding a specific label
 
 ```php
 use Maartenpaauw\Chart\Data\Axes\Axes;
@@ -184,6 +215,40 @@ protected function datasets(): DatasetsContract
 ```
 
 You can hide a dataset's label by calling the `hideLabel()` method on a dataset.
+
+#### Hiding a specific label
+
+```php
+use Maartenpaauw\Chart\Data\Axes\Axes;
+use Maartenpaauw\Chart\Data\Datasets\Dataset;
+use Maartenpaauw\Chart\Data\Datasets\Datasets;
+use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Value\Value;
+use Maartenpaauw\Chart\Data\Label\Label;
+
+// ...
+
+protected function datasets(): DatasetsContract
+{
+    return new Datasets(
+        new Axes('Country', ['Gold', 'Silver', 'Bronze']),
+        (new Dataset([
+            new Entry(new Value(46)),
+            new Entry(new Value(37)),
+            new Entry(new Value(38)),
+        ], new Label('USA')))
+            ->alignLabel('end'), // <--
+        new Dataset([
+            new Entry(new Value(27)),
+            new Entry(new Value(23)),
+            new Entry(new Value(17)),
+        ], new Label('GBR')),
+    );
+}
+```
+
+You can align a dataset's label by calling the `alignLabel()` method on a dataset with `start`, `center` or `end` as parameter.
 
 ### Stylesheet
 

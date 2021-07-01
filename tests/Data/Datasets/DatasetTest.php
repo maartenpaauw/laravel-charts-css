@@ -65,6 +65,17 @@ class DatasetTest extends TestCase
     }
 
     /** @test */
+    public function it_should_be_possible_to_align_the_label(): void
+    {
+        // Act
+        $dataset = $this->dataset->alignLabel('end');
+
+        // Assert
+        $this->assertNotEquals($this->dataset, $dataset);
+        $this->assertEquals('--labels-align: flex-end;', $dataset->label()->declarations()->toString());
+    }
+
+    /** @test */
     public function it_should_have_no_entries_by_default(): void
     {
         // Arrange
