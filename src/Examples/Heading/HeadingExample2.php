@@ -2,7 +2,11 @@
 
 namespace Maartenpaauw\Chart\Examples\Heading;
 
+use Maartenpaauw\Chart\Appearance\Modifications;
+use Maartenpaauw\Chart\Appearance\ShowHeading;
 use Maartenpaauw\Chart\Chart;
+use Maartenpaauw\Chart\Configuration\Configuration;
+use Maartenpaauw\Chart\Configuration\ConfigurationContract;
 use Maartenpaauw\Chart\Data\Axes\Axes;
 use Maartenpaauw\Chart\Data\Datasets\Dataset;
 use Maartenpaauw\Chart\Data\Datasets\Datasets;
@@ -35,5 +39,21 @@ class HeadingExample2 extends Chart
                 new Entry(new Value(1.0, ''), new Label('2020')),
             ]),
         );
+    }
+
+    protected function configuration(): ConfigurationContract
+    {
+        return new Configuration(
+            $this->identity(),
+            $this->legend(),
+            $this->modifications(),
+            $this->colorscheme(),
+        );
+    }
+
+    protected function modifications(): Modifications
+    {
+        return parent::modifications()
+            ->add(new ShowHeading());
     }
 }
