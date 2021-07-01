@@ -86,11 +86,8 @@ class LegendTest extends TestCase
     /** @test */
     public function it_should_be_possible_to_inline_the_legend(): void
     {
-        // Arrange
-        $legend = new Legend();
-
         // Act
-        $legend->inline();
+        $legend = (new Legend())->inline();
 
         // Assert
         $this->assertCount(1, $legend->classes());
@@ -100,11 +97,8 @@ class LegendTest extends TestCase
     /** @test */
     public function it_should_be_possible_to_change_the_legend_shape_to_circles(): void
     {
-        // Arrange
-        $legend = new Legend();
-
         // Act
-        $legend->circles();
+        $legend = (new Legend())->circles();
 
         // Assert
         $this->assertCount(1, $legend->classes());
@@ -114,11 +108,8 @@ class LegendTest extends TestCase
     /** @test */
     public function it_should_be_possible_to_change_the_legend_shape_to_ellipses(): void
     {
-        // Arrange
-        $legend = new Legend();
-
         // Act
-        $legend->ellipses();
+        $legend = (new Legend())->ellipses();
 
         // Assert
         $this->assertCount(1, $legend->classes());
@@ -128,11 +119,8 @@ class LegendTest extends TestCase
     /** @test */
     public function it_should_be_possible_to_change_the_legend_shape_to_lines(): void
     {
-        // Arrange
-        $legend = new Legend();
-
         // Act
-        $legend->lines();
+        $legend = (new Legend())->lines();
 
         // Assert
         $this->assertCount(1, $legend->classes());
@@ -142,11 +130,8 @@ class LegendTest extends TestCase
     /** @test */
     public function it_should_be_possible_to_change_the_legend_shape_to_rectangles(): void
     {
-        // Arrange
-        $legend = new Legend();
-
         // Act
-        $legend->rectangles();
+        $legend = (new Legend())->rectangles();
 
         // Assert
         $this->assertCount(1, $legend->classes());
@@ -156,11 +141,8 @@ class LegendTest extends TestCase
     /** @test */
     public function it_should_be_possible_to_change_the_legend_shape_to_rhombuses(): void
     {
-        // Arrange
-        $legend = new Legend();
-
         // Act
-        $legend->rhombuses();
+        $legend = (new Legend())->rhombuses();
 
         // Assert
         $this->assertCount(1, $legend->classes());
@@ -170,11 +152,8 @@ class LegendTest extends TestCase
     /** @test */
     public function it_should_be_possible_to_change_the_legend_shape_to_squares(): void
     {
-        // Arrange
-        $legend = new Legend();
-
         // Act
-        $legend->squares();
+        $legend = (new Legend())->squares();
 
         // Assert
         $this->assertCount(1, $legend->classes());

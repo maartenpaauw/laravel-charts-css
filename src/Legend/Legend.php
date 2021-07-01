@@ -53,51 +53,52 @@ class Legend
 
     public function inline(): self
     {
-        $this->modifications->add(new Inline());
-
-        return $this;
+        return $this->withModification(new Inline());
     }
 
     public function circles(): self
     {
-        $this->modifications->add(new Circle());
-
-        return $this;
+        return $this->withModification(new Circle());
     }
 
     public function ellipses(): self
     {
-        $this->modifications->add(new Ellipse());
-
-        return $this;
+        return $this->withModification(new Ellipse());
     }
 
     public function lines(): self
     {
-        $this->modifications->add(new Line());
-
-        return $this;
+        return $this->withModification(new Line());
     }
 
     public function rectangles(): self
     {
-        $this->modifications->add(new Rectangle());
-
-        return $this;
+        return $this->withModification(new Rectangle());
     }
 
     public function rhombuses(): self
     {
-        $this->modifications->add(new Rhombus());
-
-        return $this;
+        return $this->withModification(new Rhombus());
     }
 
     public function squares(): self
     {
-        $this->modifications->add(new Square());
+        return $this->withModification(new Square());
+    }
 
-        return $this;
+    private function withModification(Modification $modification): Legend
+    {
+        $mergedModifications = $this->modifications
+            ->merge(new Modifications([
+                $modification,
+            ]))
+            ->toArray();
+
+        return new self(
+            $this->labels,
+            $mergedModifications,
+            $this->tag,
+        );
     }
 
     public function classes(): array
