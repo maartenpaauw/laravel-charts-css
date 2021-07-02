@@ -40,4 +40,10 @@ class CalculatedEntryTest extends TestCase
     {
         $this->assertEquals($this->origin->label(), $this->calculatedEntry->label());
     }
+
+    /** @test */
+    public function it_should_return_the_origin_tooltip(): void
+    {
+        $this->assertEquals($this->origin->tooltip(), $this->calculatedEntry->tooltip());
+    }
 }

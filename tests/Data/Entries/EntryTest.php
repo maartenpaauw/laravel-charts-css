@@ -4,8 +4,10 @@ namespace Maartenpaauw\Chart\Tests\Data\Entries;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
 use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Tooltip\Tooltip;
 use Maartenpaauw\Chart\Data\Entries\Value\Value;
 use Maartenpaauw\Chart\Data\Label\Label;
+use Maartenpaauw\Chart\Data\Label\NullLabel;
 use Maartenpaauw\Chart\Tests\TestCase;
 
 class EntryTest extends TestCase
@@ -72,6 +74,20 @@ class EntryTest extends TestCase
 
         // Assert
         $this->assertEmpty($declarations->toString());
+    }
+
+    /** @test */
+    public function it_should_be_possible_to_receive_the_tooltip(): void
+    {
+        // Arrange
+        $expectedTooltip = new Tooltip('This is a tooltip.');
+        $entry = new Entry(new Value(0), new NullLabel(), $expectedTooltip);
+
+        // Act
+        $tooltip = $entry->tooltip();
+
+        // Assert
+        $this->assertEquals($expectedTooltip, $tooltip);
     }
 
     /** @test */

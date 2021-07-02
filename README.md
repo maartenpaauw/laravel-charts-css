@@ -91,6 +91,47 @@ Make sure you import the css library as well. There is a helper component availa
 
 ## Advanced
 
+### Tooltips
+
+It is possible to configure a tooltip for each entry like this:
+
+```php
+use Maartenpaauw\Chart\Data\Axes\Axes;
+use Maartenpaauw\Chart\Data\Datasets\Dataset;
+use Maartenpaauw\Chart\Data\Datasets\Datasets;
+use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\Tooltip\Tooltip;
+use Maartenpaauw\Chart\Data\Entries\Value\Value;
+use Maartenpaauw\Chart\Data\Label\Label;
+
+// ...
+
+protected function datasets(): DatasetsContract
+{
+    return new Datasets(
+        new Axes('Type', 'Amount'),
+        new Dataset([
+            new Entry(
+                new Value(46),
+                new Label('Gold'),
+                new Tooltip('46 gold medals!'), // <--
+            ),
+            new Entry(
+                new Value(37),
+                new Label('Silver'),
+                new Tooltip('37 silver medals!'), // <--
+            ),
+            new Entry(
+                new Value(38),
+                new Label('Bronze'),
+                new Tooltip('38 bronze medals!'), // <--
+            ),
+        ]),
+    );
+}
+```
+
 ### Single dataset
 
 The default generated chart component shows you how you can provide multiple datasets.

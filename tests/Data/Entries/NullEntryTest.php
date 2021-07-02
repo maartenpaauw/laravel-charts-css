@@ -47,4 +47,14 @@ class NullEntryTest extends TestCase
         // Assert
         $this->assertEquals($expectedLabel, $label);
     }
+
+    /** @test */
+    public function it_should_return_a_tooltip_without_any_content(): void
+    {
+        // Act
+        $tooltip = $this->entry->tooltip();
+
+        // Assert
+        $this->assertEmpty($tooltip->content());
+    }
 }

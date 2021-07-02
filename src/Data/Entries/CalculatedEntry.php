@@ -2,6 +2,7 @@
 
 namespace Maartenpaauw\Chart\Data\Entries;
 
+use Maartenpaauw\Chart\Data\Entries\Tooltip\TooltipContract;
 use Maartenpaauw\Chart\Data\Entries\Value\SizedValue;
 use Maartenpaauw\Chart\Data\Entries\Value\ValueContract;
 use Maartenpaauw\Chart\Data\Label\LabelContract;
@@ -29,5 +30,10 @@ class CalculatedEntry implements EntryContract
     public function label(): LabelContract
     {
         return $this->origin->label();
+    }
+
+    public function tooltip(): TooltipContract
+    {
+        return $this->origin->tooltip();
     }
 }

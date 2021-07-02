@@ -42,4 +42,10 @@ class StartingPointEntryTest extends TestCase
         $this->assertStringContainsString('--start: calc(20 / 30);', $declarations->toString());
         $this->assertCount(1, $declarations->toArray());
     }
+
+    /** @test */
+    public function it_should_return_the_origin_tooltip(): void
+    {
+        $this->assertEquals($this->origin->tooltip(), $this->startingPointEntry->tooltip());
+    }
 }

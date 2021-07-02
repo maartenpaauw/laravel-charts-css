@@ -3,6 +3,8 @@
 namespace Maartenpaauw\Chart\Data\Entries;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
+use Maartenpaauw\Chart\Data\Entries\Tooltip\NullTooltip;
+use Maartenpaauw\Chart\Data\Entries\Tooltip\TooltipContract;
 use Maartenpaauw\Chart\Data\Entries\Value\ColorfulValue;
 use Maartenpaauw\Chart\Data\Entries\Value\StartValue;
 use Maartenpaauw\Chart\Data\Entries\Value\ValueContract;
@@ -17,10 +19,13 @@ class Entry implements EntryContract
 
     private LabelContract $label;
 
-    public function __construct(ValueContract $value, ?LabelContract $label = null)
+    private TooltipContract $tooltip;
+
+    public function __construct(ValueContract $value, ?LabelContract $label = null, ?TooltipContract $tooltip = null)
     {
         $this->value = $value;
         $this->label = $label ?? new NullLabel();
+        $this->tooltip = $tooltip ?? new NullTooltip();
     }
 
     public function value(): ValueContract
@@ -31,6 +36,11 @@ class Entry implements EntryContract
     public function label(): LabelContract
     {
         return $this->label;
+    }
+
+    public function tooltip(): TooltipContract
+    {
+        return $this->tooltip;
     }
 
     public function color(ColorContract $color): Entry
