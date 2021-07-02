@@ -4,18 +4,18 @@ namespace Maartenpaauw\Chart\Data\Entries\Value;
 
 use Maartenpaauw\Chart\Declarations\DeclarationContract;
 use Maartenpaauw\Chart\Declarations\Declarations;
-use Maartenpaauw\Chart\Declarations\StartDeclaration;
+use Maartenpaauw\Chart\Declarations\SizeDeclaration;
 
-class StartValue implements ValueContract
+class SizedValue implements ValueContract
 {
     private ValueContract $origin;
 
     private DeclarationContract $declaration;
 
-    public function __construct(ValueContract $origin, float $value, float $max = 1)
+    public function __construct(ValueContract $origin, float $value, float $max)
     {
         $this->origin = $origin;
-        $this->declaration = new StartDeclaration($value, $max);
+        $this->declaration = new SizeDeclaration($value, $max);
     }
 
     public function raw(): float

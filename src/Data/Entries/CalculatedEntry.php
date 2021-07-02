@@ -2,11 +2,9 @@
 
 namespace Maartenpaauw\Chart\Data\Entries;
 
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
+use Maartenpaauw\Chart\Data\Entries\Value\SizedValue;
 use Maartenpaauw\Chart\Data\Entries\Value\ValueContract;
 use Maartenpaauw\Chart\Data\Label\LabelContract;
-use Maartenpaauw\Chart\Declarations\Declarations;
-use Maartenpaauw\Chart\Declarations\SizeDeclaration;
 
 class CalculatedEntry implements EntryContract
 {
@@ -22,17 +20,10 @@ class CalculatedEntry implements EntryContract
 
     public function value(): ValueContract
     {
-        $declarations = $this->origin
-            ->value()
-            ->declarations()
-            ->merge(new Declarations([
-                new SizeDeclaration($this->origin->value()->raw(), $this->max),
-            ]));
-
-        return new Value(
+        return new SizedValue(
+            $this->origin->value(),
             $this->origin->value()->raw(),
-            $this->origin->value()->display(),
-            $declarations,
+            $this->max,
         );
     }
 

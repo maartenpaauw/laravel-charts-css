@@ -2,11 +2,9 @@
 
 namespace Maartenpaauw\Chart\Data\Entries;
 
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
+use Maartenpaauw\Chart\Data\Entries\Value\StartValue;
 use Maartenpaauw\Chart\Data\Entries\Value\ValueContract;
 use Maartenpaauw\Chart\Data\Label\LabelContract;
-use Maartenpaauw\Chart\Declarations\Declarations;
-use Maartenpaauw\Chart\Declarations\StartDeclaration;
 
 class StartingPointEntry implements EntryContract
 {
@@ -25,17 +23,10 @@ class StartingPointEntry implements EntryContract
 
     public function value(): ValueContract
     {
-        $declarations = $this->origin
-            ->value()
-            ->declarations()
-            ->merge(new Declarations([
-                new StartDeclaration($this->previous->value()->raw(), $this->max),
-            ]));
-
-        return new Value(
-            $this->origin->value()->raw(),
-            $this->origin->value()->display(),
-            $declarations,
+        return new StartValue(
+            $this->origin->value(),
+            $this->previous->value()->raw(),
+            $this->max,
         );
     }
 
