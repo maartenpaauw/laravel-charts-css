@@ -3,14 +3,13 @@
 namespace Maartenpaauw\Chart\Data\Entries;
 
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
+use Maartenpaauw\Chart\Data\Entries\Value\ColorfulValue;
+use Maartenpaauw\Chart\Data\Entries\Value\StartValue;
 use Maartenpaauw\Chart\Data\Entries\Value\ValueContract;
 use Maartenpaauw\Chart\Data\Label\AlignedLabel;
 use Maartenpaauw\Chart\Data\Label\HiddenLabel;
 use Maartenpaauw\Chart\Data\Label\LabelContract;
 use Maartenpaauw\Chart\Data\Label\NullLabel;
-use Maartenpaauw\Chart\Declarations\DeclarationContract;
-use Maartenpaauw\Chart\Declarations\StartDeclaration;
 
 class Entry implements EntryContract
 {
@@ -36,26 +35,16 @@ class Entry implements EntryContract
 
     public function color(ColorContract $color): Entry
     {
-        return $this->withDeclaration($color->declaration());
-    }
-
-    public function start(float $value): Entry
-    {
-        return $this->withDeclaration(new StartDeclaration($value, 1));
-    }
-
-    private function withDeclaration(DeclarationContract $declaration): Entry
-    {
-        $declarations = $this->value
-            ->declarations()
-            ->add($declaration);
-
         return new self(
-            new Value(
-                $this->value->raw(),
-                $this->value->display(),
-                $declarations,
-            ),
+            new ColorfulValue($this->value, $color),
+            $this->label,
+        );
+    }
+
+    public function start(float $start): Entry
+    {
+        return new self(
+            new StartValue($this->value, $start),
             $this->label,
         );
     }
