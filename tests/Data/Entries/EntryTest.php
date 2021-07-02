@@ -68,7 +68,7 @@ class EntryTest extends TestCase
     public function it_should_return_an_empty_declarations_instance_by_default(): void
     {
         // Act
-        $declarations = $this->entry->declarations();
+        $declarations = $this->entry->value()->declarations();
 
         // Assert
         $this->assertEmpty($declarations->toString());
@@ -84,7 +84,7 @@ class EntryTest extends TestCase
         $entry = $this->entry->color($color);
 
         // Assert
-        $this->assertEquals('--color: red;', $entry->declarations()->toString());
+        $this->assertEquals('--color: red;', $entry->value()->declarations()->toString());
     }
 
     /** @test */
@@ -94,7 +94,7 @@ class EntryTest extends TestCase
         $entry = $this->entry->start(10000);
 
         // Assert
-        $this->assertEquals('--start: calc(10000 / 1);', $entry->declarations()->toString());
+        $this->assertEquals('--start: calc(10000 / 1);', $entry->value()->declarations()->toString());
     }
 
     /** @test */

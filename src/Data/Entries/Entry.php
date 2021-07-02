@@ -5,9 +5,11 @@ namespace Maartenpaauw\Chart\Data\Entries;
 use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
 use Maartenpaauw\Chart\Data\Entries\Value\Value;
 use Maartenpaauw\Chart\Data\Entries\Value\ValueContract;
-use Maartenpaauw\Chart\Data\Label\Label;
+use Maartenpaauw\Chart\Data\Label\AlignedLabel;
+use Maartenpaauw\Chart\Data\Label\HiddenLabel;
 use Maartenpaauw\Chart\Data\Label\LabelContract;
-use Maartenpaauw\Chart\Declarations\Declarations;
+use Maartenpaauw\Chart\Data\Label\NullLabel;
+use Maartenpaauw\Chart\Declarations\DeclarationContract;
 use Maartenpaauw\Chart\Declarations\StartDeclaration;
 
 class Entry implements EntryContract
@@ -19,7 +21,7 @@ class Entry implements EntryContract
     public function __construct(ValueContract $value, ?LabelContract $label = null)
     {
         $this->value = $value;
-        $this->label = $label ?? new Label('');
+        $this->label = $label ?? new NullLabel();
     }
 
     public function value(): ValueContract
@@ -32,30 +34,27 @@ class Entry implements EntryContract
         return $this->label;
     }
 
-    public function declarations(): Declarations
-    {
-        return $this->value->declarations();
-    }
-
     public function color(ColorContract $color): Entry
     {
-        return new self(
-            new Value(
-                $this->value->raw(),
-                $this->value->display(),
-                $this->value->declarations()->add($color->declaration()),
-            ),
-            $this->label,
-        );
+        return $this->withDeclaration($color->declaration());
     }
 
     public function start(float $value): Entry
     {
+        return $this->withDeclaration(new StartDeclaration($value, 1));
+    }
+
+    private function withDeclaration(DeclarationContract $declaration): Entry
+    {
+        $declarations = $this->value
+            ->declarations()
+            ->add($declaration);
+
         return new self(
             new Value(
                 $this->value->raw(),
                 $this->value->display(),
-                $this->value->declarations()->add(new StartDeclaration($value, 1)),
+                $declarations,
             ),
             $this->label,
         );
@@ -65,7 +64,7 @@ class Entry implements EntryContract
     {
         return new self(
             $this->value,
-            $this->label->hide(),
+            new HiddenLabel($this->label),
         );
     }
 
@@ -73,7 +72,7 @@ class Entry implements EntryContract
     {
         return new self(
             $this->value,
-            $this->label->align($alignment),
+            new AlignedLabel($this->label, $alignment),
         );
     }
 }

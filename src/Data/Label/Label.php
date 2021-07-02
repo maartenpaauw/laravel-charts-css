@@ -2,10 +2,8 @@
 
 namespace Maartenpaauw\Chart\Data\Label;
 
-use Maartenpaauw\Chart\Appearance\HideLabel;
 use Maartenpaauw\Chart\Appearance\Modifications;
 use Maartenpaauw\Chart\Declarations\Declarations;
-use Maartenpaauw\Chart\Declarations\LabelAlignmentDeclaration;
 
 class Label implements LabelContract
 {
@@ -35,33 +33,5 @@ class Label implements LabelContract
     public function declarations(): Declarations
     {
         return $this->declarations;
-    }
-
-    public function hide(): LabelContract
-    {
-        $mergedModifications = $this->modifications
-            ->merge(new Modifications([
-                new HideLabel(),
-            ]));
-
-        return new self(
-            $this->value,
-            $mergedModifications,
-            $this->declarations,
-        );
-    }
-
-    public function align(string $alignment): LabelContract
-    {
-        $mergedDeclarations = $this->declarations
-            ->merge(new Declarations([
-                new LabelAlignmentDeclaration($alignment),
-            ]));
-
-        return new self(
-            $this->value,
-            $this->modifications,
-            $mergedDeclarations,
-        );
     }
 }

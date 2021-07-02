@@ -26,16 +26,10 @@ class CalculatedEntryTest extends TestCase
     }
 
     /** @test */
-    public function it_should_return_the_origin_value(): void
-    {
-        $this->assertEquals($this->origin->value(), $this->calculatedEntry->value());
-    }
-
-    /** @test */
     public function it_should_add_the_size_declaration_correctly(): void
     {
         // Act
-        $declarations = $this->calculatedEntry->declarations();
+        $declarations = $this->calculatedEntry->value()->declarations();
 
         // Assert
         $this->assertStringContainsString('--size: calc(10 / 30);', $declarations->toString());

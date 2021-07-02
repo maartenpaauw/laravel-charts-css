@@ -37,10 +37,10 @@ class CalculatedDatasetTest extends TestCase
         [$a, $b, $c, $d] = $this->calculatedDataset->entries();
 
         // Assert
-        $this->assertStringContainsString('--size: calc(10 / 50);', $a->declarations()->toString());
-        $this->assertStringContainsString('--size: calc(30 / 50);', $b->declarations()->toString());
-        $this->assertStringContainsString('--size: calc(20 / 50);', $c->declarations()->toString());
-        $this->assertStringContainsString('--size: calc(40 / 50);', $d->declarations()->toString());
+        $this->assertStringContainsString('--size: calc(10 / 50);', $a->value()->declarations()->toString());
+        $this->assertStringContainsString('--size: calc(30 / 50);', $b->value()->declarations()->toString());
+        $this->assertStringContainsString('--size: calc(20 / 50);', $c->value()->declarations()->toString());
+        $this->assertStringContainsString('--size: calc(40 / 50);', $d->value()->declarations()->toString());
     }
 
     /** @test */

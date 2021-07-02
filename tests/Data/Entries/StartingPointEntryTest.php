@@ -27,12 +27,6 @@ class StartingPointEntryTest extends TestCase
     }
 
     /** @test */
-    public function it_should_return_the_origin_value(): void
-    {
-        $this->assertEquals($this->origin->value(), $this->startingPointEntry->value());
-    }
-
-    /** @test */
     public function it_should_return_the_origin_label(): void
     {
         $this->assertEquals($this->origin->label(), $this->startingPointEntry->label());
@@ -42,10 +36,10 @@ class StartingPointEntryTest extends TestCase
     public function it_should_add_the_start_declaration_correctly(): void
     {
         // Act
-        $declarations = $this->startingPointEntry->declarations();
+        $declarations = $this->startingPointEntry->value()->declarations();
 
         // Assert
         $this->assertStringContainsString('--start: calc(20 / 30);', $declarations->toString());
-        $this->assertCount(1, $this->startingPointEntry->declarations()->toArray());
+        $this->assertCount(1, $declarations->toArray());
     }
 }

@@ -12,8 +12,4 @@ interface LabelContract
     public function modifications(): Modifications;
 
     public function declarations(): Declarations;
-
-    public function hide(): LabelContract;
-
-    public function align(string $alignment): LabelContract;
 }

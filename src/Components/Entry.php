@@ -18,7 +18,7 @@ class Entry extends Component
     public function render(): View
     {
         return view('charts-css::components.entry', [
-            'styling' => $this->entry->declarations()->toString(),
+            'styling' => $this->entry->value()->declarations()->toString(),
             'value' => $this->entry->value()->display(),
         ]);
     }

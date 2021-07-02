@@ -3,8 +3,10 @@
 namespace Maartenpaauw\Chart\Data\Datasets;
 
 use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Label\Label;
+use Maartenpaauw\Chart\Data\Label\AlignedLabel;
+use Maartenpaauw\Chart\Data\Label\HiddenLabel;
 use Maartenpaauw\Chart\Data\Label\LabelContract;
+use Maartenpaauw\Chart\Data\Label\NullLabel;
 
 class Dataset implements DatasetContract
 {
@@ -15,7 +17,7 @@ class Dataset implements DatasetContract
     public function __construct(array $entries = [], ?LabelContract $label = null)
     {
         $this->entries = $entries;
-        $this->label = $label ?? new Label('');
+        $this->label = $label ?? new NullLabel();
     }
 
     public function entries(): array
@@ -37,7 +39,7 @@ class Dataset implements DatasetContract
     {
         return new self(
             $this->entries,
-            $this->label->hide(),
+            new HiddenLabel($this->label),
         );
     }
 
@@ -45,7 +47,7 @@ class Dataset implements DatasetContract
     {
         return new self(
             $this->entries,
-            $this->label->align($alignment),
+            new AlignedLabel($this->label, $alignment),
         );
     }
 }

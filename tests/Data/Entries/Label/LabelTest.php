@@ -42,23 +42,6 @@ class LabelTest extends TestCase
     }
 
     /** @test */
-    public function it_should_be_possible_to_hide_the_label(): void
-    {
-        // Arrange
-        $expectedClass = 'hide-label';
-
-        // Act
-        $label = $this->label->hide();
-
-        $array = $label->modifications()->toArray();
-        $classes = $label->modifications()->classes();
-
-        // Assert
-        $this->assertCount(1, $array);
-        $this->assertContains($expectedClass, $classes);
-    }
-
-    /** @test */
     public function it_should_create_an_empty_modifications_instance_when_it_is_not_specified(): void
     {
         // Arrange
@@ -69,38 +52,5 @@ class LabelTest extends TestCase
 
         // Assert
         $this->assertEmpty($modifications->toArray());
-    }
-
-    /** @test */
-    public function it_should_be_possible_to_align_the_label_at_start(): void
-    {
-        // Act
-        $label = $this->label->align('start');
-
-        // Assert
-        $this->assertNotEquals($this->label, $label);
-        $this->assertEquals('--labels-align: flex-start;', $label->declarations()->toString());
-    }
-
-    /** @test */
-    public function it_should_be_possible_to_align_the_label_at_the_center(): void
-    {
-        // Act
-        $label = $this->label->align('center');
-
-        // Assert
-        $this->assertNotEquals($this->label, $label);
-        $this->assertEquals('--labels-align: center;', $label->declarations()->toString());
-    }
-
-    /** @test */
-    public function it_should_be_possible_to_align_the_label_at_end(): void
-    {
-        // Act
-        $label = $this->label->align('end');
-
-        // Assert
-        $this->assertNotEquals($this->label, $label);
-        $this->assertEquals('--labels-align: flex-end;', $label->declarations()->toString());
     }
 }
