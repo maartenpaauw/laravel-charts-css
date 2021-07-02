@@ -91,6 +91,8 @@ Make sure you import the css library as well. There is a helper component availa
 
 ## Advanced
 
+See all Charts.css documentation examples within the `src/Examples` directory or read all the advanced documentation below to learn more. 
+
 ### Tooltips
 
 It is possible to configure a tooltip for each entry like this:
