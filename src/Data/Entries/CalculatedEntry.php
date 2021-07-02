@@ -22,7 +22,6 @@ class CalculatedEntry implements EntryContract
     {
         return new SizedValue(
             $this->origin->value(),
-            $this->origin->value()->raw(),
             $this->max,
         );
     }

@@ -17,8 +17,8 @@ class SizedValueTest extends TestCase
     {
         parent::setUp();
 
-        $this->value = new Value(0);
-        $this->sizedValue = new SizedValue($this->value, 10, 20);
+        $this->value = new Value(10);
+        $this->sizedValue = new SizedValue($this->value, 20);
     }
 
     /** @test */

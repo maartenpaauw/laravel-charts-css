@@ -12,10 +12,10 @@ class SizedValue implements ValueContract
 
     private DeclarationContract $declaration;
 
-    public function __construct(ValueContract $origin, float $value, float $max)
+    public function __construct(ValueContract $origin, float $max)
     {
         $this->origin = $origin;
-        $this->declaration = new SizeDeclaration($value, $max);
+        $this->declaration = new SizeDeclaration($origin->raw(), $max);
     }
 
     public function raw(): float
