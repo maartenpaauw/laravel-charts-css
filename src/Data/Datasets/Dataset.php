@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chart\Data\Datasets;
 
-use Maartenpaauw\Chart\Data\Entries\Entry;
+use Maartenpaauw\Chart\Data\Entries\EntryContract;
 use Maartenpaauw\Chart\Data\Label\AlignedLabel;
 use Maartenpaauw\Chart\Data\Label\HiddenLabel;
 use Maartenpaauw\Chart\Data\Label\LabelContract;
@@ -32,7 +32,7 @@ class Dataset implements DatasetContract
 
     public function max(): float
     {
-        return max(array_map(fn (Entry $entry) => $entry->value()->raw(), $this->entries));
+        return max(array_map(fn (EntryContract $entry) => $entry->value()->raw(), $this->entries));
     }
 
     public function hideLabel(): Dataset
