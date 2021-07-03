@@ -20,6 +20,10 @@ class StartingPointDataset implements DatasetContract
 
     public function entries(): array
     {
+        if (count($this->origin->entries()) <= 1) {
+            return $this->origin->entries();
+        }
+
         $entries = array_values($this->origin->entries());
         $first = array_shift($entries);
 
