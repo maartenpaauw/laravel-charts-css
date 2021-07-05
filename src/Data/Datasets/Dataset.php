@@ -32,7 +32,7 @@ class Dataset implements DatasetContract
 
     public function max(): float
     {
-        return max(array_map(fn (EntryContract $entry) => $entry->value()->raw(), $this->entries));
+        return max(array_merge([0], array_map(fn(EntryContract $entry) => $entry->value()->raw(), $this->entries)));
     }
 
     public function hideLabel(): Dataset

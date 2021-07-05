@@ -88,4 +88,18 @@ class DatasetTest extends TestCase
         // Assert
         $this->assertEmpty($entries);
     }
+
+    /** @test */
+    public function it_should_have_a_maximum_default_of_zero(): void
+    {
+        // Arrange
+        $expectedMax = 0;
+        $dataset = new Dataset();
+
+        // Act
+        $max = $dataset->max();
+
+        // Assert
+        $this->assertEquals($expectedMax, $max);
+    }
 }
