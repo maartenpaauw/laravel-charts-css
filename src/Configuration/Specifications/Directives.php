@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Configuration\Specifications;
+namespace Maartenpaauw\Chartscss\Configuration\Specifications;
 
 use Illuminate\Support\Facades\Blade;
-use Maartenpaauw\Chart\Configuration\ConfigurationContract;
+use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
 
 class Directives
 {

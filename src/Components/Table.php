@@ -1,11 +1,11 @@
 <?php
 
-namespace Maartenpaauw\Chart\Components;
+namespace Maartenpaauw\Chartscss\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
-use Maartenpaauw\Chart\Configuration\ConfigurationContract;
-use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
 
 class Table extends Component
 {

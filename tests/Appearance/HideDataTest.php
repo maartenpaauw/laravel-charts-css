@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Appearance;
+namespace Maartenpaauw\Chartscss\Tests\Appearance;
 
-use Maartenpaauw\Chart\Appearance\HideData;
-use Maartenpaauw\Chart\Appearance\Modification;
+use Maartenpaauw\Chartscss\Appearance\HideData;
+use Maartenpaauw\Chartscss\Appearance\Modification;
 
 class HideDataTest extends ModificationTest
 {

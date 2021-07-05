@@ -1,11 +1,11 @@
 <?php
 
-namespace Maartenpaauw\Chart\Components;
+namespace Maartenpaauw\Chartscss\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
-use Maartenpaauw\Chart\Stylesheets\StylesheetContract;
-use Maartenpaauw\Chart\Stylesheets\StylesheetFactory;
+use Maartenpaauw\Chartscss\Stylesheets\StylesheetContract;
+use Maartenpaauw\Chartscss\Stylesheets\StylesheetFactory;
 
 class Stylesheet extends Component
 {

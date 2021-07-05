@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Types;
+namespace Maartenpaauw\Chartscss\Tests\Types;
 
-use Maartenpaauw\Chart\Tests\TestCase;
-use Maartenpaauw\Chart\Types\ChartType;
+use Maartenpaauw\Chartscss\Tests\TestCase;
+use Maartenpaauw\Chartscss\Types\ChartType;
 
 abstract class ChartTypeTest extends TestCase
 {

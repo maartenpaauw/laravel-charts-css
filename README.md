@@ -32,14 +32,14 @@ This will generate a chart component within the `View/Components` namespace.
 
 namespace DummyNamespace;
 
-use Maartenpaauw\Chart\Chart;
-use Maartenpaauw\Chart\Data\Axes\Axes;
-use Maartenpaauw\Chart\Data\Datasets\Dataset;
-use Maartenpaauw\Chart\Data\Datasets\Datasets;
-use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
-use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
-use Maartenpaauw\Chart\Data\Label\Label;
+use Maartenpaauw\Chartscss\Chart;
+use Maartenpaauw\Chartscss\Data\Axes\Axes;
+use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
+use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Entries\Entry;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Label\Label;
 
 class MedalsChart extends Chart
 {
@@ -98,14 +98,14 @@ See all Charts.css documentation examples within the `src/Examples` directory or
 It is possible to configure a tooltip for each entry like this:
 
 ```php
-use Maartenpaauw\Chart\Data\Axes\Axes;
-use Maartenpaauw\Chart\Data\Datasets\Dataset;
-use Maartenpaauw\Chart\Data\Datasets\Datasets;
-use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
-use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\Tooltip\Tooltip;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
-use Maartenpaauw\Chart\Data\Label\Label;
+use Maartenpaauw\Chartscss\Data\Axes\Axes;
+use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
+use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Entries\Entry;
+use Maartenpaauw\Chartscss\Data\Entries\Tooltip\Tooltip;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Label\Label;
 
 // ...
 
@@ -142,13 +142,13 @@ This is because axes must be provided. The only difference is you need to provid
 and give a global description via the axes.
 
 ```php
-use Maartenpaauw\Chart\Data\Axes\Axes;
-use Maartenpaauw\Chart\Data\Datasets\Dataset;
-use Maartenpaauw\Chart\Data\Datasets\Datasets;
-use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
-use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
-use Maartenpaauw\Chart\Data\Label\Label;
+use Maartenpaauw\Chartscss\Data\Axes\Axes;
+use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
+use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Entries\Entry;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Label\Label;
 
 // ...
 
@@ -168,13 +168,13 @@ protected function datasets(): DatasetsContract
 #### Hiding a specific label
 
 ```php
-use Maartenpaauw\Chart\Data\Axes\Axes;
-use Maartenpaauw\Chart\Data\Datasets\Dataset;
-use Maartenpaauw\Chart\Data\Datasets\Datasets;
-use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
-use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
-use Maartenpaauw\Chart\Data\Label\Label;
+use Maartenpaauw\Chartscss\Data\Axes\Axes;
+use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
+use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Entries\Entry;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Label\Label;
 
 // ...
 
@@ -197,13 +197,13 @@ You can hide an entry's label by calling the `hideLabel()` method on a dataset.
 #### Alignment of a specific label
 
 ```php
-use Maartenpaauw\Chart\Data\Axes\Axes;
-use Maartenpaauw\Chart\Data\Datasets\Dataset;
-use Maartenpaauw\Chart\Data\Datasets\Datasets;
-use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
-use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
-use Maartenpaauw\Chart\Data\Label\Label;
+use Maartenpaauw\Chartscss\Data\Axes\Axes;
+use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
+use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Entries\Entry;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Label\Label;
 
 // ...
 
@@ -228,13 +228,13 @@ You can align an entry's label by calling the `alignLabel()` method on a dataset
 #### Hiding a specific label
 
 ```php
-use Maartenpaauw\Chart\Data\Axes\Axes;
-use Maartenpaauw\Chart\Data\Datasets\Dataset;
-use Maartenpaauw\Chart\Data\Datasets\Datasets;
-use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
-use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
-use Maartenpaauw\Chart\Data\Label\Label;
+use Maartenpaauw\Chartscss\Data\Axes\Axes;
+use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
+use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Entries\Entry;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Label\Label;
 
 // ...
 
@@ -262,13 +262,13 @@ You can hide a dataset's label by calling the `hideLabel()` method on a dataset.
 #### Hiding a specific label
 
 ```php
-use Maartenpaauw\Chart\Data\Axes\Axes;
-use Maartenpaauw\Chart\Data\Datasets\Dataset;
-use Maartenpaauw\Chart\Data\Datasets\Datasets;
-use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
-use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
-use Maartenpaauw\Chart\Data\Label\Label;
+use Maartenpaauw\Chartscss\Data\Axes\Axes;
+use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
+use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Entries\Entry;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Label\Label;
 
 // ...
 
@@ -311,8 +311,8 @@ Then this component will only be used to render the colorscheme definitions.
 ### Type
 
 ```php
-use Maartenpaauw\Chart\Types\Bar;
-use Maartenpaauw\Chart\Types\ChartType;
+use Maartenpaauw\Chartscss\Types\Bar;
+use Maartenpaauw\Chartscss\Types\ChartType;
 
 // ...
 
@@ -335,13 +335,13 @@ When using an `area` or `line` chart, you must determine the start of the chart 
 entry like this:
 
 ```php
-use Maartenpaauw\Chart\Data\Axes\Axes;
-use Maartenpaauw\Chart\Data\Datasets\Dataset;
-use Maartenpaauw\Chart\Data\Datasets\Datasets;
-use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
-use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
-use Maartenpaauw\Chart\Data\Label\Label;
+use Maartenpaauw\Chartscss\Data\Axes\Axes;
+use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
+use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Entries\Entry;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Label\Label;
 
 // ...
 
@@ -362,7 +362,7 @@ protected function datasets(): DatasetsContract
 ### Legend
 
 ```php
-use Maartenpaauw\Chart\Legend\Legend;
+use Maartenpaauw\Chartscss\Legend\Legend;
 
 // ...
 
@@ -398,8 +398,8 @@ By default the HTML tag `ul` is used to display the legend on the screen. If you
 > **Warning!** Do not forget to add the `<x-charts-css-stylesheet />` to your layout's head.
 
 ```php
-use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
-use Maartenpaauw\Chart\Appearance\Colorscheme\ColorschemeContract;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\Color;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\ColorschemeContract;
 
 // ...
 
@@ -419,8 +419,8 @@ If you only add one color, **all** the data entries will get the same color.
 You can add up to 10 colors by calling the `add()` method on the colorscheme.
 
 ```php
-use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
-use Maartenpaauw\Chart\Appearance\Colorscheme\ColorschemeContract;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\Color;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\ColorschemeContract;
 
 // ...
 
@@ -439,14 +439,14 @@ It is also possible to return a new instance of `Colorscheme` and given an array
 #### Specific color for one entry
 
 ```php
-use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
-use Maartenpaauw\Chart\Data\Axes\Axes;
-use Maartenpaauw\Chart\Data\Datasets\Dataset;
-use Maartenpaauw\Chart\Data\Datasets\Datasets;
-use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
-use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
-use Maartenpaauw\Chart\Data\Label\Label;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\Color;
+use Maartenpaauw\Chartscss\Data\Axes\Axes;
+use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
+use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Entries\Entry;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Label\Label;
 
 // ...
 
@@ -473,14 +473,14 @@ By overwriting the `modifications()` method you can add multiple modifications.
 Out of the box the `ShowHeading` modification will be applied when the heading is present
 and the modifications `Multiple` and `ShowLabels` are applied when there are multiple datasets configured.
 
-All modifications can be found within the `Maartenpaauw\Chart\Appearance` namespace.
+All modifications can be found within the `Maartenpaauw\Chartscss\Appearance` namespace.
 
 #### Data(sets) spacing
 
 ```php
-use Maartenpaauw\Chart\Appearance\DatasetsSpacing;
-use Maartenpaauw\Chart\Appearance\DataSpacing;
-use Maartenpaauw\Chart\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Appearance\DatasetsSpacing;
+use Maartenpaauw\Chartscss\Appearance\DataSpacing;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
 
 // ...
 
@@ -497,8 +497,8 @@ By adding `DatasetsSpacing` or `DataSpacing` you can configure the space between
 #### Hide data
 
 ```php
-use Maartenpaauw\Chart\Appearance\HideData;
-use Maartenpaauw\Chart\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Appearance\HideData;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
 
 // ...
 
@@ -516,8 +516,8 @@ This will respect screenreaders.
 #### Show data on hover
 
 ```php
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Appearance\ShowDataOnHover;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Appearance\ShowDataOnHover;
 
 // ...
 
@@ -534,10 +534,10 @@ The big difference is it will show the data when you hover it.
 #### Label alignment
 
 ```php
-use Maartenpaauw\Chart\Appearance\LabelsAlignCenter;
-use Maartenpaauw\Chart\Appearance\LabelsAlignEnd;
-use Maartenpaauw\Chart\Appearance\LabelsAlignStart;
-use Maartenpaauw\Chart\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Appearance\LabelsAlignCenter;
+use Maartenpaauw\Chartscss\Appearance\LabelsAlignEnd;
+use Maartenpaauw\Chartscss\Appearance\LabelsAlignStart;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
 
 // ...
 
@@ -555,8 +555,8 @@ You can configure the label alignment by adding one of the following modificatio
 #### Multiple
 
 ```php
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Appearance\Multiple;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Appearance\Multiple;
 
 // ...
 
@@ -573,10 +573,10 @@ Out of the box it is automatically added if there are multiple datasets.
 #### Reverse
 
 ```php
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Appearance\ReverseData;
-use Maartenpaauw\Chart\Appearance\ReverseDatasets;
-use Maartenpaauw\Chart\Appearance\ReverseOrientation;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Appearance\ReverseData;
+use Maartenpaauw\Chartscss\Appearance\ReverseDatasets;
+use Maartenpaauw\Chartscss\Appearance\ReverseOrientation;
 
 // ...
 
@@ -595,10 +595,10 @@ If you want to reverse the data, datasets or the orientation you can add the mod
 #### Axes
 
 ```php
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Appearance\ShowDataAxes;
-use Maartenpaauw\Chart\Appearance\ShowPrimaryAxis;
-use Maartenpaauw\Chart\Appearance\ShowSecondaryAxes;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Appearance\ShowDataAxes;
+use Maartenpaauw\Chartscss\Appearance\ShowPrimaryAxis;
+use Maartenpaauw\Chartscss\Appearance\ShowSecondaryAxes;
 
 // ...
 
@@ -620,8 +620,8 @@ The constructor accepts the amount of axes (with a limit of 10) as the first par
 #### Show heading
 
 ```php
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Appearance\ShowHeading;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Appearance\ShowHeading;
 
 // ...
 
@@ -639,8 +639,8 @@ This modification will be added automatically when the heading is present.
 #### Show labels
 
 ```php
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Appearance\ShowLabels;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Appearance\ShowLabels;
 
 // ...
 
@@ -657,8 +657,8 @@ but they are hidden with CSS by default. If you want to display the labels you n
 #### Stacked
 
 ```php
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Appearance\Stacked;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Appearance\Stacked;
 
 // ...
 
@@ -674,8 +674,8 @@ If you want to stack multiple datasets you can add the `Stacked` modification.
 #### Did I miss adding a modification?
 
 ```php
-use Maartenpaauw\Chart\Appearance\CustomModification;
-use Maartenpaauw\Chart\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Appearance\CustomModification;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
 
 // ...
 
@@ -699,8 +699,8 @@ This is done by wrapping the configuration within a `SmartConfiguration` decorat
 you can overwrite the `configuration` method and build the configuration by yourself.
 
 ```php
-use Maartenpaauw\Chart\Configuration\Configuration;
-use Maartenpaauw\Chart\Configuration\ConfigurationContract;
+use Maartenpaauw\Chartscss\Configuration\Configuration;
+use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
 
 // ...
 

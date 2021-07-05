@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Appearance\Colorscheme;
+namespace Maartenpaauw\Chartscss\Appearance\Colorscheme;
 
-use Maartenpaauw\Chart\Declarations\DeclarationContract;
-use Maartenpaauw\Chart\Declarations\RowColorDeclaration;
+use Maartenpaauw\Chartscss\Declarations\DeclarationContract;
+use Maartenpaauw\Chartscss\Declarations\RowColorDeclaration;
 
 class RowColor implements ColorContract
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Maartenpaauw\Chart\Legend\Appearance;
+namespace Maartenpaauw\Chartscss\Legend\Appearance;
 
-use Maartenpaauw\Chart\Appearance\Modification;
+use Maartenpaauw\Chartscss\Appearance\Modification;
 
 class Ellipse implements Modification
 {

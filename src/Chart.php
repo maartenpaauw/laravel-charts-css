@@ -1,23 +1,23 @@
 <?php
 
-namespace Maartenpaauw\Chart;
+namespace Maartenpaauw\Chartscss;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
-use Maartenpaauw\Chart\Appearance\Colorscheme\Colorscheme;
-use Maartenpaauw\Chart\Appearance\Colorscheme\ColorschemeContract;
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Configuration\Configuration;
-use Maartenpaauw\Chart\Configuration\ConfigurationContract;
-use Maartenpaauw\Chart\Configuration\SmartConfiguration;
-use Maartenpaauw\Chart\Configuration\Specifications\NeedsStartingPoint;
-use Maartenpaauw\Chart\Data\Datasets\CalculatedDatasets;
-use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
-use Maartenpaauw\Chart\Data\Datasets\StartingPointDatasets;
-use Maartenpaauw\Chart\Identity\Identity;
-use Maartenpaauw\Chart\Legend\Legend;
-use Maartenpaauw\Chart\Types\ChartType;
-use Maartenpaauw\Chart\Types\Column;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\Colorscheme;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\ColorschemeContract;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Configuration\Configuration;
+use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
+use Maartenpaauw\Chartscss\Configuration\SmartConfiguration;
+use Maartenpaauw\Chartscss\Configuration\Specifications\NeedsStartingPoint;
+use Maartenpaauw\Chartscss\Data\Datasets\CalculatedDatasets;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Datasets\StartingPointDatasets;
+use Maartenpaauw\Chartscss\Identity\Identity;
+use Maartenpaauw\Chartscss\Legend\Legend;
+use Maartenpaauw\Chartscss\Types\ChartType;
+use Maartenpaauw\Chartscss\Types\Column;
 
 abstract class Chart extends Component
 {

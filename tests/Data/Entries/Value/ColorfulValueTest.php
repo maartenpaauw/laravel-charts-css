@@ -1,12 +1,12 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Data\Entries\Value;
+namespace Maartenpaauw\Chartscss\Tests\Data\Entries\Value;
 
-use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
-use Maartenpaauw\Chart\Data\Entries\Value\ColorfulValue;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
-use Maartenpaauw\Chart\Data\Entries\Value\ValueContract;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\Color;
+use Maartenpaauw\Chartscss\Data\Entries\Value\ColorfulValue;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Entries\Value\ValueContract;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class ColorfulValueTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Maartenpaauw\Chart\Specifications;
+namespace Maartenpaauw\Chartscss\Specifications;
 
 class AndSpecification implements BasicSpecification
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Maartenpaauw\Chart\Configuration;
+namespace Maartenpaauw\Chartscss\Configuration;
 
-use Maartenpaauw\Chart\Appearance\Colorscheme\ColorschemeContract;
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Identity\Identity;
-use Maartenpaauw\Chart\Legend\Legend;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\ColorschemeContract;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Identity\Identity;
+use Maartenpaauw\Chartscss\Legend\Legend;
 
 interface ConfigurationContract
 {

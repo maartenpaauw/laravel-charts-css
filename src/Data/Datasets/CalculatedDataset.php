@@ -1,10 +1,10 @@
 <?php
 
-namespace Maartenpaauw\Chart\Data\Datasets;
+namespace Maartenpaauw\Chartscss\Data\Datasets;
 
-use Maartenpaauw\Chart\Data\Entries\CalculatedEntry;
-use Maartenpaauw\Chart\Data\Entries\EntryContract;
-use Maartenpaauw\Chart\Data\Label\LabelContract;
+use Maartenpaauw\Chartscss\Data\Entries\CalculatedEntry;
+use Maartenpaauw\Chartscss\Data\Entries\EntryContract;
+use Maartenpaauw\Chartscss\Data\Label\LabelContract;
 
 class CalculatedDataset implements DatasetContract
 {

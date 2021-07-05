@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Appearance;
+namespace Maartenpaauw\Chartscss\Tests\Appearance;
 
-use Maartenpaauw\Chart\Appearance\Modification;
-use Maartenpaauw\Chart\Appearance\ShowPrimaryAxis;
+use Maartenpaauw\Chartscss\Appearance\Modification;
+use Maartenpaauw\Chartscss\Appearance\ShowPrimaryAxis;
 
 class ShowPrimaryAxisTest extends ModificationTest
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Data\Entries\Value;
+namespace Maartenpaauw\Chartscss\Tests\Data\Entries\Value;
 
-use Maartenpaauw\Chart\Data\Entries\Value\StartValue;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
-use Maartenpaauw\Chart\Data\Entries\Value\ValueContract;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Data\Entries\Value\StartValue;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Entries\Value\ValueContract;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class StartValueTest extends TestCase
 {

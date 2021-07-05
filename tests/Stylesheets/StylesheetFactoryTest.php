@@ -1,12 +1,12 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Stylesheets;
+namespace Maartenpaauw\Chartscss\Tests\Stylesheets;
 
-use Maartenpaauw\Chart\Stylesheets\JSDelivrStylesheet;
-use Maartenpaauw\Chart\Stylesheets\NullStylesheet;
-use Maartenpaauw\Chart\Stylesheets\StylesheetFactory;
-use Maartenpaauw\Chart\Stylesheets\UnpkgStylesheet;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Stylesheets\JSDelivrStylesheet;
+use Maartenpaauw\Chartscss\Stylesheets\NullStylesheet;
+use Maartenpaauw\Chartscss\Stylesheets\StylesheetFactory;
+use Maartenpaauw\Chartscss\Stylesheets\UnpkgStylesheet;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class StylesheetFactoryTest extends TestCase
 {

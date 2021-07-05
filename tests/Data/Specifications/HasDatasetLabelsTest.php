@@ -1,14 +1,14 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Data\Specifications;
+namespace Maartenpaauw\Chartscss\Tests\Data\Specifications;
 
-use Maartenpaauw\Chart\Data\Axes\NullAxes;
-use Maartenpaauw\Chart\Data\Datasets\Dataset;
-use Maartenpaauw\Chart\Data\Datasets\Datasets;
-use Maartenpaauw\Chart\Data\Label\Label;
-use Maartenpaauw\Chart\Data\Specifications\DatasetsSpecification;
-use Maartenpaauw\Chart\Data\Specifications\HasDatasetLabels;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Data\Axes\NullAxes;
+use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
+use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
+use Maartenpaauw\Chartscss\Data\Label\Label;
+use Maartenpaauw\Chartscss\Data\Specifications\DatasetsSpecification;
+use Maartenpaauw\Chartscss\Data\Specifications\HasDatasetLabels;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class HasDatasetLabelsTest extends TestCase
 {

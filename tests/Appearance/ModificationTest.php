@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Appearance;
+namespace Maartenpaauw\Chartscss\Tests\Appearance;
 
-use Maartenpaauw\Chart\Appearance\Modification;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Appearance\Modification;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 abstract class ModificationTest extends TestCase
 {

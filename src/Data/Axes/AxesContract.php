@@ -1,6 +1,6 @@
 <?php
 
-namespace Maartenpaauw\Chart\Data\Axes;
+namespace Maartenpaauw\Chartscss\Data\Axes;
 
 interface AxesContract
 {

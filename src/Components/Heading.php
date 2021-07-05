@@ -1,6 +1,6 @@
 <?php
 
-namespace Maartenpaauw\Chart\Components;
+namespace Maartenpaauw\Chartscss\Components;
 
 use Illuminate\View\Component;
 

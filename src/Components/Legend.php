@@ -1,10 +1,10 @@
 <?php
 
-namespace Maartenpaauw\Chart\Components;
+namespace Maartenpaauw\Chartscss\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
-use Maartenpaauw\Chart\Configuration\ConfigurationContract;
+use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
 
 class Legend extends Component
 {

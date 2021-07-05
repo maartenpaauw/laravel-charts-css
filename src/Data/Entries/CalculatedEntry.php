@@ -1,11 +1,11 @@
 <?php
 
-namespace Maartenpaauw\Chart\Data\Entries;
+namespace Maartenpaauw\Chartscss\Data\Entries;
 
-use Maartenpaauw\Chart\Data\Entries\Tooltip\TooltipContract;
-use Maartenpaauw\Chart\Data\Entries\Value\SizedValue;
-use Maartenpaauw\Chart\Data\Entries\Value\ValueContract;
-use Maartenpaauw\Chart\Data\Label\LabelContract;
+use Maartenpaauw\Chartscss\Data\Entries\Tooltip\TooltipContract;
+use Maartenpaauw\Chartscss\Data\Entries\Value\SizedValue;
+use Maartenpaauw\Chartscss\Data\Entries\Value\ValueContract;
+use Maartenpaauw\Chartscss\Data\Label\LabelContract;
 
 class CalculatedEntry implements EntryContract
 {

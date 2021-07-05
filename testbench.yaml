@@ -1,2 +1,2 @@
 providers:
-  - Maartenpaauw\Chart\ChartServiceProvider
+  - Maartenpaauw\Chartscss\ChartscssServiceProvider

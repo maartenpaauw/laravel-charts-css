@@ -1,11 +1,11 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Appearance\Colorscheme;
+namespace Maartenpaauw\Chartscss\Tests\Appearance\Colorscheme;
 
-use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
-use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
-use Maartenpaauw\Chart\Declarations\ColorDeclaration;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\Color;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\ColorContract;
+use Maartenpaauw\Chartscss\Declarations\ColorDeclaration;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class ColorTest extends TestCase
 {

@@ -1,22 +1,22 @@
 <?php
 
-namespace Maartenpaauw\Chart\Examples\Datasets;
+namespace Maartenpaauw\Chartscss\Examples\Datasets;
 
-use Maartenpaauw\Chart\Appearance\DatasetsSpacing;
-use Maartenpaauw\Chart\Appearance\DataSpacing;
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Appearance\ShowLabels;
-use Maartenpaauw\Chart\Chart;
-use Maartenpaauw\Chart\Configuration\Configuration;
-use Maartenpaauw\Chart\Configuration\ConfigurationContract;
-use Maartenpaauw\Chart\Data\Axes\NullAxes;
-use Maartenpaauw\Chart\Data\Datasets\Dataset;
-use Maartenpaauw\Chart\Data\Datasets\Datasets;
-use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
-use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
-use Maartenpaauw\Chart\Data\Label\Label;
-use Maartenpaauw\Chart\Legend\Legend;
+use Maartenpaauw\Chartscss\Appearance\DatasetsSpacing;
+use Maartenpaauw\Chartscss\Appearance\DataSpacing;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Appearance\ShowLabels;
+use Maartenpaauw\Chartscss\Chart;
+use Maartenpaauw\Chartscss\Configuration\Configuration;
+use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
+use Maartenpaauw\Chartscss\Data\Axes\NullAxes;
+use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
+use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Entries\Entry;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Label\Label;
+use Maartenpaauw\Chartscss\Legend\Legend;
 
 class DatasetsExample1 extends Chart
 {

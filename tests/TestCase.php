@@ -1,8 +1,8 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests;
+namespace Maartenpaauw\Chartscss\Tests;
 
-use Maartenpaauw\Chart\ChartServiceProvider;
+use Maartenpaauw\Chartscss\ChartscssServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -10,7 +10,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            ChartServiceProvider::class,
+            ChartscssServiceProvider::class,
         ];
     }
 

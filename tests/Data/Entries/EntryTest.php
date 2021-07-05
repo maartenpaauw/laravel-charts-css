@@ -1,14 +1,14 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Data\Entries;
+namespace Maartenpaauw\Chartscss\Tests\Data\Entries;
 
-use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
-use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\Tooltip\Tooltip;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
-use Maartenpaauw\Chart\Data\Label\Label;
-use Maartenpaauw\Chart\Data\Label\NullLabel;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\Color;
+use Maartenpaauw\Chartscss\Data\Entries\Entry;
+use Maartenpaauw\Chartscss\Data\Entries\Tooltip\Tooltip;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Label\Label;
+use Maartenpaauw\Chartscss\Data\Label\NullLabel;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class EntryTest extends TestCase
 {

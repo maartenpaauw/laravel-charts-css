@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Types;
+namespace Maartenpaauw\Chartscss\Tests\Types;
 
-use Maartenpaauw\Chart\Types\Area;
-use Maartenpaauw\Chart\Types\ChartType;
+use Maartenpaauw\Chartscss\Types\Area;
+use Maartenpaauw\Chartscss\Types\ChartType;
 
 class AreaTest extends ChartTypeTest
 {

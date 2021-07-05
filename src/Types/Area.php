@@ -1,6 +1,6 @@
 <?php
 
-namespace Maartenpaauw\Chart\Types;
+namespace Maartenpaauw\Chartscss\Types;
 
 class Area extends AbstractChartType
 {

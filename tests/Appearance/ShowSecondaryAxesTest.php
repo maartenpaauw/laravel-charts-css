@@ -1,10 +1,10 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Appearance;
+namespace Maartenpaauw\Chartscss\Tests\Appearance;
 
-use Maartenpaauw\Chart\Appearance\Exceptions\OutOfRangeException;
-use Maartenpaauw\Chart\Appearance\Modification;
-use Maartenpaauw\Chart\Appearance\ShowSecondaryAxes;
+use Maartenpaauw\Chartscss\Appearance\Exceptions\OutOfRangeException;
+use Maartenpaauw\Chartscss\Appearance\Modification;
+use Maartenpaauw\Chartscss\Appearance\ShowSecondaryAxes;
 
 class ShowSecondaryAxesTest extends ModificationTest
 {

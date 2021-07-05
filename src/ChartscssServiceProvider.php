@@ -1,23 +1,23 @@
 <?php
 
-namespace Maartenpaauw\Chart;
+namespace Maartenpaauw\Chartscss;
 
-use Maartenpaauw\Chart\Commands\MakeChartCommand;
-use Maartenpaauw\Chart\Components\Colorscheme;
-use Maartenpaauw\Chart\Components\Entry;
-use Maartenpaauw\Chart\Components\Heading;
-use Maartenpaauw\Chart\Components\Label;
-use Maartenpaauw\Chart\Components\Legend;
-use Maartenpaauw\Chart\Components\Stylesheet;
-use Maartenpaauw\Chart\Components\Table;
-use Maartenpaauw\Chart\Configuration\Specifications\Directives;
-use Maartenpaauw\Chart\Configuration\Specifications\HasColorscheme;
-use Maartenpaauw\Chart\Configuration\Specifications\HasHeading;
-use Maartenpaauw\Chart\Configuration\Specifications\HasLabels;
+use Maartenpaauw\Chartscss\Commands\MakeChartCommand;
+use Maartenpaauw\Chartscss\Components\Colorscheme;
+use Maartenpaauw\Chartscss\Components\Entry;
+use Maartenpaauw\Chartscss\Components\Heading;
+use Maartenpaauw\Chartscss\Components\Label;
+use Maartenpaauw\Chartscss\Components\Legend;
+use Maartenpaauw\Chartscss\Components\Stylesheet;
+use Maartenpaauw\Chartscss\Components\Table;
+use Maartenpaauw\Chartscss\Configuration\Specifications\Directives;
+use Maartenpaauw\Chartscss\Configuration\Specifications\HasColorscheme;
+use Maartenpaauw\Chartscss\Configuration\Specifications\HasHeading;
+use Maartenpaauw\Chartscss\Configuration\Specifications\HasLabels;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class ChartServiceProvider extends PackageServiceProvider
+class ChartscssServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {

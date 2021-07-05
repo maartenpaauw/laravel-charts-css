@@ -1,6 +1,6 @@
 <?php
 
-namespace Maartenpaauw\Chart\Appearance\Colorscheme;
+namespace Maartenpaauw\Chartscss\Appearance\Colorscheme;
 
 class Colorscheme implements ColorschemeContract
 {

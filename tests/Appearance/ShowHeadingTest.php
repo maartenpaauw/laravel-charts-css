@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Appearance;
+namespace Maartenpaauw\Chartscss\Tests\Appearance;
 
-use Maartenpaauw\Chart\Appearance\Modification;
-use Maartenpaauw\Chart\Appearance\ShowHeading;
+use Maartenpaauw\Chartscss\Appearance\Modification;
+use Maartenpaauw\Chartscss\Appearance\ShowHeading;
 
 class ShowHeadingTest extends ModificationTest
 {

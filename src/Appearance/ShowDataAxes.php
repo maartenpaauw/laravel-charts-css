@@ -1,6 +1,6 @@
 <?php
 
-namespace Maartenpaauw\Chart\Appearance;
+namespace Maartenpaauw\Chartscss\Appearance;
 
 class ShowDataAxes implements Modification
 {

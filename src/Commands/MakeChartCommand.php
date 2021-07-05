@@ -1,6 +1,6 @@
 <?php
 
-namespace Maartenpaauw\Chart\Commands;
+namespace Maartenpaauw\Chartscss\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;

@@ -1,17 +1,17 @@
 <?php
 
-namespace Maartenpaauw\Chart\Data\Entries;
+namespace Maartenpaauw\Chartscss\Data\Entries;
 
-use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
-use Maartenpaauw\Chart\Data\Entries\Tooltip\NullTooltip;
-use Maartenpaauw\Chart\Data\Entries\Tooltip\TooltipContract;
-use Maartenpaauw\Chart\Data\Entries\Value\ColorfulValue;
-use Maartenpaauw\Chart\Data\Entries\Value\StartValue;
-use Maartenpaauw\Chart\Data\Entries\Value\ValueContract;
-use Maartenpaauw\Chart\Data\Label\AlignedLabel;
-use Maartenpaauw\Chart\Data\Label\HiddenLabel;
-use Maartenpaauw\Chart\Data\Label\LabelContract;
-use Maartenpaauw\Chart\Data\Label\NullLabel;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\ColorContract;
+use Maartenpaauw\Chartscss\Data\Entries\Tooltip\NullTooltip;
+use Maartenpaauw\Chartscss\Data\Entries\Tooltip\TooltipContract;
+use Maartenpaauw\Chartscss\Data\Entries\Value\ColorfulValue;
+use Maartenpaauw\Chartscss\Data\Entries\Value\StartValue;
+use Maartenpaauw\Chartscss\Data\Entries\Value\ValueContract;
+use Maartenpaauw\Chartscss\Data\Label\AlignedLabel;
+use Maartenpaauw\Chartscss\Data\Label\HiddenLabel;
+use Maartenpaauw\Chartscss\Data\Label\LabelContract;
+use Maartenpaauw\Chartscss\Data\Label\NullLabel;
 
 class Entry implements EntryContract
 {

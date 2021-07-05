@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Appearance;
+namespace Maartenpaauw\Chartscss\Tests\Appearance;
 
-use Maartenpaauw\Chart\Appearance\Modification;
-use Maartenpaauw\Chart\Appearance\ShowDataOnHover;
+use Maartenpaauw\Chartscss\Appearance\Modification;
+use Maartenpaauw\Chartscss\Appearance\ShowDataOnHover;
 
 class ShowDataOnHoverTest extends ModificationTest
 {

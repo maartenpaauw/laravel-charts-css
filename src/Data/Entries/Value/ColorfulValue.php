@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Data\Entries\Value;
+namespace Maartenpaauw\Chartscss\Data\Entries\Value;
 
-use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
-use Maartenpaauw\Chart\Declarations\Declarations;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\ColorContract;
+use Maartenpaauw\Chartscss\Declarations\Declarations;
 
 class ColorfulValue implements ValueContract
 {

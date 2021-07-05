@@ -1,10 +1,10 @@
 <?php
 
-namespace Maartenpaauw\Chart\Configuration\Specifications;
+namespace Maartenpaauw\Chartscss\Configuration\Specifications;
 
-use Maartenpaauw\Chart\Configuration\ConfigurationContract;
-use Maartenpaauw\Chart\Types\Area;
-use Maartenpaauw\Chart\Types\Line;
+use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
+use Maartenpaauw\Chartscss\Types\Area;
+use Maartenpaauw\Chartscss\Types\Line;
 
 class NeedsStartingPoint implements ConfigurationSpecification
 {

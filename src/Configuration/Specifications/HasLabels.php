@@ -1,8 +1,8 @@
 <?php
 
-namespace Maartenpaauw\Chart\Configuration\Specifications;
+namespace Maartenpaauw\Chartscss\Configuration\Specifications;
 
-use Maartenpaauw\Chart\Configuration\ConfigurationContract;
+use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
 
 class HasLabels implements ConfigurationSpecification
 {

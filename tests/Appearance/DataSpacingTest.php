@@ -1,10 +1,10 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Appearance;
+namespace Maartenpaauw\Chartscss\Tests\Appearance;
 
-use Maartenpaauw\Chart\Appearance\DataSpacing;
-use Maartenpaauw\Chart\Appearance\Exceptions\OutOfRangeException;
-use Maartenpaauw\Chart\Appearance\Modification;
+use Maartenpaauw\Chartscss\Appearance\DataSpacing;
+use Maartenpaauw\Chartscss\Appearance\Exceptions\OutOfRangeException;
+use Maartenpaauw\Chartscss\Appearance\Modification;
 
 class DataSpacingTest extends ModificationTest
 {

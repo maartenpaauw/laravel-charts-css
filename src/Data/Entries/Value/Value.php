@@ -1,8 +1,8 @@
 <?php
 
-namespace Maartenpaauw\Chart\Data\Entries\Value;
+namespace Maartenpaauw\Chartscss\Data\Entries\Value;
 
-use Maartenpaauw\Chart\Declarations\Declarations;
+use Maartenpaauw\Chartscss\Declarations\Declarations;
 
 class Value implements ValueContract
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Appearance;
+namespace Maartenpaauw\Chartscss\Tests\Appearance;
 
-use Maartenpaauw\Chart\Appearance\HideData;
-use Maartenpaauw\Chart\Appearance\Modification;
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Appearance\Multiple;
-use Maartenpaauw\Chart\Appearance\ShowDataOnHover;
-use Maartenpaauw\Chart\Appearance\ShowLabels;
+use Maartenpaauw\Chartscss\Appearance\HideData;
+use Maartenpaauw\Chartscss\Appearance\Modification;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Appearance\Multiple;
+use Maartenpaauw\Chartscss\Appearance\ShowDataOnHover;
+use Maartenpaauw\Chartscss\Appearance\ShowLabels;
 
 class ModificationsTest extends ModificationTest
 {

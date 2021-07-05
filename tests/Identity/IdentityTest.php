@@ -1,10 +1,10 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Identity;
+namespace Maartenpaauw\Chartscss\Tests\Identity;
 
-use Maartenpaauw\Chart\Identity\Identity;
-use Maartenpaauw\Chart\Tests\TestCase;
-use Maartenpaauw\Chart\Types\Column;
+use Maartenpaauw\Chartscss\Identity\Identity;
+use Maartenpaauw\Chartscss\Tests\TestCase;
+use Maartenpaauw\Chartscss\Types\Column;
 
 class IdentityTest extends TestCase
 {

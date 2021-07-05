@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Stylesheets;
+namespace Maartenpaauw\Chartscss\Tests\Stylesheets;
 
-use Maartenpaauw\Chart\Stylesheets\NullStylesheet;
-use Maartenpaauw\Chart\Stylesheets\StylesheetContract;
+use Maartenpaauw\Chartscss\Stylesheets\NullStylesheet;
+use Maartenpaauw\Chartscss\Stylesheets\StylesheetContract;
 
 class NullStylesheetTest extends StylesheetTest
 {

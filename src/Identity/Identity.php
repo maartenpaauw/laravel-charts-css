@@ -1,8 +1,8 @@
 <?php
 
-namespace Maartenpaauw\Chart\Identity;
+namespace Maartenpaauw\Chartscss\Identity;
 
-use Maartenpaauw\Chart\Types\ChartType;
+use Maartenpaauw\Chartscss\Types\ChartType;
 
 class Identity
 {

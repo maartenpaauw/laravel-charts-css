@@ -1,6 +1,6 @@
 <?php
 
-namespace Maartenpaauw\Chart\Data\Entries\Tooltip;
+namespace Maartenpaauw\Chartscss\Data\Entries\Tooltip;
 
 class Tooltip implements TooltipContract
 {

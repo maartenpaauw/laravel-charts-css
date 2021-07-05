@@ -1,10 +1,10 @@
 <?php
 
-namespace Maartenpaauw\Chart\Components;
+namespace Maartenpaauw\Chartscss\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
-use Maartenpaauw\Chart\Data\Label\LabelContract;
+use Maartenpaauw\Chartscss\Data\Label\LabelContract;
 
 class Label extends Component
 {

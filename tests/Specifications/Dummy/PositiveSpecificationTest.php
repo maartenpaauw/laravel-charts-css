@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Specifications\Dummy;
+namespace Maartenpaauw\Chartscss\Tests\Specifications\Dummy;
 
-use Maartenpaauw\Chart\Specifications\Dummy\PositiveSpecification;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Specifications\Dummy\PositiveSpecification;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class PositiveSpecificationTest extends TestCase
 {

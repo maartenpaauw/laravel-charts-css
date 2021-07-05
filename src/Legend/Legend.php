@@ -1,16 +1,16 @@
 <?php
 
-namespace Maartenpaauw\Chart\Legend;
+namespace Maartenpaauw\Chartscss\Legend;
 
-use Maartenpaauw\Chart\Appearance\Modification;
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Legend\Appearance\Circle;
-use Maartenpaauw\Chart\Legend\Appearance\Ellipse;
-use Maartenpaauw\Chart\Legend\Appearance\Inline;
-use Maartenpaauw\Chart\Legend\Appearance\Line;
-use Maartenpaauw\Chart\Legend\Appearance\Rectangle;
-use Maartenpaauw\Chart\Legend\Appearance\Rhombus;
-use Maartenpaauw\Chart\Legend\Appearance\Square;
+use Maartenpaauw\Chartscss\Appearance\Modification;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Legend\Appearance\Circle;
+use Maartenpaauw\Chartscss\Legend\Appearance\Ellipse;
+use Maartenpaauw\Chartscss\Legend\Appearance\Inline;
+use Maartenpaauw\Chartscss\Legend\Appearance\Line;
+use Maartenpaauw\Chartscss\Legend\Appearance\Rectangle;
+use Maartenpaauw\Chartscss\Legend\Appearance\Rhombus;
+use Maartenpaauw\Chartscss\Legend\Appearance\Square;
 
 class Legend
 {

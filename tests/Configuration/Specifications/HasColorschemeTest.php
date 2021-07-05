@@ -1,17 +1,17 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Configuration\Specifications;
+namespace Maartenpaauw\Chartscss\Tests\Configuration\Specifications;
 
-use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
-use Maartenpaauw\Chart\Appearance\Colorscheme\Colorscheme;
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Configuration\Configuration;
-use Maartenpaauw\Chart\Configuration\Specifications\ConfigurationSpecification;
-use Maartenpaauw\Chart\Configuration\Specifications\HasColorscheme;
-use Maartenpaauw\Chart\Identity\Identity;
-use Maartenpaauw\Chart\Legend\Legend;
-use Maartenpaauw\Chart\Tests\TestCase;
-use Maartenpaauw\Chart\Types\Column;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\Color;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\Colorscheme;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Configuration\Configuration;
+use Maartenpaauw\Chartscss\Configuration\Specifications\ConfigurationSpecification;
+use Maartenpaauw\Chartscss\Configuration\Specifications\HasColorscheme;
+use Maartenpaauw\Chartscss\Identity\Identity;
+use Maartenpaauw\Chartscss\Legend\Legend;
+use Maartenpaauw\Chartscss\Tests\TestCase;
+use Maartenpaauw\Chartscss\Types\Column;
 
 class HasColorschemeTest extends TestCase
 {

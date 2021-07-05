@@ -1,10 +1,10 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Declarations;
+namespace Maartenpaauw\Chartscss\Tests\Declarations;
 
-use Maartenpaauw\Chart\Declarations\Declarations;
-use Maartenpaauw\Chart\Declarations\RowColorDeclaration;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Declarations\Declarations;
+use Maartenpaauw\Chartscss\Declarations\RowColorDeclaration;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class DeclarationsTest extends TestCase
 {

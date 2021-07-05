@@ -1,6 +1,6 @@
 <?php
 
-namespace Maartenpaauw\Chart\Stylesheets;
+namespace Maartenpaauw\Chartscss\Stylesheets;
 
 interface StylesheetContract
 {

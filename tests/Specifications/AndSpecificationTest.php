@@ -1,11 +1,11 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Specifications;
+namespace Maartenpaauw\Chartscss\Tests\Specifications;
 
-use Maartenpaauw\Chart\Specifications\AndSpecification;
-use Maartenpaauw\Chart\Specifications\Dummy\NegativeSpecification;
-use Maartenpaauw\Chart\Specifications\Dummy\PositiveSpecification;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Specifications\AndSpecification;
+use Maartenpaauw\Chartscss\Specifications\Dummy\NegativeSpecification;
+use Maartenpaauw\Chartscss\Specifications\Dummy\PositiveSpecification;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class AndSpecificationTest extends TestCase
 {

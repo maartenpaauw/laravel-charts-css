@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Specifications\Dummy;
+namespace Maartenpaauw\Chartscss\Tests\Specifications\Dummy;
 
-use Maartenpaauw\Chart\Specifications\Dummy\NegativeSpecification;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Specifications\Dummy\NegativeSpecification;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class NegativeSpecificationTest extends TestCase
 {

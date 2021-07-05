@@ -1,8 +1,8 @@
 <?php
 
-namespace Maartenpaauw\Chart\Data\Specifications;
+namespace Maartenpaauw\Chartscss\Data\Specifications;
 
-use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
 
 class HasDatasetLabels implements DatasetsSpecification
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Legend\Appearance;
+namespace Maartenpaauw\Chartscss\Tests\Legend\Appearance;
 
-use Maartenpaauw\Chart\Appearance\Modification;
-use Maartenpaauw\Chart\Legend\Appearance\Rectangle;
-use Maartenpaauw\Chart\Tests\Appearance\ModificationTest;
+use Maartenpaauw\Chartscss\Appearance\Modification;
+use Maartenpaauw\Chartscss\Legend\Appearance\Rectangle;
+use Maartenpaauw\Chartscss\Tests\Appearance\ModificationTest;
 
 class RectangleTest extends ModificationTest
 {

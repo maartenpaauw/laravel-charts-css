@@ -1,10 +1,10 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Data\Entries\Tooltip;
+namespace Maartenpaauw\Chartscss\Tests\Data\Entries\Tooltip;
 
-use Maartenpaauw\Chart\Data\Entries\Tooltip\NullTooltip;
-use Maartenpaauw\Chart\Data\Entries\Tooltip\TooltipContract;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Data\Entries\Tooltip\NullTooltip;
+use Maartenpaauw\Chartscss\Data\Entries\Tooltip\TooltipContract;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class NullTooltipTest extends TestCase
 {

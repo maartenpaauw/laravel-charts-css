@@ -1,8 +1,8 @@
 <?php
 
-namespace Maartenpaauw\Chart\Appearance;
+namespace Maartenpaauw\Chartscss\Appearance;
 
-use Maartenpaauw\Chart\Appearance\Exceptions\OutOfRangeException;
+use Maartenpaauw\Chartscss\Appearance\Exceptions\OutOfRangeException;
 
 class DatasetsSpacing extends RangeModification
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Legend;
+namespace Maartenpaauw\Chartscss\Tests\Legend;
 
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Legend\Appearance\Inline;
-use Maartenpaauw\Chart\Legend\Appearance\Square;
-use Maartenpaauw\Chart\Legend\Legend;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Legend\Appearance\Inline;
+use Maartenpaauw\Chartscss\Legend\Appearance\Square;
+use Maartenpaauw\Chartscss\Legend\Legend;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class LegendTest extends TestCase
 {

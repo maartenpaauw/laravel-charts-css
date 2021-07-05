@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Declarations;
+namespace Maartenpaauw\Chartscss\Tests\Declarations;
 
-use Maartenpaauw\Chart\Declarations\DeclarationContract;
-use Maartenpaauw\Chart\Declarations\SizeDeclaration;
+use Maartenpaauw\Chartscss\Declarations\DeclarationContract;
+use Maartenpaauw\Chartscss\Declarations\SizeDeclaration;
 
 class SizeDeclarationTest extends DeclarationTest
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Types;
+namespace Maartenpaauw\Chartscss\Tests\Types;
 
-use Maartenpaauw\Chart\Types\Bar;
-use Maartenpaauw\Chart\Types\ChartType;
+use Maartenpaauw\Chartscss\Types\Bar;
+use Maartenpaauw\Chartscss\Types\ChartType;
 
 class BarTest extends ChartTypeTest
 {

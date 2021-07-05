@@ -1,10 +1,10 @@
 <?php
 
-namespace Maartenpaauw\Chart\Components;
+namespace Maartenpaauw\Chartscss\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
-use Maartenpaauw\Chart\Data\Entries\EntryContract;
+use Maartenpaauw\Chartscss\Data\Entries\EntryContract;
 
 class Entry extends Component
 {

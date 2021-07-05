@@ -1,12 +1,12 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Appearance\Colorscheme;
+namespace Maartenpaauw\Chartscss\Tests\Appearance\Colorscheme;
 
-use Maartenpaauw\Chart\Appearance\Colorscheme\Color;
-use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
-use Maartenpaauw\Chart\Appearance\Colorscheme\RowColor;
-use Maartenpaauw\Chart\Declarations\RowColorDeclaration;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\Color;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\ColorContract;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\RowColor;
+use Maartenpaauw\Chartscss\Declarations\RowColorDeclaration;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class RowColorTest extends TestCase
 {

@@ -1,25 +1,25 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Configuration;
+namespace Maartenpaauw\Chartscss\Tests\Configuration;
 
-use Maartenpaauw\Chart\Appearance\Colorscheme\Colorscheme;
-use Maartenpaauw\Chart\Appearance\Colorscheme\ColorschemeContract;
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Configuration\Configuration;
-use Maartenpaauw\Chart\Configuration\ConfigurationContract;
-use Maartenpaauw\Chart\Configuration\SmartConfiguration;
-use Maartenpaauw\Chart\Data\Axes\Axes;
-use Maartenpaauw\Chart\Data\Axes\NullAxes;
-use Maartenpaauw\Chart\Data\Datasets\Dataset;
-use Maartenpaauw\Chart\Data\Datasets\Datasets;
-use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
-use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
-use Maartenpaauw\Chart\Data\Label\Label;
-use Maartenpaauw\Chart\Identity\Identity;
-use Maartenpaauw\Chart\Legend\Legend;
-use Maartenpaauw\Chart\Tests\TestCase;
-use Maartenpaauw\Chart\Types\Column;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\Colorscheme;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\ColorschemeContract;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Configuration\Configuration;
+use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
+use Maartenpaauw\Chartscss\Configuration\SmartConfiguration;
+use Maartenpaauw\Chartscss\Data\Axes\Axes;
+use Maartenpaauw\Chartscss\Data\Axes\NullAxes;
+use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
+use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Entries\Entry;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Label\Label;
+use Maartenpaauw\Chartscss\Identity\Identity;
+use Maartenpaauw\Chartscss\Legend\Legend;
+use Maartenpaauw\Chartscss\Tests\TestCase;
+use Maartenpaauw\Chartscss\Types\Column;
 
 class SmartConfigurationTest extends TestCase
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Stylesheets;
+namespace Maartenpaauw\Chartscss\Tests\Stylesheets;
 
-use Maartenpaauw\Chart\Stylesheets\JSDelivrStylesheet;
-use Maartenpaauw\Chart\Stylesheets\StylesheetContract;
+use Maartenpaauw\Chartscss\Stylesheets\JSDelivrStylesheet;
+use Maartenpaauw\Chartscss\Stylesheets\StylesheetContract;
 
 class JSDelivrStylesheetTest extends StylesheetTest
 {

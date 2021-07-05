@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Types;
+namespace Maartenpaauw\Chartscss\Tests\Types;
 
-use Maartenpaauw\Chart\Types\ChartType;
-use Maartenpaauw\Chart\Types\Column;
+use Maartenpaauw\Chartscss\Types\ChartType;
+use Maartenpaauw\Chartscss\Types\Column;
 
 class ColumnTest extends ChartTypeTest
 {

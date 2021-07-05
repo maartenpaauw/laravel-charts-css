@@ -1,10 +1,10 @@
 <?php
 
-namespace Maartenpaauw\Chart\Data\Label;
+namespace Maartenpaauw\Chartscss\Data\Label;
 
-use Maartenpaauw\Chart\Appearance\HideLabel;
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Declarations\Declarations;
+use Maartenpaauw\Chartscss\Appearance\HideLabel;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Declarations\Declarations;
 
 class HiddenLabel implements LabelContract
 {

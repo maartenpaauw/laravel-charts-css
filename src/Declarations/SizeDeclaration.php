@@ -1,6 +1,6 @@
 <?php
 
-namespace Maartenpaauw\Chart\Declarations;
+namespace Maartenpaauw\Chartscss\Declarations;
 
 class SizeDeclaration implements DeclarationContract
 {

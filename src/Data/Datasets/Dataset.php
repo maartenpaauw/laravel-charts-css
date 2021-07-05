@@ -1,12 +1,12 @@
 <?php
 
-namespace Maartenpaauw\Chart\Data\Datasets;
+namespace Maartenpaauw\Chartscss\Data\Datasets;
 
-use Maartenpaauw\Chart\Data\Entries\EntryContract;
-use Maartenpaauw\Chart\Data\Label\AlignedLabel;
-use Maartenpaauw\Chart\Data\Label\HiddenLabel;
-use Maartenpaauw\Chart\Data\Label\LabelContract;
-use Maartenpaauw\Chart\Data\Label\NullLabel;
+use Maartenpaauw\Chartscss\Data\Entries\EntryContract;
+use Maartenpaauw\Chartscss\Data\Label\AlignedLabel;
+use Maartenpaauw\Chartscss\Data\Label\HiddenLabel;
+use Maartenpaauw\Chartscss\Data\Label\LabelContract;
+use Maartenpaauw\Chartscss\Data\Label\NullLabel;
 
 class Dataset implements DatasetContract
 {

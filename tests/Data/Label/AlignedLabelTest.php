@@ -1,11 +1,11 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Data\Label;
+namespace Maartenpaauw\Chartscss\Tests\Data\Label;
 
-use Maartenpaauw\Chart\Data\Label\AlignedLabel;
-use Maartenpaauw\Chart\Data\Label\LabelContract;
-use Maartenpaauw\Chart\Data\Label\NullLabel;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Data\Label\AlignedLabel;
+use Maartenpaauw\Chartscss\Data\Label\LabelContract;
+use Maartenpaauw\Chartscss\Data\Label\NullLabel;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class AlignedLabelTest extends TestCase
 {

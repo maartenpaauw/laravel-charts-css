@@ -1,11 +1,11 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Data\Label;
+namespace Maartenpaauw\Chartscss\Tests\Data\Label;
 
-use Maartenpaauw\Chart\Data\Label\HiddenLabel;
-use Maartenpaauw\Chart\Data\Label\LabelContract;
-use Maartenpaauw\Chart\Data\Label\NullLabel;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Data\Label\HiddenLabel;
+use Maartenpaauw\Chartscss\Data\Label\LabelContract;
+use Maartenpaauw\Chartscss\Data\Label\NullLabel;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class HiddenLabelTest extends TestCase
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Appearance;
+namespace Maartenpaauw\Chartscss\Tests\Appearance;
 
-use Maartenpaauw\Chart\Appearance\LabelsAlignCenter;
-use Maartenpaauw\Chart\Appearance\Modification;
+use Maartenpaauw\Chartscss\Appearance\LabelsAlignCenter;
+use Maartenpaauw\Chartscss\Appearance\Modification;
 
 class LabelsAlignCenterTest extends ModificationTest
 {

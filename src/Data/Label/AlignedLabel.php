@@ -1,10 +1,10 @@
 <?php
 
-namespace Maartenpaauw\Chart\Data\Label;
+namespace Maartenpaauw\Chartscss\Data\Label;
 
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Declarations\Declarations;
-use Maartenpaauw\Chart\Declarations\LabelAlignmentDeclaration;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Declarations\Declarations;
+use Maartenpaauw\Chartscss\Declarations\LabelAlignmentDeclaration;
 
 class AlignedLabel implements LabelContract
 {

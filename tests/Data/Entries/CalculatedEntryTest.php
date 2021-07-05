@@ -1,12 +1,12 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Data\Entries;
+namespace Maartenpaauw\Chartscss\Tests\Data\Entries;
 
-use Maartenpaauw\Chart\Data\Entries\CalculatedEntry;
-use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\EntryContract;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Data\Entries\CalculatedEntry;
+use Maartenpaauw\Chartscss\Data\Entries\Entry;
+use Maartenpaauw\Chartscss\Data\Entries\EntryContract;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class CalculatedEntryTest extends TestCase
 {

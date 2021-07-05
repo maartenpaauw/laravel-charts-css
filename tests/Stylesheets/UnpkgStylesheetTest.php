@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Stylesheets;
+namespace Maartenpaauw\Chartscss\Tests\Stylesheets;
 
-use Maartenpaauw\Chart\Stylesheets\StylesheetContract;
-use Maartenpaauw\Chart\Stylesheets\UnpkgStylesheet;
+use Maartenpaauw\Chartscss\Stylesheets\StylesheetContract;
+use Maartenpaauw\Chartscss\Stylesheets\UnpkgStylesheet;
 
 class UnpkgStylesheetTest extends StylesheetTest
 {

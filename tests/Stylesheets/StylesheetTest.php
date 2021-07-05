@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Stylesheets;
+namespace Maartenpaauw\Chartscss\Tests\Stylesheets;
 
-use Maartenpaauw\Chart\Stylesheets\StylesheetContract;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Stylesheets\StylesheetContract;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 abstract class StylesheetTest extends TestCase
 {

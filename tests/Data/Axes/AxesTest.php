@@ -1,10 +1,10 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Data\Axes;
+namespace Maartenpaauw\Chartscss\Tests\Data\Axes;
 
-use Maartenpaauw\Chart\Data\Axes\Axes;
-use Maartenpaauw\Chart\Data\Axes\AxesContract;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Data\Axes\Axes;
+use Maartenpaauw\Chartscss\Data\Axes\AxesContract;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class AxesTest extends TestCase
 {

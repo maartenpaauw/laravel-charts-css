@@ -1,23 +1,23 @@
 <?php
 
-namespace Maartenpaauw\Chart\Configuration;
+namespace Maartenpaauw\Chartscss\Configuration;
 
-use Maartenpaauw\Chart\Appearance\Colorscheme\ColorschemeContract;
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Appearance\Multiple;
-use Maartenpaauw\Chart\Appearance\ShowHeading;
-use Maartenpaauw\Chart\Appearance\ShowLabels;
-use Maartenpaauw\Chart\Configuration\Specifications\HasHeading;
-use Maartenpaauw\Chart\Configuration\Specifications\HasLabels;
-use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
-use Maartenpaauw\Chart\Data\Specifications\HasDatasetLabels;
-use Maartenpaauw\Chart\Data\Specifications\HasEntryLabels;
-use Maartenpaauw\Chart\Data\Specifications\HasMultiple;
-use Maartenpaauw\Chart\Identity\Identity;
-use Maartenpaauw\Chart\Legend\Legend;
-use Maartenpaauw\Chart\Specifications\AndSpecification;
-use Maartenpaauw\Chart\Specifications\NotSpecification;
-use Maartenpaauw\Chart\Specifications\OrSpecification;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\ColorschemeContract;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Appearance\Multiple;
+use Maartenpaauw\Chartscss\Appearance\ShowHeading;
+use Maartenpaauw\Chartscss\Appearance\ShowLabels;
+use Maartenpaauw\Chartscss\Configuration\Specifications\HasHeading;
+use Maartenpaauw\Chartscss\Configuration\Specifications\HasLabels;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Specifications\HasDatasetLabels;
+use Maartenpaauw\Chartscss\Data\Specifications\HasEntryLabels;
+use Maartenpaauw\Chartscss\Data\Specifications\HasMultiple;
+use Maartenpaauw\Chartscss\Identity\Identity;
+use Maartenpaauw\Chartscss\Legend\Legend;
+use Maartenpaauw\Chartscss\Specifications\AndSpecification;
+use Maartenpaauw\Chartscss\Specifications\NotSpecification;
+use Maartenpaauw\Chartscss\Specifications\OrSpecification;
 
 class SmartConfiguration implements ConfigurationContract
 {

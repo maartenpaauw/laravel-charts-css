@@ -1,8 +1,8 @@
 <?php
 
-namespace Maartenpaauw\Chart\Data\Datasets;
+namespace Maartenpaauw\Chartscss\Data\Datasets;
 
-use Maartenpaauw\Chart\Data\Axes\AxesContract;
+use Maartenpaauw\Chartscss\Data\Axes\AxesContract;
 
 class Datasets implements DatasetsContract
 {

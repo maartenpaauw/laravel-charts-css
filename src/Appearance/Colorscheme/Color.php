@@ -1,9 +1,9 @@
 <?php
 
-namespace Maartenpaauw\Chart\Appearance\Colorscheme;
+namespace Maartenpaauw\Chartscss\Appearance\Colorscheme;
 
-use Maartenpaauw\Chart\Declarations\ColorDeclaration;
-use Maartenpaauw\Chart\Declarations\DeclarationContract;
+use Maartenpaauw\Chartscss\Declarations\ColorDeclaration;
+use Maartenpaauw\Chartscss\Declarations\DeclarationContract;
 
 class Color implements ColorContract
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Data\Entries\Label;
+namespace Maartenpaauw\Chartscss\Tests\Data\Entries\Label;
 
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Data\Label\Label;
-use Maartenpaauw\Chart\Data\Label\LabelContract;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Data\Label\Label;
+use Maartenpaauw\Chartscss\Data\Label\LabelContract;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class LabelTest extends TestCase
 {

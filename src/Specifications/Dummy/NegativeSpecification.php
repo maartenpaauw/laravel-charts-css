@@ -1,8 +1,8 @@
 <?php
 
-namespace Maartenpaauw\Chart\Specifications\Dummy;
+namespace Maartenpaauw\Chartscss\Specifications\Dummy;
 
-use Maartenpaauw\Chart\Specifications\BasicSpecification;
+use Maartenpaauw\Chartscss\Specifications\BasicSpecification;
 
 class NegativeSpecification implements BasicSpecification
 {

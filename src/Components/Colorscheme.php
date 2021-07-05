@@ -1,11 +1,11 @@
 <?php
 
-namespace Maartenpaauw\Chart\Components;
+namespace Maartenpaauw\Chartscss\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
-use Maartenpaauw\Chart\Appearance\Colorscheme\ColorContract;
-use Maartenpaauw\Chart\Configuration\ConfigurationContract;
+use Maartenpaauw\Chartscss\Appearance\Colorscheme\ColorContract;
+use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
 
 class Colorscheme extends Component
 {

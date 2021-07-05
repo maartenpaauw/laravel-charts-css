@@ -1,14 +1,14 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Data\Datasets;
+namespace Maartenpaauw\Chartscss\Tests\Data\Datasets;
 
-use Maartenpaauw\Chart\Data\Datasets\CalculatedDataset;
-use Maartenpaauw\Chart\Data\Datasets\Dataset;
-use Maartenpaauw\Chart\Data\Datasets\DatasetContract;
-use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
-use Maartenpaauw\Chart\Data\Label\Label;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Data\Datasets\CalculatedDataset;
+use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetContract;
+use Maartenpaauw\Chartscss\Data\Entries\Entry;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Label\Label;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class CalculatedDatasetTest extends TestCase
 {

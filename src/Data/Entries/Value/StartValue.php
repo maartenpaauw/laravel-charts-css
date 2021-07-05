@@ -1,10 +1,10 @@
 <?php
 
-namespace Maartenpaauw\Chart\Data\Entries\Value;
+namespace Maartenpaauw\Chartscss\Data\Entries\Value;
 
-use Maartenpaauw\Chart\Declarations\DeclarationContract;
-use Maartenpaauw\Chart\Declarations\Declarations;
-use Maartenpaauw\Chart\Declarations\StartDeclaration;
+use Maartenpaauw\Chartscss\Declarations\DeclarationContract;
+use Maartenpaauw\Chartscss\Declarations\Declarations;
+use Maartenpaauw\Chartscss\Declarations\StartDeclaration;
 
 class StartValue implements ValueContract
 {

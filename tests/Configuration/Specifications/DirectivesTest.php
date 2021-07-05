@@ -1,11 +1,11 @@
 <?php
 
-namespace Maartenpaauw\Chart\Tests\Configuration\Specifications;
+namespace Maartenpaauw\Chartscss\Tests\Configuration\Specifications;
 
 use Illuminate\Support\Facades\Blade;
-use Maartenpaauw\Chart\Configuration\Specifications\Directives;
-use Maartenpaauw\Chart\Configuration\Specifications\HasLabels;
-use Maartenpaauw\Chart\Tests\TestCase;
+use Maartenpaauw\Chartscss\Configuration\Specifications\Directives;
+use Maartenpaauw\Chartscss\Configuration\Specifications\HasLabels;
+use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class DirectivesTest extends TestCase
 {

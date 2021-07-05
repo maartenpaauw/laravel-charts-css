@@ -1,21 +1,21 @@
 <?php
 
-namespace Maartenpaauw\Chart\Examples\Orientation;
+namespace Maartenpaauw\Chartscss\Examples\Orientation;
 
-use Maartenpaauw\Chart\Appearance\Modifications;
-use Maartenpaauw\Chart\Appearance\ReverseOrientation;
-use Maartenpaauw\Chart\Chart;
-use Maartenpaauw\Chart\Configuration\Configuration;
-use Maartenpaauw\Chart\Configuration\ConfigurationContract;
-use Maartenpaauw\Chart\Data\Axes\Axes;
-use Maartenpaauw\Chart\Data\Datasets\Dataset;
-use Maartenpaauw\Chart\Data\Datasets\Datasets;
-use Maartenpaauw\Chart\Data\Datasets\DatasetsContract;
-use Maartenpaauw\Chart\Data\Entries\Entry;
-use Maartenpaauw\Chart\Data\Entries\Value\Value;
-use Maartenpaauw\Chart\Data\Label\Label;
-use Maartenpaauw\Chart\Types\Bar;
-use Maartenpaauw\Chart\Types\ChartType;
+use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Appearance\ReverseOrientation;
+use Maartenpaauw\Chartscss\Chart;
+use Maartenpaauw\Chartscss\Configuration\Configuration;
+use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
+use Maartenpaauw\Chartscss\Data\Axes\Axes;
+use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
+use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Entries\Entry;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Label\Label;
+use Maartenpaauw\Chartscss\Types\Bar;
+use Maartenpaauw\Chartscss\Types\ChartType;
 
 class OrientationExample2 extends Chart
 {

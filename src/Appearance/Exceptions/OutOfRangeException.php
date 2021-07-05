@@ -1,6 +1,6 @@
 <?php
 
-namespace Maartenpaauw\Chart\Appearance\Exceptions;
+namespace Maartenpaauw\Chartscss\Appearance\Exceptions;
 
 use InvalidArgumentException;
 

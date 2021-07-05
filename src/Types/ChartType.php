@@ -1,8 +1,8 @@
 <?php
 
-namespace Maartenpaauw\Chart\Types;
+namespace Maartenpaauw\Chartscss\Types;
 
-use Maartenpaauw\Chart\Appearance\Modification;
+use Maartenpaauw\Chartscss\Appearance\Modification;
 
 interface ChartType
 {
