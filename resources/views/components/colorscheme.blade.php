@@ -2,7 +2,7 @@
     @push('charts.css')
         @hasLabels($configuration) {{ $id }} ul, {{ $id }} table @else {{ $id }} @endhasLabels {
             @foreach($declarations as $declaration)
-                {{ $declaration }}
+                {!! $declaration !!}
             @endforeach
         }
     @endpush
