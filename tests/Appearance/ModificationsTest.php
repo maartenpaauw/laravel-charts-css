@@ -54,23 +54,6 @@ class ModificationsTest extends ModificationTest
     }
 
     /** @test */
-    public function it_should_be_possible_to_merge_two_modification_instances(): void
-    {
-        // Arrange
-        $a = new Modifications([new HideData()]);
-        $b = new Modifications([new ShowLabels()]);
-
-        // Act
-        $mergedModifications = $a->merge($b);
-        [$hideData, $showLabels] = $modifications = $mergedModifications->toArray();
-
-        // Assert
-        $this->assertInstanceOf(HideData::class, $hideData);
-        $this->assertInstanceOf(ShowLabels::class, $showLabels);
-        $this->assertCount(2, $modifications);
-    }
-
-    /** @test */
     public function it_should_be_possible_to_convert_it_to_a_string(): void
     {
         // Arrange

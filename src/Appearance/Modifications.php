@@ -16,13 +16,6 @@ class Modifications implements Modification
         return new self(array_merge($this->modifications, [$modification]));
     }
 
-    public function merge(Modifications $modifications): Modifications
-    {
-        $merge = array_merge($this->modifications, $modifications->toArray());
-
-        return new Modifications($merge);
-    }
-
     public function classes(): array
     {
         return array_reduce($this->modifications, function (array $classes, Modification $modification) {
