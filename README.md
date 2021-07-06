@@ -30,7 +30,7 @@ This will generate a chart component within the `View/Components` namespace.
 ```php
 <?php
 
-namespace DummyNamespace;
+namespace App\View\Components;
 
 use Maartenpaauw\Chartscss\Chart;
 use Maartenpaauw\Chartscss\Data\Axes\Axes;
