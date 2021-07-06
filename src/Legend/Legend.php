@@ -83,14 +83,9 @@ class Legend
 
     private function withModification(Modification $modification): Legend
     {
-        $mergedModifications = $this->modifications
-            ->merge(new Modifications([
-                $modification,
-            ]));
-
         return new self(
             $this->labels,
-            $mergedModifications,
+            $this->modifications->add($modification),
             $this->tag,
         );
     }
