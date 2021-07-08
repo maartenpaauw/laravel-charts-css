@@ -311,15 +311,13 @@ Then this component will only be used to render the colorscheme definitions.
 ### Type
 
 ```php
-use Maartenpaauw\Chartscss\Types\Bar;
-use Maartenpaauw\Chartscss\Types\ChartType;
+use Maartenpaauw\Chartscss\AreaChart;
 
-// ...
-
-protected function type(): ChartType
+class MyChart extends AreaChart
 {
-    return new Bar();
+    // ...
 }
+
 ```
 
 At the moment there is support for 4 types of charts:
@@ -329,7 +327,8 @@ At the moment there is support for 4 types of charts:
 - `Column`
 - `Line`
 
-By default each generated chart is a `Column` chart. If you want to change the chart type you can do it by overwriting the `type` method.
+By default, each generated chart is a `Column` chart. If you want to change the chart type you can overwrite the `type`
+method, or you can inherit the `AreaChart`, `BarChart` or `LineChart` class instead of the `Chart` class.
 
 When using an `area` or `line` chart, you must determine the start of the chart by calling the `start` method on the first
 entry like this:
