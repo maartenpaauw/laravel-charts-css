@@ -4,7 +4,7 @@ namespace Maartenpaauw\Chartscss\Examples\Orientation;
 
 use Maartenpaauw\Chartscss\Appearance\Modifications;
 use Maartenpaauw\Chartscss\Appearance\ReverseOrientation;
-use Maartenpaauw\Chartscss\Chart;
+use Maartenpaauw\Chartscss\BarChart;
 use Maartenpaauw\Chartscss\Configuration\Configuration;
 use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
 use Maartenpaauw\Chartscss\Data\Axes\Axes;
@@ -14,10 +14,8 @@ use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chartscss\Data\Entries\Entry;
 use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
 use Maartenpaauw\Chartscss\Data\Label\Label;
-use Maartenpaauw\Chartscss\Types\Bar;
-use Maartenpaauw\Chartscss\Types\ChartType;
 
-class OrientationExample2 extends Chart
+class OrientationExample2 extends BarChart
 {
     protected function id(): string
     {
@@ -27,11 +25,6 @@ class OrientationExample2 extends Chart
     protected function heading(): string
     {
         return 'Orientation Example #2';
-    }
-
-    protected function type(): ChartType
-    {
-        return new Bar();
     }
 
     protected function datasets(): DatasetsContract

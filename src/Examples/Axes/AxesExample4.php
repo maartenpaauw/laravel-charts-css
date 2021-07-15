@@ -6,7 +6,7 @@ use Maartenpaauw\Chartscss\Appearance\Modifications;
 use Maartenpaauw\Chartscss\Appearance\ReverseOrientation;
 use Maartenpaauw\Chartscss\Appearance\ShowLabels;
 use Maartenpaauw\Chartscss\Appearance\ShowPrimaryAxis;
-use Maartenpaauw\Chartscss\Chart;
+use Maartenpaauw\Chartscss\BarChart;
 use Maartenpaauw\Chartscss\Configuration\Configuration;
 use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
 use Maartenpaauw\Chartscss\Data\Axes\Axes;
@@ -16,10 +16,8 @@ use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chartscss\Data\Entries\Entry;
 use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
 use Maartenpaauw\Chartscss\Data\Label\Label;
-use Maartenpaauw\Chartscss\Types\Bar;
-use Maartenpaauw\Chartscss\Types\ChartType;
 
-class AxesExample4 extends Chart
+class AxesExample4 extends BarChart
 {
     protected function id(): string
     {
@@ -29,11 +27,6 @@ class AxesExample4 extends Chart
     protected function heading(): string
     {
         return 'Axes Example #4';
-    }
-
-    protected function type(): ChartType
-    {
-        return new Bar();
     }
 
     protected function datasets(): DatasetsContract

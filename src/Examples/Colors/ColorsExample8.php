@@ -7,7 +7,7 @@ use Maartenpaauw\Chartscss\Appearance\Colorscheme\ColorschemeContract;
 use Maartenpaauw\Chartscss\Appearance\HideData;
 use Maartenpaauw\Chartscss\Appearance\Modifications;
 use Maartenpaauw\Chartscss\Appearance\ShowLabels;
-use Maartenpaauw\Chartscss\Chart;
+use Maartenpaauw\Chartscss\AreaChart;
 use Maartenpaauw\Chartscss\Configuration\Configuration;
 use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
 use Maartenpaauw\Chartscss\Data\Axes\Axes;
@@ -17,10 +17,8 @@ use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chartscss\Data\Entries\Entry;
 use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
 use Maartenpaauw\Chartscss\Data\Label\Label;
-use Maartenpaauw\Chartscss\Types\Area;
-use Maartenpaauw\Chartscss\Types\ChartType;
 
-class ColorsExample8 extends Chart
+class ColorsExample8 extends AreaChart
 {
     protected function id(): string
     {
@@ -30,11 +28,6 @@ class ColorsExample8 extends Chart
     protected function heading(): string
     {
         return 'Colors Example #8';
-    }
-
-    protected function type(): ChartType
-    {
-        return new Area();
     }
 
     protected function datasets(): DatasetsContract

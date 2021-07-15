@@ -4,7 +4,7 @@ namespace Maartenpaauw\Chartscss\Examples\Data;
 
 use Maartenpaauw\Chartscss\Appearance\HideData;
 use Maartenpaauw\Chartscss\Appearance\Modifications;
-use Maartenpaauw\Chartscss\Chart;
+use Maartenpaauw\Chartscss\AreaChart;
 use Maartenpaauw\Chartscss\Configuration\Configuration;
 use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
 use Maartenpaauw\Chartscss\Data\Axes\NullAxes;
@@ -13,10 +13,8 @@ use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
 use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chartscss\Data\Entries\Entry;
 use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
-use Maartenpaauw\Chartscss\Types\Area;
-use Maartenpaauw\Chartscss\Types\ChartType;
 
-class DataExample6 extends Chart
+class DataExample6 extends AreaChart
 {
     protected function id(): string
     {
@@ -26,11 +24,6 @@ class DataExample6 extends Chart
     protected function heading(): string
     {
         return 'Data Example #6 - Front End Developer Salary';
-    }
-
-    protected function type(): ChartType
-    {
-        return new Area();
     }
 
     protected function configuration(): ConfigurationContract

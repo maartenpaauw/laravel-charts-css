@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chartscss\Examples\Orientation;
 
-use Maartenpaauw\Chartscss\Chart;
+use Maartenpaauw\Chartscss\AreaChart;
 use Maartenpaauw\Chartscss\Configuration\Configuration;
 use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
 use Maartenpaauw\Chartscss\Data\Axes\Axes;
@@ -12,10 +12,8 @@ use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chartscss\Data\Entries\Entry;
 use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
 use Maartenpaauw\Chartscss\Data\Label\Label;
-use Maartenpaauw\Chartscss\Types\Area;
-use Maartenpaauw\Chartscss\Types\ChartType;
 
-class OrientationExample5 extends Chart
+class OrientationExample5 extends AreaChart
 {
     protected function id(): string
     {
@@ -25,11 +23,6 @@ class OrientationExample5 extends Chart
     protected function heading(): string
     {
         return 'Orientation Example #5';
-    }
-
-    protected function type(): ChartType
-    {
-        return new Area();
     }
 
     protected function datasets(): DatasetsContract
