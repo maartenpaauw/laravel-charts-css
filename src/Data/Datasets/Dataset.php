@@ -2,7 +2,6 @@
 
 namespace Maartenpaauw\Chartscss\Data\Datasets;
 
-use Maartenpaauw\Chartscss\Data\Entries\EntryContract;
 use Maartenpaauw\Chartscss\Data\Label\AlignedLabel;
 use Maartenpaauw\Chartscss\Data\Label\HiddenLabel;
 use Maartenpaauw\Chartscss\Data\Label\LabelContract;
@@ -28,11 +27,6 @@ class Dataset implements DatasetContract
     public function label(): LabelContract
     {
         return $this->label;
-    }
-
-    public function max(): float
-    {
-        return max(array_merge([0], array_map(fn (EntryContract $entry) => $entry->value()->raw(), $this->entries)));
     }
 
     public function hideLabel(): Dataset

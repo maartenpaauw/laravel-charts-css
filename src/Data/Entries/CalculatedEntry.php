@@ -6,24 +6,25 @@ use Maartenpaauw\Chartscss\Data\Entries\Tooltip\TooltipContract;
 use Maartenpaauw\Chartscss\Data\Entries\Value\SizedValue;
 use Maartenpaauw\Chartscss\Data\Entries\Value\ValueContract;
 use Maartenpaauw\Chartscss\Data\Label\LabelContract;
+use Maartenpaauw\Chartscss\Statistics\StatisticContract;
 
 class CalculatedEntry implements EntryContract
 {
     private EntryContract $origin;
 
-    private float $max;
+    private StatisticContract $maximum;
 
-    public function __construct(EntryContract $origin, float $max)
+    public function __construct(EntryContract $origin, StatisticContract $maximum)
     {
         $this->origin = $origin;
-        $this->max = $max;
+        $this->maximum = $maximum;
     }
 
     public function value(): ValueContract
     {
         return new SizedValue(
             $this->origin->value(),
-            $this->max,
+            $this->maximum->result(),
         );
     }
 

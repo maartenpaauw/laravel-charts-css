@@ -39,18 +39,6 @@ class CalculatedDatasetsTest extends TestCase
     }
 
     /** @test */
-    public function it_should_return_the_origin_size(): void
-    {
-        $this->assertEquals($this->datasets->size(), $this->calculatedDatasets->size());
-    }
-
-    /** @test */
-    public function it_should_return_the_origin_max(): void
-    {
-        $this->assertEquals($this->datasets->max(), $this->calculatedDatasets->max());
-    }
-
-    /** @test */
     public function it_should_return_the_origin_axes(): void
     {
         $this->assertEquals($this->datasets->axes(), $this->calculatedDatasets->axes());
@@ -65,5 +53,21 @@ class CalculatedDatasetsTest extends TestCase
         // Assert
         $this->assertInstanceOf(CalculatedDataset::class, $a);
         $this->assertInstanceOf(CalculatedDataset::class, $b);
+    }
+
+    /** @test */
+    public function it_should_use_the_maximum_entry_for_dividing(): void
+    {
+        // Act
+        [$datasetA, $datasetB] = $this->calculatedDatasets->toArray();
+
+        [$entryA, $entryB] = $datasetA->entries();
+        [$entryC, $entryD] = $datasetB->entries();
+
+        // Assert
+        $this->assertEquals('--size: calc(10 / 40);', $entryA->value()->declarations()->toString());
+        $this->assertEquals('--size: calc(20 / 40);', $entryB->value()->declarations()->toString());
+        $this->assertEquals('--size: calc(30 / 40);', $entryC->value()->declarations()->toString());
+        $this->assertEquals('--size: calc(40 / 40);', $entryD->value()->declarations()->toString());
     }
 }

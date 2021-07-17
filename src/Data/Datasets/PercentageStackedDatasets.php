@@ -3,9 +3,9 @@
 namespace Maartenpaauw\Chartscss\Data\Datasets;
 
 use Maartenpaauw\Chartscss\Data\Axes\AxesContract;
-use Maartenpaauw\Chartscss\Data\Datasets\Statistics\HighestEntryStatistic;
+use Maartenpaauw\Chartscss\Data\Dataset\Statistics\SumStatistic;
 
-class CalculatedDatasets implements DatasetsContract
+class PercentageStackedDatasets implements DatasetsContract
 {
     private DatasetsContract $origin;
 
@@ -22,7 +22,7 @@ class CalculatedDatasets implements DatasetsContract
     public function toArray(): array
     {
         return array_map(function (DatasetContract $dataset) {
-            return new CalculatedDataset($dataset, new HighestEntryStatistic($this->origin));
+            return new CalculatedDataset($dataset, new SumStatistic($dataset));
         }, $this->origin->toArray());
     }
 }

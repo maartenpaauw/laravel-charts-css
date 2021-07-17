@@ -6,6 +6,7 @@ use Maartenpaauw\Chartscss\Data\Entries\Tooltip\TooltipContract;
 use Maartenpaauw\Chartscss\Data\Entries\Value\StartValue;
 use Maartenpaauw\Chartscss\Data\Entries\Value\ValueContract;
 use Maartenpaauw\Chartscss\Data\Label\LabelContract;
+use Maartenpaauw\Chartscss\Statistics\StatisticContract;
 
 class StartingPointEntry implements EntryContract
 {
@@ -13,13 +14,13 @@ class StartingPointEntry implements EntryContract
 
     private EntryContract $previous;
 
-    private float $max;
+    private StatisticContract $maximum;
 
-    public function __construct(EntryContract $origin, EntryContract $previous, float $max)
+    public function __construct(EntryContract $origin, EntryContract $previous, StatisticContract $maximum)
     {
         $this->origin = $origin;
         $this->previous = $previous;
-        $this->max = $max;
+        $this->maximum = $maximum;
     }
 
     public function value(): ValueContract
@@ -27,7 +28,7 @@ class StartingPointEntry implements EntryContract
         return new StartValue(
             $this->origin->value(),
             $this->previous->value()->raw(),
-            $this->max,
+            $this->maximum->result(),
         );
     }
 

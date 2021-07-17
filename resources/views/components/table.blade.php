@@ -14,20 +14,20 @@
     @endif
     <tbody>
         @foreach($datasets->toArray() as $dataset)
-            @if($datasets->size() === 1)
-                @foreach($dataset->entries() as $entry)
-                    <tr>
-                        <x-charts-css-label :label="$entry->label()" />
-                        <x-charts-css-entry :entry="$entry" />
-                    </tr>
-                @endforeach
-            @else
+            @if((new \Maartenpaauw\Chartscss\Data\Specifications\HasMultiple())->isSatisfiedBy($datasets))
                 <tr>
                     <x-charts-css-label :label="$dataset->label()" />
                     @foreach($dataset->entries() as $entry)
                         <x-charts-css-entry :entry="$entry" />
                     @endforeach
                 </tr>
+            @else
+                @foreach($dataset->entries() as $entry)
+                    <tr>
+                        <x-charts-css-label :label="$entry->label()" />
+                        <x-charts-css-entry :entry="$entry" />
+                    </tr>
+                @endforeach
             @endif
         @endforeach
     </tbody>

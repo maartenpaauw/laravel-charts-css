@@ -6,6 +6,7 @@ use Maartenpaauw\Chartscss\Data\Entries\CalculatedEntry;
 use Maartenpaauw\Chartscss\Data\Entries\Entry;
 use Maartenpaauw\Chartscss\Data\Entries\EntryContract;
 use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Statistics\CustomStatistic;
 use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class CalculatedEntryTest extends TestCase
@@ -21,7 +22,7 @@ class CalculatedEntryTest extends TestCase
         $this->origin = new Entry(new Value(10));
         $this->calculatedEntry = new CalculatedEntry(
             $this->origin,
-            30,
+            new CustomStatistic(30),
         );
     }
 

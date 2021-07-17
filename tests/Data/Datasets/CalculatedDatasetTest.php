@@ -5,9 +5,11 @@ namespace Maartenpaauw\Chartscss\Tests\Data\Datasets;
 use Maartenpaauw\Chartscss\Data\Datasets\CalculatedDataset;
 use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
 use Maartenpaauw\Chartscss\Data\Datasets\DatasetContract;
+use Maartenpaauw\Chartscss\Data\Entries\CalculatedEntry;
 use Maartenpaauw\Chartscss\Data\Entries\Entry;
 use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
 use Maartenpaauw\Chartscss\Data\Label\Label;
+use Maartenpaauw\Chartscss\Statistics\CustomStatistic;
 use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class CalculatedDatasetTest extends TestCase
@@ -27,7 +29,10 @@ class CalculatedDatasetTest extends TestCase
             new Entry(new Value(40), new Label('D')),
         ]);
 
-        $this->calculatedDataset = new CalculatedDataset($this->dataset, 50);
+        $this->calculatedDataset = new CalculatedDataset(
+            $this->dataset,
+            new CustomStatistic(50),
+        );
     }
 
     /** @test */
@@ -44,9 +49,16 @@ class CalculatedDatasetTest extends TestCase
     }
 
     /** @test */
-    public function it_should_return_the_origin_max(): void
+    public function it_should_wrap_each_entry_within_a_calculated_entry_decorator(): void
     {
-        $this->assertEquals($this->dataset->max(), $this->calculatedDataset->max());
+        // Act
+        [$a, $b, $c, $d] = $this->calculatedDataset->entries();
+
+        // Assert
+        $this->assertInstanceOf(CalculatedEntry::class, $a);
+        $this->assertInstanceOf(CalculatedEntry::class, $b);
+        $this->assertInstanceOf(CalculatedEntry::class, $c);
+        $this->assertInstanceOf(CalculatedEntry::class, $d);
     }
 
     /** @test */

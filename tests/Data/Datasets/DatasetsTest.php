@@ -38,18 +38,6 @@ class DatasetsTest extends TestCase
     }
 
     /** @test */
-    public function it_should_calculate_the_size_correctly(): void
-    {
-        $this->assertEquals(2, $this->datasets->size());
-    }
-
-    /** @test */
-    public function it_should_calculate_the_max_data_entry_correctly(): void
-    {
-        $this->assertEquals(400000, $this->datasets->max());
-    }
-
-    /** @test */
     public function it_should_be_possible_to_retrieve_the_axes(): void
     {
         $this->assertEquals($this->axes, $this->datasets->axes());

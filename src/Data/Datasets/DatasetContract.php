@@ -13,6 +13,4 @@ interface DatasetContract
     public function entries(): array;
 
     public function label(): LabelContract;
-
-    public function max(): float;
 }

@@ -7,12 +7,14 @@ use Maartenpaauw\Chartscss\Appearance\Modifications;
 use Maartenpaauw\Chartscss\Appearance\Multiple;
 use Maartenpaauw\Chartscss\Appearance\ShowHeading;
 use Maartenpaauw\Chartscss\Appearance\ShowLabels;
+use Maartenpaauw\Chartscss\Appearance\Stacked;
 use Maartenpaauw\Chartscss\Configuration\Specifications\HasHeading;
 use Maartenpaauw\Chartscss\Configuration\Specifications\HasLabels;
 use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chartscss\Data\Specifications\HasDatasetLabels;
 use Maartenpaauw\Chartscss\Data\Specifications\HasEntryLabels;
 use Maartenpaauw\Chartscss\Data\Specifications\HasMultiple;
+use Maartenpaauw\Chartscss\Data\Specifications\IsStacked;
 use Maartenpaauw\Chartscss\Identity\Identity;
 use Maartenpaauw\Chartscss\Legend\Legend;
 use Maartenpaauw\Chartscss\Specifications\AndSpecification;
@@ -59,6 +61,10 @@ class SmartConfiguration implements ConfigurationContract
 
         if ($this->hasDataLabels()) {
             $modifications = $modifications->add(new ShowLabels());
+        }
+
+        if ((new IsStacked())->isSatisfiedBy($this->datasets)) {
+            $modifications = $modifications->add(new Stacked());
         }
 
         return $modifications;
