@@ -8,6 +8,6 @@ class HasMultiple implements DatasetsSpecification
 {
     public function isSatisfiedBy(DatasetsContract $datasets): bool
     {
-        return $datasets->size() > 1;
+        return count($datasets->toArray()) > 1;
     }
 }

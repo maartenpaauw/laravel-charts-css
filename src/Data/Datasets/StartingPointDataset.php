@@ -5,17 +5,18 @@ namespace Maartenpaauw\Chartscss\Data\Datasets;
 use Maartenpaauw\Chartscss\Data\Entries\EntryContract;
 use Maartenpaauw\Chartscss\Data\Entries\StartingPointEntry;
 use Maartenpaauw\Chartscss\Data\Label\LabelContract;
+use Maartenpaauw\Chartscss\Statistics\StatisticContract;
 
 class StartingPointDataset implements DatasetContract
 {
     private DatasetContract $origin;
 
-    private float $max;
+    private StatisticContract $maximum;
 
-    public function __construct(DatasetContract $origin, float $max)
+    public function __construct(DatasetContract $origin, StatisticContract $maximum)
     {
         $this->origin = $origin;
-        $this->max = $max;
+        $this->maximum = $maximum;
     }
 
     public function entries(): array
@@ -28,13 +29,8 @@ class StartingPointDataset implements DatasetContract
         $first = array_shift($entries);
 
         return array_merge([$first], array_map(function (EntryContract $entry, int $key) use ($first, $entries) {
-            return new StartingPointEntry($entry, $entries[--$key] ?? $first, $this->max);
+            return new StartingPointEntry($entry, $entries[--$key] ?? $first, $this->maximum);
         }, $entries, array_keys($entries)));
-    }
-
-    public function max(): float
-    {
-        return $this->origin->max();
     }
 
     public function label(): LabelContract

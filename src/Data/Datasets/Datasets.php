@@ -19,16 +19,6 @@ class Datasets implements DatasetsContract
         $this->datasets = $datasets;
     }
 
-    public function size(): int
-    {
-        return count($this->datasets);
-    }
-
-    public function max(): float
-    {
-        return max(array_map(fn (DatasetContract $dataset) => $dataset->max(), $this->datasets));
-    }
-
     public function axes(): AxesContract
     {
         return $this->axes;

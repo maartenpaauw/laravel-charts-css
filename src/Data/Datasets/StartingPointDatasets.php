@@ -3,6 +3,7 @@
 namespace Maartenpaauw\Chartscss\Data\Datasets;
 
 use Maartenpaauw\Chartscss\Data\Axes\AxesContract;
+use Maartenpaauw\Chartscss\Data\Datasets\Statistics\HighestEntryStatistic;
 
 class StartingPointDatasets implements DatasetsContract
 {
@@ -13,16 +14,6 @@ class StartingPointDatasets implements DatasetsContract
         $this->origin = $origin;
     }
 
-    public function size(): int
-    {
-        return $this->origin->size();
-    }
-
-    public function max(): float
-    {
-        return $this->origin->max();
-    }
-
     public function axes(): AxesContract
     {
         return $this->origin->axes();
@@ -31,7 +22,7 @@ class StartingPointDatasets implements DatasetsContract
     public function toArray(): array
     {
         return array_map(function (DatasetContract $dataset) {
-            return new StartingPointDataset($dataset, $this->origin->max());
+            return new StartingPointDataset($dataset, new HighestEntryStatistic($this->origin));
         }, $this->origin->toArray());
     }
 }

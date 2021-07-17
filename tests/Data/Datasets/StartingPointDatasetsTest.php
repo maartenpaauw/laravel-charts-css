@@ -30,24 +30,12 @@ class StartingPointDatasetsTest extends TestCase
                 new Entry(new Value(20)),
             ], new Label('Dataset #1')),
             new Dataset([
-                new Entry(new Value(10)),
-                new Entry(new Value(20)),
+                new Entry(new Value(30)),
+                new Entry(new Value(40)),
             ], new Label('Dataset #2')),
         );
 
         $this->startingPointDatasets = new StartingPointDatasets($this->datasets);
-    }
-
-    /** @test */
-    public function it_should_return_the_size_of_the_origin_datasets(): void
-    {
-        $this->assertEquals($this->datasets->size(), $this->startingPointDatasets->size());
-    }
-
-    /** @test */
-    public function it_should_return_the_max_of_the_origin_datasets(): void
-    {
-        $this->assertEquals($this->datasets->max(), $this->startingPointDatasets->max());
     }
 
     /** @test */
@@ -59,8 +47,27 @@ class StartingPointDatasetsTest extends TestCase
     /** @test */
     public function it_should_wrap_each_dataset_within_a_starting_point_dataset(): void
     {
-        foreach ($this->startingPointDatasets->toArray() as $dataset) {
-            $this->assertInstanceOf(StartingPointDataset::class, $dataset);
-        }
+        // Act
+        [$a, $b] = $this->startingPointDatasets->toArray();
+
+        // Assert
+        $this->assertInstanceOf(StartingPointDataset::class, $a);
+        $this->assertInstanceOf(StartingPointDataset::class, $b);
+    }
+
+    /** @test */
+    public function it_should_use_the_highest_entry_of_all_datasets_for_dividing(): void
+    {
+        // Act
+        [$datasetA, $datasetB] = $this->startingPointDatasets->toArray();
+
+        [$entryA, $entryB] = $datasetA->entries();
+        [$entryC, $entryD] = $datasetB->entries();
+
+        // Assert
+        $this->assertEmpty($entryA->value()->declarations()->toString());
+        $this->assertEquals('--start: calc(10 / 40);', $entryB->value()->declarations()->toString());
+        $this->assertEmpty($entryC->value()->declarations()->toString());
+        $this->assertEquals('--start: calc(30 / 40);', $entryD->value()->declarations()->toString());
     }
 }

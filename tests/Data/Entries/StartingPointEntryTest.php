@@ -6,6 +6,7 @@ use Maartenpaauw\Chartscss\Data\Entries\Entry;
 use Maartenpaauw\Chartscss\Data\Entries\EntryContract;
 use Maartenpaauw\Chartscss\Data\Entries\StartingPointEntry;
 use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Statistics\CustomStatistic;
 use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class StartingPointEntryTest extends TestCase
@@ -22,7 +23,7 @@ class StartingPointEntryTest extends TestCase
         $this->startingPointEntry = new StartingPointEntry(
             $this->origin,
             new Entry(new Value(20)),
-            30,
+            new CustomStatistic(30),
         );
     }
 

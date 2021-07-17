@@ -14,8 +14,10 @@ use Maartenpaauw\Chartscss\Configuration\Specifications\NeedsStartingPoint;
 use Maartenpaauw\Chartscss\Data\Datasets\CalculatedDatasets;
 use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chartscss\Data\Datasets\StartingPointDatasets;
+use Maartenpaauw\Chartscss\Data\Specifications\IsStacked;
 use Maartenpaauw\Chartscss\Identity\Identity;
 use Maartenpaauw\Chartscss\Legend\Legend;
+use Maartenpaauw\Chartscss\Specifications\NotSpecification;
 use Maartenpaauw\Chartscss\Types\ChartType;
 use Maartenpaauw\Chartscss\Types\Column;
 
@@ -78,13 +80,17 @@ abstract class Chart extends Component
 
     private function prepareDatasets(): DatasetsContract
     {
-        $calculatedDatasets = new CalculatedDatasets($this->datasets());
+        $datasets = $this->datasets();
 
-        if ((new NeedsStartingPoint())->isSatisfiedBy($this->configuration())) {
-            return new StartingPointDatasets($calculatedDatasets);
+        if ((new NotSpecification(new IsStacked()))->isSatisfiedBy($datasets)) {
+            $datasets = new CalculatedDatasets($datasets);
         }
 
-        return $calculatedDatasets;
+        if ((new NeedsStartingPoint())->isSatisfiedBy($this->configuration())) {
+            $datasets = new StartingPointDatasets($datasets);
+        }
+
+        return $datasets;
     }
 
     public function render(): View

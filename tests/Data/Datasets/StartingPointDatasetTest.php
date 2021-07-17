@@ -9,6 +9,7 @@ use Maartenpaauw\Chartscss\Data\Entries\Entry;
 use Maartenpaauw\Chartscss\Data\Entries\StartingPointEntry;
 use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
 use Maartenpaauw\Chartscss\Data\Label\Label;
+use Maartenpaauw\Chartscss\Statistics\CustomStatistic;
 use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class StartingPointDatasetTest extends TestCase
@@ -27,7 +28,10 @@ class StartingPointDatasetTest extends TestCase
             new Entry(new Value(30)),
         ], new Label('Dataset #1'));
 
-        $this->startingPointDataset = new StartingPointDataset($this->dataset, 50);
+        $this->startingPointDataset = new StartingPointDataset(
+            $this->dataset,
+            new CustomStatistic(50),
+        );
     }
 
     /** @test */
@@ -37,16 +41,13 @@ class StartingPointDatasetTest extends TestCase
     }
 
     /** @test */
-    public function it_should_return_the_max_from_the_origin_dataset(): void
-    {
-        $this->assertEquals($this->dataset->max(), $this->startingPointDataset->max());
-    }
-
-    /** @test */
     public function it_should_return_an_empty_array_when_no_entries_defined(): void
     {
         // Arrange
-        $startingPointDataset = new StartingPointDataset(new Dataset(), 10);
+        $startingPointDataset = new StartingPointDataset(
+            new Dataset(),
+            new CustomStatistic(10),
+        );
 
         // Act
         $entries = $startingPointDataset->entries();
@@ -63,7 +64,7 @@ class StartingPointDatasetTest extends TestCase
             new Dataset([
                 new Entry(new Value(20)),
             ]),
-            10,
+            new CustomStatistic(10),
         );
 
         // Act
@@ -85,5 +86,17 @@ class StartingPointDatasetTest extends TestCase
         $this->assertInstanceOf(StartingPointEntry::class, $startingPointEntryB);
         $this->assertInstanceOf(StartingPointEntry::class, $startingPointEntryC);
         $this->assertCount(3, $entries);
+    }
+
+    /** @test */
+    public function it_should_calculate_the_starting_points_correctly(): void
+    {
+        // Act
+        [$a, $b, $c] = $this->startingPointDataset->entries();
+
+        // Assert
+        $this->assertEmpty($a->value()->declarations()->toString());
+        $this->assertEquals('--start: calc(10 / 50);', $b->value()->declarations()->toString());
+        $this->assertEquals('--start: calc(20 / 50);', $c->value()->declarations()->toString());
     }
 }

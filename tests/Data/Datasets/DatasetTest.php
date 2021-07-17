@@ -35,16 +35,10 @@ class DatasetTest extends TestCase
     }
 
     /** @test */
-    public function it_should_calculate_the_max_entry_correctly(): void
-    {
-        $this->assertEquals(70000, $this->dataset->max());
-    }
-
-    /** @test */
     public function it_should_be_an_empty_label_by_default(): void
     {
         // Arrange
-        $dataset = new Dataset([]);
+        $dataset = new Dataset();
 
         // Act
         $label = $dataset->label();
@@ -87,19 +81,5 @@ class DatasetTest extends TestCase
 
         // Assert
         $this->assertEmpty($entries);
-    }
-
-    /** @test */
-    public function it_should_have_a_maximum_default_of_zero(): void
-    {
-        // Arrange
-        $expectedMax = 0;
-        $dataset = new Dataset();
-
-        // Act
-        $max = $dataset->max();
-
-        // Assert
-        $this->assertEquals($expectedMax, $max);
     }
 }
