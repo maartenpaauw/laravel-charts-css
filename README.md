@@ -293,6 +293,43 @@ protected function datasets(): DatasetsContract
 
 You can align a dataset's label by calling the `alignLabel()` method on a dataset with `start`, `center` or `end` as parameter.
 
+#### Stacked datasets
+
+```php
+use Maartenpaauw\Chartscss\Data\Axes\Axes;
+use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
+use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Datasets\PercentageStackedDatasets;
+use Maartenpaauw\Chartscss\Data\Entries\Entry;
+use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Label\Label;
+
+// ...
+
+protected function datasets(): DatasetsContract
+{
+    return new PercentageStackedDatasets(
+        new Datasets(
+            new Axes('Country', ['Gold', 'Silver', 'Bronze']),
+            new Dataset([
+                new Entry(new Value(46)),
+                new Entry(new Value(37)),
+                new Entry(new Value(38)),
+            ], new Label('USA')),
+            new Dataset([
+                new Entry(new Value(27)),
+                new Entry(new Value(23)),
+                new Entry(new Value(17)),
+            ], new Label('GBR')),
+        ),
+    );
+}
+```
+
+If you want your chart data to be stacked, you can wrap the datasets instance within a `SimpleStackedDatasets` or a
+`PercentageStackedDatasets` decorator. The smart configuration will automatically add the `Stacked` modification.
+
 ### Stylesheet
 
 > **Warning!** Make sure you insert this component within your base layout template where your chart is not directly used.
@@ -668,7 +705,8 @@ protected function modifications(): Modifications
 }
 ````
 
-If you want to stack multiple datasets you can add the `Stacked` modification.
+If you want to stack multiple datasets you can add the `Stacked` modification. This is done automatically (via the smart
+configuration) if you wrapped your datasets instance within a `SimpleStackedDatasets` or `PercentageStackedDatasets` decorator
 
 #### Did I miss adding a modification?
 
@@ -693,6 +731,9 @@ In the meanwhile you can add it easily by adding a `CustomModification`.
 As mentioned before, the configuration is pretty smart. It adds a `ShowHeading` modification if a heading is present,
 adds the modifications `Multiple` when multiple datasets are present, it adds the `ShowLabels` modification when there
 are dataset or entry labels defined, and it uses the configured data axes as legend labels when none has been specified.
+
+If you wrap your datasets instance within a `SimpleStackedDatasets` or `PercentageStackedDatasets` decorator, it will
+automatically add the `Stacked` modification.
 
 This is done by wrapping the configuration within a `SmartConfiguration` decorator. If you do not want this behaviour
 you can overwrite the `configuration` method and build the configuration by yourself.
