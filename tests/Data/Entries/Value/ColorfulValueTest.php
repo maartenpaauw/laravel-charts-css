@@ -4,7 +4,7 @@ namespace Maartenpaauw\Chartscss\Tests\Data\Entries\Value;
 
 use Maartenpaauw\Chartscss\Appearance\Colorscheme\Color;
 use Maartenpaauw\Chartscss\Data\Entries\Value\ColorfulValue;
-use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Entries\Value\NullValue;
 use Maartenpaauw\Chartscss\Data\Entries\Value\ValueContract;
 use Maartenpaauw\Chartscss\Tests\TestCase;
 
@@ -18,7 +18,7 @@ class ColorfulValueTest extends TestCase
     {
         parent::setUp();
 
-        $this->value = new Value(0);
+        $this->value = new NullValue();
         $this->colorfulValue = new ColorfulValue($this->value, new Color('red'));
     }
 

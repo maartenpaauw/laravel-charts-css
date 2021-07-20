@@ -2,8 +2,8 @@
 
 namespace Maartenpaauw\Chartscss\Tests\Data\Entries\Value;
 
+use Maartenpaauw\Chartscss\Data\Entries\Value\NullValue;
 use Maartenpaauw\Chartscss\Data\Entries\Value\StartValue;
-use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
 use Maartenpaauw\Chartscss\Data\Entries\Value\ValueContract;
 use Maartenpaauw\Chartscss\Tests\TestCase;
 
@@ -17,7 +17,7 @@ class StartValueTest extends TestCase
     {
         parent::setUp();
 
-        $this->value = new Value(0);
+        $this->value = new NullValue();
         $this->startValue = new StartValue($this->value, 10);
     }
 

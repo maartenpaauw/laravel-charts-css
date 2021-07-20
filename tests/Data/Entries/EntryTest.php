@@ -5,6 +5,7 @@ namespace Maartenpaauw\Chartscss\Tests\Data\Entries;
 use Maartenpaauw\Chartscss\Appearance\Colorscheme\Color;
 use Maartenpaauw\Chartscss\Data\Entries\Entry;
 use Maartenpaauw\Chartscss\Data\Entries\Tooltip\Tooltip;
+use Maartenpaauw\Chartscss\Data\Entries\Value\NullValue;
 use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
 use Maartenpaauw\Chartscss\Data\Label\Label;
 use Maartenpaauw\Chartscss\Data\Label\NullLabel;
@@ -81,7 +82,7 @@ class EntryTest extends TestCase
     {
         // Arrange
         $expectedTooltip = new Tooltip('This is a tooltip.');
-        $entry = new Entry(new Value(0), new NullLabel(), $expectedTooltip);
+        $entry = new Entry(new NullValue(), new NullLabel(), $expectedTooltip);
 
         // Act
         $tooltip = $entry->tooltip();
