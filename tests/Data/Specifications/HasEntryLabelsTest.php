@@ -8,6 +8,7 @@ use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
 use Maartenpaauw\Chartscss\Data\Entries\Entry;
 use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
 use Maartenpaauw\Chartscss\Data\Label\Label;
+use Maartenpaauw\Chartscss\Data\Label\NullLabel;
 use Maartenpaauw\Chartscss\Data\Specifications\DatasetsSpecification;
 use Maartenpaauw\Chartscss\Data\Specifications\HasEntryLabels;
 use Maartenpaauw\Chartscss\Tests\TestCase;
@@ -83,12 +84,12 @@ class HasEntryLabelsTest extends TestCase
         $datasets = new Datasets(
             new NullAxes(),
             new Dataset([
-                new Entry(new Value(10), new Label('')),
-                new Entry(new Value(20), new Label('')),
+                new Entry(new Value(10), new NullLabel()),
+                new Entry(new Value(20), new NullLabel()),
             ]),
             new Dataset([
-                new Entry(new Value(10), new Label('')),
-                new Entry(new Value(20), new Label('')),
+                new Entry(new Value(10), new NullLabel()),
+                new Entry(new Value(20), new NullLabel()),
             ]),
         );
 
