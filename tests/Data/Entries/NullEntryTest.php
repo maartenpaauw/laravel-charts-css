@@ -18,9 +18,9 @@ class NullEntryTest extends TestCase
     }
 
     /** @test */
-    public function it_should_return_a_dash_as_value(): void
+    public function it_should_return_zero_as_value(): void
     {
-        $this->assertEquals('-', $this->entry->value()->display());
+        $this->assertEquals('0', $this->entry->value()->display());
     }
 
     /** @test */
@@ -38,14 +38,11 @@ class NullEntryTest extends TestCase
     /** @test */
     public function it_should_use_as_dash_as_label(): void
     {
-        // Arrange
-        $expectedLabel = '-';
-
         // Act
         $label = $this->entry->label()->value();
 
         // Assert
-        $this->assertEquals($expectedLabel, $label);
+        $this->assertEmpty($label);
     }
 
     /** @test */
