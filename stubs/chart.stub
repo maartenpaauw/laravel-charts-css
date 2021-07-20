@@ -2,7 +2,7 @@
 
 namespace DummyNamespace;
 
-use Maartenpaauw\Chartscss\Chart;
+use Maartenpaauw\Chartscss\DummyType;
 use Maartenpaauw\Chartscss\Data\Axes\Axes;
 use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
 use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
@@ -11,7 +11,7 @@ use Maartenpaauw\Chartscss\Data\Entries\Entry;
 use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
 use Maartenpaauw\Chartscss\Data\Label\Label;
 
-class DummyClass extends Chart
+class DummyClass extends DummyType
 {
     protected function id(): string
     {
