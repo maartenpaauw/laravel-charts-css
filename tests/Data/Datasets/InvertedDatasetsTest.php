@@ -67,7 +67,7 @@ class InvertedDatasetsTest extends TestCase
         );
 
         // Act
-        [$a, $b, $c] = $datasets =  $invertedDatasets->toArray();
+        [$a, $b, $c] = $datasets = $invertedDatasets->toArray();
         [$a1, $a2, $a3] = $a->entries();
         [$b1, $b2, $b3] = $b->entries();
         [$c1, $c2, $c3] = $c->entries();
