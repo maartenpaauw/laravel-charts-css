@@ -82,4 +82,20 @@ class DatasetTest extends TestCase
         // Assert
         $this->assertEmpty($entries);
     }
+
+    /** @test */
+    public function it_should_be_possible_to_add_an_entry_after_creating_a_dataset(): void
+    {
+        // Arrange
+        $expectedCount = 3;
+        $expectedEntry = new Entry(new Value(80000));
+
+        // Act
+        $dataset = $this->dataset->add($expectedEntry);
+        [,, $entry] = $dataset->entries();
+
+        // Assert
+        $this->assertCount($expectedCount, $dataset->entries());
+        $this->assertEquals($expectedEntry, $entry);
+    }
 }

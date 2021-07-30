@@ -2,6 +2,7 @@
 
 namespace Maartenpaauw\Chartscss\Data\Datasets;
 
+use Maartenpaauw\Chartscss\Data\Entries\EntryContract;
 use Maartenpaauw\Chartscss\Data\Label\AlignedLabel;
 use Maartenpaauw\Chartscss\Data\Label\HiddenLabel;
 use Maartenpaauw\Chartscss\Data\Label\LabelContract;
@@ -29,7 +30,15 @@ class Dataset implements DatasetContract
         return $this->label;
     }
 
-    public function hideLabel(): Dataset
+    public function add(EntryContract $entry): self
+    {
+        return new self(
+            array_merge($this->entries, [$entry]),
+            $this->label,
+        );
+    }
+
+    public function hideLabel(): self
     {
         return new self(
             $this->entries,
@@ -37,7 +46,7 @@ class Dataset implements DatasetContract
         );
     }
 
-    public function alignLabel(string $alignment): Dataset
+    public function alignLabel(string $alignment): self
     {
         return new self(
             $this->entries,
