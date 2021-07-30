@@ -13,6 +13,7 @@ use Maartenpaauw\Chartscss\Configuration\SmartConfiguration;
 use Maartenpaauw\Chartscss\Configuration\Specifications\NeedsStartingPoint;
 use Maartenpaauw\Chartscss\Data\Datasets\CalculatedDatasets;
 use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Datasets\InvertedDatasets;
 use Maartenpaauw\Chartscss\Data\Datasets\StartingPointDatasets;
 use Maartenpaauw\Chartscss\Data\Specifications\IsStacked;
 use Maartenpaauw\Chartscss\Identity\Identity;
@@ -87,7 +88,7 @@ abstract class Chart extends Component
         }
 
         if ((new NeedsStartingPoint())->isSatisfiedBy($this->configuration())) {
-            $datasets = new StartingPointDatasets($datasets);
+            $datasets = new InvertedDatasets(new StartingPointDatasets($datasets));
         }
 
         return $datasets;
