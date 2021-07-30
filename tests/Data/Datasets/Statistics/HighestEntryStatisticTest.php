@@ -42,4 +42,23 @@ class HighestEntryStatisticTest extends TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+
+    /** @test */
+    public function it_should_return_zero_when_empty_datasets_are_configured(): void
+    {
+        // Arrange
+        $datasets = new Datasets(
+            new NullAxes(),
+            new Dataset(),
+            new Dataset(),
+        );
+
+        $highestEntryStatistic = new HighestEntryStatistic($datasets);
+
+        // Act
+        $result = $highestEntryStatistic->result();
+
+        // Assert
+        $this->assertEquals(0, $result);
+    }
 }

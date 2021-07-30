@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-charts-css` will be documented in this file.
 
+## 1.2.1 - 2021-07-31
+
+- `HighestEntryStatistic` will return zero when passing datasets without entries.
+
 ## 1.2.0 - 2021-07-17
 
 - Added support for simple stacked and percentage stacked datasets.

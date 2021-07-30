@@ -18,9 +18,12 @@ class HighestEntryStatistic implements StatisticContract
     public function result(): float
     {
         return max(
-            array_map(
-                fn (EntryContract $entry) => $entry->value()->raw(),
-                $this->dataset->entries(),
+            array_merge(
+                [0],
+                array_map(
+                    fn (EntryContract $entry) => $entry->value()->raw(),
+                    $this->dataset->entries(),
+                ),
             ),
         );
     }
