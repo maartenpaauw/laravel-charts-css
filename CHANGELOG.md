@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-charts-css` will be documented in this file.
 
+## 1.2.2 - 2021-07-31
+
+- Area charts, with multiple datasets given, will be displayed correctly.
+
 ## 1.2.1 - 2021-07-31
 
 - `HighestEntryStatistic` will return zero when passing datasets without entries.
