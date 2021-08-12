@@ -4,6 +4,7 @@ namespace Maartenpaauw\Chartscss\Examples\Area;
 
 use Maartenpaauw\Chartscss\Appearance\HideData;
 use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Appearance\Multiple;
 use Maartenpaauw\Chartscss\AreaChart;
 use Maartenpaauw\Chartscss\Configuration\Configuration;
 use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
@@ -64,6 +65,7 @@ class AreaExample5 extends AreaChart
     protected function modifications(): Modifications
     {
         return parent::modifications()
+            ->add(new Multiple())
             ->add(new HideData());
     }
 }

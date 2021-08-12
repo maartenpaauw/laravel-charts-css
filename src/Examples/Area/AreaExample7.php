@@ -4,6 +4,7 @@ namespace Maartenpaauw\Chartscss\Examples\Area;
 
 use Maartenpaauw\Chartscss\Appearance\HideData;
 use Maartenpaauw\Chartscss\Appearance\Modifications;
+use Maartenpaauw\Chartscss\Appearance\Multiple;
 use Maartenpaauw\Chartscss\Appearance\ReverseOrientation;
 use Maartenpaauw\Chartscss\Appearance\ShowLabels;
 use Maartenpaauw\Chartscss\AreaChart;
@@ -71,6 +72,7 @@ class AreaExample7 extends AreaChart
     protected function modifications(): Modifications
     {
         return parent::modifications()
+            ->add(new Multiple())
             ->add(new ReverseOrientation())
             ->add(new ShowLabels())
             ->add(new HideData());
