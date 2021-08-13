@@ -8,7 +8,6 @@ use Maartenpaauw\Chartscss\Appearance\Multiple;
 use Maartenpaauw\Chartscss\Appearance\ShowDataAxes;
 use Maartenpaauw\Chartscss\Appearance\ShowLabels;
 use Maartenpaauw\Chartscss\Appearance\ShowPrimaryAxis;
-use Maartenpaauw\Chartscss\Appearance\ShowSecondaryAxes;
 use Maartenpaauw\Chartscss\Configuration\Configuration;
 use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
 use Maartenpaauw\Chartscss\Data\Axes\Axes;
