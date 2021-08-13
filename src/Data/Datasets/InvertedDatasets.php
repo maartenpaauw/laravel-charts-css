@@ -31,7 +31,11 @@ class InvertedDatasets implements DatasetsContract
 
         return array_reduce($this->origin->toArray(), function (array $datasets, DatasetContract $dataset) {
             foreach (array_values($dataset->entries()) as $index => $entry) {
-                $datasets[$index] = $datasets[$index]->add($entry);
+                if (array_key_exists($index, $datasets)) {
+                    $datasets[$index] = $datasets[$index]->add($entry);
+                } else {
+                    $datasets[$index] = new Dataset([$entry]);
+                }
             }
 
             return $datasets;

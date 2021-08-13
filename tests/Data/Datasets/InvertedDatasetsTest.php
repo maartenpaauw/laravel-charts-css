@@ -7,8 +7,7 @@ use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
 use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
 use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chartscss\Data\Datasets\InvertedDatasets;
-use Maartenpaauw\Chartscss\Data\Entries\Entry;
-use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
+use Maartenpaauw\Chartscss\Data\Entries\NullEntry;
 use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class InvertedDatasetsTest extends TestCase
@@ -45,49 +44,85 @@ class InvertedDatasetsTest extends TestCase
     public function it_should_inverse_the_origin_datasets_correctly(): void
     {
         // Arrange
-        $expectedA1 = new Entry(new Value(0.5, '50'));
-        $expectedA2 = new Entry(new Value(0.2, '20'));
-        $expectedA3 = new Entry(new Value(0.4, '40'));
-
-        $expectedB1 = new Entry(new Value(0.8, '80'));
-        $expectedB2 = new Entry(new Value(0.5, '50'));
-        $expectedB3 = new Entry(new Value(0.1, '10'));
-
-        $expectedC1 = new Entry(new Value(0.4, '40'));
-        $expectedC2 = new Entry(new Value(0.3, '30'));
-        $expectedC3 = new Entry(new Value(0.2, '20'));
+        $entry1 = new NullEntry();
+        $entry2 = new NullEntry();
+        $entry3 = new NullEntry();
+        $entry4 = new NullEntry();
+        $entry5 = new NullEntry();
+        $entry6 = new NullEntry();
+        $entry7 = new NullEntry();
+        $entry8 = new NullEntry();
+        $entry9 = new NullEntry();
 
         $invertedDatasets = new InvertedDatasets(
             new Datasets(
                 new NullAxes(),
-                new Dataset([$expectedA1, $expectedB1, $expectedC1]),
-                new Dataset([$expectedA2, $expectedB2, $expectedC2]),
-                new Dataset([$expectedA3, $expectedB3, $expectedC3]),
+                new Dataset([$entry1, $entry2, $entry3]),
+                new Dataset([$entry4, $entry5, $entry6]),
+                new Dataset([$entry7, $entry8, $entry9]),
             ),
         );
 
         // Act
-        [$a, $b, $c] = $datasets = $invertedDatasets->toArray();
-        [$a1, $a2, $a3] = $a->entries();
-        [$b1, $b2, $b3] = $b->entries();
-        [$c1, $c2, $c3] = $c->entries();
+        [$dataset1, $dataset2, $dataset3] = $datasets = $invertedDatasets->toArray();
 
         // Assert
         $this->assertCount(3, $datasets);
-        $this->assertCount(3, $a->entries());
-        $this->assertCount(3, $b->entries());
-        $this->assertCount(3, $c->entries());
 
-        $this->assertEquals($expectedA1, $a1);
-        $this->assertEquals($expectedA2, $a2);
-        $this->assertEquals($expectedA3, $a3);
+        $this->assertCount(3, $dataset1->entries());
+        $this->assertCount(3, $dataset2->entries());
+        $this->assertCount(3, $dataset3->entries());
 
-        $this->assertEquals($expectedB1, $b1);
-        $this->assertEquals($expectedB2, $b2);
-        $this->assertEquals($expectedB3, $b3);
+        $this->assertContains($entry1, $dataset1->entries());
+        $this->assertContains($entry4, $dataset1->entries());
+        $this->assertContains($entry7, $dataset1->entries());
 
-        $this->assertEquals($expectedC1, $c1);
-        $this->assertEquals($expectedC2, $c2);
-        $this->assertEquals($expectedC3, $c3);
+        $this->assertContains($entry2, $dataset2->entries());
+        $this->assertContains($entry5, $dataset2->entries());
+        $this->assertContains($entry8, $dataset2->entries());
+
+        $this->assertContains($entry3, $dataset3->entries());
+        $this->assertContains($entry6, $dataset3->entries());
+        $this->assertContains($entry9, $dataset3->entries());
+    }
+
+    /** @test */
+    public function it_should_automatically_add_more_datasets_to_the_array_when_needed(): void
+    {
+
+        // Arrange
+        $entry1 = new NullEntry();
+        $entry2 = new NullEntry();
+        $entry3 = new NullEntry();
+        $entry4 = new NullEntry();
+        $entry5 = new NullEntry();
+        $entry6 = new NullEntry();
+
+        $invertedDatasets = new InvertedDatasets(
+            new Datasets(
+                new NullAxes(),
+                new Dataset([$entry1, $entry2, $entry3]),
+                new Dataset([$entry4, $entry5, $entry6]),
+            ),
+        );
+
+        // Act
+        [$dataset1, $dataset2, $dataset3] = $datasets = $invertedDatasets->toArray();
+
+        // Assert
+        $this->assertCount(3, $datasets);
+
+        $this->assertCount(2, $dataset1->entries());
+        $this->assertCount(2, $dataset2->entries());
+        $this->assertCount(2, $dataset3->entries());
+
+        $this->assertContains($entry1, $dataset1->entries());
+        $this->assertContains($entry4, $dataset1->entries());
+
+        $this->assertContains($entry2, $dataset2->entries());
+        $this->assertContains($entry5, $dataset2->entries());
+
+        $this->assertContains($entry3, $dataset3->entries());
+        $this->assertContains($entry6, $dataset3->entries());
     }
 }
