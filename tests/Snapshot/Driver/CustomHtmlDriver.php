@@ -24,6 +24,9 @@ class CustomHtmlDriver implements Driver
 
     public function match($expected, $actual): void
     {
-        Assert::assertEquals($expected, $this->serialize($actual));
+        Assert::assertEquals(
+            trim($expected),
+            trim($this->serialize($actual)),
+        );
     }
 }
