@@ -13,6 +13,7 @@ class CustomHtmlDriver implements Driver
             'indent' => true,
             'indent-spaces' => 4,
             'show-body-only' => true,
+            'wrap' => 0,
         ]);
     }
 
