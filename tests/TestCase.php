@@ -5,7 +5,7 @@ namespace Maartenpaauw\Chartscss\Tests;
 use Maartenpaauw\Chartscss\ChartscssServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
-class TestCase extends Orchestra
+abstract class TestCase extends Orchestra
 {
     protected function getPackageProviders($app)
     {
