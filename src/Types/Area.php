@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chartscss\Types;
 
-class Area extends AbstractChartType
+class Area implements ChartType
 {
     public function toString(): string
     {

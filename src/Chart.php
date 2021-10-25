@@ -20,6 +20,7 @@ use Maartenpaauw\Chartscss\Identity\Identity;
 use Maartenpaauw\Chartscss\Legend\Legend;
 use Maartenpaauw\Chartscss\Specifications\NotSpecification;
 use Maartenpaauw\Chartscss\Types\ChartType;
+use Maartenpaauw\Chartscss\Types\ChartTypeModificationAdapter;
 use Maartenpaauw\Chartscss\Types\Column;
 
 abstract class Chart extends Component
@@ -48,7 +49,7 @@ abstract class Chart extends Component
     protected function modifications(): Modifications
     {
         return new Modifications([
-            $this->type()->toModification(),
+            new ChartTypeModificationAdapter($this->type()),
         ]);
     }
 

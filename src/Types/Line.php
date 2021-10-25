@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chartscss\Types;
 
-class Line extends AbstractChartType
+class Line implements ChartType
 {
     public function toString(): string
     {

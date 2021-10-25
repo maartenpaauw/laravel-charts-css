@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chartscss\Types;
 
-class Column extends AbstractChartType
+class Column implements ChartType
 {
     public function toString(): string
     {

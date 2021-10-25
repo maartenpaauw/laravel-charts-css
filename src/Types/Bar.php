@@ -2,7 +2,7 @@
 
 namespace Maartenpaauw\Chartscss\Types;
 
-class Bar extends AbstractChartType
+class Bar implements ChartType
 {
     public function toString(): string
     {
