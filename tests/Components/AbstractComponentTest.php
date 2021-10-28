@@ -26,5 +26,4 @@ abstract class AbstractComponentTest extends TestCase
             new CustomHtmlDriver(),
         );
     }
-
 }
