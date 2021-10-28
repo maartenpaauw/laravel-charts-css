@@ -1,7 +1,3 @@
-<style>
-    @stack('charts.css')
-</style>
+<style>@stack('charts.css')</style>
 
-@if($href)
-    <link rel="stylesheet" href="{{ $href }}">
-@endif
+@if($href)<link rel="stylesheet" href="{{ $href }}">@endif
