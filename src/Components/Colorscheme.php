@@ -9,7 +9,7 @@ use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
 
 class Colorscheme extends Component
 {
-    public ConfigurationContract $configuration;
+    private ConfigurationContract $configuration;
 
     public function __construct(ConfigurationContract $configuration)
     {
@@ -32,6 +32,7 @@ class Colorscheme extends Component
     {
         return view('charts-css::components.colorscheme', [
             'id' => $this->id(),
+            'configuration' => $this->configuration,
             'declarations' => $this->declarations(),
         ]);
     }
