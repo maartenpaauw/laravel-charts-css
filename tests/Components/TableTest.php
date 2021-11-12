@@ -17,7 +17,6 @@ use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
 use Maartenpaauw\Chartscss\Data\Label\Label;
 use Maartenpaauw\Chartscss\Identity\Identity;
 use Maartenpaauw\Chartscss\Legend\Legend;
-use Maartenpaauw\Chartscss\Tests\Snapshot\Driver\CustomHtmlDriver;
 use Maartenpaauw\Chartscss\Types\Bar;
 
 class TableTest extends AbstractComponentTest
