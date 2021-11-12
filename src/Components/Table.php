@@ -9,9 +9,9 @@ use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
 
 class Table extends Component
 {
-    public DatasetsContract $datasets;
+    private DatasetsContract $datasets;
 
-    public ConfigurationContract $configuration;
+    private ConfigurationContract $configuration;
 
     public function __construct(DatasetsContract $datasets, ConfigurationContract $configuration)
     {
@@ -21,6 +21,9 @@ class Table extends Component
 
     public function render(): View
     {
-        return view('charts-css::components.table');
+        return view('charts-css::components.table', [
+            'datasets' => $this->datasets,
+            'configuration' => $this->configuration,
+        ]);
     }
 }
