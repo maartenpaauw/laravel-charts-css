@@ -11,4 +11,9 @@ class HeadingTest extends AbstractComponentTest
     {
         return new Heading('Hello world!');
     }
+
+    protected function render(): string
+    {
+        return (string) $this->component()->render();
+    }
 }

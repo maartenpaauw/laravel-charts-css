@@ -19,6 +19,6 @@ class StylesheetTest extends AbstractComponentTest
     /** @test */
     public function it_should_render_the_component_correctly(): void
     {
-        $this->assertMatchesTextSnapshot($this->component()->render()->toHtml());
+        $this->assertMatchesTextSnapshot($this->render());
     }
 }

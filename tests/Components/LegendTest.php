@@ -33,19 +33,11 @@ class LegendTest extends AbstractComponentTest
         return (new LegendComponent($configuration));
     }
 
-    /** @test */
-    public function it_should_render_the_component_correctly(): void
+    protected function render(): string
     {
-        // Act
-        $render = $this->component()
+        return $this->component()
             ->render()
             ->with('attributes', new ComponentAttributeBag())
             ->toHtml();
-
-        // Assert
-        $this->assertMatchesSnapshot(
-            $render,
-            new CustomHtmlDriver(),
-        );
     }
 }

@@ -11,7 +11,6 @@ use Maartenpaauw\Chartscss\Components\Colorscheme as ColorschemeComponent;
 use Maartenpaauw\Chartscss\Configuration\Configuration;
 use Maartenpaauw\Chartscss\Identity\Identity;
 use Maartenpaauw\Chartscss\Legend\Legend;
-use Maartenpaauw\Chartscss\Tests\Snapshot\Driver\CustomHtmlDriver;
 use Maartenpaauw\Chartscss\Types\Bar;
 
 class ColorschemeTest extends AbstractComponentTest
@@ -33,23 +32,16 @@ class ColorschemeTest extends AbstractComponentTest
         return new ColorschemeComponent($configuration);
     }
 
-    /** @test */
-    public function it_should_render_the_component_correctly(): void
+    protected function render(): string
     {
-        // Arrange
-        /** @var Factory $viewFactory */
-        $viewFactory = $this->app->make(Factory::class);
+        /** @var Factory $factory */
+        $factory = $this->app->make(Factory::class);
 
         // If we don't increment the render count the stacks will get flushed.
-        $viewFactory->incrementRender();
-        $viewFactory->startComponent($this->component()->render());
+        $factory->incrementRender();
+        $factory->startComponent($this->component()->render());
+        $factory->renderComponent();
 
-        // Act
-        $component = $viewFactory->renderComponent();
-        $stack = $viewFactory->yieldPushContent('charts.css');
-
-        // Assert
-        $this->assertEmpty($component);
-        $this->assertMatchesSnapshot($stack, new CustomHtmlDriver());
+        return $factory->yieldPushContent('charts.css');
     }
 }

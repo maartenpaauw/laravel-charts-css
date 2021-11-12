@@ -10,19 +10,16 @@ abstract class AbstractComponentTest extends TestCase
 {
     abstract protected function component(): Component;
 
+    protected function render(): string
+    {
+        return $this->component()->render()->toHtml();
+    }
+
     /** @test */
     public function it_should_render_the_component_correctly(): void
     {
-        // Act
-        $render = $this->component()->render();
-
-        if (! is_string($render)) {
-            $render = $render->toHtml();
-        }
-
-        // Assert
         $this->assertMatchesSnapshot(
-            $render,
+            $this->render(),
             new CustomHtmlDriver(),
         );
     }
