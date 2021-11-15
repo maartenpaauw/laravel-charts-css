@@ -7,6 +7,9 @@ use Spatie\Snapshots\Driver;
 
 class CustomHtmlDriver implements Driver
 {
+    /**
+     * @param string $data
+     */
     public function serialize($data): string
     {
         return tidy_repair_string($data, [
@@ -14,7 +17,7 @@ class CustomHtmlDriver implements Driver
             'indent-spaces' => 4,
             'show-body-only' => true,
             'wrap' => 0,
-        ]);
+        ]) ?: '';
     }
 
     public function extension(): string
@@ -22,6 +25,10 @@ class CustomHtmlDriver implements Driver
         return 'html';
     }
 
+    /**
+     * @param string $expected
+     * @param string $actual
+     */
     public function match($expected, $actual): void
     {
         Assert::assertEquals(

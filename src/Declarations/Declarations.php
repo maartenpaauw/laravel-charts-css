@@ -9,6 +9,9 @@ class Declarations implements DeclarationContract
      */
     private array $declarations;
 
+    /**
+     * @param DeclarationContract[] $declarations
+     */
     public function __construct(array $declarations = [])
     {
         $this->declarations = $declarations;
@@ -31,6 +34,9 @@ class Declarations implements DeclarationContract
         }, $this->declarations));
     }
 
+    /**
+     * @return DeclarationContract[]
+     */
     public function toArray(): array
     {
         return $this->declarations;

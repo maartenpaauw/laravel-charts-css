@@ -10,6 +10,9 @@ use Maartenpaauw\Chartscss\Tests\TestCase;
 
 class LegendTest extends TestCase
 {
+    /**
+     * @var string[]
+     */
     private array $labels;
 
     private Legend $legend;

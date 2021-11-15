@@ -21,6 +21,9 @@ class Colorscheme extends Component
         return sprintf('#%s', $this->configuration->identity()->id());
     }
 
+    /**
+     * @return string[]
+     */
     private function declarations(): array
     {
         return array_map(function (ColorContract $color) {

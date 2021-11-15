@@ -9,6 +9,9 @@ abstract class ModificationTest extends TestCase
 {
     abstract public function modification(): Modification;
 
+    /**
+     * @return string[]
+     */
     abstract public function classes(): array;
 
     /** @test */

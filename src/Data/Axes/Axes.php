@@ -12,7 +12,7 @@ class Axes implements AxesContract
     private array $data;
 
     /**
-     * @param string|array $data
+     * @param string|string[] $data
      */
     public function __construct(string $primary, $data)
     {

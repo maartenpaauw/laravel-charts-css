@@ -2,7 +2,6 @@
 
 namespace Maartenpaauw\Chartscss\Tests\Components;
 
-use Illuminate\View\Component;
 use Illuminate\View\ComponentAttributeBag;
 use Maartenpaauw\Chartscss\Appearance\Colorscheme\Colorscheme;
 use Maartenpaauw\Chartscss\Appearance\Modifications;
@@ -10,12 +9,11 @@ use Maartenpaauw\Chartscss\Components\Legend as LegendComponent;
 use Maartenpaauw\Chartscss\Configuration\Configuration;
 use Maartenpaauw\Chartscss\Identity\Identity;
 use Maartenpaauw\Chartscss\Legend\Legend;
-use Maartenpaauw\Chartscss\Tests\Snapshot\Driver\CustomHtmlDriver;
 use Maartenpaauw\Chartscss\Types\Bar;
 
 class LegendTest extends AbstractComponentTest
 {
-    protected function component(): Component
+    protected function component(): LegendComponent
     {
         $legend = (new Legend())
             ->withLabel('Label A')

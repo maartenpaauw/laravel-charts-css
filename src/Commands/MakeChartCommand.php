@@ -41,7 +41,13 @@ class MakeChartCommand extends GeneratorCommand
 
     private function heading(): string
     {
-        return trim(implode(' ', preg_split('/(?=[A-Z])/', $this->className())));
+        $words = preg_split('/(?=[A-Z])/', $this->className());
+
+        if ($words === false) {
+            return '';
+        }
+
+        return trim(implode(' ', $words));
     }
 
     private function className(): string

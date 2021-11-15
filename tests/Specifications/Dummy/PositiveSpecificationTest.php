@@ -11,6 +11,7 @@ class PositiveSpecificationTest extends TestCase
     public function it_should_be_satisfied(): void
     {
         // Arrange
+        /** @var PositiveSpecification<string> $positiveSpecification */
         $positiveSpecification = new PositiveSpecification();
 
         // Act

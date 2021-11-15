@@ -8,9 +8,11 @@ use Maartenpaauw\Chartscss\Appearance\Multiple;
 use Maartenpaauw\Chartscss\Appearance\ShowHeading;
 use Maartenpaauw\Chartscss\Appearance\ShowLabels;
 use Maartenpaauw\Chartscss\Appearance\Stacked;
+use Maartenpaauw\Chartscss\Configuration\Specifications\ConfigurationSpecification;
 use Maartenpaauw\Chartscss\Configuration\Specifications\HasHeading;
 use Maartenpaauw\Chartscss\Configuration\Specifications\HasLabels;
 use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Chartscss\Data\Specifications\DatasetsSpecification;
 use Maartenpaauw\Chartscss\Data\Specifications\HasDatasetLabels;
 use Maartenpaauw\Chartscss\Data\Specifications\HasEntryLabels;
 use Maartenpaauw\Chartscss\Data\Specifications\HasMultiple;
@@ -82,16 +84,19 @@ class SmartConfiguration implements ConfigurationContract
 
     private function shouldConfigureLegend(): bool
     {
-        return $this->hasMultipleDatasets() &&
-            (new NotSpecification(new HasLabels()))->isSatisfiedBy($this->origin);
+        /** @var NotSpecification<ConfigurationContract, ConfigurationSpecification> $noLegendLabels */
+        $noLegendLabels = new NotSpecification(new HasLabels());
+
+        return $this->hasMultipleDatasets() && $noLegendLabels->isSatisfiedBy($this->origin);
     }
 
     private function hasDataLabels(): bool
     {
-        $specification = new OrSpecification(
-            new AndSpecification(new HasEntryLabels(), new NotSpecification(new HasMultiple())),
-            new AndSpecification(new HasDatasetLabels(), new HasMultiple()),
-        );
+        /** @var OrSpecification<DatasetsContract, DatasetsSpecification> $specification */
+        $specification = new OrSpecification([
+            new AndSpecification([new HasEntryLabels(), new NotSpecification(new HasMultiple())]),
+            new AndSpecification([new HasDatasetLabels(), new HasMultiple()]),
+        ]);
 
         return $specification->isSatisfiedBy($this->datasets);
     }
