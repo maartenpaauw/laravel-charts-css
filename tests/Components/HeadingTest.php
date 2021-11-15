@@ -2,7 +2,6 @@
 
 namespace Maartenpaauw\Chartscss\Tests\Components;
 
-use Illuminate\View\Component;
 use Maartenpaauw\Chartscss\Components\Heading;
 
 class HeadingTest extends AbstractComponentTest

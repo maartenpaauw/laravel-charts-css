@@ -2,7 +2,6 @@
 
 namespace Maartenpaauw\Chartscss\Tests\Components;
 
-use Illuminate\View\Component;
 use Illuminate\View\ComponentAttributeBag;
 use Maartenpaauw\Chartscss\Appearance\Colorscheme\Colorscheme;
 use Maartenpaauw\Chartscss\Appearance\Modifications;
