@@ -4,8 +4,14 @@ namespace Maartenpaauw\Chartscss\Appearance;
 
 class Modifications implements Modification
 {
+    /**
+     * @var Modification[]
+     */
     private array $modifications;
 
+    /**
+     * @param Modification[] $modifications
+     */
     public function __construct(array $modifications = [])
     {
         $this->modifications = $modifications;
@@ -23,6 +29,9 @@ class Modifications implements Modification
         }, []);
     }
 
+    /**
+     * @return Modification[]
+     */
     public function toArray(): array
     {
         return $this->modifications;

@@ -29,6 +29,9 @@ class ChartTypeModificationAdapterTest extends TestCase
         $this->assertCount(1, $classes);
     }
 
+    /**
+     * @return array<string, array<ChartType|string>>
+     */
     public function chartTypesDataProvider(): array
     {
         return [

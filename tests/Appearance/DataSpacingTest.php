@@ -47,6 +47,9 @@ class DataSpacingTest extends ModificationTest
         $this->assertContains($class, $classes);
     }
 
+    /**
+     * @return array<array<int|string>>
+     */
     public function spacingDataProvider(): array
     {
         return [

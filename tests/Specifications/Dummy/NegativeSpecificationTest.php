@@ -11,6 +11,7 @@ class NegativeSpecificationTest extends TestCase
     public function it_should_not_be_satisfied(): void
     {
         // Arrange
+        /** @var NegativeSpecification<string> $negativeSpecification */
         $negativeSpecification = new NegativeSpecification();
 
         // Act

@@ -18,10 +18,16 @@ class HighestDatasetSumStatistic implements StatisticContract
 
     public function result(): float
     {
+        $datasets = $this->datasets->toArray();
+
+        if (count($datasets) === 0) {
+            return 0;
+        }
+
         return max(
             array_map(
                 fn (DatasetContract $dataset) => (new SumStatistic($dataset))->result(),
-                $this->datasets->toArray(),
+                $datasets,
             ),
         );
     }

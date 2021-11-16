@@ -2,6 +2,7 @@
 
 namespace Maartenpaauw\Chartscss\Tests\Specifications;
 
+use Maartenpaauw\Chartscss\Specifications\BasicSpecification;
 use Maartenpaauw\Chartscss\Specifications\Dummy\NegativeSpecification;
 use Maartenpaauw\Chartscss\Specifications\Dummy\PositiveSpecification;
 use Maartenpaauw\Chartscss\Specifications\NotSpecification;
@@ -13,6 +14,7 @@ class NotSpecificationTest extends TestCase
     public function it_should_return_false_when_the_specification_is_satisfied(): void
     {
         // Arrange
+        /** @var NotSpecification<string, BasicSpecification> $notSpecification */
         $notSpecification = new NotSpecification(new PositiveSpecification());
 
         // Act
@@ -26,6 +28,7 @@ class NotSpecificationTest extends TestCase
     public function it_should_return_true_when_the_specification_is_dissatisfied(): void
     {
         // Arrange
+        /** @var NotSpecification<string, BasicSpecification> $notSpecification */
         $notSpecification = new NotSpecification(new NegativeSpecification());
 
         // Act

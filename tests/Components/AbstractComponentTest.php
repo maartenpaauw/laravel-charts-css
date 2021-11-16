@@ -3,6 +3,7 @@
 namespace Maartenpaauw\Chartscss\Tests\Components;
 
 use Illuminate\View\Component;
+use Illuminate\View\View;
 use Maartenpaauw\Chartscss\Tests\Snapshot\Driver\CustomHtmlDriver;
 use Maartenpaauw\Chartscss\Tests\Snapshot\TestCase;
 
@@ -12,7 +13,10 @@ abstract class AbstractComponentTest extends TestCase
 
     protected function render(): string
     {
-        return $this->component()->render()->toHtml();
+        /** @var View $view */
+        $view = $this->component()->render();
+
+        return $view->toHtml();
     }
 
     /** @test */

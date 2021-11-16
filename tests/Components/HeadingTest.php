@@ -2,18 +2,17 @@
 
 namespace Maartenpaauw\Chartscss\Tests\Components;
 
-use Illuminate\View\Component;
 use Maartenpaauw\Chartscss\Components\Heading;
 
 class HeadingTest extends AbstractComponentTest
 {
-    protected function component(): Component
+    protected function component(): Heading
     {
         return new Heading('Hello world!');
     }
 
     protected function render(): string
     {
-        return (string) $this->component()->render();
+        return $this->component()->render();
     }
 }

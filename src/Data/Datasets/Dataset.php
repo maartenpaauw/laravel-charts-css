@@ -10,10 +10,16 @@ use Maartenpaauw\Chartscss\Data\Label\NullLabel;
 
 class Dataset implements DatasetContract
 {
+    /**
+     * @var EntryContract[]
+     */
     private array $entries;
 
     private LabelContract $label;
 
+    /**
+     * @param EntryContract[] $entries
+     */
     public function __construct(array $entries = [], ?LabelContract $label = null)
     {
         $this->entries = $entries;

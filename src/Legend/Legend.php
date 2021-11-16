@@ -14,12 +14,18 @@ use Maartenpaauw\Chartscss\Legend\Appearance\Square;
 
 class Legend
 {
+    /**
+     * @var string[]
+     */
     private array $labels;
 
     private Modifications $modifications;
 
     private string $tag;
 
+    /**
+     * @param string[] $labels
+     */
     public function __construct(array $labels = [], ?Modifications $modifications = null, string $tag = 'ul')
     {
         $this->labels = $labels;
@@ -27,6 +33,9 @@ class Legend
         $this->tag = $tag;
     }
 
+    /**
+     * @return string[]
+     */
     public function labels(): array
     {
         return $this->labels;
@@ -37,6 +46,9 @@ class Legend
         return $this->withLabels([$label]);
     }
 
+    /**
+     * @param string[] $labels
+     */
     public function withLabels(array $labels): Legend
     {
         return new self(
@@ -90,6 +102,9 @@ class Legend
         );
     }
 
+    /**
+     * @return string[]
+     */
     public function classes(): array
     {
         return $this->modifications->classes();

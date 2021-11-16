@@ -38,4 +38,17 @@ class HighestDatasetSumStatisticTest extends TestCase
         // Assert
         $this->assertEquals(100, $result);
     }
+
+    /** @test */
+    public function it_should_return_zero_when_there_are_no_datasets(): void
+    {
+        // Arrange
+        $highestDatasetSumStatistic = new HighestDatasetSumStatistic(new Datasets(new NullAxes()));
+
+        // Act
+        $result = $highestDatasetSumStatistic->result();
+
+        // Assert
+        $this->assertEquals(0, $result);
+    }
 }

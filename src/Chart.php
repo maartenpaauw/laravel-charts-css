@@ -15,6 +15,7 @@ use Maartenpaauw\Chartscss\Data\Datasets\CalculatedDatasets;
 use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chartscss\Data\Datasets\InvertedDatasets;
 use Maartenpaauw\Chartscss\Data\Datasets\StartingPointDatasets;
+use Maartenpaauw\Chartscss\Data\Specifications\DatasetsSpecification;
 use Maartenpaauw\Chartscss\Data\Specifications\IsStacked;
 use Maartenpaauw\Chartscss\Identity\Identity;
 use Maartenpaauw\Chartscss\Legend\Legend;
@@ -84,7 +85,10 @@ abstract class Chart extends Component
     {
         $datasets = $this->datasets();
 
-        if ((new NotSpecification(new IsStacked()))->isSatisfiedBy($datasets)) {
+        /** @var NotSpecification<DatasetsContract, DatasetsSpecification> $notStacked */
+        $notStacked = new NotSpecification(new IsStacked());
+
+        if ($notStacked->isSatisfiedBy($datasets)) {
             $datasets = new CalculatedDatasets($datasets);
         }
 
