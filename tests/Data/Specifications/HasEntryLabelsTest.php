@@ -5,17 +5,19 @@ namespace Maartenpaauw\Chartscss\Tests\Data\Specifications;
 use Maartenpaauw\Chartscss\Data\Axes\NullAxes;
 use Maartenpaauw\Chartscss\Data\Datasets\Dataset;
 use Maartenpaauw\Chartscss\Data\Datasets\Datasets;
+use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chartscss\Data\Entries\Entry;
 use Maartenpaauw\Chartscss\Data\Entries\Value\Value;
 use Maartenpaauw\Chartscss\Data\Label\Label;
 use Maartenpaauw\Chartscss\Data\Label\NullLabel;
-use Maartenpaauw\Chartscss\Data\Specifications\DatasetsSpecification;
 use Maartenpaauw\Chartscss\Data\Specifications\HasEntryLabels;
 use Maartenpaauw\Chartscss\Tests\TestCase;
+use Maartenpaauw\Specifications\Specification;
 
 class HasEntryLabelsTest extends TestCase
 {
-    private DatasetsSpecification $hasLabels;
+    /** @var Specification<DatasetsContract> */
+    private Specification $hasLabels;
 
     protected function setUp(): void
     {

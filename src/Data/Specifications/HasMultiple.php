@@ -3,11 +3,18 @@
 namespace Maartenpaauw\Chartscss\Data\Specifications;
 
 use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Specifications\CompositeSpecification;
 
-class HasMultiple implements DatasetsSpecification
+/**
+ * @extends CompositeSpecification<DatasetsContract>
+ */
+class HasMultiple extends CompositeSpecification
 {
-    public function isSatisfiedBy(DatasetsContract $datasets): bool
+    /**
+     * @inheritDoc
+     */
+    public function isSatisfiedBy($candidate): bool
     {
-        return count($datasets->toArray()) > 1;
+        return count($candidate->toArray()) > 1;
     }
 }

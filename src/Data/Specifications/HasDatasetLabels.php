@@ -3,12 +3,19 @@
 namespace Maartenpaauw\Chartscss\Data\Specifications;
 
 use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
+use Maartenpaauw\Specifications\CompositeSpecification;
 
-class HasDatasetLabels implements DatasetsSpecification
+/**
+ * @extends CompositeSpecification<DatasetsContract>
+ */
+class HasDatasetLabels extends CompositeSpecification
 {
-    public function isSatisfiedBy(DatasetsContract $datasets): bool
+    /**
+     * @inheritDoc
+     */
+    public function isSatisfiedBy($candidate): bool
     {
-        foreach ($datasets->toArray() as $dataset) {
+        foreach ($candidate->toArray() as $dataset) {
             if ($dataset->label()->value() !== '') {
                 return true;
             }

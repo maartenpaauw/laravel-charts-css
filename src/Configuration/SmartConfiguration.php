@@ -8,20 +8,15 @@ use Maartenpaauw\Chartscss\Appearance\Multiple;
 use Maartenpaauw\Chartscss\Appearance\ShowHeading;
 use Maartenpaauw\Chartscss\Appearance\ShowLabels;
 use Maartenpaauw\Chartscss\Appearance\Stacked;
-use Maartenpaauw\Chartscss\Configuration\Specifications\ConfigurationSpecification;
 use Maartenpaauw\Chartscss\Configuration\Specifications\HasHeading;
 use Maartenpaauw\Chartscss\Configuration\Specifications\HasLabels;
 use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
-use Maartenpaauw\Chartscss\Data\Specifications\DatasetsSpecification;
 use Maartenpaauw\Chartscss\Data\Specifications\HasDatasetLabels;
 use Maartenpaauw\Chartscss\Data\Specifications\HasEntryLabels;
 use Maartenpaauw\Chartscss\Data\Specifications\HasMultiple;
 use Maartenpaauw\Chartscss\Data\Specifications\IsStacked;
 use Maartenpaauw\Chartscss\Identity\Identity;
 use Maartenpaauw\Chartscss\Legend\Legend;
-use Maartenpaauw\Chartscss\Specifications\AndSpecification;
-use Maartenpaauw\Chartscss\Specifications\NotSpecification;
-use Maartenpaauw\Chartscss\Specifications\OrSpecification;
 
 class SmartConfiguration implements ConfigurationContract
 {
@@ -84,20 +79,19 @@ class SmartConfiguration implements ConfigurationContract
 
     private function shouldConfigureLegend(): bool
     {
-        /** @var NotSpecification<ConfigurationContract, ConfigurationSpecification> $noLegendLabels */
-        $noLegendLabels = new NotSpecification(new HasLabels());
-
-        return $this->hasMultipleDatasets() && $noLegendLabels->isSatisfiedBy($this->origin);
+        return $this->hasMultipleDatasets() &&
+            (new HasLabels())->not()->isSatisfiedBy($this->origin);
     }
 
     private function hasDataLabels(): bool
     {
-        /** @var OrSpecification<DatasetsContract, DatasetsSpecification> $specification */
-        $specification = new OrSpecification([
-            new AndSpecification([new HasEntryLabels(), new NotSpecification(new HasMultiple())]),
-            new AndSpecification([new HasDatasetLabels(), new HasMultiple()]),
-        ]);
+        $hasMultiple = new HasMultiple();
+        $hasEntryLabels = new HasEntryLabels();
+        $hasDatasetLabels = new HasDatasetLabels();
 
-        return $specification->isSatisfiedBy($this->datasets);
+        return $hasEntryLabels
+            ->andNot($hasMultiple)
+            ->or($hasDatasetLabels->and($hasMultiple))
+            ->isSatisfiedBy($this->datasets);
     }
 }

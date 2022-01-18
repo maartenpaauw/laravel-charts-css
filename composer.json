@@ -16,9 +16,10 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
-        "spatie/laravel-package-tools": "^1.9.0",
-        "illuminate/contracts": "^8.37"
+        "php": "^8.0",
+        "illuminate/contracts": "^8.37",
+        "maartenpaauw/laravel-specification-pattern": "^1.0",
+        "spatie/laravel-package-tools": "^1.9.0"
     },
     "require-dev": {
         "ext-tidy": "*",

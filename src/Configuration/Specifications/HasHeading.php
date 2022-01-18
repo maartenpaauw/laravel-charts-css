@@ -3,11 +3,18 @@
 namespace Maartenpaauw\Chartscss\Configuration\Specifications;
 
 use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
+use Maartenpaauw\Specifications\CompositeSpecification;
 
-class HasHeading implements ConfigurationSpecification
+/**
+ * @extends CompositeSpecification<ConfigurationContract>
+ */
+class HasHeading extends CompositeSpecification
 {
-    public function isSatisfiedBy(ConfigurationContract $configuration): bool
+    /**
+     * @inheritDoc
+     */
+    public function isSatisfiedBy($candidate): bool
     {
-        return $configuration->identity()->description() !== '';
+        return $candidate->identity()->description() !== '';
     }
 }
