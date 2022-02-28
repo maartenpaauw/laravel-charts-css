@@ -3,9 +3,7 @@
 namespace Maartenpaauw\Chartscss\Data\Datasets;
 
 use Maartenpaauw\Chartscss\Data\Axes\AxesContract;
-use Maartenpaauw\Chartscss\Data\Specifications\DatasetsSpecification;
 use Maartenpaauw\Chartscss\Data\Specifications\HasMultiple;
-use Maartenpaauw\Chartscss\Specifications\NotSpecification;
 
 class InvertedDatasets implements DatasetsContract
 {
@@ -26,10 +24,7 @@ class InvertedDatasets implements DatasetsContract
      */
     public function toArray(): array
     {
-        /** @var NotSpecification<DatasetsContract, DatasetsSpecification> $singleDataset */
-        $singleDataset = new NotSpecification((new HasMultiple()));
-
-        if ($singleDataset->isSatisfiedBy($this->origin)) {
+        if ((new HasMultiple())->not()->isSatisfiedBy($this->origin)) {
             return $this->origin->toArray();
         }
 

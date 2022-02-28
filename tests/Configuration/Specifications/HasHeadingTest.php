@@ -6,16 +6,18 @@ use Maartenpaauw\Chartscss\Appearance\Colorscheme\Colorscheme;
 use Maartenpaauw\Chartscss\Appearance\Colorscheme\ColorschemeContract;
 use Maartenpaauw\Chartscss\Appearance\Modifications;
 use Maartenpaauw\Chartscss\Configuration\Configuration;
-use Maartenpaauw\Chartscss\Configuration\Specifications\ConfigurationSpecification;
+use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
 use Maartenpaauw\Chartscss\Configuration\Specifications\HasHeading;
 use Maartenpaauw\Chartscss\Identity\Identity;
 use Maartenpaauw\Chartscss\Legend\Legend;
 use Maartenpaauw\Chartscss\Tests\TestCase;
 use Maartenpaauw\Chartscss\Types\Column;
+use Maartenpaauw\Specifications\Specification;
 
 class HasHeadingTest extends TestCase
 {
-    private ConfigurationSpecification $hasHeading;
+    /** @var Specification<ConfigurationContract> */
+    private Specification $hasHeading;
 
     private Legend $legend;
 

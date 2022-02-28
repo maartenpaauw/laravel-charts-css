@@ -6,16 +6,18 @@ use Maartenpaauw\Chartscss\Appearance\Colorscheme\Color;
 use Maartenpaauw\Chartscss\Appearance\Colorscheme\Colorscheme;
 use Maartenpaauw\Chartscss\Appearance\Modifications;
 use Maartenpaauw\Chartscss\Configuration\Configuration;
-use Maartenpaauw\Chartscss\Configuration\Specifications\ConfigurationSpecification;
+use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
 use Maartenpaauw\Chartscss\Configuration\Specifications\HasColorscheme;
 use Maartenpaauw\Chartscss\Identity\Identity;
 use Maartenpaauw\Chartscss\Legend\Legend;
 use Maartenpaauw\Chartscss\Tests\TestCase;
 use Maartenpaauw\Chartscss\Types\Column;
+use Maartenpaauw\Specifications\Specification;
 
 class HasColorschemeTest extends TestCase
 {
-    private ConfigurationSpecification $hasColorscheme;
+    /** @var Specification<ConfigurationContract> */
+    private Specification $hasColorscheme;
 
     private Identity $identity;
 

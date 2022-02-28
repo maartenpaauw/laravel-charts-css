@@ -3,11 +3,18 @@
 namespace Maartenpaauw\Chartscss\Configuration\Specifications;
 
 use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
+use Maartenpaauw\Specifications\CompositeSpecification;
 
-class HasLabels implements ConfigurationSpecification
+/**
+ * @extends CompositeSpecification<ConfigurationContract>
+ */
+class HasLabels extends CompositeSpecification
 {
-    public function isSatisfiedBy(ConfigurationContract $configuration): bool
+    /**
+     * @inheritDoc
+     */
+    public function isSatisfiedBy($candidate): bool
     {
-        return count($configuration->legend()->labels()) !== 0;
+        return count($candidate->legend()->labels()) !== 0;
     }
 }

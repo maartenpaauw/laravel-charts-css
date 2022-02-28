@@ -3,11 +3,18 @@
 namespace Maartenpaauw\Chartscss\Configuration\Specifications;
 
 use Maartenpaauw\Chartscss\Configuration\ConfigurationContract;
+use Maartenpaauw\Specifications\CompositeSpecification;
 
-class HasColorscheme implements ConfigurationSpecification
+/**
+ * @extends CompositeSpecification<ConfigurationContract>
+ */
+class HasColorscheme extends CompositeSpecification
 {
-    public function isSatisfiedBy(ConfigurationContract $configuration): bool
+    /**
+     * @inheritDoc
+     */
+    public function isSatisfiedBy($candidate): bool
     {
-        return count($configuration->colorscheme()->colors()) !== 0;
+        return count($candidate->colorscheme()->colors()) !== 0;
     }
 }

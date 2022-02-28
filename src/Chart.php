@@ -2,8 +2,8 @@
 
 namespace Maartenpaauw\Chartscss;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
-use Illuminate\View\View;
 use Maartenpaauw\Chartscss\Appearance\Colorscheme\Colorscheme;
 use Maartenpaauw\Chartscss\Appearance\Colorscheme\ColorschemeContract;
 use Maartenpaauw\Chartscss\Appearance\Modifications;
@@ -15,14 +15,14 @@ use Maartenpaauw\Chartscss\Data\Datasets\CalculatedDatasets;
 use Maartenpaauw\Chartscss\Data\Datasets\DatasetsContract;
 use Maartenpaauw\Chartscss\Data\Datasets\InvertedDatasets;
 use Maartenpaauw\Chartscss\Data\Datasets\StartingPointDatasets;
-use Maartenpaauw\Chartscss\Data\Specifications\DatasetsSpecification;
 use Maartenpaauw\Chartscss\Data\Specifications\IsStacked;
 use Maartenpaauw\Chartscss\Identity\Identity;
 use Maartenpaauw\Chartscss\Legend\Legend;
-use Maartenpaauw\Chartscss\Specifications\NotSpecification;
 use Maartenpaauw\Chartscss\Types\ChartType;
 use Maartenpaauw\Chartscss\Types\ChartTypeModificationAdapter;
 use Maartenpaauw\Chartscss\Types\Column;
+use Maartenpaauw\Specifications\NotSpecification;
+use Maartenpaauw\Specifications\Specification;
 
 abstract class Chart extends Component
 {
@@ -85,7 +85,7 @@ abstract class Chart extends Component
     {
         $datasets = $this->datasets();
 
-        /** @var NotSpecification<DatasetsContract, DatasetsSpecification> $notStacked */
+        /** @var Specification<DatasetsContract> $notStacked */
         $notStacked = new NotSpecification(new IsStacked());
 
         if ($notStacked->isSatisfiedBy($datasets)) {
