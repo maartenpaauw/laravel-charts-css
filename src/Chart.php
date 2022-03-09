@@ -72,6 +72,11 @@ abstract class Chart extends Component
         );
     }
 
+    protected function displayLegendFirst(): bool
+    {
+        return false;
+    }
+
     protected function identity(): Identity
     {
         return new Identity(
@@ -106,6 +111,7 @@ abstract class Chart extends Component
             'tag' => $this->tag(),
             'configuration' => $this->configuration(),
             'datasets' => $this->prepareDatasets(),
+            'displayLegendFirst' => $this->displayLegendFirst(),
         ]);
     }
 }

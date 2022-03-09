@@ -4,8 +4,13 @@
 
 @hasLabels($configuration)
     <{{ $tag }} id="{{ $id }}">
-        <x-charts-css-table :datasets="$datasets" :configuration="$configuration"/>
-        <x-charts-css-legend :configuration="$configuration"/>
+        @if ($displayLegendFirst)
+            <x-charts-css-legend :configuration="$configuration"/>
+            <x-charts-css-table :datasets="$datasets" :configuration="$configuration"/>
+        @else
+            <x-charts-css-table :datasets="$datasets" :configuration="$configuration"/>
+            <x-charts-css-legend :configuration="$configuration"/>
+        @endif
     </{{ $tag }}>
 @else
     <x-charts-css-table id="{{ $id }}" :datasets="$datasets" :configuration="$configuration"/>
