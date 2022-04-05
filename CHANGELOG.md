@@ -4,6 +4,8 @@ All notable changes to `laravel-charts-css` will be documented in this file.
 
 ## Unreleased
 
+## 2.0.0 - 2022-04-05
+
 ### Added
 
 - Support for Laravel 9.
