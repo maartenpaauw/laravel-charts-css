@@ -4,6 +4,10 @@ All notable changes to `laravel-charts-css` will be documented in this file.
 
 ## Unreleased
 
+### Added
+
+- Support for Laravel 9.
+
 ### Changed
 
 - Make use of `maartenpaauw/laravel-specification-pattern` package.
