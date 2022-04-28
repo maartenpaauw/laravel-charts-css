@@ -2,17 +2,14 @@
 
 namespace Maartenpaauw\Chartscss\Stylesheets;
 
-class StylesheetFactory
+final class StylesheetFactory
 {
     public function create(string $cdn = ''): StylesheetContract
     {
-        switch ($cdn) {
-            case 'jsdelivr':
-                return new JSDelivrStylesheet();
-            case 'unpkg':
-                return new UnpkgStylesheet();
-            default:
-                return new NullStylesheet();
-        }
+        return match ($cdn) {
+            'jsdelivr' => new JSDelivrStylesheet(),
+            'unpkg' => new UnpkgStylesheet(),
+            default => new NullStylesheet(),
+        };
     }
 }
